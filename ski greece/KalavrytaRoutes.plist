@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Harrow To Watford</string>
+		<key>distance</key>
+		<integer>2000</integer>
+		<key>endPointLongitude</key>
+		<real>-0.39628</real>
+		<key>endPointLatitude</key>
+		<real>51.663552</real>
+		<key>hasMidPoints</key>
+		<false/>
+		<key>startPointLongitude</key>
+		<real>-0.333841</real>
+		<key>startPointLatitude</key>
+		<real>51.592185</real>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>NameOfTrack</string>
+		<key>distance</key>
+		<integer>0</integer>
+		<key>endPointLongitude</key>
+		<integer>0</integer>
+		<key>endPointLatitude</key>
+		<string></string>
+		<key>hasMidPoints</key>
+		<false/>
+		<key>startPointLongitude</key>
+		<integer>0</integer>
+		<key>startPointLatitude</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>NameOfTrack</string>
+		<key>distance</key>
+		<integer>0</integer>
+		<key>endPointLongitude</key>
+		<integer>0</integer>
+		<key>endPointLatitude</key>
+		<string></string>
+		<key>hasMidPoints</key>
+		<false/>
+		<key>startPointLongitude</key>
+		<integer>0</integer>
+		<key>startPointLatitude</key>
+		<string></string>
+	</dict>
+</array>
+</plist>

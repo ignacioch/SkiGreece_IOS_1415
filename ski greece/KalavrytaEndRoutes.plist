@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>PH Bridge</string>
+		<key>latitude</key>
+		<real>51.707035</real>
+		<key>longitude</key>
+		<real>-0.44074</real>
+		<key>radius</key>
+		<integer>100</integer>
+	</dict>
+	<dict>
+		<key>radius</key>
+		<integer>100</integer>
+		<key>longitude</key>
+		<real>-0.39628</real>
+		<key>latitude</key>
+		<real>51.663552</real>
+		<key>title</key>
+		<string>Watford</string>
+	</dict>
+	<dict>
+		<key>radius</key>
+		<integer>50</integer>
+		<key>longitude</key>
+		<real>-0.438626</real>
+		<key>latitude</key>
+		<real>51.70648</real>
+		<key>title</key>
+		<string>Kings Langley end</string>
+	</dict>
+	<dict>
+		<key>radius</key>
+		<integer>100</integer>
+		<key>longitude</key>
+		<real>-0.202153</real>
+		<key>latitude</key>
+		<real>51.551606</real>
+		<key>title</key>
+		<string>Home2 end</string>
+	</dict>
+    <dict>
+		<key>radius</key>
+		<integer>100</integer>
+		<key>longitude</key>
+		<real>-0.206165</real>
+		<key>latitude</key>
+		<real>51.549284</real>
+		<key>title</key>
+		<string>HomeEnd</string>
+	</dict>
+    <dict>
+		<key>radius</key>
+		<integer>100</integer>
+		<key>longitude</key>
+		<real>23.731979</real>
+		<key>latitude</key>
+		<real>37.985474</real>
+		<key>title</key>
+		<string>MariosEnd</string>
+	</dict>
+</array>
+</plist>

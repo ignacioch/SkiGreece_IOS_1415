@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Tagli Resort &amp; Spa</string>
+		<key>location</key>
+		<string>{38.503965, 22.552524}</string>
+		<key>type</key>
+		<string>1</string>
+		<key>subtitle</key>
+		<string>7.8</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Αιγλη Resort &amp; Spa</string>
+		<key>location</key>
+		<string>{38.484123,22.575315}</string>
+		<key>type</key>
+		<string>1</string>
+		<key>subtitle</key>
+		<string>8.1</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Elafivolia Arachova Suites</string>
+		<key>location</key>
+		<string>{38.48393,22.570717}</string>
+		<key>type</key>
+		<string>1</string>
+		<key>subtitle</key>
+		<string>7.0</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Επικουρος Εστιατοριο</string>
+		<key>location</key>
+		<string>{38.479126,22.493806}</string>
+		<key>type</key>
+		<string>2</string>
+		<key>subtitle</key>
+		<string>Cost: $$</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Ταβερνα ΦΤΕΡΟΛΑΚΑ</string>
+		<key>location</key>
+		<string>{38.480365,22.584617}</string>
+		<key>type</key>
+		<string>2</string>
+		<key>subtitle</key>
+		<string>Cost: $</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Coffee-Bar Paramount</string>
+		<key>location</key>
+		<string>{38.517381,22.548727}</string>
+		<key>type</key>
+		<string>3</string>
+		<key>subtitle</key>
+		<string>Call 911 For Emergency</string>
+	</dict>
+</array>
+</plist>
