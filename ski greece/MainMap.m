@@ -9,7 +9,7 @@
 #import "MainMap.h"
 #import "MainMapCell.h"
 #import "AppDelegate.h"
-#import "Reachability.h"
+//#import "Reachability.h"
 #import "CenterClassViewController.h"
 #import "MBProgressHUD.h"
 #import "Flurry.h"
@@ -49,7 +49,7 @@
     
     flag=0;
     
-    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    /*Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     if (networkStatus == NotReachable) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ski Greece"
@@ -60,7 +60,7 @@
         [alert show];
     } else {
         
-    }
+    }*/
     
     [self.mapMain setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 

@@ -8,7 +8,7 @@
 
 #import "CenterMoreInfoV2.h"
 #import "AppDelegate.h"
-#import "UIImageView+WebCache.h"
+//#import "UIImageView+WebCache.h"
 #import "SingleWebview.h"
 #import "SingleMap.h"
 #import "MBProgressHUD.h"

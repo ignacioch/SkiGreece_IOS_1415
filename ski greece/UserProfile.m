@@ -114,7 +114,7 @@
     [hud show:YES];
     
     AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
-    [appDelegate openSession];
+    //[appDelegate openSession];
     
     __unsafe_unretained typeof(self) weakSelf = self;
     

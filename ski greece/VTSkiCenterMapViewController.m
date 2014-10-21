@@ -392,7 +392,7 @@
             [FBSession openActiveSessionWithAllowLoginUI: YES];
         } else {
             AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
-            [appDelegate openSession];
+            //[appDelegate openSession];
         }
         NSLog(@"I will just post to Facebook");
         [self publishStory];

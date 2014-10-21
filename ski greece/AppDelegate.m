@@ -7,11 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import <FacebookSDK/FacebookSDK.h>
-#import <Parse/Parse.h>
 #import "Appirater.h"
 #import "Flurry.h"
 #import "API.h"
+#import <Parse/Parse.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 
 
 @implementation AppDelegate
@@ -47,21 +47,6 @@
     //your code
     [Flurry setCrashReportingEnabled:YES];
     
-    /*if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
-        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-        NSLog(@"status bar for ios7");
-    }*/
-    
-    // See if the app has a valid token for the current state.
-    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
-        // To-do, show logged in view
-        NSLog(@"There is token for session");
-        //[self openSession];
-    } else {
-        // No, display the login page.
-        NSLog(@"There isn't token for session");
-
-    }
     
     // Extract the notification data
     NSDictionary *notificationPayload = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
@@ -82,6 +67,13 @@
         message.delegate=self;
         [message show];
     }
+    
+    
+    
+    
+    //Initialize facebook with Parse
+    
+    [PFFacebookUtils initializeFacebook];
 
     
     return YES;
@@ -109,7 +101,9 @@
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     //[FBSettings publishInstall:@"220305831428010"];
-    [FBSettings publishInstall:[FBSession defaultAppID]];
+    
+    //[FBSettings publishInstall:[FBSession defaultAppID]];
+    [FBAppEvents activateApp];
     
     // We need to properly handle activation of the application with regards to Facebook Login
     // (e.g., returning from iOS 6.0 Login Dialog or from fast app switching).
@@ -125,6 +119,16 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [[PFFacebookUtils session] close];
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [FBAppCall handleOpenURL:url
+                  sourceApplication:sourceApplication
+                        withSession:[PFFacebookUtils session]];
 }
 
 //Add For Parse SDK
@@ -167,90 +171,6 @@
     
 }
 
-#pragma mark - facebook functions
 
-- (void)sessionStateChanged:(FBSession *)session
-                      state:(FBSessionState) state
-                      error:(NSError *)error
-{
-    switch (state) {
-        case FBSessionStateOpen: {
-            NSLog(@"FBSessionStateOpen");
-        }
-            break;
-        case FBSessionStateClosed:
-        case FBSessionStateClosedLoginFailed:
-            
-            [FBSession.activeSession closeAndClearTokenInformation];
-            
-            //[self showLoginView];
-            break;
-        default:
-            break;
-    }
-    
-    if (error) {
-        UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:@"Error"
-                                  message:error.localizedDescription
-                                  delegate:nil
-                                  cancelButtonTitle:@"OK"
-                                  otherButtonTitles:nil];
-        [alertView show];
-    }
-}
-
-- (void)openSession
-{
-    NSLog(@"Open Session Called");
-    [FBSession openActiveSessionWithReadPermissions:nil
-                                       allowLoginUI:YES
-                                  completionHandler:
-     ^(FBSession *session,
-       FBSessionState state, NSError *error) {
-         [self sessionStateChanged:session state:state error:error];
-     }];
-}
-
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation
-{
-    NSLog(@"Facebook callback - logic returned in main Screen");
-    return [FBSession.activeSession handleOpenURL:url];
-}
-
--(void) publishStory
-{
-    NSLog(@"Publish story");
-}
-
-- (void)populateUserDetails
-{
-    if (FBSession.activeSession.isOpen) {
-        [[FBRequest requestForMe] startWithCompletionHandler:
-         ^(FBRequestConnection *connection,
-           NSDictionary<FBGraphUser> *user,
-           NSError *error) {
-             if (!error) {
-                 NSLog(@"Username:%@",user.name);
-             }
-         }];
-    }
-}
-
-- (void)openSessionAndLogin
-{
-    NSLog(@"Open Session and searching for the login Called");
-    [FBSession openActiveSessionWithReadPermissions:nil
-                                       allowLoginUI:YES
-                                  completionHandler:
-     ^(FBSession *session,
-       FBSessionState state, NSError *error) {
-         [self sessionStateChanged:session state:state error:error];
-         NSLog(@"session opened and permissions granted - I should check whether the user is logged in + log him in the community.");
-     }];
-}
 
 @end
