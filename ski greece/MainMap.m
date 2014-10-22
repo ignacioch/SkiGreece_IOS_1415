@@ -94,8 +94,7 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:
                              [NSURL URLWithString:[NSString stringWithFormat:@"http://%s/_all",BASE_URL]]];
     
-    //NSURLRequest *request = [NSURLRequest requestWithURL:
-                             //[NSURL URLWithString:@"http://vimateam.gr/projects/skigreece/scripts/data/condition.php"]];
+
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
     
 }
@@ -216,11 +215,6 @@
 	
 	// get the selected language
 
-    /*NSLog(@"The row id is %d",  indexPath.row);
-    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    delegate.center=[centers objectAtIndex:indexPath.row];
-    delegate.cent_id=indexPath.row;
-    delegate.cond=[condition objectAtIndex:indexPath.row];*/
     /*add entry for advertisment*/
     
     /*analytics add/event per ski center*/
@@ -237,9 +231,6 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     CenterClassViewController *vc = [sb instantiateViewControllerWithIdentifier:@"CenterMain"];
     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    /*vc.skiCenter=[centers objectAtIndex:indexPath.row];
-    vc.skiCenterId=[NSString stringWithFormat:@"%d",indexPath.row];
-    vc.skiCenterCondition=[condition objectAtIndex:indexPath.row];*/
     vc.skiCenterDictionary = [dataFromServer objectAtIndex:indexPath.row];
     [self presentViewController:vc animated:YES completion:NULL];
 }
