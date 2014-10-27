@@ -171,6 +171,37 @@
     
 }
 
+#pragma mark - AppDelegate
+
+
+- (void)logOut {
+    // clear cache
+    [[PAPCache sharedCache] clear];
+    
+    // clear NSUserDefaults
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kPAPUserDefaultsCacheFacebookFriendsKey];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kPAPUserDefaultsActivityFeedViewControllerLastRefreshKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    // Unsubscribe from push notifications by removing the user association from the current installation.
+    [[PFInstallation currentInstallation] removeObjectForKey:kPAPInstallationUserKey];
+    [[PFInstallation currentInstallation] saveInBackground];
+    
+    // Clear all caches
+    [PFQuery clearAllCachedResults];
+    
+    // Log out
+    [PFUser logOut];
+    
+    // clear out cached data, view controllers, etc
+    //[self.navController popToRootViewControllerAnimated:NO];
+    
+    //[self presentLoginViewController];
+    
+    //self.homeViewController = nil;
+    //self.activityViewController = nil;
+}
+
 
 
 @end

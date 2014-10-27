@@ -40,7 +40,8 @@
 @property (nonatomic,strong) NSString *notif_text;
 @property (nonatomic,strong) NSDictionary *notification_msg;
 
-//- (void)openSession;
+
+- (void)logOut;
 
 
 

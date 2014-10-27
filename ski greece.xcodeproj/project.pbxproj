@@ -462,6 +462,17 @@
 		DFFB533D19FEF34600A7549B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB533619FEF34600A7549B /* Reachability.m */; };
 		DFFB533E19FEF34600A7549B /* TTTTimeIntervalFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB533919FEF34600A7549B /* TTTTimeIntervalFormatter.m */; };
 		DFFB533F19FEF34600A7549B /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB533C19FEF34600A7549B /* UIImage+ImageEffects.m */; };
+		DFFB534619FEF43200A7549B /* PAPImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB534119FEF43200A7549B /* PAPImageView.m */; };
+		DFFB534719FEF43200A7549B /* PAPProfileImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB534319FEF43200A7549B /* PAPProfileImageView.m */; };
+		DFFB534819FEF43200A7549B /* PAPSettingsButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB534519FEF43200A7549B /* PAPSettingsButtonItem.m */; };
+		DFFB534E19FEF4E800A7549B /* PAPFindFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB534B19FEF4E800A7549B /* PAPFindFriendsViewController.m */; };
+		DFFB534F19FEF4E800A7549B /* PAPSettingsActionSheetDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB534D19FEF4E800A7549B /* PAPSettingsActionSheetDelegate.m */; };
+		DFFB535319FEF58A00A7549B /* PAPPhotoDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB535219FEF58A00A7549B /* PAPPhotoDetailsViewController.m */; };
+		DFFB535819FEF6D400A7549B /* PAPActivityFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB535719FEF6D400A7549B /* PAPActivityFeedViewController.m */; };
+		DFFB535B19FEF6DE00A7549B /* PAPEditPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB535A19FEF6DE00A7549B /* PAPEditPhotoViewController.m */; };
+		DFFB536119FEF82E00A7549B /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFFB536019FEF82E00A7549B /* Twitter.framework */; };
+		DFFB536319FEFADD00A7549B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFFB536219FEFADD00A7549B /* Accelerate.framework */; };
+		DFFB536519FEFB5200A7549B /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFFB536419FEFB5200A7549B /* AddressBookUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1023,6 +1034,25 @@
 		DFFB533919FEF34600A7549B /* TTTTimeIntervalFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTimeIntervalFormatter.m; sourceTree = "<group>"; };
 		DFFB533B19FEF34600A7549B /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		DFFB533C19FEF34600A7549B /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		DFFB534019FEF43200A7549B /* PAPImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAPImageView.h; sourceTree = "<group>"; };
+		DFFB534119FEF43200A7549B /* PAPImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAPImageView.m; sourceTree = "<group>"; };
+		DFFB534219FEF43200A7549B /* PAPProfileImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAPProfileImageView.h; sourceTree = "<group>"; };
+		DFFB534319FEF43200A7549B /* PAPProfileImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAPProfileImageView.m; sourceTree = "<group>"; };
+		DFFB534419FEF43200A7549B /* PAPSettingsButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAPSettingsButtonItem.h; sourceTree = "<group>"; };
+		DFFB534519FEF43200A7549B /* PAPSettingsButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAPSettingsButtonItem.m; sourceTree = "<group>"; };
+		DFFB534A19FEF4E800A7549B /* PAPFindFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAPFindFriendsViewController.h; sourceTree = "<group>"; };
+		DFFB534B19FEF4E800A7549B /* PAPFindFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAPFindFriendsViewController.m; sourceTree = "<group>"; };
+		DFFB534C19FEF4E800A7549B /* PAPSettingsActionSheetDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAPSettingsActionSheetDelegate.h; sourceTree = "<group>"; };
+		DFFB534D19FEF4E800A7549B /* PAPSettingsActionSheetDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAPSettingsActionSheetDelegate.m; sourceTree = "<group>"; };
+		DFFB535119FEF58A00A7549B /* PAPPhotoDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAPPhotoDetailsViewController.h; sourceTree = "<group>"; };
+		DFFB535219FEF58A00A7549B /* PAPPhotoDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAPPhotoDetailsViewController.m; sourceTree = "<group>"; };
+		DFFB535619FEF6D400A7549B /* PAPActivityFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAPActivityFeedViewController.h; sourceTree = "<group>"; };
+		DFFB535719FEF6D400A7549B /* PAPActivityFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAPActivityFeedViewController.m; sourceTree = "<group>"; };
+		DFFB535919FEF6DE00A7549B /* PAPEditPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAPEditPhotoViewController.h; sourceTree = "<group>"; };
+		DFFB535A19FEF6DE00A7549B /* PAPEditPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAPEditPhotoViewController.m; sourceTree = "<group>"; };
+		DFFB536019FEF82E00A7549B /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		DFFB536219FEFADD00A7549B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		DFFB536419FEFB5200A7549B /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1030,6 +1060,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFFB536519FEFB5200A7549B /* AddressBookUI.framework in Frameworks */,
+				DFFB536319FEFADD00A7549B /* Accelerate.framework in Frameworks */,
+				DFFB536119FEF82E00A7549B /* Twitter.framework in Frameworks */,
 				DF4D234D19BFA6530000F94E /* MediaPlayer.framework in Frameworks */,
 				84E4AFCA1605C0F2007CB117 /* SystemConfiguration.framework in Frameworks */,
 				844A577A17ECF84300476D5A /* StoreKit.framework in Frameworks */,
@@ -1234,6 +1267,9 @@
 		84685A2415F6AC3100E6E4FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DFFB536419FEFB5200A7549B /* AddressBookUI.framework */,
+				DFFB536219FEFADD00A7549B /* Accelerate.framework */,
+				DFFB536019FEF82E00A7549B /* Twitter.framework */,
 				DF0EC77B19F703F400470040 /* Parse.framework */,
 				DF0EC77919F7033A00470040 /* ParseFacebookUtils.framework */,
 				DF0EC77519F7019B00470040 /* FacebookSDK.framework */,
@@ -2069,6 +2105,10 @@
 		DFFB52F019FEEC1E00A7549B /* Community */ = {
 			isa = PBXGroup;
 			children = (
+				DFFB535519FEF6B900A7549B /* Activity */,
+				DFFB535419FEF6AF00A7549B /* TakePhoto */,
+				DFFB535019FEF57400A7549B /* Detail */,
+				DFFB534919FEF4D300A7549B /* Settings */,
 				DFFB52F119FEEC2E00A7549B /* Home */,
 			);
 			name = Community;
@@ -2090,6 +2130,12 @@
 		DFFB530D19FEF14A00A7549B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DFFB534019FEF43200A7549B /* PAPImageView.h */,
+				DFFB534119FEF43200A7549B /* PAPImageView.m */,
+				DFFB534219FEF43200A7549B /* PAPProfileImageView.h */,
+				DFFB534319FEF43200A7549B /* PAPProfileImageView.m */,
+				DFFB534419FEF43200A7549B /* PAPSettingsButtonItem.h */,
+				DFFB534519FEF43200A7549B /* PAPSettingsButtonItem.m */,
 				DFFB531019FEF16700A7549B /* UITableViewCell */,
 				DFFB530F19FEF15C00A7549B /* PhotoDetailsView */,
 				DFFB530E19FEF15300A7549B /* TimelineView */,
@@ -2178,6 +2224,44 @@
 				DFFB533C19FEF34600A7549B /* UIImage+ImageEffects.m */,
 			);
 			path = UIImageEffects;
+			sourceTree = "<group>";
+		};
+		DFFB534919FEF4D300A7549B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DFFB534A19FEF4E800A7549B /* PAPFindFriendsViewController.h */,
+				DFFB534B19FEF4E800A7549B /* PAPFindFriendsViewController.m */,
+				DFFB534C19FEF4E800A7549B /* PAPSettingsActionSheetDelegate.h */,
+				DFFB534D19FEF4E800A7549B /* PAPSettingsActionSheetDelegate.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		DFFB535019FEF57400A7549B /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				DFFB535119FEF58A00A7549B /* PAPPhotoDetailsViewController.h */,
+				DFFB535219FEF58A00A7549B /* PAPPhotoDetailsViewController.m */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		DFFB535419FEF6AF00A7549B /* TakePhoto */ = {
+			isa = PBXGroup;
+			children = (
+				DFFB535919FEF6DE00A7549B /* PAPEditPhotoViewController.h */,
+				DFFB535A19FEF6DE00A7549B /* PAPEditPhotoViewController.m */,
+			);
+			name = TakePhoto;
+			sourceTree = "<group>";
+		};
+		DFFB535519FEF6B900A7549B /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				DFFB535619FEF6D400A7549B /* PAPActivityFeedViewController.h */,
+				DFFB535719FEF6D400A7549B /* PAPActivityFeedViewController.m */,
+			);
+			name = Activity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2542,6 +2626,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFFB535319FEF58A00A7549B /* PAPPhotoDetailsViewController.m in Sources */,
 				84685A3215F6AC3100E6E4FC /* main.m in Sources */,
 				84685A3C15F6AC3100E6E4FC /* ViewController.m in Sources */,
 				DFFB52ED19FEEC1700A7549B /* PAPAccountViewController.m in Sources */,
@@ -2551,6 +2636,7 @@
 				DFFB52FC19FEED6300A7549B /* UIImage+AlphaAdditions.m in Sources */,
 				DF4D231719BFA5E10000F94E /* functions_61.js in Sources */,
 				DFFB52EE19FEEC1700A7549B /* PAPHomeViewController.m in Sources */,
+				DFFB534819FEF43200A7549B /* PAPSettingsButtonItem.m in Sources */,
 				DF4D22BD19BFA5E10000F94E /* annotated.js in Sources */,
 				84640EC515FE12730044AF1A /* TracksViewViewController.m in Sources */,
 				DF4D22EF19BFA5E10000F94E /* navtree.js in Sources */,
@@ -2582,12 +2668,14 @@
 				843845ED17B549160020FD93 /* CoreLocationController.m in Sources */,
 				843845F017B63E170020FD93 /* TrackDayMenuViewController.m in Sources */,
 				843845F417B6ABD50020FD93 /* PSLocationManager.m in Sources */,
+				DFFB535819FEF6D400A7549B /* PAPActivityFeedViewController.m in Sources */,
 				843845F717B82E8B0020FD93 /* VTSkiCenterMapViewController.m in Sources */,
 				DFFB532019FEF19E00A7549B /* PAPPhotoCell.m in Sources */,
 				843845FE17B8314F0020FD93 /* VTSkiCenter.m in Sources */,
 				840BC1A017B8F5B50047193E /* VTSkiCenterMapOverlay.m in Sources */,
 				DF4D22F619BFA5E10000F94E /* resize.js in Sources */,
 				840BC1A317B8F6350047193E /* SkiCenterMapOverlayView.m in Sources */,
+				DFFB534719FEF43200A7549B /* PAPProfileImageView.m in Sources */,
 				DF4D232519BFA5E10000F94E /* functions_6c.js in Sources */,
 				84E49AF917BD062800016E09 /* AFHTTPClient.m in Sources */,
 				84E49AFA17BD062800016E09 /* AFHTTPRequestOperation.m in Sources */,
@@ -2613,6 +2701,7 @@
 				84E49B0117BD062800016E09 /* UIImageView+AFNetworking.m in Sources */,
 				DF4D232319BFA5E10000F94E /* functions_69.js in Sources */,
 				84E49B0517BD0ED000016E09 /* API.m in Sources */,
+				DFFB534F19FEF4E800A7549B /* PAPSettingsActionSheetDelegate.m in Sources */,
 				84E49B0817BD14DB00016E09 /* StreamScreen.m in Sources */,
 				DFFB533E19FEF34600A7549B /* TTTTimeIntervalFormatter.m in Sources */,
 				DFFB533119FEF2B700A7549B /* PAPConstants.m in Sources */,
@@ -2624,6 +2713,7 @@
 				DF4D230619BFA5E10000F94E /* all_69.js in Sources */,
 				84E49B1C17BD177700016E09 /* UIAlertView+error.m in Sources */,
 				DFFB52F419FEED5200A7549B /* UIImage+RoundedCornerAdditions.m in Sources */,
+				DFFB535B19FEF6DE00A7549B /* PAPEditPhotoViewController.m in Sources */,
 				84E49B1D17BD177700016E09 /* UIImage+Alpha.m in Sources */,
 				84E49B1E17BD177700016E09 /* UIImage+Resize.m in Sources */,
 				DF4D230019BFA5E10000F94E /* all_65.js in Sources */,
@@ -2636,6 +2726,7 @@
 				8433FAC617EDDFC700BC0F27 /* NotificationScreen.m in Sources */,
 				DFFB533F19FEF34600A7549B /* UIImage+ImageEffects.m in Sources */,
 				DFFB531819FEF18E00A7549B /* PAPActivityCell.m in Sources */,
+				DFFB534619FEF43200A7549B /* PAPImageView.m in Sources */,
 				DF4D232B19BFA5E10000F94E /* functions_73.js in Sources */,
 				DFFB532519FEF1AE00A7549B /* PAPPhotoDetailsFooterView.m in Sources */,
 				84C5BC2418002E1D007F0FE0 /* UIFont+SnapAdditions.m in Sources */,
@@ -2672,6 +2763,7 @@
 				8498609C18250FEB00CCBBDF /* EAIntroView.m in Sources */,
 				DF4D22F819BFA5E10000F94E /* all_5f.js in Sources */,
 				849860AB1825159500CCBBDF /* Appirater.m in Sources */,
+				DFFB534E19FEF4E800A7549B /* PAPFindFriendsViewController.m in Sources */,
 				849860B4182520AB00CCBBDF /* LikeUsPrompt.m in Sources */,
 				8463BF64183033AD005F4CD0 /* OffersAPI.m in Sources */,
 			);
@@ -2819,7 +2911,7 @@
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = NO;
-				VALID_ARCHS = "armv7s armv7";
+				VALID_ARCHS = "armv7s armv7 arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2857,7 +2949,7 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8ED0710C-5AAE-43B6-AF91-E9B5C76E38A3";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv7s armv7";
+				VALID_ARCHS = "armv7s armv7 arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -2931,7 +3023,7 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8ED0710C-5AAE-43B6-AF91-E9B5C76E38A3";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv7s armv7";
+				VALID_ARCHS = "armv7s armv7 arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Distribution;
