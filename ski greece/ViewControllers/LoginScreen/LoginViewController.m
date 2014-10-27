@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
+#import "TrackDayMenuViewController.h"
 
 @interface LoginViewController ()
 
@@ -100,13 +101,12 @@
 #pragma mark OpenMainScreen
 
 - (void)_presentMainScreenViewControllerAnimated:(BOOL)animated {
-    /*NSString * storyboardName = @"Main_iPhone";
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-    UserSettingsSetupViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"UserSettingsSetup"];
-    [self presentViewController:vc animated:animated completion:nil];*/
     
-    /*UserSettingsSetupViewController *userSettingsSetupController = [[UserSettingsSetupViewController alloc] init];
-     [self presentViewController:userSettingsSetupController animated:animated completion:nil];*/
-    //[self.navigationController pushViewController:userSettingsSetupController animated:animated];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    TrackDayMenuViewController *vc = [sb instantiateViewControllerWithIdentifier:@"OpenScreen"];
+    [self presentViewController:vc animated:animated completion:nil];
+
+    
+
 }
 @end

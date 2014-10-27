@@ -18,6 +18,7 @@
     #import <ParseFacebookUtils/PFFacebookUtils.h>
     #import <Foundation/Foundation.h>
     #import <AVFoundation/AVFoundation.h>
+    #import "Config.h"
 #endif
 
 #define OFFSET_5 88.0f

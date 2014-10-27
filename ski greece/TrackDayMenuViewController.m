@@ -89,6 +89,7 @@
     
 
     [defaults synchronize];
+
     
     
     /*Initialite for iPhone5*/
@@ -219,6 +220,11 @@
                                     }];
     
     
+    if (IS_DEVELOPER) {
+        PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+        [currentInstallation addUniqueObject:@"SkiGreeceAdmin" forKey:@"channels"];
+        [currentInstallation saveInBackground];
+    }
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
@@ -258,10 +264,12 @@
     [Flurry logEvent:@"CommunityOpened"];
 
     
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    /*UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     StreamPhotoScreen *vc = [sb instantiateViewControllerWithIdentifier:@"CommunityMain"];
     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    [self presentViewController:vc animated:YES completion:NULL];
+    [self presentViewController:vc animated:YES completion:NULL];*/
+    
+    
 }
 
 - (IBAction)goToNotification:(id)sender
@@ -294,8 +302,6 @@
 
 - (IBAction)goToOffers:(id)sender {
     [Flurry logEvent:@"OffersOpened"];
-    
-
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     SpecialOffers *vc = [sb instantiateViewControllerWithIdentifier:@"SpecialOffersID"];

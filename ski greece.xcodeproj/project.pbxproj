@@ -218,7 +218,6 @@
 		84D70223183C158F00F827FC /* tutorial_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D70221183C158F00F827FC /* tutorial_1.png */; };
 		84D710E81809580900ACD1D8 /* back_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D710E61809580900ACD1D8 /* back_btn.png */; };
 		84D710E91809580900ACD1D8 /* background_only.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D710E71809580900ACD1D8 /* background_only.png */; };
-		84D710F11809582400ACD1D8 /* like_done.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D710EB1809582400ACD1D8 /* like_done.png */; };
 		84D710F21809582400ACD1D8 /* cell_back_triangle_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D710EC1809582400ACD1D8 /* cell_back_triangle_2.png */; };
 		84D710F31809582400ACD1D8 /* cell_back_triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D710ED1809582400ACD1D8 /* cell_back_triangle.png */; };
 		84D710F41809582400ACD1D8 /* cell_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D710EE1809582400ACD1D8 /* cell_back.png */; };
@@ -442,6 +441,27 @@
 		DF4D234A19BFA5E10000F94E /* Jansson-LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = DF4D22B619BFA5E10000F94E /* Jansson-LICENSE.txt */; };
 		DF4D234B19BFA5E10000F94E /* PLCrashReporter-LICENSE.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DF4D22B719BFA5E10000F94E /* PLCrashReporter-LICENSE.rtf */; };
 		DF4D234D19BFA6530000F94E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4D234C19BFA6530000F94E /* MediaPlayer.framework */; };
+		DFFB52ED19FEEC1700A7549B /* PAPAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB52E819FEEC1700A7549B /* PAPAccountViewController.m */; };
+		DFFB52EE19FEEC1700A7549B /* PAPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB52EA19FEEC1700A7549B /* PAPHomeViewController.m */; };
+		DFFB52EF19FEEC1700A7549B /* PAPPhotoTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB52EC19FEEC1700A7549B /* PAPPhotoTimelineViewController.m */; };
+		DFFB52F419FEED5200A7549B /* UIImage+RoundedCornerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB52F319FEED5200A7549B /* UIImage+RoundedCornerAdditions.m */; };
+		DFFB52FB19FEED6300A7549B /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB52F619FEED6300A7549B /* UIImage+Alpha.m */; };
+		DFFB52FC19FEED6300A7549B /* UIImage+AlphaAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB52F819FEED6300A7549B /* UIImage+AlphaAdditions.m */; };
+		DFFB52FD19FEED6300A7549B /* UIImage+ResizeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB52FA19FEED6300A7549B /* UIImage+ResizeAdditions.m */; };
+		DFFB531819FEF18E00A7549B /* PAPActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB531319FEF18E00A7549B /* PAPActivityCell.m */; };
+		DFFB531919FEF18E00A7549B /* PAPBaseTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB531519FEF18E00A7549B /* PAPBaseTextCell.m */; };
+		DFFB531A19FEF18E00A7549B /* PAPFindFriendsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB531719FEF18E00A7549B /* PAPFindFriendsCell.m */; };
+		DFFB531F19FEF19E00A7549B /* PAPLoadMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB531C19FEF19E00A7549B /* PAPLoadMoreCell.m */; };
+		DFFB532019FEF19E00A7549B /* PAPPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB531E19FEF19E00A7549B /* PAPPhotoCell.m */; };
+		DFFB532519FEF1AE00A7549B /* PAPPhotoDetailsFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB532219FEF1AE00A7549B /* PAPPhotoDetailsFooterView.m */; };
+		DFFB532619FEF1AE00A7549B /* PAPPhotoDetailsHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB532419FEF1AE00A7549B /* PAPPhotoDetailsHeaderView.m */; };
+		DFFB532919FEF1C200A7549B /* PAPPhotoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB532819FEF1C200A7549B /* PAPPhotoHeaderView.m */; };
+		DFFB533019FEF2B700A7549B /* PAPCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB532B19FEF2B700A7549B /* PAPCache.m */; };
+		DFFB533119FEF2B700A7549B /* PAPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB532D19FEF2B700A7549B /* PAPConstants.m */; };
+		DFFB533219FEF2B700A7549B /* PAPUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB532F19FEF2B700A7549B /* PAPUtility.m */; };
+		DFFB533D19FEF34600A7549B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB533619FEF34600A7549B /* Reachability.m */; };
+		DFFB533E19FEF34600A7549B /* TTTTimeIntervalFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB533919FEF34600A7549B /* TTTTimeIntervalFormatter.m */; };
+		DFFB533F19FEF34600A7549B /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB533C19FEF34600A7549B /* UIImage+ImageEffects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -960,6 +980,49 @@
 		DF4D22B619BFA5E10000F94E /* Jansson-LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Jansson-LICENSE.txt"; sourceTree = "<group>"; };
 		DF4D22B719BFA5E10000F94E /* PLCrashReporter-LICENSE.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "PLCrashReporter-LICENSE.rtf"; sourceTree = "<group>"; };
 		DF4D234C19BFA6530000F94E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		DFC50C5D19FD04350015F1D8 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Config.h; path = "ski greece/Others/Config.h"; sourceTree = SOURCE_ROOT; };
+		DFFB52E719FEEC1700A7549B /* PAPAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAPAccountViewController.h; sourceTree = "<group>"; };
+		DFFB52E819FEEC1700A7549B /* PAPAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAPAccountViewController.m; sourceTree = "<group>"; };
+		DFFB52E919FEEC1700A7549B /* PAPHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAPHomeViewController.h; sourceTree = "<group>"; };
+		DFFB52EA19FEEC1700A7549B /* PAPHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAPHomeViewController.m; sourceTree = "<group>"; };
+		DFFB52EB19FEEC1700A7549B /* PAPPhotoTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAPPhotoTimelineViewController.h; sourceTree = "<group>"; };
+		DFFB52EC19FEEC1700A7549B /* PAPPhotoTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAPPhotoTimelineViewController.m; sourceTree = "<group>"; };
+		DFFB52F219FEED5200A7549B /* UIImage+RoundedCornerAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+RoundedCornerAdditions.h"; path = "ski greece/Categories/UIImage+RoundedCornerAdditions.h"; sourceTree = SOURCE_ROOT; };
+		DFFB52F319FEED5200A7549B /* UIImage+RoundedCornerAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+RoundedCornerAdditions.m"; path = "ski greece/Categories/UIImage+RoundedCornerAdditions.m"; sourceTree = SOURCE_ROOT; };
+		DFFB52F519FEED6300A7549B /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Alpha.h"; path = "ski greece/Categories/UIImage+Alpha.h"; sourceTree = SOURCE_ROOT; };
+		DFFB52F619FEED6300A7549B /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Alpha.m"; path = "ski greece/Categories/UIImage+Alpha.m"; sourceTree = SOURCE_ROOT; };
+		DFFB52F719FEED6300A7549B /* UIImage+AlphaAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+AlphaAdditions.h"; path = "ski greece/Categories/UIImage+AlphaAdditions.h"; sourceTree = SOURCE_ROOT; };
+		DFFB52F819FEED6300A7549B /* UIImage+AlphaAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+AlphaAdditions.m"; path = "ski greece/Categories/UIImage+AlphaAdditions.m"; sourceTree = SOURCE_ROOT; };
+		DFFB52F919FEED6300A7549B /* UIImage+ResizeAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ResizeAdditions.h"; path = "ski greece/Categories/UIImage+ResizeAdditions.h"; sourceTree = SOURCE_ROOT; };
+		DFFB52FA19FEED6300A7549B /* UIImage+ResizeAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ResizeAdditions.m"; path = "ski greece/Categories/UIImage+ResizeAdditions.m"; sourceTree = SOURCE_ROOT; };
+		DFFB531219FEF18E00A7549B /* PAPActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PAPActivityCell.h; path = "ski greece/Views/UITableViewCells/PAPBaseTextCell/PAPActivityCell.h"; sourceTree = SOURCE_ROOT; };
+		DFFB531319FEF18E00A7549B /* PAPActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PAPActivityCell.m; path = "ski greece/Views/UITableViewCells/PAPBaseTextCell/PAPActivityCell.m"; sourceTree = SOURCE_ROOT; };
+		DFFB531419FEF18E00A7549B /* PAPBaseTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PAPBaseTextCell.h; path = "ski greece/Views/UITableViewCells/PAPBaseTextCell/PAPBaseTextCell.h"; sourceTree = SOURCE_ROOT; };
+		DFFB531519FEF18E00A7549B /* PAPBaseTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PAPBaseTextCell.m; path = "ski greece/Views/UITableViewCells/PAPBaseTextCell/PAPBaseTextCell.m"; sourceTree = SOURCE_ROOT; };
+		DFFB531619FEF18E00A7549B /* PAPFindFriendsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PAPFindFriendsCell.h; path = "ski greece/Views/UITableViewCells/PAPBaseTextCell/PAPFindFriendsCell.h"; sourceTree = SOURCE_ROOT; };
+		DFFB531719FEF18E00A7549B /* PAPFindFriendsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PAPFindFriendsCell.m; path = "ski greece/Views/UITableViewCells/PAPBaseTextCell/PAPFindFriendsCell.m"; sourceTree = SOURCE_ROOT; };
+		DFFB531B19FEF19E00A7549B /* PAPLoadMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PAPLoadMoreCell.h; path = "ski greece/Views/UITableViewCells/PAPLoadMoreCell.h"; sourceTree = SOURCE_ROOT; };
+		DFFB531C19FEF19E00A7549B /* PAPLoadMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PAPLoadMoreCell.m; path = "ski greece/Views/UITableViewCells/PAPLoadMoreCell.m"; sourceTree = SOURCE_ROOT; };
+		DFFB531D19FEF19E00A7549B /* PAPPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PAPPhotoCell.h; path = "ski greece/Views/UITableViewCells/PAPPhotoCell.h"; sourceTree = SOURCE_ROOT; };
+		DFFB531E19FEF19E00A7549B /* PAPPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PAPPhotoCell.m; path = "ski greece/Views/UITableViewCells/PAPPhotoCell.m"; sourceTree = SOURCE_ROOT; };
+		DFFB532119FEF1AE00A7549B /* PAPPhotoDetailsFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PAPPhotoDetailsFooterView.h; path = "ski greece/Views/PhotoDetailsViews/PAPPhotoDetailsFooterView.h"; sourceTree = SOURCE_ROOT; };
+		DFFB532219FEF1AE00A7549B /* PAPPhotoDetailsFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PAPPhotoDetailsFooterView.m; path = "ski greece/Views/PhotoDetailsViews/PAPPhotoDetailsFooterView.m"; sourceTree = SOURCE_ROOT; };
+		DFFB532319FEF1AE00A7549B /* PAPPhotoDetailsHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PAPPhotoDetailsHeaderView.h; path = "ski greece/Views/PhotoDetailsViews/PAPPhotoDetailsHeaderView.h"; sourceTree = SOURCE_ROOT; };
+		DFFB532419FEF1AE00A7549B /* PAPPhotoDetailsHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PAPPhotoDetailsHeaderView.m; path = "ski greece/Views/PhotoDetailsViews/PAPPhotoDetailsHeaderView.m"; sourceTree = SOURCE_ROOT; };
+		DFFB532719FEF1C200A7549B /* PAPPhotoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PAPPhotoHeaderView.h; path = "ski greece/Views/TimelineView/PAPPhotoHeaderView.h"; sourceTree = SOURCE_ROOT; };
+		DFFB532819FEF1C200A7549B /* PAPPhotoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PAPPhotoHeaderView.m; path = "ski greece/Views/TimelineView/PAPPhotoHeaderView.m"; sourceTree = SOURCE_ROOT; };
+		DFFB532A19FEF2B700A7549B /* PAPCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PAPCache.h; path = "ski greece/PAPCache.h"; sourceTree = SOURCE_ROOT; };
+		DFFB532B19FEF2B700A7549B /* PAPCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PAPCache.m; path = "ski greece/PAPCache.m"; sourceTree = SOURCE_ROOT; };
+		DFFB532C19FEF2B700A7549B /* PAPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PAPConstants.h; path = "ski greece/PAPConstants.h"; sourceTree = SOURCE_ROOT; };
+		DFFB532D19FEF2B700A7549B /* PAPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PAPConstants.m; path = "ski greece/PAPConstants.m"; sourceTree = SOURCE_ROOT; };
+		DFFB532E19FEF2B700A7549B /* PAPUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PAPUtility.h; path = "ski greece/PAPUtility.h"; sourceTree = SOURCE_ROOT; };
+		DFFB532F19FEF2B700A7549B /* PAPUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PAPUtility.m; path = "ski greece/PAPUtility.m"; sourceTree = SOURCE_ROOT; };
+		DFFB533519FEF34600A7549B /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		DFFB533619FEF34600A7549B /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		DFFB533819FEF34600A7549B /* TTTTimeIntervalFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTTimeIntervalFormatter.h; sourceTree = "<group>"; };
+		DFFB533919FEF34600A7549B /* TTTTimeIntervalFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTTimeIntervalFormatter.m; sourceTree = "<group>"; };
+		DFFB533B19FEF34600A7549B /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		DFFB533C19FEF34600A7549B /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1101,8 +1164,15 @@
 		8438460317B83D9B0020FD93 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				DFFB532A19FEF2B700A7549B /* PAPCache.h */,
+				DFFB532B19FEF2B700A7549B /* PAPCache.m */,
+				DFFB532C19FEF2B700A7549B /* PAPConstants.h */,
+				DFFB532D19FEF2B700A7549B /* PAPConstants.m */,
+				DFFB532E19FEF2B700A7549B /* PAPUtility.h */,
+				DFFB532F19FEF2B700A7549B /* PAPUtility.m */,
 				845C2F741604E85D00FF7571 /* AppDelegate.h */,
 				845C2F751604E85D00FF7571 /* AppDelegate.m */,
+				DFC50C5D19FD04350015F1D8 /* Config.h */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -1149,6 +1219,7 @@
 				84685A2B15F6AC3100E6E4FC /* Ski Greece */,
 				84685A2415F6AC3100E6E4FC /* Frameworks */,
 				84685A2215F6AC3100E6E4FC /* Products */,
+				DFFB533319FEF34600A7549B /* Vendors */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1196,6 +1267,7 @@
 		84685A2B15F6AC3100E6E4FC /* Ski Greece */ = {
 			isa = PBXGroup;
 			children = (
+				DFFB530D19FEF14A00A7549B /* Views */,
 				84A014B2181ED1B700D15F95 /* Helper */,
 				84A014A0181D4B2B00D15F95 /* GeneralScreens */,
 				84EAC2A01809F19C00D614A4 /* NearbyPlaces */,
@@ -1381,6 +1453,14 @@
 		84C5BC2018002D39007F0FE0 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				DFFB52F519FEED6300A7549B /* UIImage+Alpha.h */,
+				DFFB52F619FEED6300A7549B /* UIImage+Alpha.m */,
+				DFFB52F719FEED6300A7549B /* UIImage+AlphaAdditions.h */,
+				DFFB52F819FEED6300A7549B /* UIImage+AlphaAdditions.m */,
+				DFFB52F919FEED6300A7549B /* UIImage+ResizeAdditions.h */,
+				DFFB52FA19FEED6300A7549B /* UIImage+ResizeAdditions.m */,
+				DFFB52F219FEED5200A7549B /* UIImage+RoundedCornerAdditions.h */,
+				DFFB52F319FEED5200A7549B /* UIImage+RoundedCornerAdditions.m */,
 				84C5BC2218002E1D007F0FE0 /* UIFont+SnapAdditions.h */,
 				84C5BC2318002E1D007F0FE0 /* UIFont+SnapAdditions.m */,
 			);
@@ -1782,6 +1862,7 @@
 		DF0EC78119F7066000470040 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				DFFB52F019FEEC1E00A7549B /* Community */,
 				DF0EC78019F7065300470040 /* Login Screen */,
 			);
 			name = ViewControllers;
@@ -1985,6 +2066,120 @@
 			path = Licenses;
 			sourceTree = "<group>";
 		};
+		DFFB52F019FEEC1E00A7549B /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				DFFB52F119FEEC2E00A7549B /* Home */,
+			);
+			name = Community;
+			sourceTree = "<group>";
+		};
+		DFFB52F119FEEC2E00A7549B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DFFB52E719FEEC1700A7549B /* PAPAccountViewController.h */,
+				DFFB52E819FEEC1700A7549B /* PAPAccountViewController.m */,
+				DFFB52E919FEEC1700A7549B /* PAPHomeViewController.h */,
+				DFFB52EA19FEEC1700A7549B /* PAPHomeViewController.m */,
+				DFFB52EB19FEEC1700A7549B /* PAPPhotoTimelineViewController.h */,
+				DFFB52EC19FEEC1700A7549B /* PAPPhotoTimelineViewController.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		DFFB530D19FEF14A00A7549B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DFFB531019FEF16700A7549B /* UITableViewCell */,
+				DFFB530F19FEF15C00A7549B /* PhotoDetailsView */,
+				DFFB530E19FEF15300A7549B /* TimelineView */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DFFB530E19FEF15300A7549B /* TimelineView */ = {
+			isa = PBXGroup;
+			children = (
+				DFFB532719FEF1C200A7549B /* PAPPhotoHeaderView.h */,
+				DFFB532819FEF1C200A7549B /* PAPPhotoHeaderView.m */,
+			);
+			name = TimelineView;
+			sourceTree = "<group>";
+		};
+		DFFB530F19FEF15C00A7549B /* PhotoDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				DFFB532119FEF1AE00A7549B /* PAPPhotoDetailsFooterView.h */,
+				DFFB532219FEF1AE00A7549B /* PAPPhotoDetailsFooterView.m */,
+				DFFB532319FEF1AE00A7549B /* PAPPhotoDetailsHeaderView.h */,
+				DFFB532419FEF1AE00A7549B /* PAPPhotoDetailsHeaderView.m */,
+			);
+			name = PhotoDetailsView;
+			sourceTree = "<group>";
+		};
+		DFFB531019FEF16700A7549B /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DFFB531B19FEF19E00A7549B /* PAPLoadMoreCell.h */,
+				DFFB531C19FEF19E00A7549B /* PAPLoadMoreCell.m */,
+				DFFB531D19FEF19E00A7549B /* PAPPhotoCell.h */,
+				DFFB531E19FEF19E00A7549B /* PAPPhotoCell.m */,
+				DFFB531119FEF17100A7549B /* PAPBaseTextCell */,
+			);
+			name = UITableViewCell;
+			sourceTree = "<group>";
+		};
+		DFFB531119FEF17100A7549B /* PAPBaseTextCell */ = {
+			isa = PBXGroup;
+			children = (
+				DFFB531219FEF18E00A7549B /* PAPActivityCell.h */,
+				DFFB531319FEF18E00A7549B /* PAPActivityCell.m */,
+				DFFB531419FEF18E00A7549B /* PAPBaseTextCell.h */,
+				DFFB531519FEF18E00A7549B /* PAPBaseTextCell.m */,
+				DFFB531619FEF18E00A7549B /* PAPFindFriendsCell.h */,
+				DFFB531719FEF18E00A7549B /* PAPFindFriendsCell.m */,
+			);
+			name = PAPBaseTextCell;
+			sourceTree = "<group>";
+		};
+		DFFB533319FEF34600A7549B /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				DFFB533419FEF34600A7549B /* Reachability */,
+				DFFB533719FEF34600A7549B /* TTTTimeIntervalFormatter */,
+				DFFB533A19FEF34600A7549B /* UIImageEffects */,
+			);
+			name = Vendors;
+			path = "ski greece/Vendors";
+			sourceTree = "<group>";
+		};
+		DFFB533419FEF34600A7549B /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				DFFB533519FEF34600A7549B /* Reachability.h */,
+				DFFB533619FEF34600A7549B /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		DFFB533719FEF34600A7549B /* TTTTimeIntervalFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				DFFB533819FEF34600A7549B /* TTTTimeIntervalFormatter.h */,
+				DFFB533919FEF34600A7549B /* TTTTimeIntervalFormatter.m */,
+			);
+			path = TTTTimeIntervalFormatter;
+			sourceTree = "<group>";
+		};
+		DFFB533A19FEF34600A7549B /* UIImageEffects */ = {
+			isa = PBXGroup;
+			children = (
+				DFFB533B19FEF34600A7549B /* UIImage+ImageEffects.h */,
+				DFFB533C19FEF34600A7549B /* UIImage+ImageEffects.m */,
+			);
+			path = UIImageEffects;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2011,7 +2206,7 @@
 		84685A1815F6AC3100E6E4FC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = VimaTeamGr;
 				TargetAttributes = {
 					84685A2015F6AC3100E6E4FC = {
@@ -2237,7 +2432,6 @@
 				DF4D22FB19BFA5E10000F94E /* all_63.html in Resources */,
 				84D710E81809580900ACD1D8 /* back_btn.png in Resources */,
 				84D710E91809580900ACD1D8 /* background_only.png in Resources */,
-				84D710F11809582400ACD1D8 /* like_done.png in Resources */,
 				DF4D22F219BFA5E10000F94E /* pages.html in Resources */,
 				84D710F21809582400ACD1D8 /* cell_back_triangle_2.png in Resources */,
 				84D710F31809582400ACD1D8 /* cell_back_triangle.png in Resources */,
@@ -2350,23 +2544,29 @@
 			files = (
 				84685A3215F6AC3100E6E4FC /* main.m in Sources */,
 				84685A3C15F6AC3100E6E4FC /* ViewController.m in Sources */,
+				DFFB52ED19FEEC1700A7549B /* PAPAccountViewController.m in Sources */,
 				84685A4915F6AD3900E6E4FC /* MainMap.m in Sources */,
 				84C5D11515FDDB3B0056FC60 /* LiftsView.m in Sources */,
 				84C5D11B15FDF6660056FC60 /* LiftsCell.m in Sources */,
+				DFFB52FC19FEED6300A7549B /* UIImage+AlphaAdditions.m in Sources */,
 				DF4D231719BFA5E10000F94E /* functions_61.js in Sources */,
+				DFFB52EE19FEEC1700A7549B /* PAPHomeViewController.m in Sources */,
 				DF4D22BD19BFA5E10000F94E /* annotated.js in Sources */,
 				84640EC515FE12730044AF1A /* TracksViewViewController.m in Sources */,
 				DF4D22EF19BFA5E10000F94E /* navtree.js in Sources */,
 				84640ECC15FE1F560044AF1A /* WeatherViewController.m in Sources */,
+				DFFB531919FEF18E00A7549B /* PAPBaseTextCell.m in Sources */,
 				84DF45CC15FE5815000A2FA3 /* TrailMap.m in Sources */,
 				DF4D22CF19BFA5E10000F94E /* dynsections.js in Sources */,
 				DF4D22D119BFA5E10000F94E /* files.js in Sources */,
 				845C2F761604E85D00FF7571 /* AppDelegate.m in Sources */,
+				DFFB532919FEF1C200A7549B /* PAPPhotoHeaderView.m in Sources */,
 				DF4D231F19BFA5E10000F94E /* functions_66.js in Sources */,
 				8440A957168B34A4002596E4 /* CenterClassViewController.m in Sources */,
 				DF4D22FC19BFA5E10000F94E /* all_63.js in Sources */,
 				84043DF9168DD9BA0071F978 /* CenterMoreInfoV2.m in Sources */,
 				DF4D22F519BFA5E10000F94E /* protocol_flurry_ad_delegate-p.js in Sources */,
+				DFFB532619FEF1AE00A7549B /* PAPPhotoDetailsHeaderView.m in Sources */,
 				DF4D230219BFA5E10000F94E /* all_66.js in Sources */,
 				DF4D230819BFA5E10000F94E /* all_6c.js in Sources */,
 				84EF12DF169051BB001E7C76 /* CameraInitCell.m in Sources */,
@@ -2383,6 +2583,7 @@
 				843845F017B63E170020FD93 /* TrackDayMenuViewController.m in Sources */,
 				843845F417B6ABD50020FD93 /* PSLocationManager.m in Sources */,
 				843845F717B82E8B0020FD93 /* VTSkiCenterMapViewController.m in Sources */,
+				DFFB532019FEF19E00A7549B /* PAPPhotoCell.m in Sources */,
 				843845FE17B8314F0020FD93 /* VTSkiCenter.m in Sources */,
 				840BC1A017B8F5B50047193E /* VTSkiCenterMapOverlay.m in Sources */,
 				DF4D22F619BFA5E10000F94E /* resize.js in Sources */,
@@ -2392,10 +2593,14 @@
 				84E49AFA17BD062800016E09 /* AFHTTPRequestOperation.m in Sources */,
 				84E49AFB17BD062800016E09 /* AFImageRequestOperation.m in Sources */,
 				84E49AFC17BD062800016E09 /* AFJSONRequestOperation.m in Sources */,
+				DFFB52EF19FEEC1700A7549B /* PAPPhotoTimelineViewController.m in Sources */,
 				84E49AFD17BD062800016E09 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				DFFB52FB19FEED6300A7549B /* UIImage+Alpha.m in Sources */,
 				DF4D22F019BFA5E10000F94E /* navtreeindex0.js in Sources */,
 				84E49AFE17BD062800016E09 /* AFPropertyListRequestOperation.m in Sources */,
+				DFFB531A19FEF18E00A7549B /* PAPFindFriendsCell.m in Sources */,
 				84E49AFF17BD062800016E09 /* AFURLConnectionOperation.m in Sources */,
+				DFFB533219FEF2B700A7549B /* PAPUtility.m in Sources */,
 				DF4D231919BFA5E10000F94E /* functions_63.js in Sources */,
 				DF4D232919BFA5E10000F94E /* functions_72.js in Sources */,
 				84E49B0017BD062800016E09 /* AFXMLRequestOperation.m in Sources */,
@@ -2409,12 +2614,16 @@
 				DF4D232319BFA5E10000F94E /* functions_69.js in Sources */,
 				84E49B0517BD0ED000016E09 /* API.m in Sources */,
 				84E49B0817BD14DB00016E09 /* StreamScreen.m in Sources */,
+				DFFB533E19FEF34600A7549B /* TTTTimeIntervalFormatter.m in Sources */,
+				DFFB533119FEF2B700A7549B /* PAPConstants.m in Sources */,
 				DF4D231519BFA5E10000F94E /* functions_5f.js in Sources */,
 				84E49B0B17BD14EB00016E09 /* PhotoScreen.m in Sources */,
 				84E49B0E17BD14FB00016E09 /* LoginScreen.m in Sources */,
+				DFFB52FD19FEED6300A7549B /* UIImage+ResizeAdditions.m in Sources */,
 				84E49B1117BD150D00016E09 /* StreamPhotoScreen.m in Sources */,
 				DF4D230619BFA5E10000F94E /* all_69.js in Sources */,
 				84E49B1C17BD177700016E09 /* UIAlertView+error.m in Sources */,
+				DFFB52F419FEED5200A7549B /* UIImage+RoundedCornerAdditions.m in Sources */,
 				84E49B1D17BD177700016E09 /* UIImage+Alpha.m in Sources */,
 				84E49B1E17BD177700016E09 /* UIImage+Resize.m in Sources */,
 				DF4D230019BFA5E10000F94E /* all_65.js in Sources */,
@@ -2425,7 +2634,10 @@
 				DF0EC77F19F7064700470040 /* LoginViewController.m in Sources */,
 				8430EFB717D21A5200B19305 /* UserProfile.m in Sources */,
 				8433FAC617EDDFC700BC0F27 /* NotificationScreen.m in Sources */,
+				DFFB533F19FEF34600A7549B /* UIImage+ImageEffects.m in Sources */,
+				DFFB531819FEF18E00A7549B /* PAPActivityCell.m in Sources */,
 				DF4D232B19BFA5E10000F94E /* functions_73.js in Sources */,
+				DFFB532519FEF1AE00A7549B /* PAPPhotoDetailsFooterView.m in Sources */,
 				84C5BC2418002E1D007F0FE0 /* UIFont+SnapAdditions.m in Sources */,
 				84EAC2A31809F1B700D614A4 /* NearbyPlaces.m in Sources */,
 				DF4D230419BFA5E10000F94E /* all_67.js in Sources */,
@@ -2436,6 +2648,7 @@
 				DF4D22C619BFA5E10000F94E /* dir_2c12105386bcc5c3935feab96f296a41.js in Sources */,
 				DF4D232D19BFA5E10000F94E /* functions_76.js in Sources */,
 				849BB4F41815171B007FD1FF /* LocalAPI.m in Sources */,
+				DFFB533D19FEF34600A7549B /* Reachability.m in Sources */,
 				DF4D22E619BFA5E10000F94E /* hierarchy.js in Sources */,
 				841FD1EE1815C04D007D6579 /* LocalPosts.m in Sources */,
 				840F8F5B181712810087B1D2 /* MainMapCell.m in Sources */,
@@ -2447,7 +2660,9 @@
 				84A014A9181D662000D15F95 /* MyLocation.m in Sources */,
 				DF4D22CA19BFA5E10000F94E /* dir_8d09381268ac2638daf17fcbbfe92ff4.js in Sources */,
 				84A014AE181D8AE100D15F95 /* SpecialOffers.m in Sources */,
+				DFFB533019FEF2B700A7549B /* PAPCache.m in Sources */,
 				DF4D22FE19BFA5E10000F94E /* all_64.js in Sources */,
+				DFFB531F19FEF19E00A7549B /* PAPLoadMoreCell.m in Sources */,
 				84A014B1181D92D500D15F95 /* InfoScreen.m in Sources */,
 				84A014B5181ED1D300D15F95 /* MBProgressHUD.m in Sources */,
 				84A014BA182100DC00D15F95 /* AFPickerView.m in Sources */,
@@ -2497,13 +2712,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: marios papanikolopoulos (9SCJ3ARUY4)";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "Apple Development IOS Push Services: com.vimateamgr.ios.skigreece";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2513,10 +2734,14 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "Ski Greece";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C23DBE14-551B-4A19-88A9-A9B78B90D85C";
@@ -2529,17 +2754,26 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: I CHARALAMPIDIS (P89PMWUXH4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: I CHARALAMPIDIS (P89PMWUXH4)";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
@@ -2632,17 +2866,26 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: I CHARALAMPIDIS (P89PMWUXH4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: I CHARALAMPIDIS (P89PMWUXH4)";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";

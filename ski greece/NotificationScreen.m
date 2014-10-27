@@ -373,7 +373,7 @@
     }
     
     // DEMO
-    [currentInstallation addUniqueObject:@"Admin" forKey:@"channels"];
+    //[currentInstallation addUniqueObject:@"Admin" forKey:@"channels"];
     
     [currentInstallation saveInBackground];
     
