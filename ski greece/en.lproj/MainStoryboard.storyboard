@@ -1692,7 +1692,7 @@
         <!--Login View Controller-->
         <scene sceneID="dxu-qM-kTD">
             <objects>
-                <viewController id="EiV-qO-BW8" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FBLoginScreen" id="EiV-qO-BW8" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LBM-4x-kzk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1701,7 +1701,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4T7-5j-n7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-706" y="1335"/>
+            <point key="canvasLocation" x="-1342" y="1293"/>
         </scene>
         <!--Stream Screen-->
         <scene sceneID="tWa-yu-3j1">

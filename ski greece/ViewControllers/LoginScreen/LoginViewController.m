@@ -24,6 +24,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    if ([UIScreen mainScreen].bounds.size.height > 480.0f) {
+        // for the iPhone 5
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundLogin-568h.png"]];
+    } else {
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundLogin.png"]];
+    }
+
+    
     // Add the FB login Button
     _loginFBButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [_loginFBButton addTarget:self
@@ -105,8 +113,6 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     TrackDayMenuViewController *vc = [sb instantiateViewControllerWithIdentifier:@"OpenScreen"];
     [self presentViewController:vc animated:animated completion:nil];
-
-    
 
 }
 @end

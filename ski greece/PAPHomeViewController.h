@@ -8,8 +8,9 @@
 
 #import "PAPPhotoTimelineViewController.h"
 
-@interface PAPHomeViewController : PAPPhotoTimelineViewController
+@interface PAPHomeViewController : PAPPhotoTimelineViewController <UIActionSheetDelegate>
 
 @property (nonatomic, assign, getter = isFirstLaunch) BOOL firstLaunch;
+@property (nonatomic,assign) IBOutlet UIButton * settingsButton;
 
 @end

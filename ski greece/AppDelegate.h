@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
+#import "PAPHomeViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -40,7 +42,13 @@
 @property (nonatomic,strong) NSString *notif_text;
 @property (nonatomic,strong) NSDictionary *notification_msg;
 
+@property (nonatomic, strong) MBProgressHUD *hud;
+@property (nonatomic, strong) NSTimer *autoFollowTimer;
+@property (nonatomic, strong) PAPHomeViewController *homeViewController;
 
+
+
+- (BOOL)shouldProceedToMainInterface:(PFUser *)user;
 - (void)logOut;
 
 

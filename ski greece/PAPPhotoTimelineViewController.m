@@ -69,9 +69,15 @@
     
     [super viewDidLoad];
     
+    
     UIView *texturedBackgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
     texturedBackgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundLeather.png"]];
     self.tableView.backgroundView = texturedBackgroundView;
+    
+    if (IS_DEVELOPER){
+        NSLog(@"Timeline is loaded");
+        NSLog(@"TableView. X : %f Y:%f Height :%f Width : %f",self.tableView.frame.origin.x,self.tableView.frame.origin.y,self.tableView.frame.size.height,self.tableView.frame.size.width);
+    }
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidPublishPhoto:) name:PAPTabBarControllerDidFinishEditingPhotoNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userFollowingChanged:) name:PAPUtilityUserFollowingChangedNotification object:nil];
@@ -318,6 +324,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
+    NSLog(@"Object in cells");
     static NSString *CellIdentifier = @"Cell";
     
     if (indexPath.section == self.objects.count) {

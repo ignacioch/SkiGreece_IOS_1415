@@ -13,11 +13,21 @@
 #import <Parse/Parse.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 
+@interface AppDelegate () {
+    NSMutableData *_data;
+    BOOL firstLaunch;
+}
+
+
+@end
 
 @implementation AppDelegate
 
 @synthesize notif_text=_notif_text;
 @synthesize notification_msg = _notification_msg;
+@synthesize homeViewController;
+
+
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -74,6 +84,9 @@
     //Initialize facebook with Parse
     
     [PFFacebookUtils initializeFacebook];
+    
+    // initiate dynamically created view controllers
+    self.homeViewController = [[PAPHomeViewController alloc] initWithStyle:UITableViewStylePlain];
 
     
     return YES;
@@ -201,6 +214,139 @@
     //self.homeViewController = nil;
     //self.activityViewController = nil;
 }
+
+- (void)facebookRequestDidLoad:(id)result {
+    // This method is called twice - once for the user's /me profile, and a second time when obtaining their friends. We will try and handle both scenarios in a single method.
+    PFUser *user = [PFUser currentUser];
+    
+    NSArray *data = [result objectForKey:@"data"];
+    
+    if (data) {
+        // we have friends data
+        NSMutableArray *facebookIds = [[NSMutableArray alloc] initWithCapacity:[data count]];
+        for (NSDictionary *friendData in data) {
+            if (friendData[@"id"]) {
+                [facebookIds addObject:friendData[@"id"]];
+            }
+        }
+        
+        // cache friend data
+        [[PAPCache sharedCache] setFacebookFriends:facebookIds];
+        
+        if (user) {
+            if ([user objectForKey:kPAPUserFacebookFriendsKey]) {
+                [user removeObjectForKey:kPAPUserFacebookFriendsKey];
+            }
+            
+            if (![user objectForKey:kPAPUserAlreadyAutoFollowedFacebookFriendsKey]) {
+                self.hud.labelText = NSLocalizedString(@"Following Friends", nil);
+                firstLaunch = YES;
+                
+                [user setObject:@YES forKey:kPAPUserAlreadyAutoFollowedFacebookFriendsKey];
+                NSError *error = nil;
+                
+                // find common Facebook friends already using Anypic
+                PFQuery *facebookFriendsQuery = [PFUser query];
+                [facebookFriendsQuery whereKey:kPAPUserFacebookIDKey containedIn:facebookIds];
+                
+                // auto-follow Parse employees
+                PFQuery *parseEmployeesQuery = [PFUser query];
+                [parseEmployeesQuery whereKey:kPAPUserFacebookIDKey containedIn:kPAPParseEmployeeAccounts];
+                
+                // combined query
+                PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:parseEmployeesQuery,facebookFriendsQuery, nil]];
+                
+                NSArray *anypicFriends = [query findObjects:&error];
+                
+                if (!error) {
+                    [anypicFriends enumerateObjectsUsingBlock:^(PFUser *newFriend, NSUInteger idx, BOOL *stop) {
+                        PFObject *joinActivity = [PFObject objectWithClassName:kPAPActivityClassKey];
+                        [joinActivity setObject:user forKey:kPAPActivityFromUserKey];
+                        [joinActivity setObject:newFriend forKey:kPAPActivityToUserKey];
+                        [joinActivity setObject:kPAPActivityTypeJoined forKey:kPAPActivityTypeKey];
+                        
+                        PFACL *joinACL = [PFACL ACL];
+                        [joinACL setPublicReadAccess:YES];
+                        joinActivity.ACL = joinACL;
+                        
+                        // make sure our join activity is always earlier than a follow
+                        [joinActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                            [PAPUtility followUserInBackground:newFriend block:^(BOOL succeeded, NSError *error) {
+                                // This block will be executed once for each friend that is followed.
+                                // We need to refresh the timeline when we are following at least a few friends
+                                // Use a timer to avoid refreshing innecessarily
+                                if (self.autoFollowTimer) {
+                                    [self.autoFollowTimer invalidate];
+                                }
+                                
+                                //self.autoFollowTimer = [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(autoFollowTimerFired:) userInfo:nil repeats:NO];
+                            }];
+                        }];
+                    }];
+                }
+                
+                /*if (![self shouldProceedToMainInterface:user]) {
+                    [self logOut];
+                    return;
+                }*/
+                
+                if (!error) {
+                    [MBProgressHUD hideHUDForView:self.homeViewController.view animated:NO];
+                    if (anypicFriends.count > 0) {
+                        self.hud = [MBProgressHUD showHUDAddedTo:self.homeViewController.view animated:NO];
+                        self.hud.dimBackground = YES;
+                        self.hud.labelText = NSLocalizedString(@"Following Friends", nil);
+                    } else {
+                        [self.homeViewController loadObjects];
+                    }
+                }
+            }
+            
+            [user saveEventually];
+        } else {
+            NSLog(@"No user session found. Forcing logOut.");
+            [self logOut];
+        }
+    } else {
+        self.hud.labelText = NSLocalizedString(@"Creating Profile", nil);
+        
+        if (user) {
+            NSString *facebookName = result[@"name"];
+            if (facebookName && [facebookName length] != 0) {
+                [user setObject:facebookName forKey:kPAPUserDisplayNameKey];
+            } else {
+                [user setObject:@"Someone" forKey:kPAPUserDisplayNameKey];
+            }
+            
+            NSString *facebookId = result[@"id"];
+            if (facebookId && [facebookId length] != 0) {
+                [user setObject:facebookId forKey:kPAPUserFacebookIDKey];
+            }
+            
+            [user saveEventually];
+        }
+        
+        [FBRequestConnection startForMyFriendsWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+            if (!error) {
+                [self facebookRequestDidLoad:result];
+            } else {
+                [self facebookRequestDidFailWithError:error];
+            }
+        }];
+    }
+}
+
+- (void)facebookRequestDidFailWithError:(NSError *)error {
+    NSLog(@"Facebook error: %@", error);
+    
+    if ([PFUser currentUser]) {
+        if ([[error userInfo][@"error"][@"type"] isEqualToString:@"OAuthException"]) {
+            NSLog(@"The Facebook token was invalidated. Logging out.");
+            [self logOut];
+        }
+    }
+}
+
 
 
 

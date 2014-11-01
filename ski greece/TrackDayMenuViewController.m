@@ -19,9 +19,13 @@
 #import "DriveMeScreen.h"
 #import "API.h"
 #import "LocalAPI.h"
+#import "PAPHomeViewController.h"
 
 
 @interface TrackDayMenuViewController ()
+
+@property (nonatomic, strong) PAPHomeViewController *homeViewController;
+
 
 @end
 
@@ -268,6 +272,13 @@
     StreamPhotoScreen *vc = [sb instantiateViewControllerWithIdentifier:@"CommunityMain"];
     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentViewController:vc animated:YES completion:NULL];*/
+    
+    //(AppDelegate*)[[UIApplication sharedApplication].delegate].homeViewController;
+    AppDelegate *del = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    PAPHomeViewController *vc = del.homeViewController;
+    //PAPHomeViewController *vc = [[PAPHomeViewController alloc] initWithStyle:UITableViewStylePlain];
+    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:vc animated:YES completion:NULL];
     
     
 }

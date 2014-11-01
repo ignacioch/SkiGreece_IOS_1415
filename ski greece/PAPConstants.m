@@ -8,8 +8,8 @@
 
 #import "PAPConstants.h"
 
-NSString *const kPAPUserDefaultsActivityFeedViewControllerLastRefreshKey    = @"com.parse.Anypic.userDefaults.activityFeedViewController.lastRefresh";
-NSString *const kPAPUserDefaultsCacheFacebookFriendsKey                     = @"com.parse.Anypic.userDefaults.cache.facebookFriends";
+NSString *const kPAPUserDefaultsActivityFeedViewControllerLastRefreshKey    = @"com.vimateamgr.ios.skigreece.userDefaults.activityFeedViewController.lastRefresh";
+NSString *const kPAPUserDefaultsCacheFacebookFriendsKey                     = @"com.vimateamgr.ios.skigreece.userDefaults.cache.facebookFriends";
 
 
 #pragma mark - Launch URLs
@@ -19,15 +19,15 @@ NSString *const kPAPLaunchURLHostTakePicture = @"camera";
 
 #pragma mark - NSNotification
 
-NSString *const PAPAppDelegateApplicationDidReceiveRemoteNotification           = @"com.parse.Anypic.appDelegate.applicationDidReceiveRemoteNotification";
-NSString *const PAPUtilityUserFollowingChangedNotification                      = @"com.parse.Anypic.utility.userFollowingChanged";
-NSString *const PAPUtilityUserLikedUnlikedPhotoCallbackFinishedNotification     = @"com.parse.Anypic.utility.userLikedUnlikedPhotoCallbackFinished";
-NSString *const PAPUtilityDidFinishProcessingProfilePictureNotification         = @"com.parse.Anypic.utility.didFinishProcessingProfilePictureNotification";
-NSString *const PAPTabBarControllerDidFinishEditingPhotoNotification            = @"com.parse.Anypic.tabBarController.didFinishEditingPhoto";
-NSString *const PAPTabBarControllerDidFinishImageFileUploadNotification         = @"com.parse.Anypic.tabBarController.didFinishImageFileUploadNotification";
-NSString *const PAPPhotoDetailsViewControllerUserDeletedPhotoNotification       = @"com.parse.Anypic.photoDetailsViewController.userDeletedPhoto";
-NSString *const PAPPhotoDetailsViewControllerUserLikedUnlikedPhotoNotification  = @"com.parse.Anypic.photoDetailsViewController.userLikedUnlikedPhotoInDetailsViewNotification";
-NSString *const PAPPhotoDetailsViewControllerUserCommentedOnPhotoNotification   = @"com.parse.Anypic.photoDetailsViewController.userCommentedOnPhotoInDetailsViewNotification";
+NSString *const PAPAppDelegateApplicationDidReceiveRemoteNotification           = @"com.vimateamgr.ios.skigreece.appDelegate.applicationDidReceiveRemoteNotification";
+NSString *const PAPUtilityUserFollowingChangedNotification                      = @"com.vimateamgr.ios.skigreece.utility.userFollowingChanged";
+NSString *const PAPUtilityUserLikedUnlikedPhotoCallbackFinishedNotification     = @"com.vimateamgr.ios.skigreece.utility.userLikedUnlikedPhotoCallbackFinished";
+NSString *const PAPUtilityDidFinishProcessingProfilePictureNotification         = @"com.vimateamgr.ios.skigreece.utility.didFinishProcessingProfilePictureNotification";
+NSString *const PAPTabBarControllerDidFinishEditingPhotoNotification            = @"com.vimateamgr.ios.skigreece.tabBarController.didFinishEditingPhoto";
+NSString *const PAPTabBarControllerDidFinishImageFileUploadNotification         = @"com.vimateamgr.ios.skigreece.tabBarController.didFinishImageFileUploadNotification";
+NSString *const PAPPhotoDetailsViewControllerUserDeletedPhotoNotification       = @"com.vimateamgr.ios.skigreece.photoDetailsViewController.userDeletedPhoto";
+NSString *const PAPPhotoDetailsViewControllerUserLikedUnlikedPhotoNotification  = @"com.vimateamgr.ios.skigreece.photoDetailsViewController.userLikedUnlikedPhotoInDetailsViewNotification";
+NSString *const PAPPhotoDetailsViewControllerUserCommentedOnPhotoNotification   = @"com.vimateamgr.ios.skigreece.photoDetailsViewController.userCommentedOnPhotoInDetailsViewNotification";
 
 
 #pragma mark - User Info Keys

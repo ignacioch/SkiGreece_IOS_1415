@@ -189,6 +189,7 @@
 
 + (BOOL)userHasValidFacebookData:(PFUser *)user {
     NSString *facebookId = [user objectForKey:kPAPUserFacebookIDKey];
+    NSLog(@"User : %@",user);
     return (facebookId && facebookId.length > 0);
 }
 
