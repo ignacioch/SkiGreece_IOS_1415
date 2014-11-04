@@ -665,6 +665,7 @@
 		DFA752321A051C2200EBD6F6 /* DefaultAnypic-fbYOUR_FACEBOOK_APP_ID@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA7522C1A051C2200EBD6F6 /* DefaultAnypic-fbYOUR_FACEBOOK_APP_ID@2x.png */; };
 		DFA752331A051C2200EBD6F6 /* DefaultAnypic.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA7522D1A051C2200EBD6F6 /* DefaultAnypic.png */; };
 		DFA752341A051C2200EBD6F6 /* DefaultAnypic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA7522E1A051C2200EBD6F6 /* DefaultAnypic@2x.png */; };
+		DFA752371A09949500EBD6F6 /* PAPLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA752361A09949500EBD6F6 /* PAPLogInViewController.m */; };
 		DFFB52ED19FEEC1700A7549B /* PAPAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB52E819FEEC1700A7549B /* PAPAccountViewController.m */; };
 		DFFB52EE19FEEC1700A7549B /* PAPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB52EA19FEEC1700A7549B /* PAPHomeViewController.m */; };
 		DFFB52EF19FEEC1700A7549B /* PAPPhotoTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB52EC19FEEC1700A7549B /* PAPPhotoTimelineViewController.m */; };
@@ -1439,6 +1440,8 @@
 		DFA7522C1A051C2200EBD6F6 /* DefaultAnypic-fbYOUR_FACEBOOK_APP_ID@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DefaultAnypic-fbYOUR_FACEBOOK_APP_ID@2x.png"; sourceTree = "<group>"; };
 		DFA7522D1A051C2200EBD6F6 /* DefaultAnypic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DefaultAnypic.png; sourceTree = "<group>"; };
 		DFA7522E1A051C2200EBD6F6 /* DefaultAnypic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DefaultAnypic@2x.png"; sourceTree = "<group>"; };
+		DFA752351A09949500EBD6F6 /* PAPLogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PAPLogInViewController.h; path = "ski greece/ViewControllers/LoginScreen/PAPLogInViewController.h"; sourceTree = SOURCE_ROOT; };
+		DFA752361A09949500EBD6F6 /* PAPLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PAPLogInViewController.m; path = "ski greece/ViewControllers/LoginScreen/PAPLogInViewController.m"; sourceTree = SOURCE_ROOT; };
 		DFC50C5D19FD04350015F1D8 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Config.h; path = "ski greece/Others/Config.h"; sourceTree = SOURCE_ROOT; };
 		DFFB52E719FEEC1700A7549B /* PAPAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAPAccountViewController.h; sourceTree = "<group>"; };
 		DFFB52E819FEEC1700A7549B /* PAPAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAPAccountViewController.m; sourceTree = "<group>"; };
@@ -2338,6 +2341,8 @@
 		DF0EC78019F7065300470040 /* Login Screen */ = {
 			isa = PBXGroup;
 			children = (
+				DFA752351A09949500EBD6F6 /* PAPLogInViewController.h */,
+				DFA752361A09949500EBD6F6 /* PAPLogInViewController.m */,
 				DF0EC77D19F7064700470040 /* LoginViewController.h */,
 				DF0EC77E19F7064700470040 /* LoginViewController.m */,
 			);
@@ -3533,6 +3538,7 @@
 			files = (
 				DFFB535319FEF58A00A7549B /* PAPPhotoDetailsViewController.m in Sources */,
 				84685A3215F6AC3100E6E4FC /* main.m in Sources */,
+				DFA752371A09949500EBD6F6 /* PAPLogInViewController.m in Sources */,
 				84685A3C15F6AC3100E6E4FC /* ViewController.m in Sources */,
 				DFFB52ED19FEEC1700A7549B /* PAPAccountViewController.m in Sources */,
 				84685A4915F6AD3900E6E4FC /* MainMap.m in Sources */,

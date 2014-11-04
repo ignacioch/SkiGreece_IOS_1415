@@ -13,6 +13,7 @@
 #import "MBProgressHUD.h"
 #import "LoginViewController.h"
 #import "AppDelegate.h"
+#import "PAPEditPhotoViewController.h"
 
 @interface PAPHomeViewController ()
     @property (nonatomic, strong) PAPSettingsActionSheetDelegate *settingsActionSheetDelegate;
@@ -128,7 +129,7 @@ typedef enum {
                                                         cancelButtonTitle:@"Cancel"
                                                         destructiveButtonTitle:nil
                                                         otherButtonTitles:@"My Profile",@"Take Photo",@"My Activity",@"Find Friends",@"Log Out", nil];
-    
+    actionSheet.tag = 0 ;
     [actionSheet showInView:self.view];
     //[actionSheet showFromTabBar:self.tabBarController.tabBar];
 }
@@ -226,43 +227,180 @@ typedef enum {
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
-    switch ((kPAPSettingsActionSheetButtons)buttonIndex) {
-        case kPAPSettingsProfile:
-        {
-            if (IS_DEVELOPER) NSLog(@"My profile");
-            /*PAPAccountViewController *accountViewController = [[PAPAccountViewController alloc] initWithStyle:UITableViewStylePlain];
-            [accountViewController setUser:[PFUser currentUser]];
-            [navController pushViewController:accountViewController animated:YES];*/
-            break;
+    if (actionSheet.tag == 0) {
+        switch ((kPAPSettingsActionSheetButtons)buttonIndex) {
+            case kPAPSettingsProfile:
+            {
+                if (IS_DEVELOPER) NSLog(@"My profile");
+                /*PAPAccountViewController *accountViewController = [[PAPAccountViewController alloc] initWithStyle:UITableViewStylePlain];
+                 [accountViewController setUser:[PFUser currentUser]];
+                 [navController pushViewController:accountViewController animated:YES];*/
+                break;
+            }
+                
+            case kPAPSettingsTakePhoto :
+            {
+                if (IS_DEVELOPER) NSLog(@"Take Photo");
+                [self takePhoto];
+                break;
+            }
+                
+            case kPAPSettingsActivity :
+            {
+                if (IS_DEVELOPER) NSLog(@"Activity");
+                break;
+            }
+                
+            case kPAPSettingsFindFriends:
+            {
+                if (IS_DEVELOPER) NSLog(@"Find Friends");
+                /*PAPFindFriendsViewController *findFriendsVC = [[PAPFindFriendsViewController alloc] init];
+                 [navController pushViewController:findFriendsVC animated:YES];*/
+                break;
+            }
+            case kPAPSettingsLogout:
+                if (IS_DEVELOPER) NSLog(@"Logout");
+                // Log out user and present the login view controller
+                [(AppDelegate *)[[UIApplication sharedApplication] delegate] logOut];
+                break;
+            default:
+                break;
         }
-        
-        case kPAPSettingsTakePhoto :
-        {
-            if (IS_DEVELOPER) NSLog(@"Take Photo");
-            break;
+    } else if (actionSheet.tag == 1) {
+        if (buttonIndex == 0) {
+            [self shouldStartCameraController];
+        } else if (buttonIndex == 1) {
+            [self shouldStartPhotoLibraryPickerController];
         }
-            
-        case kPAPSettingsActivity :
-        {
-            if (IS_DEVELOPER) NSLog(@"Activity");
-            break;
-        }
-            
-        case kPAPSettingsFindFriends:
-        {
-            if (IS_DEVELOPER) NSLog(@"Find Friends");
-            /*PAPFindFriendsViewController *findFriendsVC = [[PAPFindFriendsViewController alloc] init];
-            [navController pushViewController:findFriendsVC animated:YES];*/
-            break;
-        }
-        case kPAPSettingsLogout:
-            if (IS_DEVELOPER) NSLog(@"Logout");
-            // Log out user and present the login view controller
-            [(AppDelegate *)[[UIApplication sharedApplication] delegate] logOut];
-            break;
-        default:
-            break;
+    }
+  }
+
+#pragma mark - takePhoto function
+
+-(void) takePhoto
+{
+    BOOL cameraDeviceAvailable = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
+    BOOL photoLibraryAvailable = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary];
+    
+    if (cameraDeviceAvailable && photoLibraryAvailable) {
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take Photo", @"Choose Photo", nil];
+        actionSheet.tag = 1;
+        [actionSheet showInView:self.view];
+    } else {
+        // if we don't have at least two options, we automatically show whichever is available (camera or roll)
+        [self shouldPresentPhotoCaptureController];
     }
 }
+
+- (BOOL)shouldStartCameraController {
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == NO) {
+        return NO;
+    }
+    
+    UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]
+        && [[UIImagePickerController availableMediaTypesForSourceType:
+             UIImagePickerControllerSourceTypeCamera] containsObject:(NSString *)kUTTypeImage]) {
+        
+        cameraUI.mediaTypes = [NSArray arrayWithObject:(NSString *) kUTTypeImage];
+        cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
+        
+        if ([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear]) {
+            cameraUI.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+        } else if ([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront]) {
+            cameraUI.cameraDevice = UIImagePickerControllerCameraDeviceFront;
+        }
+        
+    } else {
+        return NO;
+    }
+    
+    cameraUI.allowsEditing = YES;
+    cameraUI.showsCameraControls = YES;
+    cameraUI.delegate = self;
+    
+    [self presentViewController:cameraUI animated:YES completion:nil];
+    
+    return YES;
+}
+
+
+- (BOOL)shouldStartPhotoLibraryPickerController {
+    if (([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary] == NO
+         && [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum] == NO)) {
+        return NO;
+    }
+    
+    UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]
+        && [[UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary] containsObject:(NSString *)kUTTypeImage]) {
+        
+        cameraUI.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        cameraUI.mediaTypes = [NSArray arrayWithObject:(NSString *) kUTTypeImage];
+        
+    } else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]
+               && [[UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum] containsObject:(NSString *)kUTTypeImage]) {
+        
+        cameraUI.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+        cameraUI.mediaTypes = [NSArray arrayWithObject:(NSString *) kUTTypeImage];
+        
+    } else {
+        return NO;
+    }
+    
+    cameraUI.allowsEditing = YES;
+    cameraUI.delegate = self;
+    
+    [self presentViewController:cameraUI animated:YES completion:nil];
+    
+    return YES;
+}
+
+#pragma mark - UIImagePickerDelegate
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    [self dismissViewControllerAnimated:NO completion:nil];
+    
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+    
+    PAPEditPhotoViewController *viewController = [[PAPEditPhotoViewController alloc] initWithImage:image];
+    [viewController setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    
+    /*[self.navController setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [self.navController pushViewController:viewController animated:NO];
+    
+    [self presentViewController:self.navController animated:YES completion:nil];
+    
+    AppDelegate *del = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    PAPHomeViewController *vc = del.homeViewController;
+    //PAPHomeViewController *vc = [[PAPHomeViewController alloc] initWithStyle:UITableViewStylePlain];
+    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;*/
+    //[self setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    NSLog(@"Switching to the edit photo view controller");
+    [self presentViewController:viewController animated:YES completion:NULL];
+
+}
+
+
+
+
+#pragma mark - PresentPhotoCapture
+
+- (BOOL)shouldPresentPhotoCaptureController {
+    BOOL presentedPhotoCaptureController = [self shouldStartCameraController];
+    
+    if (!presentedPhotoCaptureController) {
+        presentedPhotoCaptureController = [self shouldStartPhotoLibraryPickerController];
+    }
+    
+    return presentedPhotoCaptureController;
+}
+
 
 @end

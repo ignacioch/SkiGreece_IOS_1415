@@ -13,7 +13,7 @@
 
 
 
-@interface TrackDayMenuViewController : UIViewController <EAIntroDelegate,PSLocationManagerDelegate,UIAlertViewDelegate>
+@interface TrackDayMenuViewController : UIViewController <EAIntroDelegate,PSLocationManagerDelegate,UIAlertViewDelegate,PFLogInViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIButton *liveNewsBtn;
 @property (strong, nonatomic) IBOutlet UIButton *trackDayBtn;

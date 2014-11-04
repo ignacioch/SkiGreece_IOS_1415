@@ -50,6 +50,8 @@
 
 - (BOOL)shouldProceedToMainInterface:(PFUser *)user;
 - (void)logOut;
+- (void)facebookRequestDidLoad:(id)result;
+- (void)facebookRequestDidFailWithError:(NSError *)error;
 
 
 

@@ -60,10 +60,12 @@
 #pragma mark - UIViewController
 
 - (void)loadView {
+    NSLog(@"loadView");
     self.scrollView = [[UIScrollView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     self.scrollView.delegate = self;
     self.scrollView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundLeather.png"]];
     self.view = self.scrollView;
+    //[self.view addSubview:self.scrollView];
     
     UIImageView *photoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(20.0f, 42.0f, 280.0f, 280.0f)];
     [photoImageView setBackgroundColor:[UIColor blackColor]];
@@ -82,6 +84,7 @@
     CGRect footerRect = [PAPPhotoDetailsFooterView rectForView];
     footerRect.origin.y = photoImageView.frame.origin.y + photoImageView.frame.size.height;
 
+    NSLog(@"Photo details footer view");
     PAPPhotoDetailsFooterView *footerView = [[PAPPhotoDetailsFooterView alloc] initWithFrame:footerRect];
     self.commentTextField = footerView.commentField;
     self.commentTextField.delegate = self;
@@ -93,11 +96,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self.navigationItem setHidesBackButton:YES];
+    /*[self.navigationItem setHidesBackButton:YES];
 
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LogoNavigationBar.png"]];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelButtonAction:)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Publish" style:UIBarButtonItemStyleDone target:self action:@selector(doneButtonAction:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Publish" style:UIBarButtonItemStyleDone target:self action:@selector(doneButtonAction:)];*/
+    
+    NSLog(@"viewDidLoad is called");
+    
+    // add cancel / done button
+    
+    self.cancelButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [self.cancelButton addTarget:self
+                            action:@selector(cancelButtonAction:)
+                  forControlEvents:UIControlEventTouchUpInside];
+    [self.cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
+    self.cancelButton.frame = CGRectMake(200.0, 0.0, 100.0, 100.0);
+    [self.scrollView addSubview:self.cancelButton];
+    
+    self.doneButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [self.doneButton addTarget:self
+                          action:@selector(doneButtonAction:)
+                forControlEvents:UIControlEventTouchUpInside];
+    [self.doneButton setTitle:@"Done" forState:UIControlStateNormal];
+    self.doneButton.frame = CGRectMake(50.0, 0.0, 100.0, 100.0);
+    [self.scrollView addSubview:self.doneButton];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -122,7 +145,8 @@
 
 #pragma mark - ()
 
-- (BOOL)shouldUploadImage:(UIImage *)anImage {    
+- (BOOL)shouldUploadImage:(UIImage *)anImage {
+    NSLog(@"shouldUploadImage entering");
     UIImage *resizedImage = [anImage resizedImageWithContentMode:UIViewContentModeScaleAspectFit bounds:CGSizeMake(560.0f, 560.0f) interpolationQuality:kCGInterpolationHigh];
     UIImage *thumbnailImage = [anImage thumbnailImage:86.0f transparentBorder:0.0f cornerRadius:10.0f interpolationQuality:kCGInterpolationDefault];
     
@@ -131,6 +155,7 @@
     NSData *thumbnailImageData = UIImagePNGRepresentation(thumbnailImage);
     
     if (!imageData || !thumbnailImageData) {
+        NSLog(@"Returning NO");
         return NO;
     }
     
@@ -152,6 +177,7 @@
         }
     }];
     
+    NSLog(@"Should upload image exiting");
     return YES;
 }
 
@@ -188,6 +214,7 @@
     
     // Make sure there were no errors creating the image files
     if (!self.photoFile || !self.thumbnailFile) {
+        NSLog(@"Errors");
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Couldn't post your photo" message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
         [alert show];
         return;
@@ -221,6 +248,7 @@
                 NSString *commentText = [userInfo objectForKey:kPAPEditPhotoViewControllerUserInfoCommentKey];
                 
                 if (commentText && commentText.length != 0) {
+                    NSLog(@"Saving the caption as the first comment");
                     // create and save photo caption
                     PFObject *comment = [PFObject objectWithClassName:kPAPActivityClassKey];
                     [comment setObject:kPAPActivityTypeComment forKey:kPAPActivityTypeKey];
@@ -240,6 +268,7 @@
             
             [[NSNotificationCenter defaultCenter] postNotificationName:PAPTabBarControllerDidFinishEditingPhotoNotification object:photo];
         } else {
+            NSLog(@"not succeeded");
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Couldn't post your photo" message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
             [alert show];
         }
@@ -247,11 +276,13 @@
     }];
     
     // Dismiss this screen
-    [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
+    //[self.parentViewController dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (void)cancelButtonAction:(id)sender {
-    [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
+    //[self.parentViewController dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 @end

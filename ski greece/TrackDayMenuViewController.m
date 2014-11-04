@@ -20,11 +20,13 @@
 #import "API.h"
 #import "LocalAPI.h"
 #import "PAPHomeViewController.h"
+#import "PAPLogInViewController.h"
 
 
 @interface TrackDayMenuViewController ()
 
 @property (nonatomic, strong) PAPHomeViewController *homeViewController;
+@property (nonatomic, strong) MBProgressHUD *hud;
 
 
 @end
@@ -229,6 +231,22 @@
         [currentInstallation addUniqueObject:@"SkiGreeceAdmin" forKey:@"channels"];
         [currentInstallation saveInBackground];
     }
+    
+    
+    
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    // If not logged in, present login view controller
+    if (![PFUser currentUser]) {
+        [self openLoginScreen];
+        return;
+    }
+    
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
@@ -417,6 +435,46 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
    
 
+}
+
+#pragma mark- Login View Controller
+
+-(void) openLoginScreen
+{
+    PAPLogInViewController *loginViewController = [[PAPLogInViewController alloc] init];
+    [loginViewController setDelegate:self];
+    loginViewController.fields = PFLogInFieldsFacebook;
+    loginViewController.facebookPermissions = @[ @"user_about_me" ];
+    [self presentViewController:loginViewController animated:YES completion:NULL];
+}
+
+#pragma mark - PFLoginViewController
+
+- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+    
+    if (IS_DEVELOPER) NSLog(@"User has logged in we need to fetch all of their Facebook data before we let them in");
+    // user has logged in - we need to fetch all of their Facebook data before we let them in
+    //if (![self shouldProceedToMainInterface:user]) {
+        self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        self.hud.labelText = NSLocalizedString(@"Loading", nil);
+        self.hud.dimBackground = YES;
+    //}
+    
+    [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+        if (!error) {
+            //[self facebookRequestDidLoad:result];
+            if ([[UIApplication sharedApplication].delegate respondsToSelector:@selector(facebookRequestDidLoad:)]) {
+                [[UIApplication sharedApplication].delegate performSelector:@selector(facebookRequestDidLoad:) withObject:result];
+            }
+        } else {
+            if ([[UIApplication sharedApplication].delegate respondsToSelector:@selector(facebookRequestDidFailWithError:)]) {
+                [[UIApplication sharedApplication].delegate performSelector:@selector(facebookRequestDidFailWithError:) withObject:error];
+            }
+        }
+        [self dismissViewControllerAnimated:NO completion:nil];
+    }];
+    
+    
 }
 
 

@@ -18,6 +18,7 @@
     #import <ParseFacebookUtils/PFFacebookUtils.h>
     #import <Foundation/Foundation.h>
     #import <AVFoundation/AVFoundation.h>
+    #import <MobileCoreServices/UTCoreTypes.h>
     #import "Config.h"
     #import "PAPCache.h"
     #import "PAPConstants.h"

@@ -10,4 +10,8 @@
 
 - (id)initWithImage:(UIImage *)aImage;
 
+@property (nonatomic,assign) IBOutlet UIButton * cancelButton;
+@property (nonatomic,assign) IBOutlet UIButton * doneButton;
+
+
 @end
