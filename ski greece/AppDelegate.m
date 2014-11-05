@@ -12,6 +12,7 @@
 #import "API.h"
 #import <Parse/Parse.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
+#import "Reachability.h"
 
 @interface AppDelegate () {
     NSMutableData *_data;
@@ -87,6 +88,9 @@
     
     // initiate dynamically created view controllers
     self.homeViewController = [[PAPHomeViewController alloc] initWithStyle:UITableViewStylePlain];
+    
+    // Use Reachability to monitor connectivity
+    [self monitorReachability];
 
     
     return YES;
@@ -346,6 +350,31 @@
         }
     }
 }
+
+- (BOOL)isParseReachable {
+    return self.networkStatus != NotReachable;
+}
+
+- (void)monitorReachability {
+    Reachability *hostReach = [Reachability reachabilityWithHostname:@"api.parse.com"];
+    
+    hostReach.reachableBlock = ^(Reachability*reach) {
+        _networkStatus = [reach currentReachabilityStatus];
+        
+        if ([self isParseReachable] && [PFUser currentUser] && self.homeViewController.objects.count == 0) {
+            // Refresh home timeline on network restoration. Takes care of a freshly installed app that failed to load the main timeline under bad network conditions.
+            // In this case, they'd see the empty timeline placeholder and have no way of refreshing the timeline unless they followed someone.
+            [self.homeViewController loadObjects];
+        }
+    };
+    
+    hostReach.unreachableBlock = ^(Reachability*reach) {
+        _networkStatus = [reach currentReachabilityStatus];
+    };
+    
+    [hostReach startNotifier];
+}
+
 
 
 

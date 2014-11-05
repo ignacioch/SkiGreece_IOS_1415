@@ -52,6 +52,10 @@
 - (void)logOut;
 - (void)facebookRequestDidLoad:(id)result;
 - (void)facebookRequestDidFailWithError:(NSError *)error;
+@property (nonatomic, readonly) int networkStatus;
+
+- (BOOL)isParseReachable;
+
 
 
 

@@ -140,15 +140,6 @@ typedef enum {
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
-#pragma mark - ()
-
-- (void)_presentLoginViewControllerAnimated:(BOOL)animated {
-    
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    LoginViewController *vc = [sb instantiateViewControllerWithIdentifier:@"FBLoginScreen"];
-    [self presentViewController:vc animated:animated completion:nil];
-    
-}
 
 #pragma mark - ()
 
@@ -197,6 +188,8 @@ typedef enum {
 }
 
 -(void) presentUI {
+    
+    NSLog(@"UI setup");
     
     // Background
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
