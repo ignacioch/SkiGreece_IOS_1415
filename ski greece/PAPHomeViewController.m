@@ -42,16 +42,6 @@ typedef enum {
 
 #pragma mark - UIViewController
 
-/*- (void)loadView {
-    NSLog(@"LoadView is called");
-    UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-    [backgroundImageView setImage:[UIImage imageNamed:@"DefaultAnypic.png"]];
-    self.view = backgroundImageView;
- 
-    // Present Anypic UI
-    [self presentUI];
-}*/
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -71,23 +61,6 @@ typedef enum {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    /*UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-    [backgroundImageView setImage:[UIImage imageNamed:@"DefaultAnypic.png"]];
-    self.view = backgroundImageView;
-    
-    self.blankTimelineView = [[UIView alloc] initWithFrame:self.tableView.bounds];
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake( 33.0f, 96.0f, 253.0f, 173.0f);
-    [button setBackgroundImage:[UIImage imageNamed:@"HomeTimelineBlank.png"] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(inviteFriendsButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.blankTimelineView addSubview:button];*/
-    
-    //timelineVC = [[PAPPhotoTimelineViewController alloc] initWithStyle:UITableViewStylePlain];
-    //timelineVC.view.frame = CGRectMake(0.0, 40.0, self.view.frame.size.width, 200.0f);
-    //[self addChildViewController:timelineVC];
-    //[self.view addSubview:timelineVC.view];
     
     NSLog(@"LoadView is called");
     
