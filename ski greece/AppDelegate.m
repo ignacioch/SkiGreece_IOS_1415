@@ -87,7 +87,7 @@
     [PFFacebookUtils initializeFacebook];
     
     // initiate dynamically created view controllers
-    self.homeViewController = [[PAPHomeViewController alloc] initWithStyle:UITableViewStylePlain];
+     self.homeViewController = [[PAPHomeViewController alloc] initWithStyle:UITableViewStylePlain];
     
     // Use Reachability to monitor connectivity
     [self monitorReachability];

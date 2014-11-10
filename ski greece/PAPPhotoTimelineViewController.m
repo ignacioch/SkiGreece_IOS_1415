@@ -39,6 +39,10 @@
     self = [super initWithStyle:style];
     if (self) {
         
+        if (IS_DEVELOPER) {
+            NSLog(@"initWithStyle for Timeline called");
+        }
+        
         self.outstandingSectionHeaderQueries = [NSMutableDictionary dictionary];
         
         // The className to query on
@@ -85,6 +89,13 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidLikeOrUnlikePhoto:) name:PAPPhotoDetailsViewControllerUserLikedUnlikedPhotoNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidLikeOrUnlikePhoto:) name:PAPUtilityUserLikedUnlikedPhotoCallbackFinishedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidCommentOnPhoto:) name:PAPPhotoDetailsViewControllerUserCommentedOnPhotoNotification object:nil];
+    
+    self.tableView.frame = CGRectMake(0.0, 40.0f, 320.0f, 250.0f);
+    if (IS_DEVELOPER){
+        NSLog(@"TableDimensions changed");
+        NSLog(@"TableView. X : %f Y:%f Height :%f Width : %f",self.tableView.frame.origin.x,self.tableView.frame.origin.y,self.tableView.frame.size.height,self.tableView.frame.size.width);
+    }
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -324,7 +335,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
-    NSLog(@"Object in cells");
     static NSString *CellIdentifier = @"Cell";
     
     if (indexPath.section == self.objects.count) {

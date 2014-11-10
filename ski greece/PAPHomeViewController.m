@@ -15,9 +15,12 @@
 #import "AppDelegate.h"
 #import "PAPEditPhotoViewController.h"
 
+#import "PAPPhotoTimelineViewController.h"
+
 @interface PAPHomeViewController ()
     @property (nonatomic, strong) PAPSettingsActionSheetDelegate *settingsActionSheetDelegate;
     @property (nonatomic, strong) UIView *blankTimelineView;
+
 @end
 
 typedef enum {
@@ -81,10 +84,16 @@ typedef enum {
     [button addTarget:self action:@selector(inviteFriendsButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.blankTimelineView addSubview:button];*/
     
+    //timelineVC = [[PAPPhotoTimelineViewController alloc] initWithStyle:UITableViewStylePlain];
+    //timelineVC.view.frame = CGRectMake(0.0, 40.0, self.view.frame.size.width, 200.0f);
+    //[self addChildViewController:timelineVC];
+    //[self.view addSubview:timelineVC.view];
+    
     NSLog(@"LoadView is called");
     
     // Present Anypic UI
     [self presentUI];
+    
     
 }
 
@@ -190,11 +199,17 @@ typedef enum {
 -(void) presentUI {
     
     NSLog(@"UI setup");
+
     
     // Background
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     [backgroundImageView setImage:[UIImage imageNamed:@"DefaultAnypic.png"]];
-    [self.view addSubview:backgroundImageView];
+    self.tableView.backgroundView = backgroundImageView;
+    if (IS_DEVELOPER){
+        NSLog(@"Timeline is loaded2");
+        NSLog(@"TableView. X : %f Y:%f Height :%f Width : %f",self.tableView.frame.origin.x,self.tableView.frame.origin.y,self.tableView.frame.size.height,self.tableView.frame.size.width);
+    }
+    //[self.view addSubview:backgroundImageView];
     
     // emplty placeholder until I have data
     self.blankTimelineView = [[UIView alloc] initWithFrame:self.tableView.bounds];
@@ -204,16 +219,18 @@ typedef enum {
     [button setBackgroundImage:[UIImage imageNamed:@"HomeTimelineBlank.png"] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(inviteFriendsButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.blankTimelineView addSubview:button];
-    [self.view addSubview:self.blankTimelineView];
+    //[self.view addSubview:self.blankTimelineView];
     
     // Settings button
-    self.settingsButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    /*self.settingsButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.settingsButton addTarget:self
                action:@selector(settingsButtonAction:)
      forControlEvents:UIControlEventTouchUpInside];
     [self.settingsButton setTitle:@"Settings" forState:UIControlStateNormal];
     self.settingsButton.frame = CGRectMake(200.0, 0.0, 100.0, 100.0);
-    [self.view addSubview:self.settingsButton];
+    [self.view addSubview:self.settingsButton];*/
+    
+    //?? not fixed
 }
 
 #pragma mark - UIActionSheetDelegate

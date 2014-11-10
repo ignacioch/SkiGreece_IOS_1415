@@ -8,6 +8,7 @@
 
 #import "PAPPhotoTimelineViewController.h"
 
+//PAPPhotoTimelineViewController
 @interface PAPHomeViewController : PAPPhotoTimelineViewController <UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 - (BOOL)shouldPresentPhotoCaptureController;
