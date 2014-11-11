@@ -87,7 +87,7 @@
     [PFFacebookUtils initializeFacebook];
     
     // initiate dynamically created view controllers
-     self.homeViewController = [[PAPHomeViewController alloc] initWithStyle:UITableViewStylePlain];
+    self.homeViewController = [[PAPHomeViewController alloc] initWithStyle:UITableViewStylePlain];
     
     // Use Reachability to monitor connectivity
     [self monitorReachability];
@@ -301,6 +301,7 @@
                         self.hud.dimBackground = YES;
                         self.hud.labelText = NSLocalizedString(@"Following Friends", nil);
                     } else {
+                        if (IS_DEVELOPER) NSLog(@"loading objects of home view controller");
                         [self.homeViewController loadObjects];
                     }
                 }
@@ -364,6 +365,7 @@
         if ([self isParseReachable] && [PFUser currentUser] && self.homeViewController.objects.count == 0) {
             // Refresh home timeline on network restoration. Takes care of a freshly installed app that failed to load the main timeline under bad network conditions.
             // In this case, they'd see the empty timeline placeholder and have no way of refreshing the timeline unless they followed someone.
+            if (IS_DEVELOPER) NSLog(@"loading objects of home view controller");
             [self.homeViewController loadObjects];
         }
     };

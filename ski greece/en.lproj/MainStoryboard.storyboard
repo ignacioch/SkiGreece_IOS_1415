@@ -1689,19 +1689,33 @@
             </objects>
             <point key="canvasLocation" x="-31" y="654"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="svK-T3-EBm">
             <objects>
-                <viewController id="JWN-0d-7cn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommunityMainAnypicStoryboard" id="JWN-0d-7cn" customClass="VTHomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TYj-X6-i3j">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultAnypic.png" id="Ngh-3D-b4n">
+                                <rect key="frame" x="0.0" y="-19" width="320" height="479"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" id="sKr-Pq-dHC">
+                                <rect key="frame" x="0.0" y="43" width="325" height="362"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="containerView" destination="sKr-Pq-dHC" id="ekm-DO-8fm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rpi-r0-7tS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1874" y="468"/>
+            <point key="canvasLocation" x="-1799" y="501"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="dxu-qM-kTD">
@@ -3040,6 +3054,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="DefaultAnypic.png" width="320" height="480"/>
         <image name="back_button_new.png" width="33" height="33"/>
         <image name="background_no_back_4.png" width="640" height="960"/>
         <image name="background_only.png" width="640" height="960"/>

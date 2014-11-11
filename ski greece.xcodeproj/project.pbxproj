@@ -666,6 +666,7 @@
 		DFA752331A051C2200EBD6F6 /* DefaultAnypic.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA7522D1A051C2200EBD6F6 /* DefaultAnypic.png */; };
 		DFA752341A051C2200EBD6F6 /* DefaultAnypic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA7522E1A051C2200EBD6F6 /* DefaultAnypic@2x.png */; };
 		DFA752371A09949500EBD6F6 /* PAPLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA752361A09949500EBD6F6 /* PAPLogInViewController.m */; };
+		DFDE61211A1143EC000AFEE6 /* VTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDE61201A1143EC000AFEE6 /* VTHomeViewController.m */; };
 		DFFB52ED19FEEC1700A7549B /* PAPAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB52E819FEEC1700A7549B /* PAPAccountViewController.m */; };
 		DFFB52EE19FEEC1700A7549B /* PAPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB52EA19FEEC1700A7549B /* PAPHomeViewController.m */; };
 		DFFB52EF19FEEC1700A7549B /* PAPPhotoTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB52EC19FEEC1700A7549B /* PAPPhotoTimelineViewController.m */; };
@@ -1443,6 +1444,8 @@
 		DFA752351A09949500EBD6F6 /* PAPLogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PAPLogInViewController.h; path = "ski greece/ViewControllers/LoginScreen/PAPLogInViewController.h"; sourceTree = SOURCE_ROOT; };
 		DFA752361A09949500EBD6F6 /* PAPLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PAPLogInViewController.m; path = "ski greece/ViewControllers/LoginScreen/PAPLogInViewController.m"; sourceTree = SOURCE_ROOT; };
 		DFC50C5D19FD04350015F1D8 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Config.h; path = "ski greece/Others/Config.h"; sourceTree = SOURCE_ROOT; };
+		DFDE611F1A1143EC000AFEE6 /* VTHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTHomeViewController.h; path = "ski greece/ViewControllers/CommunityControllers/Home/VTHomeViewController.h"; sourceTree = SOURCE_ROOT; };
+		DFDE61201A1143EC000AFEE6 /* VTHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTHomeViewController.m; path = "ski greece/ViewControllers/CommunityControllers/Home/VTHomeViewController.m"; sourceTree = SOURCE_ROOT; };
 		DFFB52E719FEEC1700A7549B /* PAPAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAPAccountViewController.h; sourceTree = "<group>"; };
 		DFFB52E819FEEC1700A7549B /* PAPAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAPAccountViewController.m; sourceTree = "<group>"; };
 		DFFB52E919FEEC1700A7549B /* PAPHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAPHomeViewController.h; sourceTree = "<group>"; };
@@ -2809,6 +2812,8 @@
 				DFFB52EA19FEEC1700A7549B /* PAPHomeViewController.m */,
 				DFFB52EB19FEEC1700A7549B /* PAPPhotoTimelineViewController.h */,
 				DFFB52EC19FEEC1700A7549B /* PAPPhotoTimelineViewController.m */,
+				DFDE611F1A1143EC000AFEE6 /* VTHomeViewController.h */,
+				DFDE61201A1143EC000AFEE6 /* VTHomeViewController.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -3611,6 +3616,7 @@
 				DF4D231019BFA5E10000F94E /* all_76.js in Sources */,
 				84E49B0117BD062800016E09 /* UIImageView+AFNetworking.m in Sources */,
 				DF4D232319BFA5E10000F94E /* functions_69.js in Sources */,
+				DFDE61211A1143EC000AFEE6 /* VTHomeViewController.m in Sources */,
 				84E49B0517BD0ED000016E09 /* API.m in Sources */,
 				DFFB534F19FEF4E800A7549B /* PAPSettingsActionSheetDelegate.m in Sources */,
 				84E49B0817BD14DB00016E09 /* StreamScreen.m in Sources */,

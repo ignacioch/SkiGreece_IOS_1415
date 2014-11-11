@@ -81,6 +81,9 @@
     if (IS_DEVELOPER){
         NSLog(@"Timeline is loaded");
         NSLog(@"TableView. X : %f Y:%f Height :%f Width : %f",self.tableView.frame.origin.x,self.tableView.frame.origin.y,self.tableView.frame.size.height,self.tableView.frame.size.width);
+        
+        NSLog(@"View is loaded");
+        NSLog(@"View. X : %f Y:%f Height :%f Width : %f",self.view.frame.origin.x,self.view.frame.origin.y,self.view.frame.size.height,self.view.frame.size.width);
     }
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidPublishPhoto:) name:PAPTabBarControllerDidFinishEditingPhotoNotification object:nil];
@@ -89,12 +92,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidLikeOrUnlikePhoto:) name:PAPPhotoDetailsViewControllerUserLikedUnlikedPhotoNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidLikeOrUnlikePhoto:) name:PAPUtilityUserLikedUnlikedPhotoCallbackFinishedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidCommentOnPhoto:) name:PAPPhotoDetailsViewControllerUserCommentedOnPhotoNotification object:nil];
-    
-    self.tableView.frame = CGRectMake(0.0, 40.0f, 320.0f, 250.0f);
-    if (IS_DEVELOPER){
-        NSLog(@"TableDimensions changed");
-        NSLog(@"TableView. X : %f Y:%f Height :%f Width : %f",self.tableView.frame.origin.x,self.tableView.frame.origin.y,self.tableView.frame.size.height,self.tableView.frame.size.width);
-    }
 
 }
 
@@ -223,6 +220,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (section == self.objects.count) {
+        if (IS_DEVELOPER) NSLog(@"heightForHeader is 0.0");
         return 0.0f;
     }
     return 44.0f;

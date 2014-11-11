@@ -21,6 +21,8 @@
 #import "LocalAPI.h"
 #import "PAPHomeViewController.h"
 #import "PAPLogInViewController.h"
+#import "VTHomeViewController.h"
+
 
 
 @interface TrackDayMenuViewController ()
@@ -286,17 +288,19 @@
     [Flurry logEvent:@"CommunityOpened"];
 
     
-    /*UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    StreamPhotoScreen *vc = [sb instantiateViewControllerWithIdentifier:@"CommunityMain"];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    VTHomeViewController *vc=[sb instantiateViewControllerWithIdentifier:@"CommunityMainAnypicStoryboard"];
     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    [self presentViewController:vc animated:YES completion:NULL];*/
+    [self presentViewController:vc animated:YES completion:NULL];
     
+    
+    /*
     //(AppDelegate*)[[UIApplication sharedApplication].delegate].homeViewController;
     AppDelegate *del = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     PAPHomeViewController *vc = del.homeViewController;
     //PAPHomeViewController *vc = [[PAPHomeViewController alloc] initWithStyle:UITableViewStylePlain];
     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    [self presentViewController:vc animated:YES completion:NULL];
+    [self presentViewController:vc animated:YES completion:NULL];*/
     
     
 }

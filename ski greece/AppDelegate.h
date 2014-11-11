@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
 #import "PAPHomeViewController.h"
+#import "VTHomeViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -44,7 +45,9 @@
 
 @property (nonatomic, strong) MBProgressHUD *hud;
 @property (nonatomic, strong) NSTimer *autoFollowTimer;
+
 @property (nonatomic, strong) PAPHomeViewController *homeViewController;
+//@property (nonatomic, strong) VTHomeViewController *homeViewController;
 
 
 

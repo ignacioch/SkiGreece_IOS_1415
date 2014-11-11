@@ -175,13 +175,13 @@ typedef enum {
 
     
     // Background
-    UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    /*UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     [backgroundImageView setImage:[UIImage imageNamed:@"DefaultAnypic.png"]];
     self.tableView.backgroundView = backgroundImageView;
     if (IS_DEVELOPER){
         NSLog(@"Timeline is loaded2");
         NSLog(@"TableView. X : %f Y:%f Height :%f Width : %f",self.tableView.frame.origin.x,self.tableView.frame.origin.y,self.tableView.frame.size.height,self.tableView.frame.size.width);
-    }
+    }*/
     //[self.view addSubview:backgroundImageView];
     
     // emplty placeholder until I have data
