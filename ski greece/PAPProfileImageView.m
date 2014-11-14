@@ -33,11 +33,11 @@
         [self addSubview:self.profileButton];
         
         if (frame.size.width < 35.0f) {
-            self.borderImageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ShadowProfilePicture-29.png"]];
+            self.borderImageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"shadowProfilePicture-29.png"]];
         } else if (frame.size.width < 43.0f) {
-            self.borderImageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ShadowProfilePicture-35.png"]];
+            self.borderImageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"shadowProfilePicture-35.png"]];
         } else {
-            self.borderImageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ShadowProfilePicture-43.png"]];
+            self.borderImageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"shadowProfilePicture-43.png"]];
         }
         
         [self addSubview:self.borderImageview];

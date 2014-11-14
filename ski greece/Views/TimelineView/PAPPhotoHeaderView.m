@@ -48,7 +48,7 @@
         // translucent portion
         self.containerView = [[UIView alloc] initWithFrame:CGRectMake( 20.0f, 0.0f, self.bounds.size.width - 20.0f * 2.0f, self.bounds.size.height)];
         [self addSubview:self.containerView];
-        [self.containerView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundComments.png"]]];
+        [self.containerView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundComments.png"]]];
         
         
         self.avatarImageView = [[PAPProfileImageView alloc] init];
@@ -71,7 +71,7 @@
             [[self.commentButton titleLabel] setFont:[UIFont systemFontOfSize:12.0f]];
             [[self.commentButton titleLabel] setMinimumScaleFactor:0.8f];
             [[self.commentButton titleLabel] setAdjustsFontSizeToFitWidth:YES];
-            [self.commentButton setBackgroundImage:[UIImage imageNamed:@"IconComment.png"] forState:UIControlStateNormal];
+            [self.commentButton setBackgroundImage:[UIImage imageNamed:@"iconComment.png"] forState:UIControlStateNormal];
             [self.commentButton setSelected:NO];
         }
         
@@ -93,8 +93,8 @@
             [[self.likeButton titleLabel] setAdjustsFontSizeToFitWidth:YES];
             [self.likeButton setAdjustsImageWhenHighlighted:NO];
             [self.likeButton setAdjustsImageWhenDisabled:NO];
-            [self.likeButton setBackgroundImage:[UIImage imageNamed:@"ButtonLike.png"] forState:UIControlStateNormal];
-            [self.likeButton setBackgroundImage:[UIImage imageNamed:@"ButtonLikeSelected.png"] forState:UIControlStateSelected];
+            [self.likeButton setBackgroundImage:[UIImage imageNamed:@"buttonLike.png"] forState:UIControlStateNormal];
+            [self.likeButton setBackgroundImage:[UIImage imageNamed:@"buttonLikeSelected.png"] forState:UIControlStateSelected];
             [self.likeButton setSelected:NO];
         }
         

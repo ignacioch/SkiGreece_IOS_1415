@@ -27,7 +27,13 @@
     PAPHomeViewController *vc = del.homeViewController;
     vc.view.frame = self.containerView.bounds;
     [self.containerView addSubview:vc.view];
+    [self.containerView setBackgroundColor:[UIColor clearColor]];
     [self addChildViewController:vc];
+    
+    if (IS_DEVELOPER){
+        NSLog(@"Container is loaded");
+        NSLog(@"ContainerView. X : %f Y:%f Height :%f Width : %f",self.containerView.frame.origin.x,self.containerView.frame.origin.y,self.containerView.frame.size.height,self.containerView.frame.size.width);
+    }
     
 }
 

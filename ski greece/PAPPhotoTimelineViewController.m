@@ -69,14 +69,14 @@
 #pragma mark - UIViewController
 
 - (void)viewDidLoad {
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [super viewDidLoad];
     
-    
     UIView *texturedBackgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
-    texturedBackgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundLeather.png"]];
+    texturedBackgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundLeather.png"]];
     self.tableView.backgroundView = texturedBackgroundView;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+  
     
     if (IS_DEVELOPER){
         NSLog(@"Timeline is loaded");
@@ -97,6 +97,11 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    if (IS_DEVELOPER) NSLog(@"viewDidAppear is called");
+    
+    
+
     
     if (self.shouldReloadOnAppear) {
         self.shouldReloadOnAppear = NO;
@@ -370,7 +375,7 @@
     if (!cell) {
         cell = [[PAPLoadMoreCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:LoadMoreCellIdentifier];
         cell.selectionStyle =UITableViewCellSelectionStyleGray;
-        cell.separatorImageTop.image = [UIImage imageNamed:@"SeparatorTimelineDark.png"];
+        cell.separatorImageTop.image = [UIImage imageNamed:@"separatorTimelineDark.png"];
         cell.hideSeparatorBottom = YES;
         cell.mainView.backgroundColor = [UIColor clearColor];
     }

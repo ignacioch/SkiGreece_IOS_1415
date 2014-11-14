@@ -23,7 +23,7 @@
 #pragma mark - PAPImageView
 
 - (void) setFile:(PFFile *)file {
-    UIImageView *border = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ShadowsProfilePicture-43.png"]];
+    UIImageView *border = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"shadowsProfilePicture-43.png"]];
     [self addSubview:border];
     
     NSString *requestURL = file.url; // Save copy of url locally (will not change in block)
