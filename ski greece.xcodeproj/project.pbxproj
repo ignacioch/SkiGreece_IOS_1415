@@ -441,6 +441,7 @@
 		DF4D234A19BFA5E10000F94E /* Jansson-LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = DF4D22B619BFA5E10000F94E /* Jansson-LICENSE.txt */; };
 		DF4D234B19BFA5E10000F94E /* PLCrashReporter-LICENSE.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DF4D22B719BFA5E10000F94E /* PLCrashReporter-LICENSE.rtf */; };
 		DF4D234D19BFA6530000F94E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4D234C19BFA6530000F94E /* MediaPlayer.framework */; };
+		DF8B80AA1A1925BA002587DF /* VTPhotoDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8B80A91A1925BA002587DF /* VTPhotoDetailsViewController.m */; };
 		DFA751431A05191E00EBD6F6 /* 29-29_pic_shadows.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA750691A05191D00EBD6F6 /* 29-29_pic_shadows.png */; };
 		DFA751441A05191E00EBD6F6 /* 29-29_pic_shadows@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA7506A1A05191D00EBD6F6 /* 29-29_pic_shadows@2x.png */; };
 		DFA751451A05191E00EBD6F6 /* 35-35_pic_shadows.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA7506B1A05191D00EBD6F6 /* 35-35_pic_shadows.png */; };
@@ -1217,6 +1218,8 @@
 		DF4D22B619BFA5E10000F94E /* Jansson-LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Jansson-LICENSE.txt"; sourceTree = "<group>"; };
 		DF4D22B719BFA5E10000F94E /* PLCrashReporter-LICENSE.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "PLCrashReporter-LICENSE.rtf"; sourceTree = "<group>"; };
 		DF4D234C19BFA6530000F94E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		DF8B80A81A1925BA002587DF /* VTPhotoDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTPhotoDetailsViewController.h; path = "ski greece/ViewControllers/CommunityControllers/Detail/VTPhotoDetailsViewController.h"; sourceTree = SOURCE_ROOT; };
+		DF8B80A91A1925BA002587DF /* VTPhotoDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTPhotoDetailsViewController.m; path = "ski greece/ViewControllers/CommunityControllers/Detail/VTPhotoDetailsViewController.m"; sourceTree = SOURCE_ROOT; };
 		DFA750691A05191D00EBD6F6 /* 29-29_pic_shadows.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "29-29_pic_shadows.png"; sourceTree = "<group>"; };
 		DFA7506A1A05191D00EBD6F6 /* 29-29_pic_shadows@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "29-29_pic_shadows@2x.png"; sourceTree = "<group>"; };
 		DFA7506B1A05191D00EBD6F6 /* 35-35_pic_shadows.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "35-35_pic_shadows.png"; sourceTree = "<group>"; };
@@ -2933,6 +2936,8 @@
 			children = (
 				DFFB535119FEF58A00A7549B /* PAPPhotoDetailsViewController.h */,
 				DFFB535219FEF58A00A7549B /* PAPPhotoDetailsViewController.m */,
+				DF8B80A81A1925BA002587DF /* VTPhotoDetailsViewController.h */,
+				DF8B80A91A1925BA002587DF /* VTPhotoDetailsViewController.m */,
 			);
 			name = Detail;
 			sourceTree = "<group>";
@@ -3557,6 +3562,7 @@
 				84640EC515FE12730044AF1A /* TracksViewViewController.m in Sources */,
 				DF4D22EF19BFA5E10000F94E /* navtree.js in Sources */,
 				84640ECC15FE1F560044AF1A /* WeatherViewController.m in Sources */,
+				DF8B80AA1A1925BA002587DF /* VTPhotoDetailsViewController.m in Sources */,
 				DFFB531919FEF18E00A7549B /* PAPBaseTextCell.m in Sources */,
 				84DF45CC15FE5815000A2FA3 /* TrailMap.m in Sources */,
 				DF4D22CF19BFA5E10000F94E /* dynsections.js in Sources */,

@@ -1689,6 +1689,30 @@
             </objects>
             <point key="canvasLocation" x="-31" y="654"/>
         </scene>
+        <!--Photo Details View Controller-->
+        <scene sceneID="GZy-Jv-OCf">
+            <objects>
+                <viewController storyboardIdentifier="VTPhotoDetails" id="3wC-Pc-MJC" customClass="VTPhotoDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PZX-lN-NYo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundNavigationBar.png" id="gW7-d0-Zj4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" id="ZfK-VB-Nfo">
+                                <rect key="frame" x="0.0" y="42" width="320" height="438"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G9I-eV-F2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2193" y="501"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="svK-T3-EBm">
             <objects>
@@ -3089,6 +3113,7 @@
     <resources>
         <image name="DefaultAnypic.png" width="320" height="480"/>
         <image name="back_button_new.png" width="33" height="33"/>
+        <image name="backgroundNavigationBar.png" width="320" height="44"/>
         <image name="background_no_back_4.png" width="640" height="960"/>
         <image name="background_only.png" width="640" height="960"/>
         <image name="background_with_back_4.png" width="640" height="960"/>
