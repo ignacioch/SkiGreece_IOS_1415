@@ -93,6 +93,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidLikeOrUnlikePhoto:) name:PAPUtilityUserLikedUnlikedPhotoCallbackFinishedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidCommentOnPhoto:) name:PAPPhotoDetailsViewControllerUserCommentedOnPhotoNotification object:nil];
 
+    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -475,16 +477,19 @@
 }
 
 - (void)userDidLikeOrUnlikePhoto:(NSNotification *)note {
+    if (IS_DEVELOPER) NSLog(@"User Liked/Unliked Photo");
     [self.tableView beginUpdates];
     [self.tableView endUpdates];
 }
 
 - (void)userDidCommentOnPhoto:(NSNotification *)note {
+    if (IS_DEVELOPER) NSLog(@"User Commented on photo");
     [self.tableView beginUpdates];
     [self.tableView endUpdates];
 }
 
 - (void)userDidDeletePhoto:(NSNotification *)note {
+    if (IS_DEVELOPER) NSLog(@"User deleted photo");
     // refresh timeline after a delay
     dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC);
     dispatch_after(time, dispatch_get_main_queue(), ^(void){
@@ -507,10 +512,12 @@
 
 
 - (void)didTapOnPhotoAction:(UIButton *)sender {
+    if (IS_DEVELOPER) NSLog(@"User tapped on Photo");
     PFObject *photo = [self.objects objectAtIndex:sender.tag];
     if (photo) {
         PAPPhotoDetailsViewController *photoDetailsVC = [[PAPPhotoDetailsViewController alloc] initWithPhoto:photo];
-        [self.navigationController pushViewController:photoDetailsVC animated:YES];
+        [self presentViewController:photoDetailsVC animated:YES completion:NULL];
+        //[self.navigationController pushViewController:photoDetailsVC animated:YES];
     }
 }
 

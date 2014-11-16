@@ -37,7 +37,7 @@
     [self.headerView setBackgroundColor:[UIColor clearColor]]; // should be clear, this will be the container for our avatar, photo count, follower count, following count, and so on
     
     UIView *texturedBackgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
-    [texturedBackgroundView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundLeather.png"]]];
+    [texturedBackgroundView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundLeather.png"]]];
     self.tableView.backgroundView = texturedBackgroundView;
 
     UIView *profilePictureBackgroundView = [[UIView alloc] initWithFrame:CGRectMake( 94.0f, 38.0f, 132.0f, 132.0f)];

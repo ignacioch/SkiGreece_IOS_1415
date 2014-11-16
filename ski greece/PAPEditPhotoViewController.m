@@ -63,7 +63,7 @@
     NSLog(@"loadView");
     self.scrollView = [[UIScrollView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     self.scrollView.delegate = self;
-    self.scrollView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundLeather.png"]];
+    self.scrollView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundLeather.png"]];
     self.view = self.scrollView;
     //[self.view addSubview:self.scrollView];
     
@@ -95,12 +95,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    /*[self.navigationItem setHidesBackButton:YES];
-
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LogoNavigationBar.png"]];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelButtonAction:)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Publish" style:UIBarButtonItemStyleDone target:self action:@selector(doneButtonAction:)];*/
     
     NSLog(@"viewDidLoad is called");
     
@@ -281,7 +275,6 @@
 }
 
 - (void)cancelButtonAction:(id)sender {
-    //[self.parentViewController dismissViewControllerAnimated:YES completion:nil];
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
