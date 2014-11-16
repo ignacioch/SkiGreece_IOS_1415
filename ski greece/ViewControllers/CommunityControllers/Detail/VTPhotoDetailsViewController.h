@@ -10,4 +10,8 @@
 
 @interface VTPhotoDetailsViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (nonatomic, strong) PFObject *photo;
+
+
 @end

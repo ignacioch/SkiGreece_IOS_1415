@@ -12,6 +12,7 @@
 #import "PAPPhotoDetailsViewController.h"
 #import "PAPUtility.h"
 #import "PAPLoadMoreCell.h"
+#import "VTPhotoDetailsViewController.h"
 
 @interface PAPPhotoTimelineViewController ()
 @property (nonatomic, assign) BOOL shouldReloadOnAppear;
@@ -515,9 +516,16 @@
     if (IS_DEVELOPER) NSLog(@"User tapped on Photo");
     PFObject *photo = [self.objects objectAtIndex:sender.tag];
     if (photo) {
-        PAPPhotoDetailsViewController *photoDetailsVC = [[PAPPhotoDetailsViewController alloc] initWithPhoto:photo];
+        
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        VTPhotoDetailsViewController *vc=[sb instantiateViewControllerWithIdentifier:@"VTPhotoDetails"];
+        vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        vc.photo = photo ;
+        [self presentViewController:vc animated:YES completion:NULL];
+        
+        //PAPPhotoDetailsViewController *photoDetailsVC = [[PAPPhotoDetailsViewController alloc] initWithPhoto:photo];
         //photoDetailsVC.view.frame = CGRectMake(0.0, 43.0f, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height - 43.0f);
-        [self presentViewController:photoDetailsVC animated:YES completion:NULL];
+        //[self presentViewController:photoDetailsVC animated:YES completion:NULL];
         //[self.navigationController pushViewController:photoDetailsVC animated:YES];
     }
 }
