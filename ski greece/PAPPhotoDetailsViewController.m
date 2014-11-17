@@ -292,6 +292,7 @@ static const CGFloat kPAPCellInsetWidth = 20.0f;
 }
 
 - (void)actionButtonAction:(id)sender {
+    if (IS_DEVELOPER) NSLog(@"Calling action Button action from father");
     UIActionSheet *actionSheet = [[UIActionSheet alloc] init];
     actionSheet.delegate = self;
     actionSheet.tag = MainActionSheetTag;
@@ -300,10 +301,12 @@ static const CGFloat kPAPCellInsetWidth = 20.0f;
         [actionSheet addButtonWithTitle:NSLocalizedString(@"Share Photo", nil)];
     }
     actionSheet.cancelButtonIndex = [actionSheet addButtonWithTitle:NSLocalizedString(@"Cancel", nil)];
-    [actionSheet showFromTabBar:self.tabBarController.tabBar];
+    [actionSheet showInView:self.view];
+    //[actionSheet showFromTabBar:self.tabBarController.tabBar];
 }
 
 - (void)activityButtonAction:(id)sender {
+    if (IS_DEVELOPER) NSLog(@"Calling activity Button action from child");
     if (NSClassFromString(@"UIActivityViewController")) {
         // TODO: Need to do something when the photo hasn't finished downloading!
         if ([[self.photo objectForKey:kPAPPhotoPictureKey] isDataAvailable]) {
@@ -338,10 +341,14 @@ static const CGFloat kPAPCellInsetWidth = 20.0f;
             }
             
             [activityItems addObject:[UIImage imageWithData:data]];
+            //??fixme what url I give
+            //?? it's working as it is.
+            //?? maybe I need to change that
             [activityItems addObject:[NSURL URLWithString:[NSString stringWithFormat:@"https://anypic.org/#pic/%@", self.photo.objectId]]];
             
             UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
-            [self.navigationController presentViewController:activityViewController animated:YES completion:nil];
+            [self presentViewController:activityViewController animated:YES completion:NULL];
+            //[self.navigationController presentViewController:activityViewController animated:YES completion:nil];
         }
     }];
 }

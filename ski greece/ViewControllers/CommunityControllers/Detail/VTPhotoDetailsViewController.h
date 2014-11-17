@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VTPhotoDetailsViewController : UIViewController
+@interface VTPhotoDetailsViewController : UIViewController<UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (nonatomic, strong) PFObject *photo;
+@property (weak, nonatomic) IBOutlet UIImageView *topBar;
+@property (weak, nonatomic) IBOutlet UIButton *activityBtn;
+
+- (IBAction)activityButtonAction:(id)sender;
+- (IBAction)actionButtonAction:(id)sender;
 
 
 @end
