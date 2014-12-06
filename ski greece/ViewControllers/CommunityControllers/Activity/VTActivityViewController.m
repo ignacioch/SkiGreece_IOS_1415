@@ -7,6 +7,7 @@
 //
 
 #import "VTActivityViewController.h"
+#import "AppDelegate.h"
 
 @interface VTActivityViewController ()
 
@@ -17,6 +18,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    AppDelegate *del = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    del.activityController = [[PAPActivityFeedViewController alloc] init];
+    PAPActivityFeedViewController *vc = del.activityController;
+    vc.view.frame = self.containerView.bounds;
+    [self.containerView addSubview:vc.view];
+    [self.containerView setBackgroundColor:[UIColor clearColor]];
+    [self addChildViewController:vc];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,5 +45,6 @@
 */
 
 - (IBAction)backButtonAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

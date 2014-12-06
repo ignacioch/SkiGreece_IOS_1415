@@ -13,6 +13,7 @@
 #import "PAPSettingsButtonItem.h"
 #import "MBProgressHUD.h"
 #import "VTFindFriendsViewController.h"
+#import "VTActivityViewController.h"
 //#import "PAPAccountViewController.h"
 
 
@@ -140,6 +141,10 @@ typedef enum {
 }
 
 - (IBAction)activityAction:(id)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    VTActivityViewController *vc=[sb instantiateViewControllerWithIdentifier:@"VTActivity"];
+    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:vc animated:YES completion:NULL];
 }
 
 #pragma mark - takePhoto function
