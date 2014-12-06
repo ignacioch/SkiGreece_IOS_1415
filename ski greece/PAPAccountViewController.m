@@ -36,9 +36,9 @@
     self.headerView = [[UIView alloc] initWithFrame:CGRectMake( 0.0f, 0.0f, self.tableView.bounds.size.width, 222.0f)];
     [self.headerView setBackgroundColor:[UIColor clearColor]]; // should be clear, this will be the container for our avatar, photo count, follower count, following count, and so on
     
-    UIView *texturedBackgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
+    /*UIView *texturedBackgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
     [texturedBackgroundView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundLeather.png"]]];
-    self.tableView.backgroundView = texturedBackgroundView;
+    self.tableView.backgroundView = texturedBackgroundView;*/
 
     UIView *profilePictureBackgroundView = [[UIView alloc] initWithFrame:CGRectMake( 94.0f, 38.0f, 132.0f, 132.0f)];
     [profilePictureBackgroundView setBackgroundColor:[UIColor darkGrayColor]];
@@ -57,7 +57,7 @@
     profilePictureImageView.alpha = 0.0f;
     UIImageView *profilePictureStrokeImageView = [[UIImageView alloc] initWithFrame:CGRectMake( 88.0f, 34.0f, 143.0f, 143.0f)];
     profilePictureStrokeImageView.alpha = 0.0f;
-    [profilePictureStrokeImageView setImage:[UIImage imageNamed:@"ProfilePictureStroke.png"]];
+    [profilePictureStrokeImageView setImage:[UIImage imageNamed:@"profilePictureStroke.png"]];
     [self.headerView addSubview:profilePictureStrokeImageView];
 
     
@@ -85,7 +85,7 @@
     }
     
     UIImageView *photoCountIconImageView = [[UIImageView alloc] initWithImage:nil];
-    [photoCountIconImageView setImage:[UIImage imageNamed:@"IconPics.png"]];
+    [photoCountIconImageView setImage:[UIImage imageNamed:@"iconPics.png"]];
     [photoCountIconImageView setFrame:CGRectMake( 26.0f, 50.0f, 45.0f, 37.0f)];
     [self.headerView addSubview:photoCountIconImageView];
     
@@ -99,7 +99,7 @@
     [self.headerView addSubview:photoCountLabel];
     
     UIImageView *followersIconImageView = [[UIImageView alloc] initWithImage:nil];
-    [followersIconImageView setImage:[UIImage imageNamed:@"IconFollowers.png"]];
+    [followersIconImageView setImage:[UIImage imageNamed:@"iconFollowers.png"]];
     [followersIconImageView setFrame:CGRectMake( 247.0f, 50.0f, 52.0f, 37.0f)];
     [self.headerView addSubview:followersIconImageView];
     
