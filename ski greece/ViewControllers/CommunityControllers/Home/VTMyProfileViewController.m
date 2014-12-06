@@ -7,6 +7,8 @@
 //
 
 #import "VTMyProfileViewController.h"
+#import "AppDelegate.h"
+
 
 @interface VTMyProfileViewController ()
 
@@ -17,6 +19,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    AppDelegate *del = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    del.myprofileViewController = [[PAPAccountViewController alloc] init];
+    [del.myprofileViewController setUser:[PFUser currentUser]];
+    PAPAccountViewController *vc = del.myprofileViewController;
+    vc.view.frame = self.containerView.bounds;
+    [self.containerView addSubview:vc.view];
+    [self.containerView setBackgroundColor:[UIColor clearColor]];
+    [self addChildViewController:vc];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +45,7 @@
 }
 */
 
+- (IBAction)backButtonAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

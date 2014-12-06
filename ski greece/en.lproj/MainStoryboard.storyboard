@@ -1788,6 +1788,45 @@
             </objects>
             <point key="canvasLocation" x="-2188" y="1047"/>
         </scene>
+        <!--My Profile View Controller-->
+        <scene sceneID="m1V-ga-BFK">
+            <objects>
+                <viewController storyboardIdentifier="VTMyProfile" id="eud-Nf-iYq" customClass="VTMyProfileViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dVC-qr-wNh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundNavigationBar.png" id="iA2-Qq-54A">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Bae-oC-RNq">
+                                <rect key="frame" x="22" y="7" width="35" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="eud-Nf-iYq" eventType="touchUpInside" id="wvm-fG-NjQ"/>
+                                </connections>
+                            </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" id="kKE-GN-7Mx">
+                                <rect key="frame" x="0.0" y="40" width="320" height="440"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="Bae-oC-RNq" id="NPy-YK-m2h"/>
+                        <outlet property="containerView" destination="kKE-GN-7Mx" id="XRc-QQ-ggS"/>
+                        <outlet property="navigationBar" destination="iA2-Qq-54A" id="M4y-ND-5UZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ymq-Np-OHF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1795" y="1051"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="svK-T3-EBm">
             <objects>

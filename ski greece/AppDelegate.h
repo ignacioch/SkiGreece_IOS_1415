@@ -11,6 +11,7 @@
 #import "PAPHomeViewController.h"
 #import "PAPPhotoDetailsViewController.h"
 #import "PAPFindFriendsViewController.h"
+#import "PAPAccountViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -50,6 +51,7 @@
 @property (nonatomic, strong) PAPHomeViewController *homeViewController;
 @property (nonatomic, strong) PAPPhotoDetailsViewController *photoDetailsViewController;
 @property (nonatomic, strong) PAPFindFriendsViewController *findFriendViewController;
+@property (nonatomic, strong) PAPAccountViewController *myprofileViewController;
 
 
 - (BOOL)shouldProceedToMainInterface:(PFUser *)user;

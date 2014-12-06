@@ -268,6 +268,10 @@ typedef enum {
             case kPAPSettingsProfile:
             {
                 if (IS_DEVELOPER) NSLog(@"My profile");
+                UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                VTFindFriendsViewController *vc=[sb instantiateViewControllerWithIdentifier:@"VTMyProfile"];
+                vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+                [self presentViewController:vc animated:YES completion:NULL];
                 //PAPAccountViewController *accountViewController = [[PAPAccountViewController alloc] initWithStyle:UITableViewStylePlain];
                 //[accountViewController setUser:[PFUser currentUser]];
                 //[self presentViewController:accountViewController animated:YES completion:NULL];
