@@ -60,7 +60,7 @@
     
     
     // Extract the notification data
-    NSDictionary *notificationPayload = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
+    /*NSDictionary *notificationPayload = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
     
     // Create a pointer to the Photo object
     _notif_text = [notificationPayload objectForKey:@"text"];
@@ -77,7 +77,10 @@
                                                 otherButtonTitles: nil];
         message.delegate=self;
         [message show];
-    }
+    }*/
+    
+    [self handlePush:launchOptions]; // Call the handle push method with the payload
+    return YES;
     
     
     
@@ -94,6 +97,29 @@
 
     
     return YES;
+}
+
+- (void)handlePush:(NSDictionary *)launchOptions {
+    // Extract the notification payload dictionary
+    NSDictionary *remoteNotificationPayload = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    
+    // Check if the app was open from a notification and a user is logged in
+    if (remoteNotificationPayload && [PFUser currentUser]) {
+        
+        // Push the referenced photo into view
+        /*NSString *photoObjectId = [remoteNotificationPayload objectForKey:kPAPPushPayloadPhotoObjectIdKey];
+        if (photoObjectId && photoObjectId.length != 0) {
+            PFQuery *query = [PFQuery queryWithClassName:kPAPPhotoClassKey];
+            [query getObjectInBackgroundWithId:photoObjectId block:^(PFObject *photo, NSError *error) {
+                if (!error) {
+                    PAPPhotoDetailsViewController *detailViewController = [[PAPPhotoDetailsViewController alloc] initWithPhoto:photo];
+                    UINavigationController *homeNavigationController = [[self.tabBarController viewControllers] objectAtIndex:PAPHomeTabBarItemIndex];
+                    [self.tabBarController setSelectedViewController:homeNavigationController];
+                    [homeNavigationController pushViewController:detailViewController animated:YES];
+                }
+            }];
+        }*/
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
