@@ -442,6 +442,7 @@
 		DF4D234A19BFA5E10000F94E /* Jansson-LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = DF4D22B619BFA5E10000F94E /* Jansson-LICENSE.txt */; };
 		DF4D234B19BFA5E10000F94E /* PLCrashReporter-LICENSE.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DF4D22B719BFA5E10000F94E /* PLCrashReporter-LICENSE.rtf */; };
 		DF4D234D19BFA6530000F94E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4D234C19BFA6530000F94E /* MediaPlayer.framework */; };
+		DF662F341A334E9B006131DA /* VTMyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF662F331A334E9B006131DA /* VTMyProfileViewController.m */; };
 		DF8B80AA1A1925BA002587DF /* VTPhotoDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8B80A91A1925BA002587DF /* VTPhotoDetailsViewController.m */; };
 		DFA751431A05191E00EBD6F6 /* 29-29_pic_shadows.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA750691A05191D00EBD6F6 /* 29-29_pic_shadows.png */; };
 		DFA751441A05191E00EBD6F6 /* 29-29_pic_shadows@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA7506A1A05191D00EBD6F6 /* 29-29_pic_shadows@2x.png */; };
@@ -1221,6 +1222,8 @@
 		DF4D22B619BFA5E10000F94E /* Jansson-LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Jansson-LICENSE.txt"; sourceTree = "<group>"; };
 		DF4D22B719BFA5E10000F94E /* PLCrashReporter-LICENSE.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "PLCrashReporter-LICENSE.rtf"; sourceTree = "<group>"; };
 		DF4D234C19BFA6530000F94E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		DF662F321A334E9B006131DA /* VTMyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTMyProfileViewController.h; path = "ski greece/ViewControllers/CommunityControllers/Home/VTMyProfileViewController.h"; sourceTree = SOURCE_ROOT; };
+		DF662F331A334E9B006131DA /* VTMyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTMyProfileViewController.m; path = "ski greece/ViewControllers/CommunityControllers/Home/VTMyProfileViewController.m"; sourceTree = SOURCE_ROOT; };
 		DF8B80A81A1925BA002587DF /* VTPhotoDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTPhotoDetailsViewController.h; path = "ski greece/ViewControllers/CommunityControllers/Detail/VTPhotoDetailsViewController.h"; sourceTree = SOURCE_ROOT; };
 		DF8B80A91A1925BA002587DF /* VTPhotoDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTPhotoDetailsViewController.m; path = "ski greece/ViewControllers/CommunityControllers/Detail/VTPhotoDetailsViewController.m"; sourceTree = SOURCE_ROOT; };
 		DFA750691A05191D00EBD6F6 /* 29-29_pic_shadows.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "29-29_pic_shadows.png"; sourceTree = "<group>"; };
@@ -2820,6 +2823,8 @@
 				DFFB52EC19FEEC1700A7549B /* PAPPhotoTimelineViewController.m */,
 				DFDE611F1A1143EC000AFEE6 /* VTHomeViewController.h */,
 				DFDE61201A1143EC000AFEE6 /* VTHomeViewController.m */,
+				DF662F321A334E9B006131DA /* VTMyProfileViewController.h */,
+				DF662F331A334E9B006131DA /* VTMyProfileViewController.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -3633,6 +3638,7 @@
 				84E49B0817BD14DB00016E09 /* StreamScreen.m in Sources */,
 				DFFB533E19FEF34600A7549B /* TTTTimeIntervalFormatter.m in Sources */,
 				DFFB533119FEF2B700A7549B /* PAPConstants.m in Sources */,
+				DF662F341A334E9B006131DA /* VTMyProfileViewController.m in Sources */,
 				DF4D231519BFA5E10000F94E /* functions_5f.js in Sources */,
 				84E49B0B17BD14EB00016E09 /* PhotoScreen.m in Sources */,
 				84E49B0E17BD14FB00016E09 /* LoginScreen.m in Sources */,

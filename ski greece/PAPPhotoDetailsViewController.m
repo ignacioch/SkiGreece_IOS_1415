@@ -345,7 +345,9 @@ static const CGFloat kPAPCellInsetWidth = 20.0f;
             //??fixme what url I give
             //?? it's working as it is.
             //?? maybe I need to change that
-            [activityItems addObject:[NSURL URLWithString:[NSString stringWithFormat:@"https://anypic.org/#pic/%@", self.photo.objectId]]];
+            //[activityItems addObject:[NSURL URLWithString:[NSString stringWithFormat:@"https://anypic.org/#pic/%@", self.photo.objectId]]];
+            [activityItems addObject:[NSString stringWithFormat:@"Image sent from the Ski Greece Community - Join now by downloading the app from the link below."]];
+            [activityItems addObject:[NSURL URLWithString:@"itms-apps://itunes.com/apps/id565068622"]];
             
             UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
             [self presentViewController:activityViewController animated:YES completion:NULL];
