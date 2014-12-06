@@ -443,6 +443,7 @@
 		DF4D234B19BFA5E10000F94E /* PLCrashReporter-LICENSE.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DF4D22B719BFA5E10000F94E /* PLCrashReporter-LICENSE.rtf */; };
 		DF4D234D19BFA6530000F94E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4D234C19BFA6530000F94E /* MediaPlayer.framework */; };
 		DF662F341A334E9B006131DA /* VTMyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF662F331A334E9B006131DA /* VTMyProfileViewController.m */; };
+		DF662F371A336119006131DA /* VTActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF662F361A336119006131DA /* VTActivityViewController.m */; };
 		DF8B80AA1A1925BA002587DF /* VTPhotoDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8B80A91A1925BA002587DF /* VTPhotoDetailsViewController.m */; };
 		DFA751431A05191E00EBD6F6 /* 29-29_pic_shadows.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA750691A05191D00EBD6F6 /* 29-29_pic_shadows.png */; };
 		DFA751441A05191E00EBD6F6 /* 29-29_pic_shadows@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA7506A1A05191D00EBD6F6 /* 29-29_pic_shadows@2x.png */; };
@@ -1224,6 +1225,8 @@
 		DF4D234C19BFA6530000F94E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		DF662F321A334E9B006131DA /* VTMyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTMyProfileViewController.h; path = "ski greece/ViewControllers/CommunityControllers/Home/VTMyProfileViewController.h"; sourceTree = SOURCE_ROOT; };
 		DF662F331A334E9B006131DA /* VTMyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTMyProfileViewController.m; path = "ski greece/ViewControllers/CommunityControllers/Home/VTMyProfileViewController.m"; sourceTree = SOURCE_ROOT; };
+		DF662F351A336119006131DA /* VTActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTActivityViewController.h; path = "ski greece/ViewControllers/CommunityControllers/Activity/VTActivityViewController.h"; sourceTree = SOURCE_ROOT; };
+		DF662F361A336119006131DA /* VTActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTActivityViewController.m; path = "ski greece/ViewControllers/CommunityControllers/Activity/VTActivityViewController.m"; sourceTree = SOURCE_ROOT; };
 		DF8B80A81A1925BA002587DF /* VTPhotoDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTPhotoDetailsViewController.h; path = "ski greece/ViewControllers/CommunityControllers/Detail/VTPhotoDetailsViewController.h"; sourceTree = SOURCE_ROOT; };
 		DF8B80A91A1925BA002587DF /* VTPhotoDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTPhotoDetailsViewController.m; path = "ski greece/ViewControllers/CommunityControllers/Detail/VTPhotoDetailsViewController.m"; sourceTree = SOURCE_ROOT; };
 		DFA750691A05191D00EBD6F6 /* 29-29_pic_shadows.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "29-29_pic_shadows.png"; sourceTree = "<group>"; };
@@ -2966,6 +2969,8 @@
 			children = (
 				DFFB535619FEF6D400A7549B /* PAPActivityFeedViewController.h */,
 				DFFB535719FEF6D400A7549B /* PAPActivityFeedViewController.m */,
+				DF662F351A336119006131DA /* VTActivityViewController.h */,
+				DF662F361A336119006131DA /* VTActivityViewController.m */,
 			);
 			name = Activity;
 			sourceTree = "<group>";
@@ -3673,6 +3678,7 @@
 				849465A4180AF2A500A8FC7D /* PlacesAnnotationView.m in Sources */,
 				DF4D22C619BFA5E10000F94E /* dir_2c12105386bcc5c3935feab96f296a41.js in Sources */,
 				DF4D232D19BFA5E10000F94E /* functions_76.js in Sources */,
+				DF662F371A336119006131DA /* VTActivityViewController.m in Sources */,
 				849BB4F41815171B007FD1FF /* LocalAPI.m in Sources */,
 				DFFB533D19FEF34600A7549B /* Reachability.m in Sources */,
 				DF4D22E619BFA5E10000F94E /* hierarchy.js in Sources */,

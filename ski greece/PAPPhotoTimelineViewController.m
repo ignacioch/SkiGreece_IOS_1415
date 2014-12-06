@@ -349,6 +349,12 @@
         return cell;
     } else {
         PAPPhotoCell *cell = (PAPPhotoCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        
+        // adding for IOS7+
+        // default background is white
+        
+        cell.backgroundColor = [UIColor clearColor];
+        cell.backgroundView =  [UIView new];
 
         if (cell == nil) {
             cell = [[PAPPhotoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];

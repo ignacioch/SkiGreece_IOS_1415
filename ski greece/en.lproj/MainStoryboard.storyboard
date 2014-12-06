@@ -1749,6 +1749,49 @@
             </objects>
             <point key="canvasLocation" x="-2193" y="501"/>
         </scene>
+        <!--Activity View Controller-->
+        <scene sceneID="1jb-Tl-g8m">
+            <objects>
+                <viewController storyboardIdentifier="VTActivity" id="f9c-uS-3iX" customClass="VTActivityViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="igr-IA-Nmd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="yGe-Hg-NGP">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundNavigationBar.png" id="SDP-Wc-Cbo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="roX-Ls-oym">
+                                <rect key="frame" x="22" y="7" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="f9c-uS-3iX" eventType="touchUpInside" id="9mx-cY-t0k"/>
+                                </connections>
+                            </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" id="bUM-JE-0Ag">
+                                <rect key="frame" x="0.0" y="44" width="320" height="436"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="roX-Ls-oym" id="HsK-tB-F8d"/>
+                        <outlet property="containerView" destination="bUM-JE-0Ag" id="wrG-3Z-tAG"/>
+                        <outlet property="navBar_top" destination="SDP-Wc-Cbo" id="ek7-UI-4o1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oZn-8B-Yfn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2605" y="1044"/>
+        </scene>
         <!--Find Friends View Controller-->
         <scene sceneID="JQD-jv-TWf">
             <objects>
