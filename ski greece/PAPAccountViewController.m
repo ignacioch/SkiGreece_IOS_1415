@@ -265,6 +265,8 @@
     [PAPUtility unfollowUserEventually:self.user];
 }
 
+// they are not called
+
 - (void)backButtonAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
