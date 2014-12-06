@@ -63,10 +63,10 @@
     [super viewDidLoad];
     
     UIView *texturedBackgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
-    [texturedBackgroundView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundLeather.png"]]];
+    [texturedBackgroundView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundLeather.png"]]];
     self.tableView.backgroundView = texturedBackgroundView;
 
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LogoNavigationBar.png"]];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoNavigationBar.png"]];
 
     // Add Settings button
     self.navigationItem.rightBarButtonItem = [[PAPSettingsButtonItem alloc] initWithTarget:self action:@selector(settingsButtonAction:)];
@@ -76,7 +76,7 @@
     self.blankTimelineView = [[UIView alloc] initWithFrame:self.tableView.bounds];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setBackgroundImage:[UIImage imageNamed:@"ActivityFeedBlank.png"] forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:@"activityFeedBlank.png"] forState:UIControlStateNormal];
     [button setFrame:CGRectMake(24.0f, 113.0f, 271.0f, 140.0f)];
     [button addTarget:self action:@selector(inviteFriendsButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.blankTimelineView addSubview:button];
@@ -281,7 +281,8 @@
 
 - (void)inviteFriendsButtonAction:(id)sender {
     PAPFindFriendsViewController *detailViewController = [[PAPFindFriendsViewController alloc] init];
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    [self presentViewController:detailViewController animated:YES completion:NULL];
+    //[self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 - (void)applicationDidReceiveRemoteNotification:(NSNotification *)note {

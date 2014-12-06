@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4Ig-0Z-yGQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4Ig-0Z-yGQ">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Center Class View Controller-->
@@ -1706,24 +1706,41 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iyi-y3-U0j">
-                                <rect key="frame" x="258" y="4" width="46" height="30"/>
+                                <rect key="frame" x="261" y="4" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Share">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="activityButtonAction:" destination="3wC-Pc-MJC" eventType="touchUpInside" id="zW5-zd-hGu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bcV-yK-Ak2">
-                                <rect key="frame" x="18" y="7" width="43" height="30"/>
+                                <rect key="frame" x="184" y="4" width="43" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="delete">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="actionButtonAction:" destination="3wC-Pc-MJC" eventType="touchUpInside" id="VcX-NT-nLW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AMg-bz-3h4">
+                                <rect key="frame" x="16" y="4" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="3wC-Pc-MJC" eventType="touchUpInside" id="yTz-HU-d8k"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="activityBtn" destination="iyi-y3-U0j" id="73h-LK-Rep"/>
+                        <outlet property="backBtn" destination="AMg-bz-3h4" id="SFU-q0-mx4"/>
                         <outlet property="containerView" destination="ZfK-VB-Nfo" id="z4n-fU-Ksd"/>
                         <outlet property="topBar" destination="gW7-d0-Zj4" id="T2O-o8-Jr9"/>
                     </connections>
@@ -1731,6 +1748,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G9I-eV-F2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2193" y="501"/>
+        </scene>
+        <!--Find Friends View Controller-->
+        <scene sceneID="JQD-jv-TWf">
+            <objects>
+                <viewController storyboardIdentifier="VTFindFriends" id="xRK-Oj-W4g" customClass="VTFindFriendsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b9z-KQ-Qky">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundNavigationBar.png" id="BCy-kW-FvW">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" id="fA2-FG-ltY">
+                                <rect key="frame" x="0.0" y="42" width="320" height="438"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4Y1-7D-dmv">
+                                <rect key="frame" x="16" y="4" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="bacj">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="xRK-Oj-W4g" eventType="touchUpInside" id="gdV-gI-BJS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="backBtn" destination="4Y1-7D-dmv" id="dke-yf-s8e"/>
+                        <outlet property="containerView" destination="fA2-FG-ltY" id="HPj-nS-qEb"/>
+                        <outlet property="topBar" destination="BCy-kW-FvW" id="k8j-WJ-1Fn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h0G-Yq-IFc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2188" y="1047"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="svK-T3-EBm">

@@ -292,6 +292,7 @@
 		DF0EC77A19F7033A00470040 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0EC77919F7033A00470040 /* ParseFacebookUtils.framework */; };
 		DF0EC77C19F703F400470040 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0EC77B19F703F400470040 /* Parse.framework */; };
 		DF0EC77F19F7064700470040 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0EC77E19F7064700470040 /* LoginViewController.m */; };
+		DF2F1F411A222223008F9C42 /* VTFindFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2F1F401A222223008F9C42 /* VTFindFriendsViewController.m */; };
 		DF4D22B819BFA5E10000F94E /* libFlurry_5.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4D221E19BFA5E10000F94E /* libFlurry_5.3.0.a */; };
 		DF4D22B919BFA5E10000F94E /* _flurry_8h_source.html in Resources */ = {isa = PBXBuildFile; fileRef = DF4D222019BFA5E10000F94E /* _flurry_8h_source.html */; };
 		DF4D22BA19BFA5E10000F94E /* _flurry_ad_delegate_8h_source.html in Resources */ = {isa = PBXBuildFile; fileRef = DF4D222119BFA5E10000F94E /* _flurry_ad_delegate_8h_source.html */; };
@@ -1066,6 +1067,8 @@
 		DF0EC77B19F703F400470040 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		DF0EC77D19F7064700470040 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = "ski greece/ViewControllers/LoginScreen/LoginViewController.h"; sourceTree = SOURCE_ROOT; };
 		DF0EC77E19F7064700470040 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = "ski greece/ViewControllers/LoginScreen/LoginViewController.m"; sourceTree = SOURCE_ROOT; };
+		DF2F1F3F1A222223008F9C42 /* VTFindFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTFindFriendsViewController.h; path = "ski greece/ViewControllers/CommunityControllers/Settings/VTFindFriendsViewController.h"; sourceTree = SOURCE_ROOT; };
+		DF2F1F401A222223008F9C42 /* VTFindFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTFindFriendsViewController.m; path = "ski greece/ViewControllers/CommunityControllers/Settings/VTFindFriendsViewController.m"; sourceTree = SOURCE_ROOT; };
 		DF4D221D19BFA5E10000F94E /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		DF4D221E19BFA5E10000F94E /* libFlurry_5.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_5.3.0.a; sourceTree = "<group>"; };
 		DF4D222019BFA5E10000F94E /* _flurry_8h_source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = _flurry_8h_source.html; sourceTree = "<group>"; };
@@ -2927,6 +2930,8 @@
 				DFFB534B19FEF4E800A7549B /* PAPFindFriendsViewController.m */,
 				DFFB534C19FEF4E800A7549B /* PAPSettingsActionSheetDelegate.h */,
 				DFFB534D19FEF4E800A7549B /* PAPSettingsActionSheetDelegate.m */,
+				DF2F1F3F1A222223008F9C42 /* VTFindFriendsViewController.h */,
+				DF2F1F401A222223008F9C42 /* VTFindFriendsViewController.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -3639,6 +3644,7 @@
 				DFFB535B19FEF6DE00A7549B /* PAPEditPhotoViewController.m in Sources */,
 				84E49B1D17BD177700016E09 /* UIImage+Alpha.m in Sources */,
 				84E49B1E17BD177700016E09 /* UIImage+Resize.m in Sources */,
+				DF2F1F411A222223008F9C42 /* VTFindFriendsViewController.m in Sources */,
 				DF4D230019BFA5E10000F94E /* all_65.js in Sources */,
 				DF4D231219BFA5E10000F94E /* classes_66.js in Sources */,
 				84E49B1F17BD177700016E09 /* UIImage+RoundedCorner.m in Sources */,
@@ -3829,8 +3835,8 @@
 					"-lsqlite3.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2d4c1200-dba7-4b07-abe1-2fe4b97b6bfb";
+				PROVISIONING_PROFILE = "3372bbed-be2f-4376-adc2-927763a2f214";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3372bbed-be2f-4376-adc2-927763a2f214";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = NO;
@@ -3843,8 +3849,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: I CHARALAMPIDIS (P89PMWUXH4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: I CHARALAMPIDIS (P89PMWUXH4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/Ski\\ Greece\\\"",
@@ -3868,8 +3874,8 @@
 					"-lsqlite3.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8ED0710C-5AAE-43B6-AF91-E9B5C76E38A3";
+				PROVISIONING_PROFILE = "787b10dd-ad35-439a-ae5e-ad044871182d";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "787b10dd-ad35-439a-ae5e-ad044871182d";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7s armv7 arm64";
@@ -3917,8 +3923,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: I CHARALAMPIDIS (P89PMWUXH4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: I CHARALAMPIDIS (P89PMWUXH4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/Ski\\ Greece\\\"",
@@ -3942,8 +3948,8 @@
 					"-lsqlite3.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8ED0710C-5AAE-43B6-AF91-E9B5C76E38A3";
+				PROVISIONING_PROFILE = "2e7ef622-6953-4ea2-a288-71e58f45c19e";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2e7ef622-6953-4ea2-a288-71e58f45c19e";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7s armv7 arm64";

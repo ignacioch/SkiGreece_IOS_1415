@@ -10,6 +10,7 @@
 #import "MBProgressHUD.h"
 #import "PAPHomeViewController.h"
 #import "PAPPhotoDetailsViewController.h"
+#import "PAPFindFriendsViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -48,7 +49,7 @@
 
 @property (nonatomic, strong) PAPHomeViewController *homeViewController;
 @property (nonatomic, strong) PAPPhotoDetailsViewController *photoDetailsViewController;
-
+@property (nonatomic, strong) PAPFindFriendsViewController *findFriendViewController;
 
 
 - (BOOL)shouldProceedToMainInterface:(PFUser *)user;

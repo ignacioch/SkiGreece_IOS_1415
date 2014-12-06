@@ -475,6 +475,7 @@
                 [[UIApplication sharedApplication].delegate performSelector:@selector(facebookRequestDidFailWithError:) withObject:error];
             }
         }
+        [self.hud hide:YES];
         [self dismissViewControllerAnimated:NO completion:nil];
     }];
     

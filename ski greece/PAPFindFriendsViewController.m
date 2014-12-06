@@ -68,14 +68,14 @@ typedef enum {
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     UIView *texturedBackgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
-    [texturedBackgroundView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundLeather.png"]]];
+    [texturedBackgroundView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundLeather.png"]]];
     self.tableView.backgroundView = texturedBackgroundView;
         
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TitleFindFriends.png"]];
+    //self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"titleFindFriends.png"]];
     
     if ([MFMailComposeViewController canSendMail] || [MFMessageComposeViewController canSendText]) {
         self.headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 67)];
-        [self.headerView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundFindFriendsCell.png"]]];
+        [self.headerView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundFindFriendsCell.png"]]];
         UIButton *clearButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [clearButton setBackgroundColor:[UIColor clearColor]];
         [clearButton addTarget:self action:@selector(inviteFriendsButtonAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -94,7 +94,7 @@ typedef enum {
         [inviteLabel setTextColor:[UIColor colorWithRed:87.0f/255.0f green:72.0f/255.0f blue:49.0f/255.0f alpha:1.0]];
         [inviteLabel setBackgroundColor:[UIColor clearColor]];
         [self.headerView addSubview:inviteLabel];
-        UIImageView *separatorImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"SeparatorTimeline.png"]];
+        UIImageView *separatorImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"separatorTimeline.png"]];
         [separatorImage setFrame:CGRectMake(0, self.headerView.frame.size.height-2, 320, 2)];
         [self.headerView addSubview:separatorImage];
         [self.tableView setTableHeaderView:self.headerView];
@@ -263,7 +263,7 @@ typedef enum {
     
     if (cell == nil) {
         cell = [[PAPLoadMoreCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NextPageCellIdentifier];
-        [cell.mainView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundFindFriendsCell.png"]]];
+        [cell.mainView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundFindFriendsCell.png"]]];
         cell.hideSeparatorBottom = YES;
         cell.hideSeparatorTop = YES;
     }

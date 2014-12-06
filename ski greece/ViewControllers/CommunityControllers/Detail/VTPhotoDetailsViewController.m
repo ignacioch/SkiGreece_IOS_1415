@@ -33,7 +33,7 @@ enum ActionSheetTags {
     [self.containerView setBackgroundColor:[UIColor clearColor]];
     [self addChildViewController:vc];
     
-  if (NSClassFromString(@"UIActivityViewController")) {
+  /*if (NSClassFromString(@"UIActivityViewController")) {
        // Use UIActivityViewController if it is available (iOS 6 +)
        [self.activityBtn addTarget:self
                             action:@selector(activityButtonAction:)
@@ -43,7 +43,7 @@ enum ActionSheetTags {
       [self.activityBtn addTarget:self
                            action:@selector(actionButtonAction:)
                  forControlEvents:UIControlEventTouchUpInside];
-  }
+  }*/
     
     
     
@@ -66,8 +66,25 @@ enum ActionSheetTags {
 }
 
 - (IBAction)actionButtonAction:(id)sender{
-    if (IS_DEVELOPER) NSLog(@"Calling action Button action from father");
-    [self.childViewControllers[0] actionButtonAction:sender];
+    //if (IS_DEVELOPER) NSLog(@"Calling action Button action from father");
+    //[self.childViewControllers[0] actionButtonAction:sender];
+    if ([self currentUserOwnsPhoto]) {
+        if (IS_DEVELOPER) NSLog(@"User is the owner of the photo");
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Are you sure you want to delete this photo?", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:NSLocalizedString(@"Yes, delete photo", nil) otherButtonTitles:nil];
+        actionSheet.tag = ConfirmDeleteActionSheetTag;
+        [actionSheet showInView:self.view];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No permission"
+                                                        message:@"You don't have permission to delete this photo"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+- (IBAction)backButtonAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -76,6 +93,33 @@ enum ActionSheetTags {
 - (BOOL)currentUserOwnsPhoto {
     return [[[self.photo objectForKey:kPAPPhotoUserKey] objectId] isEqualToString:[[PFUser currentUser] objectId]];
 }
+
+- (void)shouldDeletePhoto {
+    // Delete all activites related to this photo
+    PFQuery *query = [PFQuery queryWithClassName:kPAPActivityClassKey];
+    [query whereKey:kPAPActivityPhotoKey equalTo:self.photo];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error) {
+        if (!error) {
+            for (PFObject *activity in activities) {
+                [activity deleteEventually];
+            }
+        }
+        
+        // Delete photo
+        [self.photo deleteEventually];
+    }];
+    [[NSNotificationCenter defaultCenter] postNotificationName:PAPPhotoDetailsViewControllerUserDeletedPhotoNotification object:[self.photo objectId]];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (actionSheet.tag == ConfirmDeleteActionSheetTag) {
+            [self shouldDeletePhoto];
+        }
+}
+
 
 
 @end

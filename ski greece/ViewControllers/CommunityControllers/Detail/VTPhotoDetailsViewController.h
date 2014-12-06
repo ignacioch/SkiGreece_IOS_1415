@@ -14,9 +14,11 @@
 @property (nonatomic, strong) PFObject *photo;
 @property (weak, nonatomic) IBOutlet UIImageView *topBar;
 @property (weak, nonatomic) IBOutlet UIButton *activityBtn;
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
 
 - (IBAction)activityButtonAction:(id)sender;
 - (IBAction)actionButtonAction:(id)sender;
+- (IBAction)backButtonAction:(id)sender;
 
 
 @end

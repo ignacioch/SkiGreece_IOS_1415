@@ -258,7 +258,8 @@ static const CGFloat kPAPCellInsetWidth = 20.0f;
             // prompt to delete
             UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Are you sure you want to delete this photo?", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil) destructiveButtonTitle:NSLocalizedString(@"Yes, delete photo", nil) otherButtonTitles:nil];
             actionSheet.tag = ConfirmDeleteActionSheetTag;
-            [actionSheet showFromTabBar:self.tabBarController.tabBar];
+            [actionSheet showInView:self.view];
+            //[actionSheet showFromTabBar:self.tabBarController.tabBar];
         } else {
             [self activityButtonAction:actionSheet];
         }

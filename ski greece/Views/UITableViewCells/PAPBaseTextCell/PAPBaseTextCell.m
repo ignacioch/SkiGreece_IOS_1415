@@ -58,7 +58,7 @@ static TTTTimeIntervalFormatter *timeFormatter;
         self.backgroundColor = [UIColor clearColor];
         
         mainView = [[UIView alloc] initWithFrame:self.contentView.frame];
-        [mainView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundComments.png"]]];
+        [mainView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"βackgroundComments.png"]]];
         
         self.avatarImageView = [[PAPProfileImageView alloc] init];
         [self.avatarImageView setBackgroundColor:[UIColor clearColor]];

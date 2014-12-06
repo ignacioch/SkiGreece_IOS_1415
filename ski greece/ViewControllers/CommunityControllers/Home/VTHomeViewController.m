@@ -12,6 +12,8 @@
 #import "PAPSettingsActionSheetDelegate.h"
 #import "PAPSettingsButtonItem.h"
 #import "MBProgressHUD.h"
+#import "VTFindFriendsViewController.h"
+//#import "PAPAccountViewController.h"
 
 
 @interface VTHomeViewController ()
@@ -266,15 +268,19 @@ typedef enum {
             case kPAPSettingsProfile:
             {
                 if (IS_DEVELOPER) NSLog(@"My profile");
-                /*PAPAccountViewController *accountViewController = [[PAPAccountViewController alloc] initWithStyle:UITableViewStylePlain];
-                 [accountViewController setUser:[PFUser currentUser]];
-                 [navController pushViewController:accountViewController animated:YES];*/
+                //PAPAccountViewController *accountViewController = [[PAPAccountViewController alloc] initWithStyle:UITableViewStylePlain];
+                //[accountViewController setUser:[PFUser currentUser]];
+                //[self presentViewController:accountViewController animated:YES completion:NULL];
                 break;
             }
                 
             case kPAPSettingsFindFriends:
             {
                 if (IS_DEVELOPER) NSLog(@"Find Friends");
+                UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                VTFindFriendsViewController *vc=[sb instantiateViewControllerWithIdentifier:@"VTFindFriends"];
+                vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+                [self presentViewController:vc animated:YES completion:NULL];
                 /*PAPFindFriendsViewController *findFriendsVC = [[PAPFindFriendsViewController alloc] init];
                  [navController pushViewController:findFriendsVC animated:YES];*/
                 break;
@@ -283,6 +289,7 @@ typedef enum {
                 if (IS_DEVELOPER) NSLog(@"Logout");
                 // Log out user and present the login view controller
                 [(AppDelegate *)[[UIApplication sharedApplication] delegate] logOut];
+                [self dismissViewControllerAnimated:YES completion:nil];
                 break;
             default:
                 break;
