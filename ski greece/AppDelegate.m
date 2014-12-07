@@ -80,10 +80,6 @@
     }*/
     
     [self handlePush:launchOptions]; // Call the handle push method with the payload
-    return YES;
-    
-    
-    
     
     //Initialize facebook with Parse
     
