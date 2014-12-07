@@ -445,6 +445,7 @@
 
 -(void) openLoginScreen
 {
+    if (IS_DEVELOPER) NSLog(@"Showing login screen");
     PAPLogInViewController *loginViewController = [[PAPLogInViewController alloc] init];
     [loginViewController setDelegate:self];
     loginViewController.fields = PFLogInFieldsFacebook;
