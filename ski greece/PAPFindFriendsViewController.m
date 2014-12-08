@@ -121,7 +121,8 @@ typedef enum {
     
     // Query for all friends you have on facebook and who are using the app
     PFQuery *friendsQuery = [PFUser query];
-    [friendsQuery whereKey:kPAPUserFacebookIDKey containedIn:facebookFriends];
+    //[friendsQuery whereKey:kPAPUserFacebookIDKey containedIn:facebookFriends];
+    [friendsQuery whereKeyExists:kPAPUserFacebookIDKey];
     
     // Query for all Parse employees
     /*NSMutableArray *parseEmployees = [[NSMutableArray alloc] initWithArray:kPAPParseEmployeeAccounts];
