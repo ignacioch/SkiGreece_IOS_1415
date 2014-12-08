@@ -230,7 +230,7 @@
     
     if (IS_DEVELOPER) {
         PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-        [currentInstallation addUniqueObject:@"SkiGreeceAdmin" forKey:@"channels"];
+        [currentInstallation addUniqueObject:@"SkiGreeceAdmin_201415" forKey:@"channels"];
         [currentInstallation saveInBackground];
     }
     
