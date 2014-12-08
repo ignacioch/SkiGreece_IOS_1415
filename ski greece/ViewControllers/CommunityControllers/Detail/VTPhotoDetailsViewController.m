@@ -26,28 +26,21 @@ enum ActionSheetTags {
     // Do any additional setup after loading the view.
     
     AppDelegate *del = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    // check whether we are from push notif or usual opening
+    
+    if (del.openedFromNotification) {
+        del.openedFromNotification = NO;
+        self.photo = del.photoFromNotif;
+    }
+    
     del.photoDetailsViewController = [[PAPPhotoDetailsViewController alloc] initWithPhoto:self.photo];
     PAPPhotoDetailsViewController *vc = del.photoDetailsViewController;
     vc.view.frame = self.containerView.bounds;
     [self.containerView addSubview:vc.view];
     [self.containerView setBackgroundColor:[UIColor clearColor]];
     [self addChildViewController:vc];
-    
-  /*if (NSClassFromString(@"UIActivityViewController")) {
-       // Use UIActivityViewController if it is available (iOS 6 +)
-       [self.activityBtn addTarget:self
-                            action:@selector(activityButtonAction:)
-                  forControlEvents:UIControlEventTouchUpInside];
-  } else  if ([self currentUserOwnsPhoto]) {
-      // Else we only want to show an action button if the user owns the photo and has permission to delete it.
-      [self.activityBtn addTarget:self
-                           action:@selector(actionButtonAction:)
-                 forControlEvents:UIControlEventTouchUpInside];
-  }*/
-    
-    
-    
-    
+
     //PAPPhotoDetailsViewController *photoDetailsVC = [[PAPPhotoDetailsViewController alloc] initWithPhoto:photo];
     //photoDetailsVC.view.frame = CGRectMake(0.0, 43.0f, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height - 43.0f);
     //[self presentViewController:photoDetailsVC animated:YES completion:NULL];

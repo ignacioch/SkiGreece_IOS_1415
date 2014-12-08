@@ -28,6 +28,9 @@
 @synthesize notification_msg = _notification_msg;
 @synthesize homeViewController;
 
+@synthesize openedFromNotification;
+@synthesize photoFromNotif;
+
 
 
 
@@ -111,18 +114,34 @@
     if (remoteNotificationPayload && [PFUser currentUser]) {
         
         // Push the referenced photo into view
-        /*NSString *photoObjectId = [remoteNotificationPayload objectForKey:kPAPPushPayloadPhotoObjectIdKey];
+        NSString *photoObjectId = [remoteNotificationPayload objectForKey:kPAPPushPayloadPhotoObjectIdKey];
         if (photoObjectId && photoObjectId.length != 0) {
             PFQuery *query = [PFQuery queryWithClassName:kPAPPhotoClassKey];
             [query getObjectInBackgroundWithId:photoObjectId block:^(PFObject *photo, NSError *error) {
                 if (!error) {
-                    PAPPhotoDetailsViewController *detailViewController = [[PAPPhotoDetailsViewController alloc] initWithPhoto:photo];
-                    UINavigationController *homeNavigationController = [[self.tabBarController viewControllers] objectAtIndex:PAPHomeTabBarItemIndex];
-                    [self.tabBarController setSelectedViewController:homeNavigationController];
-                    [homeNavigationController pushViewController:detailViewController animated:YES];
+
+                    // opening view from push notification
+                    openedFromNotification = YES;
+                    photoFromNotif = photo;
+
+                    //NSString *storyboardId = @"";
+                    self.window.rootViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"VTPhotoDetails"];
+
+                    
+                    /*UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+                     VTPhotoDetailsViewController *vc=[sb instantiateViewControllerWithIdentifier:@"VTPhotoDetails"];
+                     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+                     vc.photo = photo ;*/
+                    
+                    //NSString *storyboardId = isLoggedIn ? @"MainIdentifier" : @"LoginIdentifier";
+                    //self.window.rootViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:storyboardId];
+                    
+                    //UINavigationController *homeNavigationController = [[self.tabBarController viewControllers] objectAtIndex:PAPHomeTabBarItemIndex];
+                    //[self.tabBarController setSelectedViewController:homeNavigationController];
+                    //[homeNavigationController pushViewController:detailViewController animated:YES];
                 }
             }];
-        }*/
+        }
     }
 }
 
@@ -286,11 +305,11 @@
                 [facebookFriendsQuery whereKey:kPAPUserFacebookIDKey containedIn:facebookIds];
                 
                 // auto-follow Parse employees
-                PFQuery *parseEmployeesQuery = [PFUser query];
-                [parseEmployeesQuery whereKey:kPAPUserFacebookIDKey containedIn:kPAPParseEmployeeAccounts];
+                //PFQuery *parseEmployeesQuery = [PFUser query];
+                //[parseEmployeesQuery whereKey:kPAPUserFacebookIDKey containedIn:kPAPParseEmployeeAccounts];
                 
                 // combined query
-                PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:parseEmployeesQuery,facebookFriendsQuery, nil]];
+                PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:/*parseEmployeesQuery,*/facebookFriendsQuery, nil]];
                 
                 NSArray *anypicFriends = [query findObjects:&error];
                 
