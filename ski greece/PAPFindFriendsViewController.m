@@ -117,7 +117,7 @@ typedef enum {
 
 - (PFQuery *)queryForTable {
     // Use cached facebook friend ids
-    NSArray *facebookFriends = [[PAPCache sharedCache] facebookFriends];
+    //NSArray *facebookFriends = [[PAPCache sharedCache] facebookFriends];
     
     // Query for all friends you have on facebook and who are using the app
     PFQuery *friendsQuery = [PFUser query];
