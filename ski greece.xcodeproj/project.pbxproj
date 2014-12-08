@@ -292,6 +292,10 @@
 		DF0EC77A19F7033A00470040 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0EC77919F7033A00470040 /* ParseFacebookUtils.framework */; };
 		DF0EC77C19F703F400470040 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0EC77B19F703F400470040 /* Parse.framework */; };
 		DF0EC77F19F7064700470040 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0EC77E19F7064700470040 /* LoginViewController.m */; };
+		DF1A3D221A365E7E001E6029 /* DefaultAnypic.png in Resources */ = {isa = PBXBuildFile; fileRef = DF1A3D201A365E7E001E6029 /* DefaultAnypic.png */; };
+		DF1A3D231A365E7E001E6029 /* DefaultAnypic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF1A3D211A365E7E001E6029 /* DefaultAnypic@2x.png */; };
+		DF1A3D2A1A365F25001E6029 /* backgroundNavigationBar.png in Resources */ = {isa = PBXBuildFile; fileRef = DF1A3D281A365F25001E6029 /* backgroundNavigationBar.png */; };
+		DF1A3D2B1A365F25001E6029 /* backgroundNavigationBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF1A3D291A365F25001E6029 /* backgroundNavigationBar@2x.png */; };
 		DF2F1F411A222223008F9C42 /* VTFindFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2F1F401A222223008F9C42 /* VTFindFriendsViewController.m */; };
 		DF4D22B819BFA5E10000F94E /* libFlurry_5.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4D221E19BFA5E10000F94E /* libFlurry_5.3.0.a */; };
 		DF4D22B919BFA5E10000F94E /* _flurry_8h_source.html in Resources */ = {isa = PBXBuildFile; fileRef = DF4D222019BFA5E10000F94E /* _flurry_8h_source.html */; };
@@ -471,8 +475,6 @@
 		DFA7515A1A05191E00EBD6F6 /* BackgroundLogin-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA750801A05191D00EBD6F6 /* BackgroundLogin-568h@2x.png */; };
 		DFA7515B1A05191E00EBD6F6 /* backgroundLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA750811A05191D00EBD6F6 /* backgroundLogin.png */; };
 		DFA7515C1A05191E00EBD6F6 /* backgroundLogin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA750821A05191D00EBD6F6 /* backgroundLogin@2x.png */; };
-		DFA7515D1A05191E00EBD6F6 /* backgroundNavigationBar.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA750831A05191D00EBD6F6 /* backgroundNavigationBar.png */; };
-		DFA7515E1A05191E00EBD6F6 /* backgroundNavigationBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA750841A05191D00EBD6F6 /* backgroundNavigationBar@2x.png */; };
 		DFA7515F1A05191E00EBD6F6 /* backgroundNewActivity.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA750851A05191D00EBD6F6 /* backgroundNewActivity.png */; };
 		DFA751601A05191E00EBD6F6 /* backgroundNewActivity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA750861A05191D00EBD6F6 /* backgroundNewActivity@2x.png */; };
 		DFA751611A05191E00EBD6F6 /* backgroundTabBar.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA750871A05191D00EBD6F6 /* backgroundTabBar.png */; };
@@ -667,8 +669,6 @@
 		DFA752301A051C2200EBD6F6 /* DefaultAnypic-fbYOUR_FACEBOOK_APP_ID-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA7522A1A051C2200EBD6F6 /* DefaultAnypic-fbYOUR_FACEBOOK_APP_ID-568h@2x.png */; };
 		DFA752311A051C2200EBD6F6 /* DefaultAnypic-fbYOUR_FACEBOOK_APP_ID.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA7522B1A051C2200EBD6F6 /* DefaultAnypic-fbYOUR_FACEBOOK_APP_ID.png */; };
 		DFA752321A051C2200EBD6F6 /* DefaultAnypic-fbYOUR_FACEBOOK_APP_ID@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA7522C1A051C2200EBD6F6 /* DefaultAnypic-fbYOUR_FACEBOOK_APP_ID@2x.png */; };
-		DFA752331A051C2200EBD6F6 /* DefaultAnypic.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA7522D1A051C2200EBD6F6 /* DefaultAnypic.png */; };
-		DFA752341A051C2200EBD6F6 /* DefaultAnypic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA7522E1A051C2200EBD6F6 /* DefaultAnypic@2x.png */; };
 		DFA752371A09949500EBD6F6 /* PAPLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA752361A09949500EBD6F6 /* PAPLogInViewController.m */; };
 		DFDE61211A1143EC000AFEE6 /* VTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDE61201A1143EC000AFEE6 /* VTHomeViewController.m */; };
 		DFFB52ED19FEEC1700A7549B /* PAPAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB52E819FEEC1700A7549B /* PAPAccountViewController.m */; };
@@ -1069,6 +1069,10 @@
 		DF0EC77B19F703F400470040 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		DF0EC77D19F7064700470040 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = "ski greece/ViewControllers/LoginScreen/LoginViewController.h"; sourceTree = SOURCE_ROOT; };
 		DF0EC77E19F7064700470040 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = "ski greece/ViewControllers/LoginScreen/LoginViewController.m"; sourceTree = SOURCE_ROOT; };
+		DF1A3D201A365E7E001E6029 /* DefaultAnypic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DefaultAnypic.png; sourceTree = "<group>"; };
+		DF1A3D211A365E7E001E6029 /* DefaultAnypic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DefaultAnypic@2x.png"; sourceTree = "<group>"; };
+		DF1A3D281A365F25001E6029 /* backgroundNavigationBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundNavigationBar.png; sourceTree = "<group>"; };
+		DF1A3D291A365F25001E6029 /* backgroundNavigationBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundNavigationBar@2x.png"; sourceTree = "<group>"; };
 		DF2F1F3F1A222223008F9C42 /* VTFindFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTFindFriendsViewController.h; path = "ski greece/ViewControllers/CommunityControllers/Settings/VTFindFriendsViewController.h"; sourceTree = SOURCE_ROOT; };
 		DF2F1F401A222223008F9C42 /* VTFindFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTFindFriendsViewController.m; path = "ski greece/ViewControllers/CommunityControllers/Settings/VTFindFriendsViewController.m"; sourceTree = SOURCE_ROOT; };
 		DF4D221D19BFA5E10000F94E /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
@@ -1255,8 +1259,6 @@
 		DFA750801A05191D00EBD6F6 /* BackgroundLogin-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BackgroundLogin-568h@2x.png"; sourceTree = "<group>"; };
 		DFA750811A05191D00EBD6F6 /* backgroundLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundLogin.png; sourceTree = "<group>"; };
 		DFA750821A05191D00EBD6F6 /* backgroundLogin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundLogin@2x.png"; sourceTree = "<group>"; };
-		DFA750831A05191D00EBD6F6 /* backgroundNavigationBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundNavigationBar.png; sourceTree = "<group>"; };
-		DFA750841A05191D00EBD6F6 /* backgroundNavigationBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundNavigationBar@2x.png"; sourceTree = "<group>"; };
 		DFA750851A05191D00EBD6F6 /* backgroundNewActivity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundNewActivity.png; sourceTree = "<group>"; };
 		DFA750861A05191D00EBD6F6 /* backgroundNewActivity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundNewActivity@2x.png"; sourceTree = "<group>"; };
 		DFA750871A05191D00EBD6F6 /* backgroundTabBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundTabBar.png; sourceTree = "<group>"; };
@@ -1451,8 +1453,6 @@
 		DFA7522A1A051C2200EBD6F6 /* DefaultAnypic-fbYOUR_FACEBOOK_APP_ID-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DefaultAnypic-fbYOUR_FACEBOOK_APP_ID-568h@2x.png"; sourceTree = "<group>"; };
 		DFA7522B1A051C2200EBD6F6 /* DefaultAnypic-fbYOUR_FACEBOOK_APP_ID.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DefaultAnypic-fbYOUR_FACEBOOK_APP_ID.png"; sourceTree = "<group>"; };
 		DFA7522C1A051C2200EBD6F6 /* DefaultAnypic-fbYOUR_FACEBOOK_APP_ID@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DefaultAnypic-fbYOUR_FACEBOOK_APP_ID@2x.png"; sourceTree = "<group>"; };
-		DFA7522D1A051C2200EBD6F6 /* DefaultAnypic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DefaultAnypic.png; sourceTree = "<group>"; };
-		DFA7522E1A051C2200EBD6F6 /* DefaultAnypic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DefaultAnypic@2x.png"; sourceTree = "<group>"; };
 		DFA752351A09949500EBD6F6 /* PAPLogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PAPLogInViewController.h; path = "ski greece/ViewControllers/LoginScreen/PAPLogInViewController.h"; sourceTree = SOURCE_ROOT; };
 		DFA752361A09949500EBD6F6 /* PAPLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PAPLogInViewController.m; path = "ski greece/ViewControllers/LoginScreen/PAPLogInViewController.m"; sourceTree = SOURCE_ROOT; };
 		DFC50C5D19FD04350015F1D8 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Config.h; path = "ski greece/Others/Config.h"; sourceTree = SOURCE_ROOT; };
@@ -2574,12 +2574,14 @@
 		DFA750681A05191D00EBD6F6 /* AnypicAssets */ = {
 			isa = PBXGroup;
 			children = (
+				DF1A3D281A365F25001E6029 /* backgroundNavigationBar.png */,
+				DF1A3D291A365F25001E6029 /* backgroundNavigationBar@2x.png */,
+				DF1A3D201A365E7E001E6029 /* DefaultAnypic.png */,
+				DF1A3D211A365E7E001E6029 /* DefaultAnypic@2x.png */,
 				DFA752291A051C2200EBD6F6 /* DefaultAnypic-568h@2x.png */,
 				DFA7522A1A051C2200EBD6F6 /* DefaultAnypic-fbYOUR_FACEBOOK_APP_ID-568h@2x.png */,
 				DFA7522B1A051C2200EBD6F6 /* DefaultAnypic-fbYOUR_FACEBOOK_APP_ID.png */,
 				DFA7522C1A051C2200EBD6F6 /* DefaultAnypic-fbYOUR_FACEBOOK_APP_ID@2x.png */,
-				DFA7522D1A051C2200EBD6F6 /* DefaultAnypic.png */,
-				DFA7522E1A051C2200EBD6F6 /* DefaultAnypic@2x.png */,
 				DFA750691A05191D00EBD6F6 /* 29-29_pic_shadows.png */,
 				DFA7506A1A05191D00EBD6F6 /* 29-29_pic_shadows@2x.png */,
 				DFA7506B1A05191D00EBD6F6 /* 35-35_pic_shadows.png */,
@@ -2606,8 +2608,6 @@
 				DFA750801A05191D00EBD6F6 /* BackgroundLogin-568h@2x.png */,
 				DFA750811A05191D00EBD6F6 /* backgroundLogin.png */,
 				DFA750821A05191D00EBD6F6 /* backgroundLogin@2x.png */,
-				DFA750831A05191D00EBD6F6 /* backgroundNavigationBar.png */,
-				DFA750841A05191D00EBD6F6 /* backgroundNavigationBar@2x.png */,
 				DFA750851A05191D00EBD6F6 /* backgroundNewActivity.png */,
 				DFA750861A05191D00EBD6F6 /* backgroundNewActivity@2x.png */,
 				DFA750871A05191D00EBD6F6 /* backgroundTabBar.png */,
@@ -3085,7 +3085,7 @@
 				DFA7516B1A05191E00EBD6F6 /* buttonBack.png in Resources */,
 				DFA752021A05191E00EBD6F6 /* separatorComments@2x.png in Resources */,
 				DFA751AA1A05191E00EBD6F6 /* HomeTimelineBlank@2x.png in Resources */,
-				DFA752331A051C2200EBD6F6 /* DefaultAnypic.png in Resources */,
+				DF1A3D221A365E7E001E6029 /* DefaultAnypic.png in Resources */,
 				DF4D22BE19BFA5E10000F94E /* bc_s.png in Resources */,
 				84079AB717DCA35400ABA870 /* KalavrytaRegions.plist in Resources */,
 				DFA7517C1A05191E00EBD6F6 /* buttonFollowingSelected@2x.png in Resources */,
@@ -3348,6 +3348,7 @@
 				DFA751811A05191E00EBD6F6 /* buttonImageSettingsSelected.png in Resources */,
 				84F5BDBB1801730300ACE06E /* cell_comment_img.png in Resources */,
 				84F5BDBC1801730300ACE06E /* cell_photo_row.png in Resources */,
+				DF1A3D2B1A365F25001E6029 /* backgroundNavigationBar@2x.png in Resources */,
 				84F5BDBD1801730300ACE06E /* cell_date_img.png in Resources */,
 				DFA751E81A05191E00EBD6F6 /* load_more.png in Resources */,
 				DFA751551A05191E00EBD6F6 /* backgroundFindFriendsCell@2x.png in Resources */,
@@ -3363,6 +3364,7 @@
 				DFA751C71A05191E00EBD6F6 /* icon_settings_pressed@2x.png in Resources */,
 				DFA751751A05191E00EBD6F6 /* buttonFacebookSelected.png in Resources */,
 				DFA751BA1A05191E00EBD6F6 /* icon_home.png in Resources */,
+				DF1A3D2A1A365F25001E6029 /* backgroundNavigationBar.png in Resources */,
 				DF4D230919BFA5E10000F94E /* all_70.html in Resources */,
 				84F5BDD21801734400ACE06E /* like_done.png in Resources */,
 				DFA752041A05191E00EBD6F6 /* separatorTimeline@2x.png in Resources */,
@@ -3403,7 +3405,6 @@
 				DFA751601A05191E00EBD6F6 /* backgroundNewActivity@2x.png in Resources */,
 				DF4D232219BFA5E10000F94E /* functions_69.html in Resources */,
 				DF4D233219BFA5E10000F94E /* search.css in Resources */,
-				DFA7515D1A05191E00EBD6F6 /* backgroundNavigationBar.png in Resources */,
 				8454DE89180DD150001AC6B9 /* intro_info.png in Resources */,
 				DFA7516F1A05191E00EBD6F6 /* buttonCamera.png in Resources */,
 				DF4D22B919BFA5E10000F94E /* _flurry_8h_source.html in Resources */,
@@ -3492,7 +3493,7 @@
 				DFA751EA1A05191E00EBD6F6 /* login_bg.png in Resources */,
 				DF4D22C219BFA5E10000F94E /* classes.html in Resources */,
 				DFA752101A05191E00EBD6F6 /* tab_bar_bg@2x.png in Resources */,
-				DFA752341A051C2200EBD6F6 /* DefaultAnypic@2x.png in Resources */,
+				DF1A3D231A365E7E001E6029 /* DefaultAnypic@2x.png in Resources */,
 				84C6B24F1819D591002E05AA /* intro_track.png in Resources */,
 				8437F7F718382A850072DB1A /* cell_back_triangle_up.png in Resources */,
 				84C6B2501819D591002E05AA /* intro_news.png in Resources */,
@@ -3536,7 +3537,6 @@
 				84A014C61821017500D15F95 /* PickerShadow.png in Resources */,
 				DFA751F01A05191E00EBD6F6 /* MainWindow.xib in Resources */,
 				DF4D22D919BFA5E10000F94E /* ftv2link.png in Resources */,
-				DFA7515E1A05191E00EBD6F6 /* backgroundNavigationBar@2x.png in Resources */,
 				DFA751911A05191E00EBD6F6 /* CellLoadMore.png in Resources */,
 				DFA7514B1A05191E00EBD6F6 /* anypic-512.png in Resources */,
 				DFA7521A1A05191E00EBD6F6 /* timeline_separator_dark@2x.png in Resources */,
