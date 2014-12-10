@@ -212,7 +212,7 @@
     
     [PFPush handlePush:userInfo];
     
-    _notif_text = [userInfo objectForKey:@"offer"];
+ /*   _notif_text = [userInfo objectForKey:@"offer"];
     
     if ( application.applicationState == UIApplicationStateActive ){
         // app was already in the foreground
@@ -234,7 +234,7 @@
             message.delegate=self;
             [message show];
         }
-    }
+    }*/
     
 }
 
