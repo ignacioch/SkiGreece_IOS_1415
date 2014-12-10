@@ -132,7 +132,14 @@ typedef enum {
         
     // Combine the two queries with an OR
     //PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:friendsQuery, parseEmployeeQuery, nil]];
-    PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:friendsQuery, nil]];
+    
+    
+    // removing user from the list that is about to follow
+    
+    NSMutableArray *removingSelf = [NSMutableArray arrayWithArray:[NSArray arrayWithObjects:friendsQuery, nil]];
+    [removingSelf removeObject:[[PFUser currentUser] objectForKey:kPAPUserFacebookIDKey]];
+
+    PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:removingSelf, nil]];
     query.cachePolicy = kPFCachePolicyNetworkOnly;
     
     if (self.objects.count == 0) {
