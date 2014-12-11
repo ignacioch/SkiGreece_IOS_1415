@@ -13,6 +13,7 @@
 #import "PAPFindFriendsViewController.h"
 #import "PAPAccountViewController.h"
 #import "PAPActivityFeedViewController.h"
+#import "PAPEditPhotoViewController.h"
 #import "VTPhotoDetailsViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
@@ -55,6 +56,8 @@
 @property (nonatomic, strong) PAPFindFriendsViewController *findFriendViewController;
 @property (nonatomic, strong) PAPAccountViewController *myprofileViewController;
 @property (nonatomic, strong) PAPActivityFeedViewController *activityController;
+@property (nonatomic, strong) PAPEditPhotoViewController *editPhotoController;
+
 
 // true when opening activity from a notification
 // make sure you set it to false when view opened

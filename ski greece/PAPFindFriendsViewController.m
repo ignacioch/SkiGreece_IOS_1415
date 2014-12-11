@@ -122,7 +122,8 @@ typedef enum {
     // Query for all friends you have on facebook and who are using the app
     PFQuery *friendsQuery = [PFUser query];
     //[friendsQuery whereKey:kPAPUserFacebookIDKey containedIn:facebookFriends];
-    [friendsQuery whereKeyExists:kPAPUserFacebookIDKey];
+    //[friendsQuery whereKeyExists:kPAPUserFacebookIDKey];
+    [friendsQuery whereKey:kPAPUserFacebookIDKey notEqualTo:[[PFUser currentUser] objectForKey:kPAPUserFacebookIDKey]];
     
     // Query for all Parse employees
     /*NSMutableArray *parseEmployees = [[NSMutableArray alloc] initWithArray:kPAPParseEmployeeAccounts];
@@ -133,13 +134,7 @@ typedef enum {
     // Combine the two queries with an OR
     //PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:friendsQuery, parseEmployeeQuery, nil]];
     
-    
-    // removing user from the list that is about to follow
-    
-    NSMutableArray *removingSelf = [NSMutableArray arrayWithArray:[NSArray arrayWithObjects:friendsQuery, nil]];
-    [removingSelf removeObject:[[PFUser currentUser] objectForKey:kPAPUserFacebookIDKey]];
-
-    PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:removingSelf, nil]];
+    PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:friendsQuery, nil]];
     query.cachePolicy = kPFCachePolicyNetworkOnly;
     
     if (self.objects.count == 0) {

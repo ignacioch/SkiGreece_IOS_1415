@@ -1689,6 +1689,39 @@
             </objects>
             <point key="canvasLocation" x="-31" y="654"/>
         </scene>
+        <!--Edit Photo View Controller-->
+        <scene sceneID="Xoq-v3-atT">
+            <objects>
+                <viewController storyboardIdentifier="VTEditPhoto" id="jzD-XT-FaG" customClass="VTEditPhotoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RQS-ir-azU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Dgt-uY-bG4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="L18-dT-Cxo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" id="VSZ-Np-JZZ">
+                                <rect key="frame" x="0.0" y="41" width="320" height="439"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImage" destination="Dgt-uY-bG4" id="1HG-ya-JS4"/>
+                        <outlet property="containerView" destination="VSZ-Np-JZZ" id="SVe-My-8zU"/>
+                        <outlet property="navBar" destination="L18-dT-Cxo" id="s3G-lp-S6e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Cn-Gv-Rta" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2595" y="498"/>
+        </scene>
         <!--Photo Details View Controller-->
         <scene sceneID="GZy-Jv-OCf">
             <objects>

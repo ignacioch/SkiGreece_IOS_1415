@@ -14,7 +14,8 @@
 #import "MBProgressHUD.h"
 #import "VTFindFriendsViewController.h"
 #import "VTActivityViewController.h"
-//#import "PAPAccountViewController.h"
+//#import "PAPAccountViewController.h
+#import "VTEditPhotoViewController.h"
 
 
 @interface VTHomeViewController ()
@@ -241,11 +242,18 @@ typedef enum {
     
     UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
     
-    PAPEditPhotoViewController *viewController = [[PAPEditPhotoViewController alloc] initWithImage:image];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    VTEditPhotoViewController *vc=[sb instantiateViewControllerWithIdentifier:@"VTEditPhoto"];
+    vc.image = image;
+    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:vc animated:YES completion:NULL];
+
+    
+    /*PAPEditPhotoViewController *viewController = [[PAPEditPhotoViewController alloc] initWithImage:image];
     [viewController setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
     
     NSLog(@"Switching to the edit photo view controller");
-    [self presentViewController:viewController animated:YES completion:NULL];
+    [self presentViewController:viewController animated:YES completion:NULL];*/
     
 }
 

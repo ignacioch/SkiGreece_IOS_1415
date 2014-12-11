@@ -296,6 +296,7 @@
 		DF1A3D231A365E7E001E6029 /* DefaultAnypic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF1A3D211A365E7E001E6029 /* DefaultAnypic@2x.png */; };
 		DF1A3D2A1A365F25001E6029 /* backgroundNavigationBar.png in Resources */ = {isa = PBXBuildFile; fileRef = DF1A3D281A365F25001E6029 /* backgroundNavigationBar.png */; };
 		DF1A3D2B1A365F25001E6029 /* backgroundNavigationBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF1A3D291A365F25001E6029 /* backgroundNavigationBar@2x.png */; };
+		DF1A3D2E1A3915EF001E6029 /* VTEditPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1A3D2D1A3915EF001E6029 /* VTEditPhotoViewController.m */; };
 		DF2F1F411A222223008F9C42 /* VTFindFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2F1F401A222223008F9C42 /* VTFindFriendsViewController.m */; };
 		DF4D22B819BFA5E10000F94E /* libFlurry_5.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4D221E19BFA5E10000F94E /* libFlurry_5.3.0.a */; };
 		DF4D22B919BFA5E10000F94E /* _flurry_8h_source.html in Resources */ = {isa = PBXBuildFile; fileRef = DF4D222019BFA5E10000F94E /* _flurry_8h_source.html */; };
@@ -1073,6 +1074,8 @@
 		DF1A3D211A365E7E001E6029 /* DefaultAnypic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DefaultAnypic@2x.png"; sourceTree = "<group>"; };
 		DF1A3D281A365F25001E6029 /* backgroundNavigationBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundNavigationBar.png; sourceTree = "<group>"; };
 		DF1A3D291A365F25001E6029 /* backgroundNavigationBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundNavigationBar@2x.png"; sourceTree = "<group>"; };
+		DF1A3D2C1A3915EF001E6029 /* VTEditPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTEditPhotoViewController.h; path = "ski greece/ViewControllers/CommunityControllers/TakePhoto/VTEditPhotoViewController.h"; sourceTree = SOURCE_ROOT; };
+		DF1A3D2D1A3915EF001E6029 /* VTEditPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTEditPhotoViewController.m; path = "ski greece/ViewControllers/CommunityControllers/TakePhoto/VTEditPhotoViewController.m"; sourceTree = SOURCE_ROOT; };
 		DF2F1F3F1A222223008F9C42 /* VTFindFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTFindFriendsViewController.h; path = "ski greece/ViewControllers/CommunityControllers/Settings/VTFindFriendsViewController.h"; sourceTree = SOURCE_ROOT; };
 		DF2F1F401A222223008F9C42 /* VTFindFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTFindFriendsViewController.m; path = "ski greece/ViewControllers/CommunityControllers/Settings/VTFindFriendsViewController.m"; sourceTree = SOURCE_ROOT; };
 		DF4D221D19BFA5E10000F94E /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
@@ -2960,6 +2963,8 @@
 			children = (
 				DFFB535919FEF6DE00A7549B /* PAPEditPhotoViewController.h */,
 				DFFB535A19FEF6DE00A7549B /* PAPEditPhotoViewController.m */,
+				DF1A3D2C1A3915EF001E6029 /* VTEditPhotoViewController.h */,
+				DF1A3D2D1A3915EF001E6029 /* VTEditPhotoViewController.m */,
 			);
 			name = TakePhoto;
 			sourceTree = "<group>";
@@ -3632,6 +3637,7 @@
 				84E01D4F18449BD200914E37 /* DriveMeScreen.m in Sources */,
 				DF4D22CC19BFA5E10000F94E /* dir_b86bf819e2c6a39341ecbbda7786b67f.js in Sources */,
 				DF4D22C819BFA5E10000F94E /* dir_76d8c993b5c02e95c4e35abaeea2f0e9.js in Sources */,
+				DF1A3D2E1A3915EF001E6029 /* VTEditPhotoViewController.m in Sources */,
 				DF4D232119BFA5E10000F94E /* functions_67.js in Sources */,
 				84841B4F18428B7C0078A9A9 /* NotificationInfo.m in Sources */,
 				DF4D231019BFA5E10000F94E /* all_76.js in Sources */,
