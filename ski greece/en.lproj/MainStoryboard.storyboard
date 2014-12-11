@@ -1949,12 +1949,23 @@
                                     <action selector="settingsButtonAction:" destination="JWN-0d-7cn" eventType="touchUpInside" id="PSh-I9-GsX"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xgn-kQ-Qjo">
+                                <rect key="frame" x="5" y="9" width="52" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="back_button.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="JWN-0d-7cn" eventType="touchUpInside" id="7Ta-nl-nDj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="activityButton" destination="mq1-X8-s6X" id="CNk-IR-Qsl"/>
+                        <outlet property="backButton" destination="xgn-kQ-Qjo" id="fVJ-fC-i7w"/>
                         <outlet property="containerView" destination="sKr-Pq-dHC" id="ekm-DO-8fm"/>
                         <outlet property="settingsButton" destination="D9F-kC-1Yw" id="RMu-7f-5mX"/>
                         <outlet property="takePhotoBtn" destination="WCf-9a-hNP" id="8B0-jp-03W"/>
@@ -3302,6 +3313,7 @@
     </scenes>
     <resources>
         <image name="DefaultAnypic.png" width="320" height="480"/>
+        <image name="back_button.png" width="52" height="32"/>
         <image name="back_button_new.png" width="33" height="33"/>
         <image name="backgroundNavigationBar.png" width="320" height="44"/>
         <image name="background_no_back_4.png" width="640" height="960"/>

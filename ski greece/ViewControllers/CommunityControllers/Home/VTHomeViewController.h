@@ -17,6 +17,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (weak, nonatomic) IBOutlet UIButton *takePhotoBtn;
 @property (weak, nonatomic) IBOutlet UIButton *activityButton;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+
+
+
+- (IBAction)backButtonAction:(id)sender;
 - (IBAction)settingsButtonAction:(id)sender;
 - (IBAction)takePhotoAction:(id)sender;
 - (IBAction)activityAction:(id)sender;

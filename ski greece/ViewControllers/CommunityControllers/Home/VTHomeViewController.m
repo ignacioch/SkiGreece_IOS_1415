@@ -126,6 +126,10 @@ typedef enum {
 
 
 
+- (IBAction)backButtonAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (IBAction)settingsButtonAction:(id)sender {
     self.settingsActionSheetDelegate = [[PAPSettingsActionSheetDelegate alloc] initWithNavigationController:self.navigationController];
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
