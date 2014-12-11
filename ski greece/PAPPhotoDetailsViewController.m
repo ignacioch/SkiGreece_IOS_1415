@@ -90,13 +90,7 @@ static const CGFloat kPAPCellInsetWidth = 20.0f;
     commentTextField.delegate = self;
     self.tableView.tableFooterView = footerView;
 
-    /*if (NSClassFromString(@"UIActivityViewController")) {
-        // Use UIActivityViewController if it is available (iOS 6 +)
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(activityButtonAction:)];
-    } else if ([self currentUserOwnsPhoto]) {
-        // Else we only want to show an action button if the user owns the photo and has permission to delete it.
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonAction:)];
-    }*/
+    
     
     // Register to be notified when the keyboard will be shown to scroll the view
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
