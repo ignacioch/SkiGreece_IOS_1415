@@ -8,6 +8,7 @@
 
 #import "VTPhotoDetailsViewController.h"
 #import "AppDelegate.h"
+#import "TrackDayMenuViewController.h"
 
 enum ActionSheetTags {
     MainActionSheetTag = 0,
@@ -30,7 +31,11 @@ enum ActionSheetTags {
     // check whether we are from push notif or usual opening
     
     if (del.openedFromNotification) {
-        del.openedFromNotification = NO;
+        
+        // remove the image
+        // make text to be bold and set title to Done
+        
+        [self.backBtn setTitle:@"Done" forState:UIControlStateNormal];
         self.photo = del.photoFromNotif;
     }
     
@@ -77,7 +82,20 @@ enum ActionSheetTags {
 }
 
 - (IBAction)backButtonAction:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+
+    AppDelegate *del = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    if (del.openedFromNotification) {
+        del.openedFromNotification = NO;
+        
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        TrackDayMenuViewController *vc=[sb instantiateViewControllerWithIdentifier:@"OpenScreen"];
+        vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        [self presentViewController:vc animated:YES completion:NULL];
+        
+        
+    } else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 
@@ -102,8 +120,16 @@ enum ActionSheetTags {
         [self.photo deleteEventually];
     }];
     [[NSNotificationCenter defaultCenter] postNotificationName:PAPPhotoDetailsViewControllerUserDeletedPhotoNotification object:[self.photo objectId]];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+    AppDelegate *del = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    if (del.openedFromNotification) {
+        del.openedFromNotification = NO;
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        TrackDayMenuViewController *vc=[sb instantiateViewControllerWithIdentifier:@"OpenScreen"];
+        vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        [self presentViewController:vc animated:YES completion:NULL];
+    } else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }}
 
 #pragma mark - UIActionSheetDelegate
 
