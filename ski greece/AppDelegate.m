@@ -70,25 +70,6 @@
     [Flurry setCrashReportingEnabled:YES];
     
     
-    // Extract the notification data
-    /*NSDictionary *notificationPayload = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
-    
-    // Create a pointer to the Photo object
-    _notif_text = [notificationPayload objectForKey:@"text"];
-    
-    NSLog(@"Notification message in didFinishLaunching:%@",notificationPayload);
-    
-    if (_notif_text == nil || [_notif_text isEqual:[NSNull null]]) {
-        NSLog(@"Notification text is null.");
-    } else {
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Προσφορά!"
-                                                          message:_notif_text
-                                                         delegate:nil
-                                                cancelButtonTitle:@"OK"
-                                                otherButtonTitles: nil];
-        message.delegate=self;
-        [message show];
-    }*/
     
     [self handlePush:launchOptions]; // Call the handle push method with the payload
     
@@ -108,18 +89,33 @@
 
 - (void)handlePush:(NSDictionary *)launchOptions {
     // Extract the notification payload dictionary
-    NSDictionary *remoteNotificationPayload = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    //NSDictionary *remoteNotificationPayload = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    NSDictionary *remoteNotificationPayload = launchOptions;
+    
+    if (IS_DEVELOPER) NSLog(@"Notification Received : %@",launchOptions);
+    
+    if (IS_DEVELOPER) NSLog(@"remoteNotificationPayload :%@",(remoteNotificationPayload)? @"TRUE" : @"FALSE");
+    if (IS_DEVELOPER) NSLog(@"pfuser :%@",([PFUser currentUser])? @"TRUE" : @"FALSE");
+    
+    
     
     // Check if the app was open from a notification and a user is logged in
     if (remoteNotificationPayload && [PFUser currentUser]) {
         
+        if (IS_DEVELOPER) NSLog(@"Check if the app was open from a notification and a user is logged in");
+
+        
         // Push the referenced photo into view
         NSString *photoObjectId = [remoteNotificationPayload objectForKey:kPAPPushPayloadPhotoObjectIdKey];
+        if (IS_DEVELOPER) NSLog(@"PhotoObjectId : %@",photoObjectId);
+        
         if (photoObjectId && photoObjectId.length != 0) {
             PFQuery *query = [PFQuery queryWithClassName:kPAPPhotoClassKey];
             [query getObjectInBackgroundWithId:photoObjectId block:^(PFObject *photo, NSError *error) {
                 if (!error) {
 
+                    if (IS_DEVELOPER) NSLog(@"Opeening VTPhotoDetails from within the notification");
+                    
                     // opening view from push notification
                     openedFromNotification = YES;
                     photoFromNotif = photo;
@@ -128,17 +124,7 @@
                     self.window.rootViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"VTPhotoDetails"];
 
                     
-                    /*UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-                     VTPhotoDetailsViewController *vc=[sb instantiateViewControllerWithIdentifier:@"VTPhotoDetails"];
-                     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-                     vc.photo = photo ;*/
-                    
-                    //NSString *storyboardId = isLoggedIn ? @"MainIdentifier" : @"LoginIdentifier";
-                    //self.window.rootViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:storyboardId];
-                    
-                    //UINavigationController *homeNavigationController = [[self.tabBarController viewControllers] objectAtIndex:PAPHomeTabBarItemIndex];
-                    //[self.tabBarController setSelectedViewController:homeNavigationController];
-                    //[homeNavigationController pushViewController:detailViewController animated:YES];
+                
                 }
             }];
         }
@@ -212,30 +198,21 @@
     
     [PFPush handlePush:userInfo];
     
- /*   _notif_text = [userInfo objectForKey:@"offer"];
+    if (IS_DEVELOPER) NSLog(@"didReceiveRemoteNotification");
+    
     
     if ( application.applicationState == UIApplicationStateActive ){
         // app was already in the foreground
-        NSLog(@"Notification message in didReceive. App is in foreground:%@",userInfo);
-        
+       if (IS_DEVELOPER) NSLog(@"Notification message in didReceive. App is in foreground:%@",userInfo);
+    
     }
     else {
         // app was just brought from background to foreground
-        NSLog(@"Notification message in didReceive. App was in background:%@",userInfo);
+        if (IS_DEVELOPER) NSLog(@"Notification message in didReceive. App was in background:%@",userInfo);
         
-        if (_notif_text == nil || [_notif_text isEqual:[NSNull null]]) {
-            NSLog(@"Notification text is null.");
-        } else {
-            UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Προσφορά!"
-                                                              message:_notif_text
-                                                             delegate:nil
-                                                    cancelButtonTitle:@"OK"
-                                                    otherButtonTitles: nil];
-            message.delegate=self;
-            [message show];
-        }
-    }*/
-    
+        [self handlePush:userInfo];
+        
+    }
 }
 
 #pragma mark - AppDelegate
