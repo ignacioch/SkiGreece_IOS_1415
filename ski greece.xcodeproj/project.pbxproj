@@ -21,7 +21,6 @@
 		841245E5168CC1FF007C24C5 /* my_ski_greece_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 841245A4168CC1FF007C24C5 /* my_ski_greece_background.png */; };
 		841245EE168CC1FF007C24C5 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 841245AD168CC1FF007C24C5 /* splash.png */; };
 		841FD1EE1815C04D007D6579 /* LocalPosts.m in Sources */ = {isa = PBXBuildFile; fileRef = 841FD1ED1815C04D007D6579 /* LocalPosts.m */; };
-		841FD1F01815C06B007D6579 /* LocalPosts.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841FD1EF1815C06B007D6579 /* LocalPosts.xib */; };
 		841FD1F51815D833007D6579 /* coffee.png in Resources */ = {isa = PBXBuildFile; fileRef = 841FD1F11815D832007D6579 /* coffee.png */; };
 		841FD1F61815D833007D6579 /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = 841FD1F21815D832007D6579 /* food.png */; };
 		841FD1F71815D833007D6579 /* hotel.png in Resources */ = {isa = PBXBuildFile; fileRef = 841FD1F31815D833007D6579 /* hotel.png */; };
@@ -726,7 +725,6 @@
 		841245AD168CC1FF007C24C5 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
 		841FD1EC1815C04D007D6579 /* LocalPosts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalPosts.h; sourceTree = "<group>"; };
 		841FD1ED1815C04D007D6579 /* LocalPosts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalPosts.m; sourceTree = "<group>"; };
-		841FD1EF1815C06B007D6579 /* LocalPosts.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocalPosts.xib; sourceTree = "<group>"; };
 		841FD1F11815D832007D6579 /* coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee.png; sourceTree = "<group>"; };
 		841FD1F21815D832007D6579 /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
 		841FD1F31815D833007D6579 /* hotel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hotel.png; sourceTree = "<group>"; };
@@ -2266,7 +2264,6 @@
 				849BB4F31815171B007FD1FF /* LocalAPI.m */,
 				841FD1EC1815C04D007D6579 /* LocalPosts.h */,
 				841FD1ED1815C04D007D6579 /* LocalPosts.m */,
-				841FD1EF1815C06B007D6579 /* LocalPosts.xib */,
 			);
 			name = NearbyPlaces;
 			sourceTree = "<group>";
@@ -3453,7 +3450,6 @@
 				84841B4C18427F7B0078A9A9 /* main_screen_header_iphone5.png in Resources */,
 				DF4D22DB19BFA5E10000F94E /* ftv2mnode.png in Resources */,
 				DFA7514C1A05191E00EBD6F6 /* AvatarPlaceholder.png in Resources */,
-				841FD1F01815C06B007D6579 /* LocalPosts.xib in Resources */,
 				DFA751B31A05191E00EBD6F6 /* icon_add_comment@2x.png in Resources */,
 				841FD1F51815D833007D6579 /* coffee.png in Resources */,
 				DFA751C91A05191E00EBD6F6 /* icon_tick@2x.png in Resources */,

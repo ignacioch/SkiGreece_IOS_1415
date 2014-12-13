@@ -67,8 +67,7 @@
     //self = [super init];
     if (self) {
         // Custom initialization
-        /*self.titleArray = [NSMutableArray arrayWithObjects:@"All", @"Today", @"Thursday", @"Wednesday", @"Tuesday", @"Monday", nil];
-		indexCount = 0;*/
+        
     }
     return self;
 }
@@ -83,19 +82,14 @@
     
     indexCount = 0;
     selectedPlace=@"all";
-    //self.view.backgroundColor = [UIColor blackColor];
     
     CGFloat margin = 0.0f;
 	CGFloat width = (self.view.bounds.size.width - (margin * 2.0f));
 	CGFloat pickerHeight = 40.0f;
 	CGFloat x = margin;
 	CGFloat y = 80.0f;
-	CGFloat spacing = 25.0f;
+	//CGFloat spacing = 25.0f;
 	CGRect tmpFrame = CGRectMake(x, y, width, pickerHeight);
-    
-    //	CGFloat width = 200.0f;
-    //	CGFloat x = (self.view.frame.size.width - width) / 2.0f;
-    //	CGRect tmpFrame = CGRectMake(x, 150.0f, width, 40.0f);
     
 	self.pickerView = [[V8HorizontalPickerView alloc] initWithFrame:tmpFrame];
 	self.pickerView.backgroundColor   = [UIColor darkGrayColor];
@@ -134,6 +128,7 @@
     end_arrowTopLeftY = 182.0f;
     
     
+    //??FIXME - To be taken from strings or constants
     tableData = [NSArray arrayWithObjects:@"Όλες οι περιοχές",@"Χ.Κ. Παρνασσού",@"Χ.Κ. Καλαβρύτων",@"Χ.Κ. Βασιλίτσας",@"Χ.Κ. Καιμακτσαλάν",@"Χ.Κ. Σελίου",@"Χ.Κ. Πηλίου",@"Χ.Κ. 3-5 Πηγάδια",@"Χ.Κ. Πισοδερίου",@"Χ.Κ. Καρπενησίου",@"Χ.Κ. Ελατοχωρίου",@"Χ.Κ. Λαιλιά",@"Χ.Κ. Μαινάλου",@"Χ.Κ. Φαλακρού",@"Χ.Κ. Ανηλίου",@"Χ.Κ. Περτουλίου",@"Αθήνα",@"Θεσσαλονίκη",nil];
     tableDataEng = [NSArray arrayWithObjects:@"all",@"parnassos",@"kalavryta",@"vasilitsa",@"kaimaktsalan",@"seli",@"pilio",@"pigadia",@"pisoderi",@"karpenisi",@"elatohori",@"lailias",@"mainalo",@"falakro",@"metsovo",@"pertouli",@"athens",@"thessaloniki", nil];
     
@@ -185,6 +180,9 @@
     {
         [self setNeedsStatusBarAppearanceUpdate];
     }
+    
+    // Register Class for Cell Reuse Identifier
+    //[self.postsTable registerClass:[LocalPosts class] forCellReuseIdentifier:@"LocalPostsCell"];
     
     
     /*fix it for iphone5/ios7*/
@@ -273,7 +271,7 @@
                                              nil]
                                onCompletion:^(NSDictionary *json) {
                                    //got stream
-                                   NSLog(@"got stream with total number of data: %d",[[json objectForKey:@"result"] count]);
+                                   NSLog(@"got stream with total number of data: %lu",(unsigned long)[[json objectForKey:@"result"] count]);
                                    NSLog(@"Printing result:%@",[[json objectForKey:@"result"] description]);
                                    dataFromServer=[json objectForKey:@"result"];
                                    [self loadArrays:dataFromServer];
@@ -305,7 +303,7 @@
 
 #pragma mark - HorizontalPickerView DataSource Methods
 - (NSInteger)numberOfElementsInHorizontalPickerView:(V8HorizontalPickerView *)picker {
-    NSLog(@"Title array count: %d",[self.titleArray count]);
+    NSLog(@"Title array count: %lu",(unsigned long)[self.titleArray count]);
 	return [self.titleArray count];
 }
 
@@ -325,7 +323,7 @@
 }
 
 - (void)horizontalPickerView:(V8HorizontalPickerView *)picker didSelectElementAtIndex:(NSInteger)index {
-    NSLog(@"Selected index %d",index);
+    NSLog(@"Selected index %ld",(long)index);
     selectedIndex=index;
     [self updateArrays:index];
     [self updateMap:index];
@@ -542,7 +540,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (tableView == self.postsTable) {
+    //if (tableView == self.postsTable) {
         NSDictionary *photo;
         if (selectedIndex == 0) {
             photo = [dataFromServer objectAtIndex:indexPath.row];
@@ -566,28 +564,35 @@
         NSString * name= [photo objectForKey:@"name"];
         NSString * text= [photo objectForKey:@"title"];
         
-        static NSString *CellIdentifier1 = @"LocalPosts";
-                
-        LocalPosts *cell = (LocalPosts *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier1];
-        if (cell == nil)
-        {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LocalPosts" owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-        }
+        // Custom Cell init - using tags for labels/imageviews
+        // The cell structure is visible in the storyboard
+        
+        UITableViewCell *cell = [self.postsTable dequeueReusableCellWithIdentifier:@"LocalPostsCell" forIndexPath:indexPath];
+
+        UILabel *nameLabel = (UILabel *)[cell viewWithTag:100];
+        
+        UILabel *descriptionLabel = (UILabel *)[cell viewWithTag:101];
+        
         if (name == nil || [name isEqual:[NSNull null]]) {
             // handle the place not being available
-            cell.name.text= @"";
+            nameLabel.text= @"";
         } else {
-            cell.name.text=name;    
+            nameLabel.text = name;
         }
         
         if (text == nil || [text isEqual:[NSNull null]]) {
             // handle the place not being available
-            cell.description.text= @"";
+            descriptionLabel.text = @"";
         } else {
-            cell.description.text=text;
+            descriptionLabel.text = text;
         }
         
+        UIImageView *businessImageView = (UIImageView *)[cell viewWithTag:102];
+        businessImageView.frame = CGRectMake(0.0f, 0.0f, 125.0f, 78.0f);
+    
+
+    
+    
         //load the image
         NSURL* imageURL = [[LocalAPI sharedInstance] urlForImageWithId:IdPost];
         
@@ -599,7 +604,7 @@
                                                               UIImageView* thumbView = [[UIImageView alloc] initWithImage: image];
                                                               thumbView.frame = CGRectMake(0,0,90,90);
                                                               thumbView.contentMode = UIViewContentModeScaleAspectFit;
-                                                              cell.image.image=thumbView.image;
+                                                              businessImageView.image=thumbView.image;
                                                           }];
         
         NSOperationQueue* queue = [[NSOperationQueue alloc] init];
@@ -609,19 +614,7 @@
         
         return cell;
         
-    } /*else {
-        static NSString *simpleTableIdentifier = @"SimpleTableItem";
-        
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-        
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-        }
-        
-        cell.textLabel.text =[NSString stringWithFormat:@"%@",[tableData objectAtIndex:indexPath.row]];
-        
-        return cell;
-    }*/
+    //}
     
 }
 

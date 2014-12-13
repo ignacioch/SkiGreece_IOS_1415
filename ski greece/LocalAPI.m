@@ -56,6 +56,7 @@
                               parameters:params
                constructingBodyWithBlock: ^(id <AFMultipartFormData>formData) {
                }];
+    if (IS_DEVELOPER) NSLog(@"ApiUrl for Nearby : %@",apiRequest);
     AFJSONRequestOperation* operation = [[AFJSONRequestOperation alloc] initWithRequest: apiRequest];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         //success!
