@@ -10,9 +10,11 @@
 
 //the web location of the service
 #define kAPIHost @"http://www.vimateam.gr/projects/skigreece_backup"
-//#define kAPIHost @"http://localhost:8888/"
-//#define kAPIPath @"nearby/"
 #define kAPIPath @"nearby/"
+
+
+#define kAPIHost_Images @"http://vimateam.gr/projects/skigreece_201415_demo"
+#define kAPIPath_Images @"nearby/"
 
 @implementation LocalAPI
 
@@ -71,8 +73,8 @@
 }
 
 -(NSURL*)urlForImageWithId:(int)IdPhoto{
-    NSString* urlString = [NSString stringWithFormat:@"%@/%@images/%d.jpg",
-                           kAPIHost, kAPIPath, IdPhoto
+    NSString* urlString = [NSString stringWithFormat:@"%@/%@thumbnails/%d.jpg",
+                           kAPIHost_Images, kAPIPath_Images, IdPhoto
                            ];
     NSLog(@"Trying to open url:%@",urlString);
     return [NSURL URLWithString:urlString];
