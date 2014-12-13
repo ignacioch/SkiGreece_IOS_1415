@@ -9,7 +9,10 @@
 #import "LocalAPI.h"
 
 //the web location of the service
-#define kAPIHost @"http://www.vimateam.gr/projects/skigreece_backup"
+//#define kAPIHost @"http://www.vimateam.gr/projects/skigreece_backup"
+//#define kAPIPath @"nearby/"
+
+#define kAPIHost @"http://ec2-54-194-95-194.eu-west-1.compute.amazonaws.com/SkiGreece_201415/backend"
 #define kAPIPath @"nearby/"
 
 
