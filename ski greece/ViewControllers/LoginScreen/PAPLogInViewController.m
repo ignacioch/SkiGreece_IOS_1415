@@ -32,7 +32,7 @@
                                                  attributes:@{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Medium" size:18.0f]}
                                                     context:nil].size;
     
-    UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake( ([UIScreen mainScreen].bounds.size.width - textSize.width)/2.0f, 160.0f, textSize.width, textSize.height)];
+    UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake( ([UIScreen mainScreen].bounds.size.width - textSize.width)/2.0f, 380.0f, textSize.width, textSize.height)];
     [textLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:18.0f]];
     [textLabel setLineBreakMode:NSLineBreakByWordWrapping];
     [textLabel setNumberOfLines:0];
@@ -44,8 +44,16 @@
     [self.logInView setLogo:nil];
     [self.logInView addSubview:textLabel];
     
+    
     self.fields = PFLogInFieldsUsernameAndPassword;
     self.logInView.usernameField.placeholder = @"Enter your email";
+}
+
+-(void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    self.logInView.facebookButton.frame = CGRectMake(self.logInView.facebookButton.frame.origin.x, 330.0f, self.logInView.facebookButton.frame.size.width, self.logInView.facebookButton.frame.size.height);
+    
+    if (IS_DEVELOPER) NSLog(@"Facebook button is %@ . Frame is (%f,%f,%f,%f) ", (self.logInView.facebookButton.hidden) ? @"Hidden" : @"Visible",self.logInView.facebookButton.frame.origin.x, self.logInView.facebookButton.frame.origin.y, self.logInView.facebookButton.frame.size.width, self.logInView.facebookButton.frame.size.height);
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
