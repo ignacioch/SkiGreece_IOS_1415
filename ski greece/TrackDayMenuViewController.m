@@ -71,6 +71,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    if (IS_DEVELOPER) {
+        NSLog(@"Device is : %@", (IS_IPHONE_4_OR_LESS) ? @"iPhone4" : (IS_IPHONE_5) ? @"iPhone5" : (IS_IPHONE_6) ? @"iPhone6" : (IS_IPHONE_6P) ? @ "iPhone6+" : @"Unknown device");
+    }
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     if([defaults objectForKey:@"ActiveUsername"] == nil) {

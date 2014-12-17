@@ -15,9 +15,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    if (IS_DEVELOPER) {
+        NSLog(@"SCREEN_WIDTH: %f", SCREEN_WIDTH);
+        NSLog(@"SCREEN_HEIGHT: %f", SCREEN_HEIGHT);
+        NSLog(@"SCREEN_MAX_LENGTH: %f", SCREEN_MAX_LENGTH);
+        NSLog(@"SCREEN_MIN_LENGTH: %f", SCREEN_MIN_LENGTH);
+        NSLog(@"main screen height : %f", [UIScreen mainScreen].bounds.size.height);
+        NSLog(@"main screen width : %f", [UIScreen mainScreen].bounds.size.width);
+    }
+    
+    
     // There is no documentation on how to handle assets with the taller iPhone 5 screen as of 9/13/2012
-    if ([UIScreen mainScreen].bounds.size.height > 480.0f) {
+    if ([UIScreen mainScreen].bounds.size.height > 568.0f) {
+        // for the iPhone 6
+        if (IS_DEVELOPER) NSLog(@"iPhone 6 device");
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundLogin-667h.png"]];
+    } else if ([UIScreen mainScreen].bounds.size.height > 480.0f) {
         // for the iPhone 5
+        if (IS_DEVELOPER) NSLog(@"iPhone 5 device");
         self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundLogin-568h.png"]];
     } else {
         self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundLogin.png"]];

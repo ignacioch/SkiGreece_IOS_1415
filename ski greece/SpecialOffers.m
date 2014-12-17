@@ -183,6 +183,8 @@
         
         NSURL* imageURL = [[OffersAPI sharedInstance] urlForImageWithId:(i+1)];
         
+        if (IS_DEVELOPER) NSLog(@"Offer : %d. Url is %@",i,imageURL);
+        
         UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320,_myScroll.frame.size.height)];
         [subview addSubview:imgView];
         

@@ -667,6 +667,7 @@
 		DFA752311A051C2200EBD6F6 /* DefaultAnypic-fbYOUR_FACEBOOK_APP_ID.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA7522B1A051C2200EBD6F6 /* DefaultAnypic-fbYOUR_FACEBOOK_APP_ID.png */; };
 		DFA752321A051C2200EBD6F6 /* DefaultAnypic-fbYOUR_FACEBOOK_APP_ID@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA7522C1A051C2200EBD6F6 /* DefaultAnypic-fbYOUR_FACEBOOK_APP_ID@2x.png */; };
 		DFA752371A09949500EBD6F6 /* PAPLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA752361A09949500EBD6F6 /* PAPLogInViewController.m */; };
+		DFA753D71A3F977F004BB1F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFA753D61A3F977F004BB1F9 /* Images.xcassets */; };
 		DFB50AA41A3A5A6200C4C36F /* back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = DFB50AA01A3A5A6200C4C36F /* back_button.png */; };
 		DFB50AA51A3A5A6200C4C36F /* back_button_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = DFB50AA11A3A5A6200C4C36F /* back_button_pressed.png */; };
 		DFB50AA61A3A5A6200C4C36F /* back_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DFB50AA21A3A5A6200C4C36F /* back_button@2x.png */; };
@@ -1454,6 +1455,7 @@
 		DFA7522C1A051C2200EBD6F6 /* DefaultAnypic-fbYOUR_FACEBOOK_APP_ID@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DefaultAnypic-fbYOUR_FACEBOOK_APP_ID@2x.png"; sourceTree = "<group>"; };
 		DFA752351A09949500EBD6F6 /* PAPLogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PAPLogInViewController.h; path = "ski greece/ViewControllers/LoginScreen/PAPLogInViewController.h"; sourceTree = SOURCE_ROOT; };
 		DFA752361A09949500EBD6F6 /* PAPLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PAPLogInViewController.m; path = "ski greece/ViewControllers/LoginScreen/PAPLogInViewController.m"; sourceTree = SOURCE_ROOT; };
+		DFA753D61A3F977F004BB1F9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DFB50AA01A3A5A6200C4C36F /* back_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button.png; sourceTree = "<group>"; };
 		DFB50AA11A3A5A6200C4C36F /* back_button_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button_pressed.png; sourceTree = "<group>"; };
 		DFB50AA21A3A5A6200C4C36F /* back_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_button@2x.png"; sourceTree = "<group>"; };
@@ -1827,6 +1829,7 @@
 				840F8F59181712800087B1D2 /* MainMapCell.h */,
 				840F8F5A181712800087B1D2 /* MainMapCell.m */,
 				DF0EC78119F7066000470040 /* ViewControllers */,
+				DFA753D61A3F977F004BB1F9 /* Images.xcassets */,
 			);
 			path = "Ski Greece";
 			sourceTree = "<group>";
@@ -3118,6 +3121,7 @@
 				846BFC1B17E11A2700DEA985 /* KalavrytaRoute1.plist in Resources */,
 				DF4D234819BFA5E10000F94E /* Flurry-LICENSE.txt in Resources */,
 				DFA751E61A05191E00EBD6F6 /* iTunesArtwork in Resources */,
+				DFA753D71A3F977F004BB1F9 /* Images.xcassets in Resources */,
 				DF4D233B19BFA5E10000F94E /* tab_h.png in Resources */,
 				847CD9F717E5124700A97DDB /* KalavrytaRoute2.plist in Resources */,
 				84D70223183C158F00F827FC /* tutorial_1.png in Resources */,
@@ -3779,7 +3783,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "Ski Greece";
@@ -3814,7 +3818,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "Ski Greece";
@@ -3827,6 +3831,8 @@
 		84685A4015F6AC3100E6E4FC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: marios papanikolopoulos (9SCJ3ARUY4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: marios papanikolopoulos (9SCJ3ARUY4)";
@@ -3866,6 +3872,8 @@
 		84685A4115F6AC3100E6E4FC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: I CHARALAMPIDIS (P89PMWUXH4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: I CHARALAMPIDIS (P89PMWUXH4)";
@@ -3926,7 +3934,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "Ski Greece";
@@ -3940,6 +3948,8 @@
 		84D64AC71611B9E200E10C46 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: I CHARALAMPIDIS (P89PMWUXH4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: I CHARALAMPIDIS (P89PMWUXH4)";
