@@ -26,6 +26,36 @@
 #define BASIC_BUTTON_WIDTH 102.0f
 #define BASIC_BUTTON_HEIGHT 102.0f
 
+#define LIVE_NEWS_BTN_X_IPHONE_5 50.0f
+#define LIVE_NEWS_BTN_X_IPHONE_6 50.0f
+#define LIVE_NEWS_BTN_Y_IPHONE_5 81.0f
+#define LIVE_NEWS_BTN_Y_IPHONE_6 81.0f
+
+#define TRACK_DAY_BTN_X_IPHONE_5 181.0f
+#define TRACK_DAY_BTN_X_IPHONE_6 181.0f
+#define TRACK_DAY_BTN_Y_IPHONE_5 LIVE_NEWS_BTN_Y_IPHONE_5
+#define TRACK_DAY_BTN_Y_IPHONE_6 LIVE_NEWS_BTN_Y_IPHONE_6
+                                
+#define NOTIFY_BTN_X_IPHONE_5 LIVE_NEWS_BTN_X_IPHONE_5
+#define NOTIFY_BTN_X_IPHONE_6 LIVE_NEWS_BTN_X_IPHONE_6
+#define NOTIFY_BTN_Y_IPHONE_5 219.0f
+#define NOTIFY_BTN_Y_IPHONE_6 219.0f
+                                
+#define NEARBY_BTN_X_IPHONE_5 TRACK_DAY_BTN_X_IPHONE_5
+#define NEARBY_BTN_X_IPHONE_6 TRACK_DAY_BTN_X_IPHONE_5
+#define NEARBY_BTN_Y_IPHONE_5 NOTIFY_BTN_Y_IPHONE_5
+#define NEARBY_BTN_Y_IPHONE_6 NOTIFY_BTN_Y_IPHONE_6
+                                
+#define COMMUNITY_BTN_X_IPHONE_5 LIVE_NEWS_BTN_X_IPHONE_5
+#define COMMUNITY_BTN_X_IPHONE_6 LIVE_NEWS_BTN_X_IPHONE_6
+#define COMMUNITY_BTN_Y_IPHONE_5 349.0f
+#define COMMUNITY_BTN_Y_IPHONE_6 349.0f
+                                
+#define BOOK_BTN_X_IPHONE_5 TRACK_DAY_BTN_X_IPHONE_5
+#define BOOK_BTN_X_IPHONE_6 TRACK_DAY_BTN_X_IPHONE_5
+#define BOOK_BTN_Y_IPHONE_5 COMMUNITY_BTN_Y_IPHONE_5
+#define BOOK_BTN_Y_IPHONE_6 COMMUNITY_BTN_Y_IPHONE_6
+    
 
 
 @interface TrackDayMenuViewController ()
@@ -188,17 +218,18 @@
     }
     
     /*load data for spash screen offers*/
+    //?? FIXME this should not load back anyting
     
     [[LocalAPI sharedInstance] commandWithParams:[NSMutableDictionary dictionaryWithObjectsAndKeys:
                                                   @"splash",@"command",
                                                   nil]
                                     onCompletion:^(NSDictionary *json) {
                                         //got stream
-                                        NSLog(@"got stream with total number of data: %d",[[json objectForKey:@"result"] count]);
+                                        NSLog(@"Command splash : got stream with total number of data: %lu",(unsigned long)[[json objectForKey:@"result"] count]);
                                         NSLog(@"Printing result:%@",[[json objectForKey:@"result"] description]);
                                     }];
     
-    
+    // subscribing to a developer channel used for debugging purposes
     if (IS_DEVELOPER) {
         PFInstallation *currentInstallation = [PFInstallation currentInstallation];
         [currentInstallation addUniqueObject:@"SkiGreeceAdmin_201415" forKey:@"channels"];
@@ -263,16 +294,6 @@
     VTHomeViewController *vc=[sb instantiateViewControllerWithIdentifier:@"CommunityMainAnypicStoryboard"];
     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentViewController:vc animated:YES completion:NULL];
-    
-    
-    /*
-    //(AppDelegate*)[[UIApplication sharedApplication].delegate].homeViewController;
-    AppDelegate *del = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    PAPHomeViewController *vc = del.homeViewController;
-    //PAPHomeViewController *vc = [[PAPHomeViewController alloc] initWithStyle:UITableViewStylePlain];
-    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    [self presentViewController:vc animated:YES completion:NULL];*/
-    
     
 }
 
@@ -369,9 +390,6 @@
     EAIntroPage *page1 = [EAIntroPage page];
     page1.bgImage = [UIImage imageNamed:@"tutorial_1"];
     
-    //page1.title = @"Hello world";
-    //page1.desc = @"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-    //page1.titleImage = [UIImage imageNamed:@"original"];
     
     EAIntroPage *page2 = [EAIntroPage page];
     page2.bgImage = [UIImage imageNamed:@"tutorial_2"];
@@ -586,12 +604,12 @@
         
         self.offersBtn.frame = CGRectMake(self.offersBtn.frame.origin.x + 50.0f, self.offersBtn.frame.origin.y , self.offersBtn.frame.size.width, self.offersBtn.frame.size.height);
         
-        self.liveNewsBtn.frame = CGRectMake(50, 81 + [UIApplication sharedApplication].statusBarFrame.size.height , BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
-        self.trackDayBtn.frame = CGRectMake(181, 81 +[UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
-        self.notifBtn.frame = CGRectMake(50, 219 + [UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
-        self.nearbyBtn.frame = CGRectMake(181, 219 +[UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
-        self.communBtn.frame = CGRectMake(50, 349 + [UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
-        self.bookBtn.frame = CGRectMake(181, 349 + [UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        self.liveNewsBtn.frame = CGRectMake(LIVE_NEWS_BTN_X_IPHONE_6, LIVE_NEWS_BTN_Y_IPHONE_6 + [UIApplication sharedApplication].statusBarFrame.size.height , BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        self.trackDayBtn.frame = CGRectMake(TRACK_DAY_BTN_X_IPHONE_6, TRACK_DAY_BTN_Y_IPHONE_6 +[UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        self.notifBtn.frame = CGRectMake(NOTIFY_BTN_X_IPHONE_6, NOTIFY_BTN_Y_IPHONE_6 + [UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        self.nearbyBtn.frame = CGRectMake(NEARBY_BTN_X_IPHONE_6, NEARBY_BTN_Y_IPHONE_6 +[UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        self.communBtn.frame = CGRectMake(COMMUNITY_BTN_X_IPHONE_6, COMMUNITY_BTN_Y_IPHONE_6 + [UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        self.bookBtn.frame = CGRectMake(BOOK_BTN_X_IPHONE_6, BOOK_BTN_Y_IPHONE_6 + [UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
         
         self.infoBtn.frame = CGRectMake(0, 484 + [UIApplication sharedApplication].statusBarFrame.size.height, 53, 42);
         
@@ -612,12 +630,12 @@
         
         self.offersBtn.frame = CGRectMake(self.offersBtn.frame.origin.x, self.offersBtn.frame.origin.y , self.offersBtn.frame.size.width, self.offersBtn.frame.size.height);
         
-        self.liveNewsBtn.frame = CGRectMake(50, 81 + [UIApplication sharedApplication].statusBarFrame.size.height , BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
-        self.trackDayBtn.frame = CGRectMake(181, 81 +[UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
-        self.notifBtn.frame = CGRectMake(50, 219 + [UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
-        self.nearbyBtn.frame = CGRectMake(181, 219 +[UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
-        self.communBtn.frame = CGRectMake(50, 349 + [UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
-        self.bookBtn.frame = CGRectMake(181, 349 + [UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        self.liveNewsBtn.frame = CGRectMake(LIVE_NEWS_BTN_X_IPHONE_5, LIVE_NEWS_BTN_Y_IPHONE_5 + [UIApplication sharedApplication].statusBarFrame.size.height , BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        self.trackDayBtn.frame = CGRectMake(TRACK_DAY_BTN_X_IPHONE_5, TRACK_DAY_BTN_Y_IPHONE_5 +[UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        self.notifBtn.frame = CGRectMake(NOTIFY_BTN_X_IPHONE_5, NOTIFY_BTN_Y_IPHONE_5 + [UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        self.nearbyBtn.frame = CGRectMake(NEARBY_BTN_X_IPHONE_5, NEARBY_BTN_Y_IPHONE_5 +[UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        self.communBtn.frame = CGRectMake(COMMUNITY_BTN_X_IPHONE_5, COMMUNITY_BTN_Y_IPHONE_5 + [UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        self.bookBtn.frame = CGRectMake(BOOK_BTN_X_IPHONE_5, BOOK_BTN_Y_IPHONE_5 + [UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
         
         self.infoBtn.frame = CGRectMake(0, 484 + [UIApplication sharedApplication].statusBarFrame.size.height, 53, 42);
         
