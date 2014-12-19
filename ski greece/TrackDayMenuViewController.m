@@ -23,6 +23,9 @@
 #import "PAPLogInViewController.h"
 #import "VTHomeViewController.h"
 
+#define BASIC_BUTTON_WIDTH 102.0f
+#define BASIC_BUTTON_HEIGHT 102.0f
+
 
 
 @interface TrackDayMenuViewController ()
@@ -75,6 +78,9 @@
         NSLog(@"Device is : %@", (IS_IPHONE_4_OR_LESS) ? @"iPhone4" : (IS_IPHONE_5) ? @"iPhone5" : (IS_IPHONE_6) ? @"iPhone6" : (IS_IPHONE_6P) ? @ "iPhone6+" : @"Unknown device");
     }
     
+    
+    //?? see where they are used
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     if([defaults objectForKey:@"ActiveUsername"] == nil) {
@@ -104,50 +110,11 @@
 
     
     
-    /*Initialite for iPhone5*/
+    /*Initialite for iPhone5/6*/
     
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    if (screenBounds.size.height == 568) {
-        // code for 4-inch screen
-        NSLog(@"iPhone 5 screen.");
-        
-        //[UIApplication sharedApplication].statusBarFrame.size.height
-        
-        self.backgroundImg.frame = CGRectMake(0, 0 + [UIApplication sharedApplication].statusBarFrame.size.height  , 320, 550);
-        [self.backgroundImg setImage:[UIImage imageNamed:@"background_no_back_5.png"]];
-        
-        self.offersBtn.frame = CGRectMake(self.offersBtn.frame.origin.x, self.offersBtn.frame.origin.y , self.offersBtn.frame.size.width, self.offersBtn.frame.size.height);
-        
-        self.liveNewsBtn.frame = CGRectMake(50, 81 + [UIApplication sharedApplication].statusBarFrame.size.height , 102, 102);
-        self.trackDayBtn.frame = CGRectMake(181, 81 +[UIApplication sharedApplication].statusBarFrame.size.height, 102, 102);
-        self.notifBtn.frame = CGRectMake(50, 219 + [UIApplication sharedApplication].statusBarFrame.size.height, 102, 102);
-        self.nearbyBtn.frame = CGRectMake(181, 219 +[UIApplication sharedApplication].statusBarFrame.size.height, 102, 102);
-        self.communBtn.frame = CGRectMake(50, 349 + [UIApplication sharedApplication].statusBarFrame.size.height, 102, 102);
-        self.bookBtn.frame = CGRectMake(181, 349 + [UIApplication sharedApplication].statusBarFrame.size.height, 102, 102);
-        
-        self.infoBtn.frame = CGRectMake(0, 484 + [UIApplication sharedApplication].statusBarFrame.size.height, 53, 42);
-        
-        self.twitterBtn.frame = CGRectMake(79, 509, 45, 45);
-        self.fbBtn.frame = CGRectMake(146, 509, 45, 45);
-        self.rateBtn.frame = CGRectMake(210, 509, 45, 45);
-        
-       
-        //[self.view sendSubviewToBack: imgView];
-
-
-        
-    }
     
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
-        imgView.backgroundColor=[UIColor blackColor];
-        [self.view addSubview:imgView];
-    }
-
-    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)])
-    {
-        [self setNeedsStatusBarAppearanceUpdate];
-    }
+    [self adjustLayoutForDevices];
+    
     
     
     if(![defaults boolForKey:@"hasSeenTutorial"]) {
@@ -603,6 +570,89 @@
                                    } 
                                }];
 }
+
+#pragma mark - adjusting layout for different devices
+
+-(void)  adjustLayoutForDevices
+{
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    
+    if (IS_IPHONE_6) {
+        if (IS_DEVELOPER) NSLog(@"iPhone 6 screen");
+        
+        self.backgroundImg.frame = CGRectMake(0, 0 + [UIApplication sharedApplication].statusBarFrame.size.height  , 375, 647);
+        //?? fixme image for iphone 6
+        [self.backgroundImg setImage:[UIImage imageNamed:@"background_no_back_5.png"]];
+        
+        self.offersBtn.frame = CGRectMake(self.offersBtn.frame.origin.x + 50.0f, self.offersBtn.frame.origin.y , self.offersBtn.frame.size.width, self.offersBtn.frame.size.height);
+        
+        self.liveNewsBtn.frame = CGRectMake(50, 81 + [UIApplication sharedApplication].statusBarFrame.size.height , BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        self.trackDayBtn.frame = CGRectMake(181, 81 +[UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        self.notifBtn.frame = CGRectMake(50, 219 + [UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        self.nearbyBtn.frame = CGRectMake(181, 219 +[UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        self.communBtn.frame = CGRectMake(50, 349 + [UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        self.bookBtn.frame = CGRectMake(181, 349 + [UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        
+        self.infoBtn.frame = CGRectMake(0, 484 + [UIApplication sharedApplication].statusBarFrame.size.height, 53, 42);
+        
+        self.twitterBtn.frame = CGRectMake(79, 509, 45, 45);
+        self.fbBtn.frame = CGRectMake(146, 509, 45, 45);
+        self.rateBtn.frame = CGRectMake(210, 509, 45, 45);
+        
+        
+    } else if (IS_IPHONE_5) {
+        //if (screenBounds.size.height == 568) {
+        // code for 4-inch screen
+        NSLog(@"iPhone 5 screen.");
+        
+        //[UIApplication sharedApplication].statusBarFrame.size.height
+        
+        self.backgroundImg.frame = CGRectMake(0, 0 + [UIApplication sharedApplication].statusBarFrame.size.height  , 320, 550);
+        [self.backgroundImg setImage:[UIImage imageNamed:@"background_no_back_5.png"]];
+        
+        self.offersBtn.frame = CGRectMake(self.offersBtn.frame.origin.x, self.offersBtn.frame.origin.y , self.offersBtn.frame.size.width, self.offersBtn.frame.size.height);
+        
+        self.liveNewsBtn.frame = CGRectMake(50, 81 + [UIApplication sharedApplication].statusBarFrame.size.height , BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        self.trackDayBtn.frame = CGRectMake(181, 81 +[UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        self.notifBtn.frame = CGRectMake(50, 219 + [UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        self.nearbyBtn.frame = CGRectMake(181, 219 +[UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        self.communBtn.frame = CGRectMake(50, 349 + [UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        self.bookBtn.frame = CGRectMake(181, 349 + [UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
+        
+        self.infoBtn.frame = CGRectMake(0, 484 + [UIApplication sharedApplication].statusBarFrame.size.height, 53, 42);
+        
+        self.twitterBtn.frame = CGRectMake(79, 509, 45, 45);
+        self.fbBtn.frame = CGRectMake(146, 509, 45, 45);
+        self.rateBtn.frame = CGRectMake(210, 509, 45, 45);
+        
+        
+        //[self.view sendSubviewToBack: imgView];
+        
+    }
+    
+    
+    // adding a black bar on top of the screen in order to look like old ios
+    //?? FIXME this needs to changed into modenr graphics
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
+        if (IS_IPHONE_6) {
+            UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 367, 20)];
+            imgView.backgroundColor=[UIColor blackColor];
+            [self.view addSubview:imgView];
+        } else if ((IS_IPHONE_5) || (IS_IPHONE_4_OR_LESS)){
+            UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+            imgView.backgroundColor=[UIColor blackColor];
+            [self.view addSubview:imgView];
+        }
+    }
+
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)])
+    {
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
+
+}
+
 
 
 
