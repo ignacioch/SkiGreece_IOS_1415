@@ -296,6 +296,7 @@
 		DF1A3D2A1A365F25001E6029 /* backgroundNavigationBar.png in Resources */ = {isa = PBXBuildFile; fileRef = DF1A3D281A365F25001E6029 /* backgroundNavigationBar.png */; };
 		DF1A3D2B1A365F25001E6029 /* backgroundNavigationBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF1A3D291A365F25001E6029 /* backgroundNavigationBar@2x.png */; };
 		DF1A3D2E1A3915EF001E6029 /* VTEditPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1A3D2D1A3915EF001E6029 /* VTEditPhotoViewController.m */; };
+		DF287D931A4B260500439850 /* mobile-banner-640x450.png in Resources */ = {isa = PBXBuildFile; fileRef = DF287D921A4B260500439850 /* mobile-banner-640x450.png */; };
 		DF2F1F411A222223008F9C42 /* VTFindFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2F1F401A222223008F9C42 /* VTFindFriendsViewController.m */; };
 		DF31D0EC1A3D17AD00E72B01 /* fb_button.png in Resources */ = {isa = PBXBuildFile; fileRef = DF31D0EA1A3D17AD00E72B01 /* fb_button.png */; };
 		DF31D0ED1A3D17AD00E72B01 /* fb_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF31D0EB1A3D17AD00E72B01 /* fb_button@2x.png */; };
@@ -1076,6 +1077,7 @@
 		DF1A3D291A365F25001E6029 /* backgroundNavigationBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundNavigationBar@2x.png"; sourceTree = "<group>"; };
 		DF1A3D2C1A3915EF001E6029 /* VTEditPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTEditPhotoViewController.h; path = "ski greece/ViewControllers/CommunityControllers/TakePhoto/VTEditPhotoViewController.h"; sourceTree = SOURCE_ROOT; };
 		DF1A3D2D1A3915EF001E6029 /* VTEditPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTEditPhotoViewController.m; path = "ski greece/ViewControllers/CommunityControllers/TakePhoto/VTEditPhotoViewController.m"; sourceTree = SOURCE_ROOT; };
+		DF287D921A4B260500439850 /* mobile-banner-640x450.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mobile-banner-640x450.png"; sourceTree = "<group>"; };
 		DF2F1F3F1A222223008F9C42 /* VTFindFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTFindFriendsViewController.h; path = "ski greece/ViewControllers/CommunityControllers/Settings/VTFindFriendsViewController.h"; sourceTree = SOURCE_ROOT; };
 		DF2F1F401A222223008F9C42 /* VTFindFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTFindFriendsViewController.m; path = "ski greece/ViewControllers/CommunityControllers/Settings/VTFindFriendsViewController.m"; sourceTree = SOURCE_ROOT; };
 		DF31D0EA1A3D17AD00E72B01 /* fb_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_button.png; sourceTree = "<group>"; };
@@ -1837,6 +1839,7 @@
 		84685A2C15F6AC3100E6E4FC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DF287D921A4B260500439850 /* mobile-banner-640x450.png */,
 				DFA750681A05191D00EBD6F6 /* AnypicAssets */,
 				8479AA3A184ADEB700ABB3C2 /* ic_launcher_120.png */,
 				84878F70184AC9E800941956 /* ski_greece_cover.jpg */,
@@ -3083,6 +3086,7 @@
 				DFA7514D1A05191E00EBD6F6 /* AvatarPlaceholder@2x.png in Resources */,
 				DFA751F21A05191E00EBD6F6 /* nav_bar_bg@2x.png in Resources */,
 				843845FA17B830300020FD93 /* SkiCenter.plist in Resources */,
+				DF287D931A4B260500439850 /* mobile-banner-640x450.png in Resources */,
 				DF4D230519BFA5E10000F94E /* all_69.html in Resources */,
 				84E49AE417BB9DD400016E09 /* overlay_image.png in Resources */,
 				DF4D22DF19BFA5E10000F94E /* ftv2plastnode.png in Resources */,
