@@ -23,39 +23,72 @@
 #import "PAPLogInViewController.h"
 #import "VTHomeViewController.h"
 
+// IPHONE 6 : Distance between basic button X => 55  , Y => 50
+//
+
 #define BASIC_BUTTON_WIDTH 102.0f
 #define BASIC_BUTTON_HEIGHT 102.0f
 
 #define LIVE_NEWS_BTN_X_IPHONE_5 50.0f
-#define LIVE_NEWS_BTN_X_IPHONE_6 50.0f
+#define LIVE_NEWS_BTN_X_IPHONE_6 55.0f
 #define LIVE_NEWS_BTN_Y_IPHONE_5 81.0f
-#define LIVE_NEWS_BTN_Y_IPHONE_6 81.0f
+#define LIVE_NEWS_BTN_Y_IPHONE_6 101.0f
 
 #define TRACK_DAY_BTN_X_IPHONE_5 181.0f
-#define TRACK_DAY_BTN_X_IPHONE_6 181.0f
+#define TRACK_DAY_BTN_X_IPHONE_6 212.0f
 #define TRACK_DAY_BTN_Y_IPHONE_5 LIVE_NEWS_BTN_Y_IPHONE_5
 #define TRACK_DAY_BTN_Y_IPHONE_6 LIVE_NEWS_BTN_Y_IPHONE_6
                                 
 #define NOTIFY_BTN_X_IPHONE_5 LIVE_NEWS_BTN_X_IPHONE_5
 #define NOTIFY_BTN_X_IPHONE_6 LIVE_NEWS_BTN_X_IPHONE_6
 #define NOTIFY_BTN_Y_IPHONE_5 219.0f
-#define NOTIFY_BTN_Y_IPHONE_6 219.0f
+#define NOTIFY_BTN_Y_IPHONE_6 253.0f
                                 
 #define NEARBY_BTN_X_IPHONE_5 TRACK_DAY_BTN_X_IPHONE_5
-#define NEARBY_BTN_X_IPHONE_6 TRACK_DAY_BTN_X_IPHONE_5
+#define NEARBY_BTN_X_IPHONE_6 TRACK_DAY_BTN_X_IPHONE_6
 #define NEARBY_BTN_Y_IPHONE_5 NOTIFY_BTN_Y_IPHONE_5
 #define NEARBY_BTN_Y_IPHONE_6 NOTIFY_BTN_Y_IPHONE_6
                                 
 #define COMMUNITY_BTN_X_IPHONE_5 LIVE_NEWS_BTN_X_IPHONE_5
 #define COMMUNITY_BTN_X_IPHONE_6 LIVE_NEWS_BTN_X_IPHONE_6
 #define COMMUNITY_BTN_Y_IPHONE_5 349.0f
-#define COMMUNITY_BTN_Y_IPHONE_6 349.0f
+#define COMMUNITY_BTN_Y_IPHONE_6 405.0f
                                 
 #define BOOK_BTN_X_IPHONE_5 TRACK_DAY_BTN_X_IPHONE_5
-#define BOOK_BTN_X_IPHONE_6 TRACK_DAY_BTN_X_IPHONE_5
+#define BOOK_BTN_X_IPHONE_6 TRACK_DAY_BTN_X_IPHONE_6
 #define BOOK_BTN_Y_IPHONE_5 COMMUNITY_BTN_Y_IPHONE_5
 #define BOOK_BTN_Y_IPHONE_6 COMMUNITY_BTN_Y_IPHONE_6
-    
+
+
+//
+//
+
+#define SMALL_ICON_HEIGHT 45
+#define SMALL_ICON_WIDTH  45
+
+#define TWITTER_BTN_X_IPHONE_5  79
+#define TWITTER_BTN_X_IPHONE_6  94
+#define TWITTER_BTN_Y_IPHONE_5  509
+#define TWITTER_BTN_Y_IPHONE_6  600
+
+#define FB_BTN_X_IPHONE_5 146
+#define FB_BTN_X_IPHONE_6 161
+#define FB_BTN_Y_IPHONE_5 TWITTER_BTN_Y_IPHONE_5
+#define FB_BTN_Y_IPHONE_6 TWITTER_BTN_Y_IPHONE_6
+
+#define RATE_BTN_X_IPHONE_5 210
+#define RATE_BTN_X_IPHONE_6 225
+#define RATE_BTN_Y_IPHONE_5 TWITTER_BTN_Y_IPHONE_5
+#define RATE_BTN_Y_IPHONE_6 TWITTER_BTN_Y_IPHONE_6
+
+#define INFO_BTN_X_IPHONE_5 0
+#define INFO_BTN_X_IPHONE_6 INFO_BTN_X_IPHONE_5
+#define INFO_BTN_Y_IPHONE_5 484
+#define INFO_BTN_Y_IPHONE_6 534
+
+#define INFO_BTN_HEIGHT 42
+#define INFO_BTN_WIDTH  53
+
 
 
 @interface TrackDayMenuViewController ()
@@ -611,11 +644,11 @@
         self.communBtn.frame = CGRectMake(COMMUNITY_BTN_X_IPHONE_6, COMMUNITY_BTN_Y_IPHONE_6 + [UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
         self.bookBtn.frame = CGRectMake(BOOK_BTN_X_IPHONE_6, BOOK_BTN_Y_IPHONE_6 + [UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
         
-        self.infoBtn.frame = CGRectMake(0, 484 + [UIApplication sharedApplication].statusBarFrame.size.height, 53, 42);
+        self.infoBtn.frame = CGRectMake(INFO_BTN_X_IPHONE_6, INFO_BTN_Y_IPHONE_6 + [UIApplication sharedApplication].statusBarFrame.size.height, INFO_BTN_WIDTH, INFO_BTN_HEIGHT);
         
-        self.twitterBtn.frame = CGRectMake(79, 509, 45, 45);
-        self.fbBtn.frame = CGRectMake(146, 509, 45, 45);
-        self.rateBtn.frame = CGRectMake(210, 509, 45, 45);
+        self.twitterBtn.frame = CGRectMake(TWITTER_BTN_X_IPHONE_6, TWITTER_BTN_Y_IPHONE_6, SMALL_ICON_WIDTH, SMALL_ICON_HEIGHT);
+        self.fbBtn.frame = CGRectMake(FB_BTN_X_IPHONE_6, FB_BTN_Y_IPHONE_6, SMALL_ICON_WIDTH, SMALL_ICON_HEIGHT);
+        self.rateBtn.frame = CGRectMake(RATE_BTN_X_IPHONE_6, RATE_BTN_Y_IPHONE_6, SMALL_ICON_WIDTH, SMALL_ICON_HEIGHT);
         
         
     } else if (IS_IPHONE_5) {
@@ -637,11 +670,12 @@
         self.communBtn.frame = CGRectMake(COMMUNITY_BTN_X_IPHONE_5, COMMUNITY_BTN_Y_IPHONE_5 + [UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
         self.bookBtn.frame = CGRectMake(BOOK_BTN_X_IPHONE_5, BOOK_BTN_Y_IPHONE_5 + [UIApplication sharedApplication].statusBarFrame.size.height, BASIC_BUTTON_WIDTH, BASIC_BUTTON_HEIGHT);
         
-        self.infoBtn.frame = CGRectMake(0, 484 + [UIApplication sharedApplication].statusBarFrame.size.height, 53, 42);
         
-        self.twitterBtn.frame = CGRectMake(79, 509, 45, 45);
-        self.fbBtn.frame = CGRectMake(146, 509, 45, 45);
-        self.rateBtn.frame = CGRectMake(210, 509, 45, 45);
+        self.infoBtn.frame = CGRectMake(INFO_BTN_X_IPHONE_5, INFO_BTN_Y_IPHONE_5 + [UIApplication sharedApplication].statusBarFrame.size.height, INFO_BTN_WIDTH, INFO_BTN_HEIGHT);
+        
+        self.twitterBtn.frame = CGRectMake(TWITTER_BTN_X_IPHONE_5, TWITTER_BTN_Y_IPHONE_5, SMALL_ICON_WIDTH, SMALL_ICON_HEIGHT);
+        self.fbBtn.frame = CGRectMake(FB_BTN_X_IPHONE_5, FB_BTN_Y_IPHONE_5, SMALL_ICON_WIDTH, SMALL_ICON_HEIGHT);
+        self.rateBtn.frame = CGRectMake(RATE_BTN_X_IPHONE_5, RATE_BTN_Y_IPHONE_5, SMALL_ICON_WIDTH, SMALL_ICON_HEIGHT);
         
         
         //[self.view sendSubviewToBack: imgView];
@@ -654,7 +688,7 @@
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
         if (IS_IPHONE_6) {
-            UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 367, 20)];
+            UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 375, 20)];
             imgView.backgroundColor=[UIColor blackColor];
             [self.view addSubview:imgView];
         } else if ((IS_IPHONE_5) || (IS_IPHONE_4_OR_LESS)){
