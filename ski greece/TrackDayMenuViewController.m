@@ -102,8 +102,8 @@
 @implementation TrackDayMenuViewController
 {
     /*FBLogin happens without salted password -use as password the facebook Id*/
-    __block NSString * fbusername;
-    __block NSString * fbpassword;
+    //__block NSString * fbusername;
+    //__block NSString * fbpassword;
     NSArray *_regionArray;
     CLLocationManager *_locationManager;
 
@@ -190,30 +190,30 @@
     }
     /*log the user as early as possible*/
     
-    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
-        if (FBSession.activeSession.isOpen) {
-            NSLog(@"FBSession is open. Will populate user details.");
-            if (![API sharedInstance].isAuthorized) {
-                [[FBRequest requestForMe] startWithCompletionHandler:
-                 ^(FBRequestConnection *connection,
-                   NSDictionary<FBGraphUser> *user,
-                   NSError *error) {
-                     if (!error) {
-                         NSLog(@"Username: %@",user.name);
-                         fbusername = user.name;
-                         fbpassword = user.id;
-                         [self FBloginUser:fbusername withPass:fbpassword];
-                     }
-                 }];
-            }
-        } else {
-            NSLog(@"Session is not open");
-            NSLog(@"There is token for session - I need to call OpenSession");
-            [self openSession];
-        }
-    } else {
-        NSLog(@"There isn't token for session - I need to call OpenSession");
-    }
+//    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+//        if (FBSession.activeSession.isOpen) {
+//            NSLog(@"FBSession is open. Will populate user details.");
+//            if (![API sharedInstance].isAuthorized) {
+//                [[FBRequest requestForMe] startWithCompletionHandler:
+//                 ^(FBRequestConnection *connection,
+//                   NSDictionary<FBGraphUser> *user,
+//                   NSError *error) {
+//                     if (!error) {
+//                         NSLog(@"Username: %@",user.name);
+//                         fbusername = user.name;
+//                         fbpassword = user.id;
+//                         [self FBloginUser:fbusername withPass:fbpassword];
+//                     }
+//                 }];
+//            }
+//        } else {
+//            NSLog(@"Session is not open");
+//            NSLog(@"There is token for session - I need to call OpenSession");
+//            [self openSession];
+//        }
+//    } else {
+//        NSLog(@"There isn't token for session - I need to call OpenSession");
+//    }
     
     if(![defaults boolForKey:@"wantLocTarget"]) {
         NSLog(@"User does not want to see Location targeting adverts");
@@ -253,14 +253,14 @@
     /*load data for spash screen offers*/
     //?? FIXME this should not load back anyting
     
-    [[LocalAPI sharedInstance] commandWithParams:[NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                                  @"splash",@"command",
-                                                  nil]
-                                    onCompletion:^(NSDictionary *json) {
-                                        //got stream
-                                        NSLog(@"Command splash : got stream with total number of data: %lu",(unsigned long)[[json objectForKey:@"result"] count]);
-                                        NSLog(@"Printing result:%@",[[json objectForKey:@"result"] description]);
-                                    }];
+//    [[LocalAPI sharedInstance] commandWithParams:[NSMutableDictionary dictionaryWithObjectsAndKeys:
+//                                                  @"splash",@"command",
+//                                                  nil]
+//                                    onCompletion:^(NSDictionary *json) {
+//                                        //got stream
+//                                        NSLog(@"Command splash : got stream with total number of data: %lu",(unsigned long)[[json objectForKey:@"result"] count]);
+//                                        NSLog(@"Printing result:%@",[[json objectForKey:@"result"] description]);
+//                                    }];
     
     // subscribing to a developer channel used for debugging purposes
     if (IS_DEVELOPER) {
@@ -506,121 +506,121 @@
 }
 
 
-#pragma mark - facebook functions
-
-- (void)openSession
-{
-    NSLog(@"Open Session Called");
-    [FBSession openActiveSessionWithReadPermissions:nil
-                                       allowLoginUI:YES
-                                  completionHandler:
-     ^(FBSession *session,
-       FBSessionState state, NSError *error) {
-         [self sessionStateChanged:session state:state error:error];
-         //onec session is completed
-         
-         [[FBRequest requestForMe] startWithCompletionHandler:
-          ^(FBRequestConnection *connection,
-            NSDictionary<FBGraphUser> *user,
-            NSError *error) {
-              if (!error) {
-                  NSLog(@"Username: %@",user.name);
-                  fbusername = user.name;
-                  fbpassword = user.id;
-                  [self FBloginUser:fbusername withPass:fbpassword];
-              }
-          }];
-         
-     }];
-}
-
-- (void)sessionStateChanged:(FBSession *)session
-                      state:(FBSessionState) state
-                      error:(NSError *)error
-{
-    switch (state) {
-        case FBSessionStateOpen: {
-            NSLog(@"FBSessionStateOpen");
-        }
-            break;
-        case FBSessionStateClosed:
-        case FBSessionStateClosedLoginFailed:
-            
-            [FBSession.activeSession closeAndClearTokenInformation];
-            
-            //[self showLoginView];
-            break;
-        default:
-            break;
-    }
-    
-    if (error) {
-        UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:@"Error"
-                                  message:error.localizedDescription
-                                  delegate:nil
-                                  cancelButtonTitle:@"OK"
-                                  otherButtonTitles:nil];
-        [alertView show];
-    }
-}
-
-
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation
-{
-    NSLog(@"Facebook callback - logic returned in main Screen");
-    return [FBSession.activeSession handleOpenURL:url];
-}
-
-
-- (void)populateUserDetails
-{
-    if (FBSession.activeSession.isOpen) {
-        [[FBRequest requestForMe] startWithCompletionHandler:
-         ^(FBRequestConnection *connection,
-           NSDictionary<FBGraphUser> *user,
-           NSError *error) {
-             if (!error) {
-                 NSLog(@"Username:%@",user.name);
-             }
-         }];
-    }
-}
-
-#pragma mark - API functions
-
--(void) FBloginUser:(NSString*)user withPass:(NSString*)password
-{
-    NSLog(@"FB username: %@",user);
-    NSLog(@"FB password: %@",password);
-    
-    NSLog(@"User already exists - log him in");
-    
-    NSMutableDictionary* params =[NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                  @"login", @"command",
-                                  user, @"username",
-                                  password, @"password",
-                                  nil];
-    //make the call to the web API
-    [[API sharedInstance] commandWithParams:params
-                               onCompletion:^(NSDictionary *json) {
-                                   //handle the response
-                                   //result returned
-                                   NSDictionary* res = [[json objectForKey:@"result"] objectAtIndex:0];
-                                   if ([json objectForKey:@"error"]==nil && [[res objectForKey:@"IdUser"] intValue]>0) {
-                                       
-                                       [[API sharedInstance] setUser: res];
-                                       
-                                       
-                                       //show message to the user
-                                       NSLog(@"User %@ is now logged in",[res objectForKey:@"username"]);
-                                       
-                                   } 
-                               }];
-}
+//#pragma mark - facebook functions
+//
+//- (void)openSession
+//{
+//    NSLog(@"Open Session Called");
+//    [FBSession openActiveSessionWithReadPermissions:nil
+//                                       allowLoginUI:YES
+//                                  completionHandler:
+//     ^(FBSession *session,
+//       FBSessionState state, NSError *error) {
+//         [self sessionStateChanged:session state:state error:error];
+//         //onec session is completed
+//         
+//         [[FBRequest requestForMe] startWithCompletionHandler:
+//          ^(FBRequestConnection *connection,
+//            NSDictionary<FBGraphUser> *user,
+//            NSError *error) {
+//              if (!error) {
+//                  NSLog(@"Username: %@",user.name);
+//                  fbusername = user.name;
+//                  fbpassword = user.id;
+//                  [self FBloginUser:fbusername withPass:fbpassword];
+//              }
+//          }];
+//         
+//     }];
+//}
+//
+//- (void)sessionStateChanged:(FBSession *)session
+//                      state:(FBSessionState) state
+//                      error:(NSError *)error
+//{
+//    switch (state) {
+//        case FBSessionStateOpen: {
+//            NSLog(@"FBSessionStateOpen");
+//        }
+//            break;
+//        case FBSessionStateClosed:
+//        case FBSessionStateClosedLoginFailed:
+//            
+//            [FBSession.activeSession closeAndClearTokenInformation];
+//            
+//            //[self showLoginView];
+//            break;
+//        default:
+//            break;
+//    }
+//    
+//    if (error) {
+//        UIAlertView *alertView = [[UIAlertView alloc]
+//                                  initWithTitle:@"Error"
+//                                  message:error.localizedDescription
+//                                  delegate:nil
+//                                  cancelButtonTitle:@"OK"
+//                                  otherButtonTitles:nil];
+//        [alertView show];
+//    }
+//}
+//
+//
+//- (BOOL)application:(UIApplication *)application
+//            openURL:(NSURL *)url
+//  sourceApplication:(NSString *)sourceApplication
+//         annotation:(id)annotation
+//{
+//    NSLog(@"Facebook callback - logic returned in main Screen");
+//    return [FBSession.activeSession handleOpenURL:url];
+//}
+//
+//
+//- (void)populateUserDetails
+//{
+//    if (FBSession.activeSession.isOpen) {
+//        [[FBRequest requestForMe] startWithCompletionHandler:
+//         ^(FBRequestConnection *connection,
+//           NSDictionary<FBGraphUser> *user,
+//           NSError *error) {
+//             if (!error) {
+//                 NSLog(@"Username:%@",user.name);
+//             }
+//         }];
+//    }
+//}
+//
+//#pragma mark - API functions
+//
+//-(void) FBloginUser:(NSString*)user withPass:(NSString*)password
+//{
+//    NSLog(@"FB username: %@",user);
+//    NSLog(@"FB password: %@",password);
+//    
+//    NSLog(@"User already exists - log him in");
+//    
+//    NSMutableDictionary* params =[NSMutableDictionary dictionaryWithObjectsAndKeys:
+//                                  @"login", @"command",
+//                                  user, @"username",
+//                                  password, @"password",
+//                                  nil];
+//    //make the call to the web API
+//    [[API sharedInstance] commandWithParams:params
+//                               onCompletion:^(NSDictionary *json) {
+//                                   //handle the response
+//                                   //result returned
+//                                   NSDictionary* res = [[json objectForKey:@"result"] objectAtIndex:0];
+//                                   if ([json objectForKey:@"error"]==nil && [[res objectForKey:@"IdUser"] intValue]>0) {
+//                                       
+//                                       [[API sharedInstance] setUser: res];
+//                                       
+//                                       
+//                                       //show message to the user
+//                                       NSLog(@"User %@ is now logged in",[res objectForKey:@"username"]);
+//                                       
+//                                   } 
+//                               }];
+//}
 
 #pragma mark - adjusting layout for different devices
 
