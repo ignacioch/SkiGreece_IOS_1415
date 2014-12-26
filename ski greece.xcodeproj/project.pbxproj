@@ -287,7 +287,6 @@
 		84F620E017C0C08F00FEE348 /* PhotoStreamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F620DF17C0C08F00FEE348 /* PhotoStreamCell.xib */; };
 		84F620E217C0C1FC00FEE348 /* PostStreamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F620E117C0C1FC00FEE348 /* PostStreamCell.xib */; };
 		84FF5BE817BF9ACC00F26041 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FF5BE717BF9ACC00F26041 /* CoreImage.framework */; };
-		AC93CDC5E16E44BBA7262702 /* libPods-Ski Greece.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C34AF9C7E7324F98BE64A98A /* libPods-Ski Greece.a */; };
 		DF0EC77619F7019B00470040 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0EC77519F7019B00470040 /* FacebookSDK.framework */; };
 		DF0EC77A19F7033A00470040 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0EC77919F7033A00470040 /* ParseFacebookUtils.framework */; };
 		DF0EC77C19F703F400470040 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0EC77B19F703F400470040 /* Parse.framework */; };
@@ -297,6 +296,10 @@
 		DF1A3D2A1A365F25001E6029 /* backgroundNavigationBar.png in Resources */ = {isa = PBXBuildFile; fileRef = DF1A3D281A365F25001E6029 /* backgroundNavigationBar.png */; };
 		DF1A3D2B1A365F25001E6029 /* backgroundNavigationBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF1A3D291A365F25001E6029 /* backgroundNavigationBar@2x.png */; };
 		DF1A3D2E1A3915EF001E6029 /* VTEditPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1A3D2D1A3915EF001E6029 /* VTEditPhotoViewController.m */; };
+		DF2661011A4DD07C00BC05B9 /* CBZRasterSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2660FC1A4DD07C00BC05B9 /* CBZRasterSplashView.m */; };
+		DF2661021A4DD07C00BC05B9 /* CBZSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2660FE1A4DD07C00BC05B9 /* CBZSplashView.m */; };
+		DF2661031A4DD07C00BC05B9 /* CBZVectorSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2661001A4DD07C00BC05B9 /* CBZVectorSplashView.m */; };
+		DF2661051A4DD23D00BC05B9 /* ski_greece_splash_screen_new.png in Resources */ = {isa = PBXBuildFile; fileRef = DF2661041A4DD23D00BC05B9 /* ski_greece_splash_screen_new.png */; };
 		DF287D931A4B260500439850 /* mobile-banner-640x450.png in Resources */ = {isa = PBXBuildFile; fileRef = DF287D921A4B260500439850 /* mobile-banner-640x450.png */; };
 		DF2F1F411A222223008F9C42 /* VTFindFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2F1F401A222223008F9C42 /* VTFindFriendsViewController.m */; };
 		DF31D0EC1A3D17AD00E72B01 /* fb_button.png in Resources */ = {isa = PBXBuildFile; fileRef = DF31D0EA1A3D17AD00E72B01 /* fb_button.png */; };
@@ -305,7 +308,6 @@
 		DF31D0F51A3D17D600E72B01 /* BackgroundLogin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF31D0F11A3D17D600E72B01 /* BackgroundLogin@2x.png */; };
 		DF31D0F81A3D18BD00E72B01 /* BackgroundLogin-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF31D0F61A3D18BD00E72B01 /* BackgroundLogin-568h@2x.png */; };
 		DF31D0F91A3D18BD00E72B01 /* BackgroundLogin-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF31D0F71A3D18BD00E72B01 /* BackgroundLogin-667h@2x.png */; };
-		DF3AABE41A4D895A00F53D1D /* ski_greece_splash_screen_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DF3AABE31A4D895A00F53D1D /* ski_greece_splash_screen_2.png */; };
 		DF4D22B819BFA5E10000F94E /* libFlurry_5.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4D221E19BFA5E10000F94E /* libFlurry_5.3.0.a */; };
 		DF4D22B919BFA5E10000F94E /* _flurry_8h_source.html in Resources */ = {isa = PBXBuildFile; fileRef = DF4D222019BFA5E10000F94E /* _flurry_8h_source.html */; };
 		DF4D22BA19BFA5E10000F94E /* _flurry_ad_delegate_8h_source.html in Resources */ = {isa = PBXBuildFile; fileRef = DF4D222119BFA5E10000F94E /* _flurry_ad_delegate_8h_source.html */; };
@@ -711,7 +713,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2319C1FCAD844B119C5B82C4 /* Pods-Ski Greece.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ski Greece.xcconfig"; path = "Pods/Pods-Ski Greece.xcconfig"; sourceTree = "<group>"; };
 		84043DF7168DD9BA0071F978 /* CenterMoreInfoV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterMoreInfoV2.h; sourceTree = "<group>"; };
 		84043DF8168DD9BA0071F978 /* CenterMoreInfoV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterMoreInfoV2.m; sourceTree = "<group>"; };
 		840625AC17E62FE3007A5764 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -1069,7 +1070,6 @@
 		84F620DF17C0C08F00FEE348 /* PhotoStreamCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoStreamCell.xib; sourceTree = "<group>"; };
 		84F620E117C0C1FC00FEE348 /* PostStreamCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostStreamCell.xib; sourceTree = "<group>"; };
 		84FF5BE717BF9ACC00F26041 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		C34AF9C7E7324F98BE64A98A /* libPods-Ski Greece.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Ski Greece.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF0EC77519F7019B00470040 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		DF0EC77919F7033A00470040 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		DF0EC77B19F703F400470040 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -1081,6 +1081,13 @@
 		DF1A3D291A365F25001E6029 /* backgroundNavigationBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundNavigationBar@2x.png"; sourceTree = "<group>"; };
 		DF1A3D2C1A3915EF001E6029 /* VTEditPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTEditPhotoViewController.h; path = "ski greece/ViewControllers/CommunityControllers/TakePhoto/VTEditPhotoViewController.h"; sourceTree = SOURCE_ROOT; };
 		DF1A3D2D1A3915EF001E6029 /* VTEditPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTEditPhotoViewController.m; path = "ski greece/ViewControllers/CommunityControllers/TakePhoto/VTEditPhotoViewController.m"; sourceTree = SOURCE_ROOT; };
+		DF2660FB1A4DD07C00BC05B9 /* CBZRasterSplashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBZRasterSplashView.h; sourceTree = "<group>"; };
+		DF2660FC1A4DD07C00BC05B9 /* CBZRasterSplashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBZRasterSplashView.m; sourceTree = "<group>"; };
+		DF2660FD1A4DD07C00BC05B9 /* CBZSplashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBZSplashView.h; sourceTree = "<group>"; };
+		DF2660FE1A4DD07C00BC05B9 /* CBZSplashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBZSplashView.m; sourceTree = "<group>"; };
+		DF2660FF1A4DD07C00BC05B9 /* CBZVectorSplashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBZVectorSplashView.h; sourceTree = "<group>"; };
+		DF2661001A4DD07C00BC05B9 /* CBZVectorSplashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBZVectorSplashView.m; sourceTree = "<group>"; };
+		DF2661041A4DD23D00BC05B9 /* ski_greece_splash_screen_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ski_greece_splash_screen_new.png; sourceTree = "<group>"; };
 		DF287D921A4B260500439850 /* mobile-banner-640x450.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mobile-banner-640x450.png"; sourceTree = "<group>"; };
 		DF2F1F3F1A222223008F9C42 /* VTFindFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTFindFriendsViewController.h; path = "ski greece/ViewControllers/CommunityControllers/Settings/VTFindFriendsViewController.h"; sourceTree = SOURCE_ROOT; };
 		DF2F1F401A222223008F9C42 /* VTFindFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTFindFriendsViewController.m; path = "ski greece/ViewControllers/CommunityControllers/Settings/VTFindFriendsViewController.m"; sourceTree = SOURCE_ROOT; };
@@ -1090,7 +1097,6 @@
 		DF31D0F11A3D17D600E72B01 /* BackgroundLogin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BackgroundLogin@2x.png"; sourceTree = "<group>"; };
 		DF31D0F61A3D18BD00E72B01 /* BackgroundLogin-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BackgroundLogin-568h@2x.png"; sourceTree = "<group>"; };
 		DF31D0F71A3D18BD00E72B01 /* BackgroundLogin-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BackgroundLogin-667h@2x.png"; sourceTree = "<group>"; };
-		DF3AABE31A4D895A00F53D1D /* ski_greece_splash_screen_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ski_greece_splash_screen_2.png; sourceTree = "<group>"; };
 		DF4D221D19BFA5E10000F94E /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		DF4D221E19BFA5E10000F94E /* libFlurry_5.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_5.3.0.a; sourceTree = "<group>"; };
 		DF4D222019BFA5E10000F94E /* _flurry_8h_source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = _flurry_8h_source.html; sourceTree = "<group>"; };
@@ -1569,7 +1575,6 @@
 				84685A2615F6AC3100E6E4FC /* UIKit.framework in Frameworks */,
 				DF4D22B819BFA5E10000F94E /* libFlurry_5.3.0.a in Frameworks */,
 				84685A2815F6AC3100E6E4FC /* Foundation.framework in Frameworks */,
-				AC93CDC5E16E44BBA7262702 /* libPods-Ski Greece.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1732,7 +1737,6 @@
 				84685A2415F6AC3100E6E4FC /* Frameworks */,
 				84685A2215F6AC3100E6E4FC /* Products */,
 				DFFB533319FEF34600A7549B /* Vendors */,
-				2319C1FCAD844B119C5B82C4 /* Pods-Ski Greece.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1776,7 +1780,6 @@
 				84685A2515F6AC3100E6E4FC /* UIKit.framework */,
 				84685A2715F6AC3100E6E4FC /* Foundation.framework */,
 				84685A2915F6AC3100E6E4FC /* CoreGraphics.framework */,
-				C34AF9C7E7324F98BE64A98A /* libPods-Ski Greece.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1784,6 +1787,7 @@
 		84685A2B15F6AC3100E6E4FC /* Ski Greece */ = {
 			isa = PBXGroup;
 			children = (
+				DF1658AE1A4DAD8000419B02 /* Libraries */,
 				DFFB530D19FEF14A00A7549B /* Views */,
 				84A014B2181ED1B700D15F95 /* Helper */,
 				84A014A0181D4B2B00D15F95 /* GeneralScreens */,
@@ -1847,7 +1851,7 @@
 		84685A2C15F6AC3100E6E4FC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DF3AABE31A4D895A00F53D1D /* ski_greece_splash_screen_2.png */,
+				DF2661041A4DD23D00BC05B9 /* ski_greece_splash_screen_new.png */,
 				DF287D921A4B260500439850 /* mobile-banner-640x450.png */,
 				DFA750681A05191D00EBD6F6 /* AnypicAssets */,
 				8479AA3A184ADEB700ABB3C2 /* ic_launcher_120.png */,
@@ -2388,6 +2392,27 @@
 				DF0EC78019F7065300470040 /* Login Screen */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DF1658AE1A4DAD8000419B02 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				DF1658AF1A4DAD8700419B02 /* CBZSplashView */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		DF1658AF1A4DAD8700419B02 /* CBZSplashView */ = {
+			isa = PBXGroup;
+			children = (
+				DF2660FB1A4DD07C00BC05B9 /* CBZRasterSplashView.h */,
+				DF2660FC1A4DD07C00BC05B9 /* CBZRasterSplashView.m */,
+				DF2660FD1A4DD07C00BC05B9 /* CBZSplashView.h */,
+				DF2660FE1A4DD07C00BC05B9 /* CBZSplashView.m */,
+				DF2660FF1A4DD07C00BC05B9 /* CBZVectorSplashView.h */,
+				DF2661001A4DD07C00BC05B9 /* CBZVectorSplashView.m */,
+			);
+			name = CBZSplashView;
 			sourceTree = "<group>";
 		};
 		DF4D221B19BFA5E10000F94E /* Flurry-iOS-5.3.0 */ = {
@@ -3002,11 +3027,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84685A3F15F6AC3100E6E4FC /* Build configuration list for PBXNativeTarget "Ski Greece" */;
 			buildPhases = (
-				A8B30CBA596D4B8DBE2CFE5F /* Check Pods Manifest.lock */,
 				84685A1D15F6AC3100E6E4FC /* Sources */,
 				84685A1E15F6AC3100E6E4FC /* Frameworks */,
 				84685A1F15F6AC3100E6E4FC /* Resources */,
-				2402822402084B1480D5D564 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -3088,7 +3111,6 @@
 				846BFBDA169758A200637D9A /* Default@2x.png in Resources */,
 				DFA752011A05191E00EBD6F6 /* separatorComments.png in Resources */,
 				DFA751A21A05191E00EBD6F6 /* follow_button_pressed@2x.png in Resources */,
-				DF3AABE41A4D895A00F53D1D /* ski_greece_splash_screen_2.png in Resources */,
 				8479AA3B184ADEB700ABB3C2 /* ic_launcher_120.png in Resources */,
 				DFB50AA51A3A5A6200C4C36F /* back_button_pressed.png in Resources */,
 				84B465F7169760DD0084ACA2 /* NewCameraCell.xib in Resources */,
@@ -3275,6 +3297,7 @@
 				84CBEFB917FF4F30007FFB45 /* cm.png in Resources */,
 				84CBEFBA17FF4F30007FFB45 /* label_closed.png in Resources */,
 				DFA752031A05191E00EBD6F6 /* separatorTimeline.png in Resources */,
+				DF2661051A4DD23D00BC05B9 /* ski_greece_splash_screen_new.png in Resources */,
 				84CBEFBB17FF4F30007FFB45 /* label_opened.png in Resources */,
 				DFA751DC1A05191E00EBD6F6 /* iconPics.png in Resources */,
 				84CBEFC417FF8C39007FFB45 /* general_blue_button.png in Resources */,
@@ -3581,39 +3604,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		2402822402084B1480D5D564 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-Ski Greece-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A8B30CBA596D4B8DBE2CFE5F /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		84685A1D15F6AC3100E6E4FC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -3629,6 +3619,7 @@
 				84C5D11B15FDF6660056FC60 /* LiftsCell.m in Sources */,
 				DFFB52FC19FEED6300A7549B /* UIImage+AlphaAdditions.m in Sources */,
 				DF4D231719BFA5E10000F94E /* functions_61.js in Sources */,
+				DF2661011A4DD07C00BC05B9 /* CBZRasterSplashView.m in Sources */,
 				DFFB52EE19FEEC1700A7549B /* PAPHomeViewController.m in Sources */,
 				DFFB534819FEF43200A7549B /* PAPSettingsButtonItem.m in Sources */,
 				DF4D22BD19BFA5E10000F94E /* annotated.js in Sources */,
@@ -3644,6 +3635,7 @@
 				DFFB532919FEF1C200A7549B /* PAPPhotoHeaderView.m in Sources */,
 				DF4D231F19BFA5E10000F94E /* functions_66.js in Sources */,
 				8440A957168B34A4002596E4 /* CenterClassViewController.m in Sources */,
+				DF2661031A4DD07C00BC05B9 /* CBZVectorSplashView.m in Sources */,
 				DF4D22FC19BFA5E10000F94E /* all_63.js in Sources */,
 				84043DF9168DD9BA0071F978 /* CenterMoreInfoV2.m in Sources */,
 				DF4D22F519BFA5E10000F94E /* protocol_flurry_ad_delegate-p.js in Sources */,
@@ -3743,6 +3735,7 @@
 				DF4D22E619BFA5E10000F94E /* hierarchy.js in Sources */,
 				841FD1EE1815C04D007D6579 /* LocalPosts.m in Sources */,
 				840F8F5B181712810087B1D2 /* MainMapCell.m in Sources */,
+				DF2661021A4DD07C00BC05B9 /* CBZSplashView.m in Sources */,
 				DF4D230E19BFA5E10000F94E /* all_73.js in Sources */,
 				84A014A3181D4B5600D15F95 /* SingleWebview.m in Sources */,
 				DF4D233319BFA5E10000F94E /* search.js in Sources */,
@@ -3879,7 +3872,6 @@
 		};
 		84685A4015F6AC3100E6E4FC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2319C1FCAD844B119C5B82C4 /* Pods-Ski Greece.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -3922,7 +3914,6 @@
 		};
 		84685A4115F6AC3100E6E4FC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2319C1FCAD844B119C5B82C4 /* Pods-Ski Greece.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -4000,7 +3991,6 @@
 		};
 		84D64AC71611B9E200E10C46 /* Distribution */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2319C1FCAD844B119C5B82C4 /* Pods-Ski Greece.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
