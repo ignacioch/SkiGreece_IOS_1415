@@ -24,7 +24,7 @@
 #import "VTHomeViewController.h"
 
 // IPHONE 6 : Distance between basic button X => 55  , Y => 50
-//
+// 
 
 #define BASIC_BUTTON_WIDTH 102.0f
 #define BASIC_BUTTON_HEIGHT 102.0f

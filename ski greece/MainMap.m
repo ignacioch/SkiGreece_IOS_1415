@@ -49,21 +49,11 @@
     
     flag=0;
     
-    /*Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
-    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
-    if (networkStatus == NotReachable) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ski Greece"
-                                                        message:@"Η εφαρμογή ενδέχεται να μην λειτουργεί σωστά χωρίς σύνδεση στο Internet. Παρακαλόυμε συνδεθείτε πρώτα!"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-    } else {
-        
-    }*/
     
     [self.mapMain setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 
+    
+    // Showing HUD for loading data
     
     hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
@@ -72,14 +62,17 @@
 
     self.responseData = [NSMutableData data];
     
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    if (screenBounds.size.height == 568) {
-        self.backgroundImg.frame = CGRectMake(0, 0 + [UIApplication sharedApplication].statusBarFrame.size.height  , 320, 550);
+    self.backgroundImg.frame = CGRectMake(0, 0 + [UIApplication sharedApplication].statusBarFrame.size.height  , SCREEN_WIDTH, SCREEN_HEIGHT);
+    if (IS_IPHONE_5) {
+        [self.backgroundImg setImage:[UIImage imageNamed:@"background_with_back_5.png"]];
+    } else if (IS_IPHONE_6){
+        //?? FIXME 
+        // create the png for iphone 6
         [self.backgroundImg setImage:[UIImage imageNamed:@"background_with_back_5.png"]];
     }
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 20)];
         imgView.backgroundColor=[UIColor blackColor];
         [self.view addSubview:imgView];
     }
@@ -89,7 +82,7 @@
         [self setNeedsStatusBarAppearanceUpdate];
     }
     
-    
+    //fetching condition for all the ski centers
     
     NSURLRequest *request = [NSURLRequest requestWithURL:
                              [NSURL URLWithString:[NSString stringWithFormat:@"http://%s/_all",BASE_URL]]];
@@ -178,11 +171,14 @@
     }
     
     NSDictionary* data= [dataFromServer objectAtIndex:indexPath.row];
-    NSLog(@"%d : %@",indexPath.row,data);
+    NSLog(@"%ld : %@",(long)indexPath.row,data);
     int open = [[data objectForKey:@"open"] intValue];
     NSString *name = [data objectForKey:@"name"];
     
 
+    // before loading data label is closed
+    // flag init to 0 - going to 1 after fetching data
+    
     if (flag==1){
         if (open == 0) {
             cell.mainImage.image = [UIImage imageNamed:@"label_closed"];

@@ -305,6 +305,7 @@
 		DF31D0F51A3D17D600E72B01 /* BackgroundLogin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF31D0F11A3D17D600E72B01 /* BackgroundLogin@2x.png */; };
 		DF31D0F81A3D18BD00E72B01 /* BackgroundLogin-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF31D0F61A3D18BD00E72B01 /* BackgroundLogin-568h@2x.png */; };
 		DF31D0F91A3D18BD00E72B01 /* BackgroundLogin-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF31D0F71A3D18BD00E72B01 /* BackgroundLogin-667h@2x.png */; };
+		DF3AABE41A4D895A00F53D1D /* ski_greece_splash_screen_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DF3AABE31A4D895A00F53D1D /* ski_greece_splash_screen_2.png */; };
 		DF4D22B819BFA5E10000F94E /* libFlurry_5.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4D221E19BFA5E10000F94E /* libFlurry_5.3.0.a */; };
 		DF4D22B919BFA5E10000F94E /* _flurry_8h_source.html in Resources */ = {isa = PBXBuildFile; fileRef = DF4D222019BFA5E10000F94E /* _flurry_8h_source.html */; };
 		DF4D22BA19BFA5E10000F94E /* _flurry_ad_delegate_8h_source.html in Resources */ = {isa = PBXBuildFile; fileRef = DF4D222119BFA5E10000F94E /* _flurry_ad_delegate_8h_source.html */; };
@@ -1089,6 +1090,7 @@
 		DF31D0F11A3D17D600E72B01 /* BackgroundLogin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BackgroundLogin@2x.png"; sourceTree = "<group>"; };
 		DF31D0F61A3D18BD00E72B01 /* BackgroundLogin-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BackgroundLogin-568h@2x.png"; sourceTree = "<group>"; };
 		DF31D0F71A3D18BD00E72B01 /* BackgroundLogin-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BackgroundLogin-667h@2x.png"; sourceTree = "<group>"; };
+		DF3AABE31A4D895A00F53D1D /* ski_greece_splash_screen_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ski_greece_splash_screen_2.png; sourceTree = "<group>"; };
 		DF4D221D19BFA5E10000F94E /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		DF4D221E19BFA5E10000F94E /* libFlurry_5.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_5.3.0.a; sourceTree = "<group>"; };
 		DF4D222019BFA5E10000F94E /* _flurry_8h_source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = _flurry_8h_source.html; sourceTree = "<group>"; };
@@ -1845,6 +1847,7 @@
 		84685A2C15F6AC3100E6E4FC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DF3AABE31A4D895A00F53D1D /* ski_greece_splash_screen_2.png */,
 				DF287D921A4B260500439850 /* mobile-banner-640x450.png */,
 				DFA750681A05191D00EBD6F6 /* AnypicAssets */,
 				8479AA3A184ADEB700ABB3C2 /* ic_launcher_120.png */,
@@ -3085,6 +3088,7 @@
 				846BFBDA169758A200637D9A /* Default@2x.png in Resources */,
 				DFA752011A05191E00EBD6F6 /* separatorComments.png in Resources */,
 				DFA751A21A05191E00EBD6F6 /* follow_button_pressed@2x.png in Resources */,
+				DF3AABE41A4D895A00F53D1D /* ski_greece_splash_screen_2.png in Resources */,
 				8479AA3B184ADEB700ABB3C2 /* ic_launcher_120.png in Resources */,
 				DFB50AA51A3A5A6200C4C36F /* back_button_pressed.png in Resources */,
 				84B465F7169760DD0084ACA2 /* NewCameraCell.xib in Resources */,
