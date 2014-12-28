@@ -76,9 +76,9 @@
     [self performSelectorInBackground:@selector(downloadImage) withObject:nil];
     
     // alocate and initialize scroll
-    UIScrollView *myScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(10.0f, 305.0f, 290.0f, 104.0f)];
+    UIScrollView *myScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(10.0f, 305.0f, SCREEN_WIDTH-30.f, 104.0f)];
     // alocate and initialize label
-    UILabel *centerLabel= [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 290.0f, 304.0f)];
+    UILabel *centerLabel= [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, SCREEN_WIDTH -30.0f, 304.0f)];
     
     centerLabel.text=[self getCenterDescription];
     // set line break mode to word wrap
@@ -86,14 +86,19 @@
     // set number of lines to zero
     centerLabel.numberOfLines = 0;
     myScroll.tag=30;
-    [centerLabel setFont:[UIFont fontWithName:@"Myriad Pro" size:11.0f]];
+    if (IS_IPHONE_6) {
+        // bigger font for iphone 6
+        [centerLabel setFont:[UIFont fontWithName:@"Myriad Pro" size:13.0f]];
+    } else {
+        [centerLabel setFont:[UIFont fontWithName:@"Myriad Pro" size:11.0f]];
+    }
     [centerLabel setTextColor:[UIColor colorWithRed:(183/255.f) green:(183/255.f) blue:(183/255.f) alpha:1.0f]];
     [centerLabel setBackgroundColor:[UIColor clearColor]];
     // resize label
     [centerLabel sizeToFit];
     
     // set scroll view size
-    myScroll.contentSize = CGSizeMake(290.0f, centerLabel.frame.size.height);
+    myScroll.contentSize = CGSizeMake(SCREEN_WIDTH-30.f, centerLabel.frame.size.height);
     NSLog(@"Content size:%f - %f",myScroll.contentSize.width, centerLabel.frame.size.height);
     myScroll.delegate = self;
     [myScroll setScrollEnabled:YES];
@@ -103,9 +108,31 @@
     [self.view addSubview:myScroll];
     
     
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    if (screenBounds.size.height == 568) {
+    //CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    //if (screenBounds.size.height == 568) {
+    if (IS_IPHONE_6) {
         
+        self.backgroundImg.frame = CGRectMake(0, 0 + [UIApplication sharedApplication].statusBarFrame.size.height  , SCREEN_WIDTH, SCREEN_HEIGHT);
+        //?? FIXME - IMAGE FOR IPHONE 6
+        [self.backgroundImg setImage:[UIImage imageNamed:@"main_screen_header_iphone5.png"]];
+        
+        self.backBtn.frame = CGRectMake(self.backBtn.frame.origin.x, self.backBtn.frame.origin.y + OFFSET_IOS_7 , self.backBtn.frame.size.width , self.backBtn.frame.size.height);
+        
+        NSArray *subviews = [self.view subviews];
+        
+        for (UIView *subview in subviews) {
+            if (subview.tag == 10) {                // 10 s the ski center label and that group
+                subview.frame = CGRectMake(subview.frame.origin.x, subview.frame.origin.y + OFFSET_IOS_7 + 20.0f + 25.f, subview.frame.size.width + OFFSET_W_6, subview.frame.size.height);
+            } else if (subview.tag == 20) {                // 20 is the image
+                subview.frame = CGRectMake(subview.frame.origin.x, subview.frame.origin.y + OFFSET_IOS_7 + 10.0f + 5.0f + 40.0f, subview.frame.size.width + OFFSET_W_6, subview.frame.size.height + 30.f);
+            } else if (subview.tag == 30) {                // 30 is the scrollview
+                subview.frame = CGRectMake(subview.frame.origin.x, subview.frame.origin.y + OFFSET_IOS_7 + 10.0f + 5.0f + 5.0f + 40.0f + 40.0f, subview.frame.size.width + OFFSET_W_6, subview.frame.size.height + 50.0f);
+            } else if (subview.tag == 40) {                // 30 is the group for the bottom
+                // width goes from 320 to 375 (+55)
+                subview.frame = CGRectMake(subview.frame.origin.x, SCREEN_HEIGHT - subview.frame.size.height, subview.frame.size.width + OFFSET_W_6, subview.frame.size.height);
+            }
+        }
+    } else if (IS_IPHONE_5) {
         self.backgroundImg.frame = CGRectMake(0, 0 + [UIApplication sharedApplication].statusBarFrame.size.height  , 320, 550);
         [self.backgroundImg setImage:[UIImage imageNamed:@"background_with_back_5.png"]];
         
@@ -135,7 +162,7 @@
     }
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 20)];
         imgView.backgroundColor=[UIColor blackColor];
         [self.view addSubview:imgView];
     }
