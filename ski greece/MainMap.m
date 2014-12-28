@@ -185,6 +185,8 @@
     static NSString *simpleTableIdentifier=@"MainMapCell";
     //this is the identifier of the custom cell
     MainMapCell *cell = (MainMapCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    
     if (cell == nil)
     {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MainMapCell" owner:self options:nil];
@@ -208,6 +210,9 @@
             cell.mainImage.image = [UIImage imageNamed:@"label_opened"];
         }
     }
+    
+    cell.mainImage.frame = CGRectMake(0.0f, 0.0f, SCREEN_WIDTH, 79.0f);
+
     
     cell.titleLabel.text = name;
     [cell.titleLabel setFont:[UIFont fontWithName:@"Myriad Pro" size:17.0f]];
