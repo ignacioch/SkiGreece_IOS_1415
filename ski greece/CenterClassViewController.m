@@ -105,9 +105,6 @@
     [self hideElements];
     
     // Do any additional setup after loading the view.
-    /*ski_center=self.skiCenter;
-    cnt_id=[self.skiCenterId integerValue];
-    condit=self.skiCenterCondition;*/
     
     NSLog(@"Ski Center Dictionary: %@",self.skiCenterDictionary);
     int open = [[self.skiCenterDictionary objectForKey:@"open"] intValue];
@@ -139,8 +136,58 @@
 
     /*adjust for different screen sizes*/
     
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    if (screenBounds.size.height == 568) {
+    //CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    //if (screenBounds.size.height == 568) {
+    if (IS_IPHONE_6) {
+        self.backgroundImg.frame = CGRectMake(0, 0 + [UIApplication sharedApplication].statusBarFrame.size.height  , SCREEN_WIDTH, SCREEN_HEIGHT);
+        //?? FIXME - IMAGE FOR IPHONE 6
+        [self.backgroundImg setImage:[UIImage imageNamed:@"main_screen_header_iphone5.png"]];
+        
+        NSArray *subviews = [self.view subviews];
+        
+        // Return if there are no subviews
+        //if ([subviews count] == 0) return;
+        
+        for (UIView *subview in subviews) {
+            if (subview.tag == 10) {                // 10 is the bottom header + the buttons in there
+                // width goes from 320 to 375 (+55)
+                subview.frame = CGRectMake(subview.frame.origin.x, SCREEN_HEIGHT - subview.frame.size.height, subview.frame.size.width + OFFSET_W_6, subview.frame.size.height);
+            } else if (subview.tag == 20) {                // 20 is the ski center label and that group
+                subview.frame = CGRectMake(subview.frame.origin.x, subview.frame.origin.y + OFFSET_IOS_7 + 20.0f + 25.f, subview.frame.size.width + OFFSET_W_6, subview.frame.size.height);
+            } else if (subview.tag == 30) {                // 30 is the group for lifts + tracks
+                subview.frame = CGRectMake(subview.frame.origin.x , subview.frame.origin.y + OFFSET_IOS_7 + 20.0f + 25.0f + 35.0f, subview.frame.size.width + OFFSET_W_6, subview.frame.size.height);
+            } else if (subview.tag == 40) {                // 40 is the group for temperature
+                subview.frame = CGRectMake(subview.frame.origin.x, subview.frame.origin.y + OFFSET_IOS_7 + 20.0f + 25.0f + 25.0f + 50.0f, subview.frame.size.width + OFFSET_W_6, subview.frame.size.height);
+            } else if (subview.tag != 99) {            // 99 is the subView of the backgroundImg
+                
+                subview.frame = CGRectMake(subview.frame.origin.x, subview.frame.origin.y + OFFSET_IOS_7, subview.frame.size.width + OFFSET_W_6, subview.frame.size.height);
+            }
+        }
+        
+        // manually change .x for some elements
+        self.open_lifts_text.frame = CGRectMake(self.open_lifts_text.frame.origin.x + 23.0f, self.open_lifts_text.frame.origin.y, self.open_lifts_text.frame.size.width, self.open_lifts_text.frame.size.height);
+        
+        self.closed_lifts_text.frame = CGRectMake(self.closed_lifts_text.frame.origin.x + 27.0f, self.closed_lifts_text.frame.origin.y, self.closed_lifts_text.frame.size.width, self.closed_lifts_text.frame.size.height);
+        
+        self.open_tracks_text.frame = CGRectMake(self.open_tracks_text.frame.origin.x + 23.0f, self.open_tracks_text.frame.origin.y, self.open_tracks_text.frame.size.width, self.open_tracks_text.frame.size.height);
+        
+        self.closed_tracks_text.frame = CGRectMake(self.closed_tracks_text.frame.origin.x + 27.0f, self.closed_tracks_text.frame.origin.y, self.closed_tracks_text.frame.size.width, self.closed_tracks_text.frame.size.height);
+        
+        self.temperature_mid.frame = CGRectMake(self.temperature_mid.frame.origin.x + 23.0f, self.temperature_mid.frame.origin.y, self.temperature_mid.frame.size.width, self.temperature_mid.frame.size.height);
+        
+        self.temperature_end.frame = CGRectMake(self.temperature_end.frame.origin.x + 23.0f, self.temperature_end.frame.origin.y, self.temperature_end.frame.size.width, self.temperature_end.frame.size.height);
+        
+        self.snow_base_label.frame = CGRectMake(self.snow_base_label.frame.origin.x + 33.0f, self.snow_base_label.frame.origin.y, self.snow_base_label.frame.size.width, self.snow_base_label.frame.size.height);
+        self.snow_base_cm.frame = CGRectMake(self.snow_base_cm.frame.origin.x + 38.0f, self.snow_base_cm.frame.origin.y, self.snow_base_cm.frame.size.width, self.snow_base_cm.frame.size.height);
+        self.snow_base.frame = CGRectMake(self.snow_base.frame.origin.x + 15.0f, self.snow_base.frame.origin.y, self.snow_base.frame.size.width, self.snow_base.frame.size.height);
+        
+        self.snow_top.frame = CGRectMake(self.snow_top.frame.origin.x + 15.0f, self.snow_top.frame.origin.y, self.snow_top.frame.size.width, self.snow_top.frame.size.height);
+        self.snow_top_label.frame = CGRectMake(self.snow_top_label.frame.origin.x + 33.0f, self.snow_top_label.frame.origin.y, self.snow_top_label.frame.size.width, self.snow_top_label.frame.size.height);
+        self.snow_top_cm.frame = CGRectMake(self.snow_top_cm.frame.origin.x + 38.0f, self.snow_top_cm.frame.origin.y, self.snow_top_cm.frame.size.width, self.snow_top_cm.frame.size.height);
+        
+        
+    } else if (IS_IPHONE_5) {
+    
         self.backgroundImg.frame = CGRectMake(0, 0 + [UIApplication sharedApplication].statusBarFrame.size.height  , 320, 550);
         [self.backgroundImg setImage:[UIImage imageNamed:@"main_screen_header_iphone5.png"]];
         
