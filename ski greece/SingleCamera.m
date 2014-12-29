@@ -37,8 +37,18 @@
     //URL Requst Object
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    if (screenBounds.size.height == 568) {
+    //CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    //if (screenBounds.size.height == 568) {
+    if (IS_IPHONE_6) {
+        self.backgroundImg.frame = CGRectMake(0, 0 + [UIApplication sharedApplication].statusBarFrame.size.height  , SCREEN_WIDTH, SCREEN_HEIGHT);
+        //??FIXME
+        [self.backgroundImg setImage:[UIImage imageNamed:@"background_with_back_5.png"]];
+        
+        self.backBtn.frame = CGRectMake(self.backBtn.frame.origin.x, self.backBtn.frame.origin.y + OFFSET_IOS_7, self.backBtn.frame.size.width, self.backBtn.frame.size.height);
+        
+        self.camera_display.frame = CGRectMake(self.camera_display.frame.origin.x, self.camera_display.frame.origin.y + OFFSET_IOS_7, SCREEN_WIDTH, SCREEN_HEIGHT-self.camera_display.frame.origin.y);
+
+    }else if (IS_IPHONE_5) {
         self.backgroundImg.frame = CGRectMake(0, 0 + [UIApplication sharedApplication].statusBarFrame.size.height  , 320, 550);
         [self.backgroundImg setImage:[UIImage imageNamed:@"background_with_back_5.png"]];
         
@@ -57,7 +67,7 @@
     }
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 20)];
         imgView.backgroundColor=[UIColor blackColor];
         [self.view addSubview:imgView];
     }

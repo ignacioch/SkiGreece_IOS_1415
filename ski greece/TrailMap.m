@@ -90,7 +90,7 @@
      self.trailImg = [[UIImageView alloc] initWithImage:[UIImage imageWithData: imageData]];
      [self.trailImg setUserInteractionEnabled:YES];
      [self.trailImg setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
-     [self.trailImg setFrame:CGRectMake(0, 45, 320, 380)];
+     [self.trailImg setFrame:CGRectMake(0, 45, SCREEN_WIDTH, SCREEN_HEIGHT - self.trailImg.frame.origin.y)];
     
     imgScrollView = [[UIScrollView alloc] initWithFrame:self.trailImg.frame];
     imgScrollView.delegate = self;
@@ -136,8 +136,15 @@
     // Attaching the Array to the NavigationBar
     [self.topBar setItems:barItemArray];
     
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    if (screenBounds.size.height == 568) {
+    //CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    //if (screenBounds.size.height == 568) {
+    if (IS_IPHONE_6) {
+        self.topBar.frame = CGRectMake(self.topBar.frame.origin.x, self.topBar.frame.origin.y + OFFSET_IOS_7, SCREEN_WIDTH, self.topBar.frame.size.height);
+        
+        imgScrollView.frame= CGRectMake(imgScrollView.frame.origin.x, imgScrollView.frame.origin.y + OFFSET_IOS_7, SCREEN_WIDTH, SCREEN_HEIGHT- (imgScrollView.frame.origin.y + OFFSET_IOS_7));
+        
+        self.trailImg.frame = CGRectMake(self.trailImg.frame.origin.x, self.trailImg.frame.origin.y, SCREEN_WIDTH, SCREEN_HEIGHT - self.trailImg.frame.origin.y);
+    } else if (IS_IPHONE_5) {
         self.topBar.frame = CGRectMake(self.topBar.frame.origin.x, self.topBar.frame.origin.y + OFFSET_IOS_7, self.topBar.frame.size.width, self.topBar.frame.size.height);
         
         imgScrollView.frame= CGRectMake(imgScrollView.frame.origin.x, imgScrollView.frame.origin.y + OFFSET_IOS_7, imgScrollView.frame.size.width, imgScrollView.frame.size.height + OFFSET_5);
@@ -150,7 +157,7 @@
     }
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 20)];
         imgView.backgroundColor=[UIColor blackColor];
         [self.view addSubview:imgView];
     }
