@@ -35,9 +35,24 @@
 	// Do any additional setup after loading the view.
     
     // alocate and initialize scroll
-    UIScrollView *myScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(10.0f, 80.0f, 300.0f, 300.0f)];
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    if (screenBounds.size.height == 568) {
+    UIScrollView *myScroll;
+    if (IS_IPHONE_6) {
+        myScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(10.0f, 80.0f, SCREEN_WIDTH - 20.0f,300.0f  + OFFSET_H_6)];
+    } else {
+        myScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(10.0f, 80.0f, SCREEN_WIDTH - 20.0f,300.0f )];
+    }
+    //CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    //if (screenBounds.size.height == 568) {
+    if (IS_IPHONE_6) {
+        self.backgroundImg.frame = CGRectMake(0, 0 + [UIApplication sharedApplication].statusBarFrame.size.height  , SCREEN_WIDTH, SCREEN_HEIGHT);
+        [self.backgroundImg setImage:[UIImage imageNamed:@"background_no_back_5.png"]];
+        
+        myScroll.frame= CGRectMake(myScroll.frame.origin.x, myScroll.frame.origin.y + OFFSET_IOS_7, myScroll.frame.size.width + OFFSET_W_6, myScroll.frame.size.height + OFFSET_H_6);
+        
+        self.homeBtn.frame = CGRectMake(SCREEN_WIDTH - self.homeBtn.frame.size.width , SCREEN_HEIGHT - self.homeBtn.frame.size.height , self.homeBtn.frame.size.width, self.homeBtn.frame.size.height);
+        
+        self.copyright.frame = CGRectMake(self.copyright.frame.origin.x, SCREEN_HEIGHT - self.copyright.frame.size.height, self.copyright.frame.size.width, self.copyright.frame.size.height);
+    } else if (IS_IPHONE_5) {
         self.backgroundImg.frame = CGRectMake(0, 0 + [UIApplication sharedApplication].statusBarFrame.size.height  , 320, 550);
         [self.backgroundImg setImage:[UIImage imageNamed:@"background_no_back_5.png"]];
         
@@ -60,7 +75,7 @@
     }
     
     // alocate and initialize labels
-    UILabel *info= [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 300.0f, 20.0f)];
+    UILabel *info= [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, SCREEN_WIDTH - 30.0f, 20.0f)];
     [info setBackgroundColor:[UIColor clearColor]];
     
     NSString * infotxt=@"Το Ski Greece σου παρέχει όλες τις πληροφορίες που χρειάζεσαι για να γίνει η εμπειρία σου στο βουνό πιο ευχάριστη.\n Μέσω του Live News, μπορείς να έχεις εικόνα για την κατάσταση λειτουργίας που επικρατεί αυτή τη στιγμή στο Χιονοδρομικό Κέντρο της επιλογής σου. Ενημερώνεσαι για τις ανοικτές πίστες, τους αναβατήρες, τον καιρό, ενώ με τις live cameras έχεις ζωντανή εικόνα ανά πάσα στιγμή. \nΜε το Track my Day μπορείς πλέον να καταγράψεις τα χιλιόμετρα που έγραψες πάνω στο βουνό. Πάτησε το \"Start\" και η εφαρμογή καταγράφει κάθε σου κίνηση. Με το \"Reset\" μηδενίζεις τα νούμερα που έχεις ήδη γράψει και σε περίπτωση που θέλεις να σταματήσεις για λίγο με το \"Pause\" σταματάς και συνεχίζεις να γράφεις όποτε εσύ το επιθυμείς απλά ξαναπατώντας το ίδιο button. Μόλις τελειώσεις την διαδρομή σου, πάτα το \"Stop\" και βλέπεις αυτόματα την διαδρομή σου πάνω στον χάρτη. Μοιράσου τις επιδόσεις σου με τους φίλους σου στα Social Media, και...σίγουρα πλέον δεν θα μπορεί να σε αμφισβητήσει κανείς! \n Μέσω του NotifyΜe μπορείς να γραφτείς σε κανάλια ενημέρωσης για να λαμβάνεις push notifications για το αγαπημένο σου Χιονοδρομικό Κέντρο. Το μόνο που έχεις να κάνεις είναι να διαλέξεις ανάμεσα στις επιλογές που σε ενδιαφέρουν, και να λαμβάνεις push notifications όταν προκύπτει κάποια αλλαγή. \n Με το NearBy έχεις τη δυνατότητα να βρεις σημεία ενδιαφέροντος στην ευρύτερη περιοχή γύρω από τα Χιονοδρομικά Κέντρα. Στο κάτω μέρος της οθόνης υπάρχουν περισσότερες πληροφορίες τις οποίες και μπορείς να δεις απλά σύροντας το βέλος προς τα επάνω.\n Γίνε μέλος του πρώτου Social Community αποκλειστικά για Ski και Snowboard. Ανέβασε φωτογραφίες από το βουνό, μοιράσου τις εμπειρίες σου και ταξίδεψε με την παρέα του Ski Greece στον κόσμο των χειμερινών σπορ. ";
@@ -84,7 +99,7 @@
     info.text = infotxt;
     
     /*title for terms and conditions*/
-    UILabel *tc= [[UILabel alloc] initWithFrame:CGRectMake(info.frame.origin.x, info.frame.origin.y + info.frame.size.height + 10.0f, 300.0f, 20.0f)];
+    UILabel *tc= [[UILabel alloc] initWithFrame:CGRectMake(info.frame.origin.x, info.frame.origin.y + info.frame.size.height + 10.0f, SCREEN_WIDTH - 30.0f, 20.0f)];
     tc.text = @"Όροι χρήσης";
     [tc setFont:[UIFont fontWithName:@"Myriad Pro" size:14.0f]];
     [tc setBackgroundColor:[UIColor clearColor]];
@@ -92,7 +107,7 @@
     
     /*terms and conditions*/
     
-    UILabel *terms= [[UILabel alloc] initWithFrame:CGRectMake(tc.frame.origin.x , tc.frame.origin.y + tc.frame.size.height + 10.0f, 300.0f, 20.0f)];
+    UILabel *terms= [[UILabel alloc] initWithFrame:CGRectMake(tc.frame.origin.x , tc.frame.origin.y + tc.frame.size.height + 10.0f, SCREEN_WIDTH - 30.0f, 20.0f)];
     
     NSString * termstxt=@"Ο χρήστης εγγράφεται στο Community είτε δημιουργώντας νέο λογαριασμό, είτε κάνοντας σύνδεση με λογαριασμό Facebook. Σε περίπτωση που δημιουργήσει νέο λογαριασμό, δεν απαιτείται mail ενεργοποίησης. Ο κωδικός του λογαριασμού αποθηκεύται στο Server κρυπτογραφημένος και δεν είναι ορατός ούτε απο τους διαχειριστές της εφαρμογής Ski Greece, ώστε να διασφαλιστεί η ασφάλεια των προσωπικών δεδομένων. Ο χρήστης έχει κάθε δικάιωμα στα δικά του posts, συνεπώς και μπορεί ανα πάσα στιγμή να τα διαγράψει. Απαγορεύονται τα posts με υβριστικό, ρατσιστικό και σεξουαλικό περιεχόμενο, και η ομάδα του Ski Greece διατηρεί κάθε δικαίωμα να τα διαγράψει χωρίς προειδοποίηση και να αποκλείσει τους χρήστες. Για οποιοδήποτε πρόβλημα που αφορά στη λειτουργία της εφαρμογής ή διαφωνία με τους όρους χρήσης παρακαλούμε επικοινωνήστε μαζί μας στο email info@skigreece.gr. ";
     terms.lineBreakMode = UILineBreakModeWordWrap;
@@ -114,7 +129,7 @@
     terms.text = termstxt;
     
     /*credits title*/
-    UILabel *cred= [[UILabel alloc] initWithFrame:CGRectMake(info.frame.origin.x, terms.frame.origin.y + terms.frame.size.height + 10.0f, 300.0f, 20.0f)];
+    UILabel *cred= [[UILabel alloc] initWithFrame:CGRectMake(info.frame.origin.x, terms.frame.origin.y + terms.frame.size.height + 10.0f, SCREEN_WIDTH - 30.0f, 20.0f)];
     cred.text = @"Credits";
     [cred setFont:[UIFont fontWithName:@"Myriad Pro" size:14.0f]];
     [cred setBackgroundColor:[UIColor clearColor]];
@@ -122,7 +137,7 @@
     
     /*credits text*/
     
-    UILabel *credits= [[UILabel alloc] initWithFrame:CGRectMake( cred.frame.origin.x , cred.frame.origin.y + cred.frame.size.height + 10.0f, 300.0f, 20.0f)];
+    UILabel *credits= [[UILabel alloc] initWithFrame:CGRectMake( cred.frame.origin.x , cred.frame.origin.y + cred.frame.size.height + 10.0f, SCREEN_WIDTH - 30.0f, 20.0f)];
     
     NSString * creditstxt=@"Ευχαριστούμε όλους όσους βοήθησαν στην παραγωγή της εφαρμογής Ski Greece. Οι βιβλιοθήκες που χρησιμοποιούνται είναι open-source licensed. Τα γραφικά έγιναν από την εταιρεία Crodek Ltd.";
     credits.lineBreakMode = UILineBreakModeWordWrap;
@@ -196,7 +211,7 @@
     
     
     // set scroll view size
-    myScroll.contentSize = CGSizeMake(290.0f, info.frame.size.height + tc.frame.size.height + terms.frame.size.height + cred.frame.size.height + credits.frame.size.height + option_loc.frame.size.height + 80.0f);
+    myScroll.contentSize = CGSizeMake(SCREEN_WIDTH - 20.0f, info.frame.size.height + tc.frame.size.height + terms.frame.size.height + cred.frame.size.height + credits.frame.size.height + option_loc.frame.size.height + 80.0f);
     myScroll.delegate = self;
     [myScroll setScrollEnabled:YES];
     // add myLabel
@@ -211,7 +226,7 @@
     [self.view addSubview:myScroll];
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 20)];
         imgView.backgroundColor=[UIColor blackColor];
         [self.view addSubview:imgView];
     }
