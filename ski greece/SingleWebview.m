@@ -56,8 +56,12 @@
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     
     
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    if (screenBounds.size.height == 568) {
+    //CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    //if (screenBounds.size.height == 568) {
+    if (IS_IPHONE_6) {
+        self.topBar.frame = CGRectMake(self.topBar.frame.origin.x , self.topBar.frame.origin.y + OFFSET_IOS_7, SCREEN_WIDTH, self.topBar.frame.size.height);
+        self.webView.frame= CGRectMake(self.webView.frame.origin.x, self.webView.frame.origin.y + OFFSET_IOS_7, SCREEN_WIDTH, SCREEN_HEIGHT-self.webView.frame.origin.y);
+    } else if (IS_IPHONE_5){
         self.topBar.frame = CGRectMake(self.topBar.frame.origin.x , self.topBar.frame.origin.y + OFFSET_IOS_7, self.topBar.frame.size.width, self.topBar.frame.size.height);
         self.webView.frame= CGRectMake(self.webView.frame.origin.x, self.webView.frame.origin.y + OFFSET_IOS_7, self.webView.frame.size.width, self.webView.frame.size.height + OFFSET_5);
        
@@ -69,7 +73,7 @@
     }
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 20)];
         imgView.backgroundColor=[UIColor blackColor];
         [self.view addSubview:imgView];
     }

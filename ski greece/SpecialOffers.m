@@ -54,8 +54,13 @@
     hud.labelText = @"Loading offers";
     [hud show:YES];
     
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    if (screenBounds.size.height == 568) {
+    //CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    //if (screenBounds.size.height == 568) {
+    if (IS_IPHONE_6){
+        self.myScroll.frame = CGRectMake(self.myScroll.frame.origin.x, self.myScroll.frame.origin.y, SCREEN_WIDTH, SCREEN_HEIGHT-self.myScroll.frame.origin.y);
+        self.homeBtn.frame = CGRectMake(SCREEN_WIDTH - self.homeBtn.frame.size.width - 20.0f, SCREEN_HEIGHT - self.homeBtn.frame.size.height, self.homeBtn.frame.size.width, self.homeBtn.frame.size.height);
+        self.myPageControl.frame= CGRectMake(self.myPageControl.frame.origin.x, SCREEN_HEIGHT - self.myPageControl.frame.size.height, self.myPageControl.frame.size.width, self.myPageControl.frame.size.height);
+    } else if (IS_IPHONE_5) {
         self.myScroll.frame = CGRectMake(self.myScroll.frame.origin.x, self.myScroll.frame.origin.y, self.myScroll.frame.size.width, 399.0f + OFFSET_5);
         self.homeBtn.frame = CGRectMake(self.homeBtn.frame.origin.x, self.homeBtn.frame.origin.y + OFFSET_5, self.homeBtn.frame.size.width, self.homeBtn.frame.size.height);
         self.myPageControl.frame= CGRectMake(self.myPageControl.frame.origin.x, self.myPageControl.frame.origin.y +OFFSET_5, self.myPageControl.frame.size.width, self.myPageControl.frame.size.height);
@@ -66,7 +71,7 @@
     }
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 20)];
         imgView.backgroundColor=[UIColor blackColor];
         [self.view addSubview:imgView];
     }
@@ -159,7 +164,13 @@
     int total=[[data objectForKey:@"total_number"] intValue];
     NSLog(@"Total Images: %d",total);
     for (int i=0; i<total; i++) {
-        NSString * url= [data objectForKey:[NSString stringWithFormat:@"url_%d",(i+1)]];
+        NSString *url;
+        if (IS_IPHONE_6) {
+            //?? differemt url for offers for iphone 6
+            url= [data objectForKey:[NSString stringWithFormat:@"url_%d",(i+1)]];
+        } else {
+            url= [data objectForKey:[NSString stringWithFormat:@"url_%d",(i+1)]];
+        }
         NSLog(@"%d: Url => %@",i+1,url);
         [urlFromServer addObject:url];
     }
@@ -185,7 +196,7 @@
         
         if (IS_DEVELOPER) NSLog(@"Offer : %d. Url is %@",i,imageURL);
         
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320,_myScroll.frame.size.height)];
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH,_myScroll.frame.size.height)];
         [subview addSubview:imgView];
         
         
@@ -211,7 +222,7 @@
          forControlEvents:UIControlEventTouchDown];
         button.tag = i;
         [button setTitle:@" " forState:UIControlStateNormal];
-        button.frame = CGRectMake(0.0, 0.0, 320.0, self.myScroll.frame.size.height);
+        button.frame = CGRectMake(0.0, 0.0, SCREEN_WIDTH, self.myScroll.frame.size.height);
         [subview addSubview:button];
         
         [self.myScroll addSubview:subview];

@@ -626,7 +626,7 @@
 
 -(void)  adjustLayoutForDevices
 {
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    //CGRect screenBounds = [[UIScreen mainScreen] bounds];
     
     if (IS_IPHONE_6) {
         if (IS_DEVELOPER) NSLog(@"iPhone 6 screen");
