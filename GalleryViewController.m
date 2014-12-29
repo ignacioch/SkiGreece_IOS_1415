@@ -48,8 +48,15 @@
     
     // Do your resizing
     
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    if (screenBounds.size.height == 568) {
+    //CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    //if (screenBounds.size.height == 568) {
+    if (IS_IPHONE_6) {
+        self.backgroundImg.frame = CGRectMake(0, 0 + [UIApplication sharedApplication].statusBarFrame.size.height  , SCREEN_WIDTH, SCREEN_HEIGHT);
+        //??fixme
+        [self.backgroundImg setImage:[UIImage imageNamed:@"background_with_back_5.png"]];
+        
+        self.backBtn.frame = CGRectMake(self.backBtn.frame.origin.x, self.backBtn.frame.origin.y + OFFSET_IOS_7 , self.backBtn.frame.size.width , self.backBtn.frame.size.height);
+    } else if (IS_IPHONE_5) {
         
         self.backgroundImg.frame = CGRectMake(0, 0 + [UIApplication sharedApplication].statusBarFrame.size.height  , 320, 550);
         [self.backgroundImg setImage:[UIImage imageNamed:@"background_with_back_5.png"]];
@@ -68,7 +75,7 @@
     }
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 20)];
         imgView.backgroundColor=[UIColor blackColor];
         [self.view addSubview:imgView];
     }
@@ -102,7 +109,7 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     NSLog(@"connectionDidFinishLoading");
-    NSLog(@"Succeeded! Received %d bytes of data",[self.responseData length]);
+    NSLog(@"Succeeded! Received %lu bytes of data",(unsigned long)[self.responseData length]);
     
     // convert to JSON
     NSError *myError = nil;
@@ -136,6 +143,9 @@
         cell = [[GalleryCell alloc]initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:simpleTableIdentifier];
     }
+    
+    cell.galleryphoto.frame = CGRectMake(cell.galleryphoto.frame.origin.x, cell.galleryphoto.frame.origin.y, SCREEN_WIDTH, 200.f);
+    
     NSString *urlString;
     if (indexPath.row==[total_images intValue]-1){
         urlString=[NSString stringWithFormat:@"http://vimateam.gr/projects/skigreece/images/send_foto.png"];
