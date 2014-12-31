@@ -28,7 +28,11 @@
         // Initialization code
         self.backgroundColor = [UIColor clearColor];
         
-        mainView = [[UIView alloc] initWithFrame:CGRectMake( 20.0f, 0.0f, 280.0f, 51.0f)];
+        if (IS_IPHONE_6) {
+            mainView = [[UIView alloc] initWithFrame:CGRectMake( 20.0f, 0.0f, 335.0f, 51.0f)];
+        } else {
+            mainView = [[UIView alloc] initWithFrame:CGRectMake( 20.0f, 0.0f, 280.0f, 51.0f)];
+        }
         mainView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundComments.png"]];
         [self addSubview:mainView];
         
@@ -37,10 +41,18 @@
         [mainView addSubview:messageIcon];
         
         UIImageView *commentBox = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"textfieldComment.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(5.0f, 10.0f, 5.0f, 10.0f)]];
-        commentBox.frame = CGRectMake(35.0f, 8.0f, 237.0f, 35.0f);
+        if (IS_IPHONE_6) {
+            commentBox.frame = CGRectMake(35.0f, 8.0f, 237.0f + 55.0f, 35.0f);
+        } else {
+            commentBox.frame = CGRectMake(35.0f, 8.0f, 237.0f, 35.0f);
+        }
         [mainView addSubview:commentBox];
         
-        commentField = [[UITextField alloc] initWithFrame:CGRectMake( 40.0f, 10.0f, 227.0f, 31.0f)];
+        if (IS_IPHONE_6) {
+            commentField = [[UITextField alloc] initWithFrame:CGRectMake( 40.0f, 10.0f, 227.0f + 55.0f, 31.0f)];
+        } else {
+            commentField = [[UITextField alloc] initWithFrame:CGRectMake( 40.0f, 10.0f, 227.0f, 31.0f)];
+        }
         commentField.font = [UIFont systemFontOfSize:14.0f];
         commentField.placeholder = @"Add a comment";
         commentField.returnKeyType = UIReturnKeySend;

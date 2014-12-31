@@ -345,8 +345,6 @@
     } else {
         PAPPhotoCell *cell = (PAPPhotoCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
-        //NSLog(@"Cell :  %f,%f,%f,%f",cell.frame.origin.x, cell.frame.origin.y,cell.frame.size.width,cell.frame.size.height);
-        
         // adding for IOS7+
         // default background is white
         

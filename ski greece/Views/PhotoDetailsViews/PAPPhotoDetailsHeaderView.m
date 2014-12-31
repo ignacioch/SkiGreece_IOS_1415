@@ -217,7 +217,11 @@ static TTTTimeIntervalFormatter *timeFormatter;
     /*
      Create middle section of the header view; the image
      */
-    self.photoImageView = [[PFImageView alloc] initWithFrame:CGRectMake(mainImageX, mainImageY, mainImageWidth, mainImageHeight)];
+    if (IS_IPHONE_6){
+        self.photoImageView = [[PFImageView alloc] initWithFrame:CGRectMake(mainImageX, mainImageY, 335.0f, mainImageHeight)];
+    } else {
+        self.photoImageView = [[PFImageView alloc] initWithFrame:CGRectMake(mainImageX, mainImageY, mainImageWidth, mainImageHeight)];
+    }
     self.photoImageView.image = [UIImage imageNamed:@"PlaceholderPhoto.png"];
     self.photoImageView.backgroundColor = [UIColor blackColor];
     self.photoImageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -234,7 +238,11 @@ static TTTTimeIntervalFormatter *timeFormatter;
     /*
      Create top of header view with name and avatar
      */
-    self.nameHeaderView = [[UIView alloc] initWithFrame:CGRectMake(nameHeaderX, nameHeaderY, nameHeaderWidth, nameHeaderHeight)];
+    if (IS_IPHONE_6) {
+        self.nameHeaderView = [[UIView alloc] initWithFrame:CGRectMake(nameHeaderX, nameHeaderY, 335.0f, nameHeaderHeight)];
+    } else {
+        self.nameHeaderView = [[UIView alloc] initWithFrame:CGRectMake(nameHeaderX, nameHeaderY, nameHeaderWidth, nameHeaderHeight)];
+    }
     self.nameHeaderView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundComments.png"]];
     [self addSubview:self.nameHeaderView];
     
@@ -308,7 +316,11 @@ static TTTTimeIntervalFormatter *timeFormatter;
     /*
      Create bottom section fo the header view; the likes
      */
-    likeBarView = [[UIView alloc] initWithFrame:CGRectMake(likeBarX, likeBarY, likeBarWidth, likeBarHeight)];
+    if (IS_IPHONE_6) {
+        likeBarView = [[UIView alloc] initWithFrame:CGRectMake(likeBarX, likeBarY, 335.0f, likeBarHeight)];
+    } else {
+        likeBarView = [[UIView alloc] initWithFrame:CGRectMake(likeBarX, likeBarY, likeBarWidth, likeBarHeight)];
+    }
     [likeBarView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundComments.png"]]];
     [self addSubview:likeBarView];
     
