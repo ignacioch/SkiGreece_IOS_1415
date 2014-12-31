@@ -19,6 +19,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    if (IS_IPHONE_6) {
+        self.navBar.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH , 43.0f);
+        self.containerView.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height +43.0f, SCREEN_WIDTH, SCREEN_HEIGHT - [UIApplication sharedApplication].statusBarFrame.size.height - 43.0f);       
+    }
+    
     AppDelegate *del = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     del.editPhotoController= [[PAPEditPhotoViewController alloc] initWithImage:self.image];
     PAPEditPhotoViewController *vc = del.editPhotoController;

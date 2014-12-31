@@ -111,10 +111,19 @@
     
     // Set name 
     NSString *nameString = [self.user objectForKey:kPAPUserDisplayNameKey];
-    CGSize nameSize = [nameString boundingRectWithSize:CGSizeMake(144.0f, CGFLOAT_MAX)
-                                                    options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin
-                                                 attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16.0f]}
-                                                    context:nil].size;
+    CGSize nameSize;
+    if (IS_IPHONE_6) {
+        nameSize = [nameString boundingRectWithSize:CGSizeMake(144.0f + 55.0f, CGFLOAT_MAX)
+                                            options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin
+                                         attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16.0f]}
+                                            context:nil].size;
+    } else {
+        nameSize = [nameString boundingRectWithSize:CGSizeMake(144.0f, CGFLOAT_MAX)
+                                            options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin
+                                         attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16.0f]}
+                                            context:nil].size;
+    }
+    
     [nameButton setTitle:[self.user objectForKey:kPAPUserDisplayNameKey] forState:UIControlStateNormal];
     [nameButton setTitle:[self.user objectForKey:kPAPUserDisplayNameKey] forState:UIControlStateHighlighted];
 
@@ -128,7 +137,11 @@
     [photoLabel setFrame:CGRectMake( 60.0f, 17.0f + nameSize.height, 140.0f, photoLabelSize.height)];
     
     // Set follow button
-    [followButton setFrame:CGRectMake( 208.0f, 20.0f, 103.0f, 32.0f)];
+    if (IS_IPHONE_6) {
+        [followButton setFrame:CGRectMake( 208.0f + 55.0f, 20.0f, 103.0f, 32.0f)];
+    } else {
+        [followButton setFrame:CGRectMake( 208.0f, 20.0f, 103.0f, 32.0f)];
+    }
 }
 
 #pragma mark - ()

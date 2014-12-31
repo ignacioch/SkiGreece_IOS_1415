@@ -66,8 +66,12 @@
     self.scrollView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundLeather.png"]];
     self.view = self.scrollView;
     //[self.view addSubview:self.scrollView];
-    
-    UIImageView *photoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(20.0f, 42.0f, 280.0f, 280.0f)];
+    UIImageView *photoImageView ;
+    if (IS_IPHONE_6) {
+        photoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(20.0f, 42.0f, 280.0f + 55.0f, 280.0f)];
+    } else {
+        photoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(20.0f, 42.0f, 280.0f, 280.0f)];
+    }
     [photoImageView setBackgroundColor:[UIColor blackColor]];
     [photoImageView setImage:self.image];
     [photoImageView setContentMode:UIViewContentModeScaleAspectFit];
@@ -105,6 +109,10 @@
                             action:@selector(cancelButtonAction:)
                   forControlEvents:UIControlEventTouchUpInside];
     [self.cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
+//    if (IS_IPHONE_6) {
+//        self.cancelButton.frame = CGRectMake(200.0, [UIApplication sharedApplication].statusBarFrame.size.height , 100.0, 100.0);
+//    } else {
+//    }
     self.cancelButton.frame = CGRectMake(200.0, 0.0, 100.0, 100.0);
     [self.scrollView addSubview:self.cancelButton];
     
@@ -113,6 +121,11 @@
                           action:@selector(doneButtonAction:)
                 forControlEvents:UIControlEventTouchUpInside];
     [self.doneButton setTitle:@"Done" forState:UIControlStateNormal];
+//    if (IS_IPHONE_6) {
+//        self.doneButton.frame = CGRectMake(50.0, [UIApplication sharedApplication].statusBarFrame.size.height , 100.0, 100.0);
+//    } else {
+//        self.doneButton.frame = CGRectMake(50.0, 0.0, 100.0, 100.0);
+//    }
     self.doneButton.frame = CGRectMake(50.0, 0.0, 100.0, 100.0);
     [self.scrollView addSubview:self.doneButton];
     
