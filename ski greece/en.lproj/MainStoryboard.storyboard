@@ -1804,6 +1804,8 @@
                         <outlet property="activityBtn" destination="iyi-y3-U0j" id="73h-LK-Rep"/>
                         <outlet property="backBtn" destination="AMg-bz-3h4" id="SFU-q0-mx4"/>
                         <outlet property="containerView" destination="ZfK-VB-Nfo" id="z4n-fU-Ksd"/>
+                        <outlet property="deleteBtn" destination="bcV-yK-Ak2" id="P7M-8L-bim"/>
+                        <outlet property="propertyBtn" destination="iyi-y3-U0j" id="cg5-I0-9Dx"/>
                         <outlet property="topBar" destination="gW7-d0-Zj4" id="T2O-o8-Jr9"/>
                     </connections>
                 </viewController>

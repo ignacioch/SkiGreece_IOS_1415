@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *topBar;
 @property (weak, nonatomic) IBOutlet UIButton *activityBtn;
 @property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *deleteBtn;
+@property (weak, nonatomic) IBOutlet UIButton *propertyBtn;
 
 - (IBAction)activityButtonAction:(id)sender;
 - (IBAction)actionButtonAction:(id)sender;
