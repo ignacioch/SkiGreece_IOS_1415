@@ -17,6 +17,12 @@
 //#import "PAPAccountViewController.h
 #import "VTEditPhotoViewController.h"
 
+#define CONTAINER_Y_IPHONE_4 60.0f
+#define CONTAINER_Y_IPHONE_5 60.0f
+#define CONTAINER_Y_IPHONE_6 64.0f
+
+#define BOTTOM_BAR_HEIGHT    60.0f
+
 
 @interface VTHomeViewController ()
 
@@ -46,6 +52,78 @@ typedef enum {
     // Do any additional setup after loading the view.
     
     
+    if (IS_DEVELOPER){
+        NSLog(@"Container is loaded");
+        NSLog(@"ContainerView. X : %f Y:%f Height :%f Width : %f",self.containerView.frame.origin.x,self.containerView.frame.origin.y,self.containerView.frame.size.height,self.containerView.frame.size.width);
+    }
+    
+    
+
+    
+    CGFloat startingPoint ;
+    CGFloat bottomBar  = BOTTOM_BAR_HEIGHT;
+
+    if (IS_IPHONE_6) {
+        startingPoint = CONTAINER_Y_IPHONE_6;
+    } else if (IS_IPHONE_5) {
+        startingPoint = CONTAINER_Y_IPHONE_5;
+    } else  {
+        startingPoint = CONTAINER_Y_IPHONE_4;
+    }
+    
+    // get device height
+    //CGRect screenRect = [[UIScreen mainScreen] bounds];
+    //CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = SCREEN_HEIGHT;
+    CGFloat containerHeight = screenHeight - startingPoint - bottomBar - [UIApplication sharedApplication].statusBarFrame.size.height;
+
+    
+    // Do your resizing
+    
+    self.backgroundImg.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH, SCREEN_HEIGHT - [UIApplication sharedApplication].statusBarFrame.size.height);
+    
+    if (IS_IPHONE_6) {
+        self.backgroundImg.image = [UIImage imageNamed:@"DefaultAnypic-667h.png"];
+        self.backButton.frame = CGRectMake(0.0f, self.backgroundImg.frame.origin.y + 4.0f, 56.0f, 56.0f);
+        self.settingsButton.frame = CGRectMake(SCREEN_WIDTH - 60.0f, self.backButton.frame.origin.y, 96.0f, 56.0f);
+        self.takePhotoBtn.frame = CGRectMake(135.0f, SCREEN_HEIGHT - self.takePhotoBtn.frame.size.height, 80.0f, self.takePhotoBtn.frame.size.height);
+        self.activityButton.frame = CGRectMake(260.0f, SCREEN_HEIGHT - self.activityButton.frame.size.height, 80.0f, self.activityButton.frame.size.height);
+    } else if (IS_IPHONE_5) {
+        self.backgroundImg.image = [UIImage imageNamed:@"DefaultAnypic-568h.png"];
+    }
+    
+    
+    
+    // adjust tableView frame
+    self.containerView.frame = CGRectMake(0.0, startingPoint + [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH,containerHeight);
+    if (IS_DEVELOPER) {
+        NSLog(@"containerView after changes");
+        NSLog(@"statusBarFrame : %f",[UIApplication sharedApplication].statusBarFrame.size.height);
+        NSLog(@"containerView. X : %f Y:%f Height :%f Width : %f",self.containerView.frame.origin.x,self.containerView.frame.origin.y,self.containerView.frame.size.height,self.containerView.frame.size.width);
+        NSLog(@"backgroundImg : X : %f Y:%f Height :%f Width : %f",self.backgroundImg.frame.origin.x,self.backgroundImg.frame.origin.y,self.backgroundImg.frame.size.height,self.backgroundImg.frame.size.width);
+    }
+    
+    // Download user's profile picture
+    NSURL *profilePictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large", [[PFUser currentUser] objectForKey:kPAPUserFacebookIDKey]]];
+    NSURLRequest *profilePictureURLRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0f]; // Facebook profile picture cache policy: Expires in 2 weeks
+    [NSURLConnection connectionWithRequest:profilePictureURLRequest delegate:self];
+    
+    // follow the same as the other screens
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 20)];
+        imgView.backgroundColor=[UIColor blackColor];
+        //[self.view addSubview:imgView];
+    }
+    
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)])
+    {
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
+    
+    
+    
+    // after the layout is computed we init the child controller
+    
     //(AppDelegate*)[[UIApplication sharedApplication].delegate].homeViewController;
     AppDelegate *del = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     PAPHomeViewController *vc = del.homeViewController;
@@ -54,65 +132,11 @@ typedef enum {
     [self.containerView setBackgroundColor:[UIColor clearColor]];
     [self addChildViewController:vc];
     
-    if (IS_DEVELOPER){
-        NSLog(@"Container is loaded");
-        NSLog(@"ContainerView. X : %f Y:%f Height :%f Width : %f",self.containerView.frame.origin.x,self.containerView.frame.origin.y,self.containerView.frame.size.height,self.containerView.frame.size.width);
-    }
-    
-    
-    CGFloat startingPoint_iphone5   = 60.0f ;
-    CGFloat bottomBar_iphone5       = 60.0f ;
-    CGFloat startingPoint_iphone4   = 50.0f ;
-    CGFloat bottomBar_iphone4       = 51.0f ;
-    CGFloat startingPoint_iphone6   = 60.0f ;
-    CGFloat bottomBar_iphone6       = 60.0f ;
-    
-    CGFloat startingPoint = startingPoint_iphone4;
-    CGFloat bottomBar = bottomBar_iphone4;
-
-    if (IS_IPHONE_4_OR_LESS) {
-        NSLog(@"iPhone4");
-        startingPoint = startingPoint_iphone4;
-        bottomBar  = bottomBar_iphone4;
-    } else if (IS_IPHONE_5) {
-        NSLog(@"iPhone5");
-        startingPoint = startingPoint_iphone5;
-        bottomBar  = bottomBar_iphone5;
-    } else if (IS_IPHONE_6) {
-        NSLog(@"iPhone6");
-        startingPoint = startingPoint_iphone6;
-        bottomBar  = bottomBar_iphone6;
-    }
-    
-    // get device height
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    //CGFloat screenWidth = screenRect.size.width;
-    CGFloat screenHeight = screenRect.size.height;
-    CGFloat containerHeight = screenHeight - startingPoint - bottomBar;
-    
-    // Do your resizing
-    // adjust tableView frame
-    self.containerView.frame = CGRectMake(0.0, startingPoint, self.containerView.frame.size.width,containerHeight);
-    if (IS_DEVELOPER) {
-        NSLog(@"containerView after changes");
-        NSLog(@"containerView. X : %f Y:%f Height :%f Width : %f",self.containerView.frame.origin.x,self.containerView.frame.origin.y,self.containerView.frame.size.height,self.containerView.frame.size.width);
-    }
-    
-    // Download user's profile picture
-    NSURL *profilePictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large", [[PFUser currentUser] objectForKey:kPAPUserFacebookIDKey]]];
-    NSURLRequest *profilePictureURLRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0f]; // Facebook profile picture cache policy: Expires in 2 weeks
-    [NSURLConnection connectionWithRequest:profilePictureURLRequest delegate:self];
-    
 }
 
 
 
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    
-    
-    
-}
+
 
 
 

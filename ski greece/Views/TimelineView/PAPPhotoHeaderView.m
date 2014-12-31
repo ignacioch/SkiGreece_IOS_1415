@@ -61,7 +61,11 @@
             // comments button
             commentButton = [UIButton buttonWithType:UIButtonTypeCustom];
             [containerView addSubview:self.commentButton];
-            [self.commentButton setFrame:CGRectMake( 242.0f, 10.0f, 29.0f, 28.0f)];
+            if (IS_IPHONE_6){
+                [self.commentButton setFrame:CGRectMake( 242.0f + 55.0f, 10.0f, 29.0f, 28.0f)];
+            } else {
+                [self.commentButton setFrame:CGRectMake( 242.0f, 10.0f, 29.0f, 28.0f)];
+            }
             [self.commentButton setBackgroundColor:[UIColor clearColor]];
             [self.commentButton setTitle:@"" forState:UIControlStateNormal];
             [self.commentButton setTitleColor:[UIColor colorWithRed:0.369f green:0.271f blue:0.176f alpha:1.0f] forState:UIControlStateNormal];
@@ -79,7 +83,11 @@
             // like button
             likeButton = [UIButton buttonWithType:UIButtonTypeCustom];
             [containerView addSubview:self.likeButton];
-            [self.likeButton setFrame:CGRectMake(206.0f, 8.0f, 29.0f, 29.0f)];
+            if (IS_IPHONE_6) {
+                [self.likeButton setFrame:CGRectMake(206.0f + 55.0f, 8.0f, 29.0f, 29.0f)];
+            } else {
+                [self.likeButton setFrame:CGRectMake(206.0f, 8.0f, 29.0f, 29.0f)];
+            }
             [self.likeButton setBackgroundColor:[UIColor clearColor]];
             [self.likeButton setTitle:@"" forState:UIControlStateNormal];
             [self.likeButton setTitleColor:[UIColor colorWithRed:0.369f green:0.271f blue:0.176f alpha:1.0f] forState:UIControlStateNormal];

@@ -58,8 +58,13 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.imageView.frame = CGRectMake( 20.0f, 0.0f, 280.0f, 280.0f);
-    self.photoButton.frame = CGRectMake( 20.0f, 0.0f, 280.0f, 280.0f);
+    if (IS_IPHONE_6) {
+        self.imageView.frame = CGRectMake( 20.0f, 0.0f, 335.0f, 280.0f);
+        self.photoButton.frame = CGRectMake( 20.0f, 0.0f, 335.0f, 280.0f);
+    } else {
+        self.imageView.frame = CGRectMake( 20.0f, 0.0f, 280.0f, 280.0f);
+        self.photoButton.frame = CGRectMake( 20.0f, 0.0f, 280.0f, 280.0f);
+    }
 }
 
 @end

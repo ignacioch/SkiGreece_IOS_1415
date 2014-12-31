@@ -1155,7 +1155,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" tag="102" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dfx-Hv-7SC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="767" height="237"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="1087" height="316"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -1941,37 +1941,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultAnypic.png" id="Ngh-3D-b4n">
-                                <rect key="frame" x="0.0" y="-19" width="320" height="499"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" id="sKr-Pq-dHC">
                                 <rect key="frame" x="0.0" y="48" width="325" height="380"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WCf-9a-hNP">
-                                <rect key="frame" x="140" y="442" width="41" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mq1-X8-s6X">
+                                <rect key="frame" x="223" y="432" width="89" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Photo">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="takePhotoAction:" destination="JWN-0d-7cn" eventType="touchUpInside" id="KRf-M1-Qq2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mq1-X8-s6X">
-                                <rect key="frame" x="244" y="429" width="51" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Activity">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                                 <connections>
                                     <action selector="activityAction:" destination="JWN-0d-7cn" eventType="touchUpInside" id="s6A-bn-ihk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="D9F-kC-1Yw">
-                                <rect key="frame" x="247" y="10" width="57" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="D9F-kC-1Yw">
+                                <rect key="frame" x="276" y="16" width="36" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Settings">
+                                <state key="normal" image="buttonImageSettings.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1988,13 +1975,23 @@
                                     <action selector="backButtonAction:" destination="JWN-0d-7cn" eventType="touchUpInside" id="7Ta-nl-nDj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WCf-9a-hNP">
+                                <rect key="frame" x="121" y="432" width="82" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePhotoAction:" destination="JWN-0d-7cn" eventType="touchUpInside" id="KRf-M1-Qq2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="activityButton" destination="mq1-X8-s6X" id="CNk-IR-Qsl"/>
                         <outlet property="backButton" destination="xgn-kQ-Qjo" id="fVJ-fC-i7w"/>
+                        <outlet property="backgroundImg" destination="Ngh-3D-b4n" id="soj-ro-Pez"/>
                         <outlet property="containerView" destination="sKr-Pq-dHC" id="ekm-DO-8fm"/>
                         <outlet property="settingsButton" destination="D9F-kC-1Yw" id="RMu-7f-5mX"/>
                         <outlet property="takePhotoBtn" destination="WCf-9a-hNP" id="8B0-jp-03W"/>
@@ -3349,6 +3346,7 @@
         <image name="background_only.png" width="640" height="960"/>
         <image name="background_with_back_4.png" width="640" height="960"/>
         <image name="blue_button_big.png" width="300" height="75"/>
+        <image name="buttonImageSettings.png" width="15" height="16"/>
         <image name="button_opened2.png" width="2179" height="443"/>
         <image name="cell_back_triangle.png" width="40" height="20"/>
         <image name="cell_close.png" width="45" height="43"/>

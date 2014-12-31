@@ -101,11 +101,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (IS_DEVELOPER) NSLog(@"viewDidAppear is called");
-    
-    
 
-    
     if (self.shouldReloadOnAppear) {
         self.shouldReloadOnAppear = NO;
         [self loadObjects];
@@ -228,7 +224,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (section == self.objects.count) {
-        if (IS_DEVELOPER) NSLog(@"heightForHeader is 0.0");
         return 0.0f;
     }
     return 44.0f;
@@ -349,6 +344,8 @@
         return cell;
     } else {
         PAPPhotoCell *cell = (PAPPhotoCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        
+        //NSLog(@"Cell :  %f,%f,%f,%f",cell.frame.origin.x, cell.frame.origin.y,cell.frame.size.width,cell.frame.size.height);
         
         // adding for IOS7+
         // default background is white
