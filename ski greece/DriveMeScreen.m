@@ -41,8 +41,12 @@
     
     flag = NO;
     
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    if (screenBounds.size.height == 568) {
+    //CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    //if (screenBounds.size.height == 568) {
+    if (IS_IPHONE_6) {
+        self.backgroundImg.frame = CGRectMake(0, 0 + [UIApplication sharedApplication].statusBarFrame.size.height  , SCREEN_WIDTH, SCREEN_HEIGHT);
+        [self.backgroundImg setImage:[UIImage imageNamed:@"main_screen_header_iphone5.png"]];
+    } else if (IS_IPHONE_5) {
         self.backgroundImg.frame = CGRectMake(0, 0 + [UIApplication sharedApplication].statusBarFrame.size.height  , 320, 550);
         [self.backgroundImg setImage:[UIImage imageNamed:@"main_screen_header_iphone5.png"]];
     }  else if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
@@ -56,7 +60,7 @@
 
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 20)];
         imgView.backgroundColor=[UIColor blackColor];
         [self.view addSubview:imgView];
     }
@@ -67,6 +71,9 @@
     }
     
     [self.skiCenterTable setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    
+    
+    self.skiCenterTable.frame = CGRectMake(0.0f, self.skiCenterTable.frame.origin.y + OFFSET_IOS_7 + 5.0f, SCREEN_WIDTH, SCREEN_HEIGHT - 77.0f - OFFSET_IOS_7 - 5.0f);
     
     
     MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -183,7 +190,7 @@
         
     }
     
-    NSLog(@"Condition at %d is %@ ",indexPath.row,[condition objectAtIndex:indexPath.row]);
+    NSLog(@"Condition at %ld is %@ ",(long)indexPath.row,[condition objectAtIndex:indexPath.row]);
     
     if (flag){
         if ([[condition objectAtIndex:indexPath.row] intValue] == 0) {
@@ -192,6 +199,9 @@
             cell.mainImage.image = [UIImage imageNamed:@"open_driveme"];
         }
     }
+    
+    cell.mainImage.frame = CGRectMake(0.0f, 0.0f, SCREEN_WIDTH, 79.0f);
+    cell.takeMeLabel.frame = CGRectMake(cell.takeMeLabel.frame.origin.x + 45.0f, cell.takeMeLabel.frame.origin.y , cell.takeMeLabel.frame.size.width, cell.takeMeLabel.frame.size.height);
     
     cell.titleLabel.text = [NSString stringWithFormat:@"%@",[centers_labels objectAtIndex:indexPath.row]];
     [cell.titleLabel setFont:[UIFont fontWithName:@"Myriad Pro" size:17.0f]];
