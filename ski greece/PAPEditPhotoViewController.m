@@ -109,25 +109,16 @@
                             action:@selector(cancelButtonAction:)
                   forControlEvents:UIControlEventTouchUpInside];
     [self.cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
-//    if (IS_IPHONE_6) {
-//        self.cancelButton.frame = CGRectMake(200.0, [UIApplication sharedApplication].statusBarFrame.size.height , 100.0, 100.0);
-//    } else {
-//    }
     self.cancelButton.frame = CGRectMake(200.0, 0.0, 100.0, 100.0);
-    [self.scrollView addSubview:self.cancelButton];
+    //[self.scrollView addSubview:self.cancelButton];
     
     self.doneButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.doneButton addTarget:self
                           action:@selector(doneButtonAction:)
                 forControlEvents:UIControlEventTouchUpInside];
     [self.doneButton setTitle:@"Done" forState:UIControlStateNormal];
-//    if (IS_IPHONE_6) {
-//        self.doneButton.frame = CGRectMake(50.0, [UIApplication sharedApplication].statusBarFrame.size.height , 100.0, 100.0);
-//    } else {
-//        self.doneButton.frame = CGRectMake(50.0, 0.0, 100.0, 100.0);
-//    }
     self.doneButton.frame = CGRectMake(50.0, 0.0, 100.0, 100.0);
-    [self.scrollView addSubview:self.doneButton];
+    //[self.scrollView addSubview:self.doneButton];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];

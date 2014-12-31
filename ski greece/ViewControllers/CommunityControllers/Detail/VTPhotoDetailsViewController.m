@@ -54,9 +54,6 @@ enum ActionSheetTags {
     [self.containerView setBackgroundColor:[UIColor clearColor]];
     [self addChildViewController:vc];
 
-    //PAPPhotoDetailsViewController *photoDetailsVC = [[PAPPhotoDetailsViewController alloc] initWithPhoto:photo];
-    //photoDetailsVC.view.frame = CGRectMake(0.0, 43.0f, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height - 43.0f);
-    //[self presentViewController:photoDetailsVC animated:YES completion:NULL];
 }
 
 - (void)didReceiveMemoryWarning {

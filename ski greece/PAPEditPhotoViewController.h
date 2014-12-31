@@ -9,6 +9,7 @@
 @interface PAPEditPhotoViewController : UIViewController <UITextFieldDelegate, UIScrollViewDelegate>
 
 - (id)initWithImage:(UIImage *)aImage;
+- (void)doneButtonAction:(id)sender;
 
 @property (nonatomic,retain) IBOutlet UIButton * cancelButton;
 @property (nonatomic,retain) IBOutlet UIButton * doneButton;

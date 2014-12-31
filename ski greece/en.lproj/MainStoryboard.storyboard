@@ -1738,12 +1738,31 @@
                                 <rect key="frame" x="0.0" y="41" width="320" height="439"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iyQ-x8-5mE">
+                                <rect key="frame" x="12" y="7" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9MG-2R-fkj">
+                                <rect key="frame" x="263" y="7" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="jzD-XT-FaG" eventType="touchUpInside" id="jh4-UX-fVP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="iyQ-x8-5mE" id="OQm-ve-1GJ"/>
                         <outlet property="backgroundImage" destination="Dgt-uY-bG4" id="1HG-ya-JS4"/>
                         <outlet property="containerView" destination="VSZ-Np-JZZ" id="SVe-My-8zU"/>
+                        <outlet property="doneButton" destination="9MG-2R-fkj" id="58A-5i-uyq"/>
                         <outlet property="navBar" destination="L18-dT-Cxo" id="s3G-lp-S6e"/>
                     </connections>
                 </viewController>
