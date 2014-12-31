@@ -171,7 +171,7 @@
     [self.topBar setItems:barItemArray];
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 20)];
         imgView.backgroundColor=[UIColor blackColor];
         [self.view addSubview:imgView];
     }
@@ -185,16 +185,26 @@
     //[self.postsTable registerClass:[LocalPosts class] forCellReuseIdentifier:@"LocalPostsCell"];
     
     
-    /*fix it for iphone5/ios7*/
     
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    if (screenBounds.size.height == 568) {
+    //CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    //if (screenBounds.size.height == 568) {
+    if (IS_IPHONE_6) {
+        self.topBar.frame = CGRectMake(self.topBar.frame.origin.x , self.topBar.frame.origin.y + OFFSET_IOS_7, self.topBar.frame.size.width, self.topBar.frame.size.height);
+        self.arrowForCenter.frame = CGRectMake(SCREEN_WIDTH -  self.arrowForCenter.frame.size.width, self.arrowForCenter.frame.origin.y + OFFSET_IOS_7, self.arrowForCenter.frame.size.width, self.arrowForCenter.frame.size.height);
+        self.skiCenterplaceholder.frame = CGRectMake(self.skiCenterplaceholder.frame.origin.x, self.skiCenterplaceholder.frame.origin.y + OFFSET_IOS_7, SCREEN_WIDTH -  self.arrowForCenter.frame.size.width, self.skiCenterplaceholder.frame.size.height);
+        self.pickerView.frame = CGRectMake(self.pickerView.frame.origin.x, self.pickerView.frame.origin.y + OFFSET_IOS_7, self.pickerView.frame.size.width, self.pickerView.frame.size.height);
+        
+        self.placesMap.frame = CGRectMake(0, 82 + OFFSET_IOS_7, SCREEN_WIDTH, 282);
+        self.postsTable.frame = CGRectMake(0, 365 + OFFSET_IOS_7, SCREEN_WIDTH, SCREEN_HEIGHT - self.postsTable.frame.origin.y);
+        self.arrowImage.frame = CGRectMake(0, 344 + OFFSET_IOS_7, SCREEN_WIDTH, 20);
+        
+        self.arrowImage.hidden = YES;
+        self.arrowImage.userInteractionEnabled = NO;
+        
+    } else if (IS_IPHONE_5) {
         self.topBar.frame = CGRectMake(self.topBar.frame.origin.x , self.topBar.frame.origin.y + OFFSET_IOS_7, self.topBar.frame.size.width, self.topBar.frame.size.height);
         self.arrowForCenter.frame = CGRectMake(self.arrowForCenter.frame.origin.x, self.arrowForCenter.frame.origin.y + OFFSET_IOS_7, self.arrowForCenter.frame.size.width, self.arrowForCenter.frame.size.height);
         self.skiCenterplaceholder.frame = CGRectMake(self.skiCenterplaceholder.frame.origin.x, self.skiCenterplaceholder.frame.origin.y + OFFSET_IOS_7, self.skiCenterplaceholder.frame.size.width, self.skiCenterplaceholder.frame.size.height);
-        //self.placesMap.frame = CGRectMake(self.placesMap.frame.origin.x, self.placesMap.frame.origin.y + OFFSET_IOS_7, self.placesMap.frame.size.width, self.placesMap.frame.size.height);
-        //self.arrowImage.frame = CGRectMake(self.arrowImage.frame.origin.x, self.arrowImage.frame.origin.y + OFFSET_IOS_7, self.arrowImage.frame.size.width, self.arrowImage.frame.size.height);
-        //self.postsTable.frame = CGRectMake(self.postsTable.frame.origin.x, self.postsTable.frame.origin.y + OFFSET_IOS_7, self.postsTable.frame.size.width, self.postsTable.frame.size.height + OFFSET_5);
         self.pickerView.frame = CGRectMake(self.pickerView.frame.origin.x, self.pickerView.frame.origin.y + OFFSET_IOS_7, self.pickerView.frame.size.width, self.pickerView.frame.size.height);
         
         self.placesMap.frame = CGRectMake(0, 82 + OFFSET_IOS_7, 320, 282);
@@ -399,22 +409,30 @@
         
         if (velocity.y >0)   // panning down
         {
-            [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-                self.placesMap.frame = CGRectMake(0, 82 + offset, 320, 282);
-                self.postsTable.frame = CGRectMake(0, 365 + offset, 320, 95 + iphone5_offset);
-                self.arrowImage.frame = CGRectMake(0, 344 + offset, 320, 20);
-            } completion:nil];
+            
+            if (IS_IPHONE_6) {
+               
+            } else {
+                [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+                    self.placesMap.frame = CGRectMake(0, 82 + offset, 320, 282);
+                    self.postsTable.frame = CGRectMake(0, 365 + offset, 320, 95 + iphone5_offset);
+                    self.arrowImage.frame = CGRectMake(0, 344 + offset, 320, 20);
+                } completion:nil];
+            }
             [self.arrowImage setImage:[UIImage imageNamed:@"up.png"]];
 
         }
         else                // panning up
         {
-            
-            [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-                self.placesMap.frame = CGRectMake(0, 82 + offset, 320, 120);
-                self.postsTable.frame = CGRectMake(0, 202 + offset, 320, 258 + iphone5_offset);
-                self.arrowImage.frame = CGRectMake(end_arrowTopLeftX, end_arrowTopLeftY + offset, 320, 20);
-            } completion:nil];
+            if (IS_IPHONE_6) {
+                
+            } else if (IS_IPHONE_5) {
+                [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+                    self.placesMap.frame = CGRectMake(0, 82 + offset, 320, 120);
+                    self.postsTable.frame = CGRectMake(0, 202 + offset, 320, 258 + iphone5_offset);
+                    self.arrowImage.frame = CGRectMake(end_arrowTopLeftX, end_arrowTopLeftY + offset, 320, 20);
+                } completion:nil];
+            }
             [self.arrowImage setImage:[UIImage imageNamed:@"down.png"]];
         }
        
@@ -433,7 +451,10 @@
         visiblePicker= YES;
         if (defaultPickerView == nil) {
             /*efaultPickerView = [[AFPickerView alloc] initWithFrame:CGRectMake(0,245,320,216) backgroundImage:@"PickerBG.png" shadowImage:@"PickerShadow.png" glassImage:@"pickerGlass.png" title:@" Επίλεξε Χιονοδρομικό"];*/
-            if (screenBounds.size.height == 568) {
+            //if (screenBounds.size.height == 568) {
+            if (IS_IPHONE_6) {
+                defaultPickerView = [[AFPickerView alloc] initWithFrame:CGRectMake(0,SCREEN_HEIGHT - 216.0f ,SCREEN_WIDTH,216) backgroundImage:@"PickerBG.png" shadowImage:@"PickerShadow.png" glassImage:@"pickerGlass.png" title:@" Επίλεξε Χιονοδρομικό"];
+            } else if (IS_IPHONE_5) {
                 defaultPickerView = [[AFPickerView alloc] initWithFrame:CGRectMake(0,245 + OFFSET_IOS_7 +  + OFFSET_5 ,320,216) backgroundImage:@"PickerBG.png" shadowImage:@"PickerShadow.png" glassImage:@"pickerGlass.png" title:@" Επίλεξε Χιονοδρομικό"];
                 
             } else {
@@ -590,6 +611,10 @@
         UIImageView *businessImageView = (UIImageView *)[cell viewWithTag:102];
         businessImageView.frame = CGRectMake(0.0f, 0.0f, 125.0f, 78.0f);
     
+        if (IS_IPHONE_6) {
+            nameLabel.frame = CGRectMake(nameLabel.frame.origin.x, nameLabel.frame.origin.y, SCREEN_WIDTH - businessImageView.frame.size.width - 2.0f, nameLabel.frame.size.height);
+            descriptionLabel.frame = CGRectMake(descriptionLabel.frame.origin.x, descriptionLabel.frame.origin.y, SCREEN_WIDTH - businessImageView.frame.size.width - 2.0f, descriptionLabel.frame.size.height);
+        }
 
     
     
