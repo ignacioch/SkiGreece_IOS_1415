@@ -252,14 +252,14 @@
 
 - (IBAction)changeCenter:(id)sender {
     
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    
     if (!visiblePicker) {
         //[self disappearMid];
         visiblePicker= YES;
         if (defaultPickerView == nil) {
-            if (screenBounds.size.height == 568) {
-                
+            //if (screenBounds.size.height == 568) {
+            if (IS_IPHONE_6) {
+              defaultPickerView = [[AFPickerView alloc] initWithFrame:CGRectMake(0,SCREEN_HEIGHT - 216.0f ,SCREEN_WIDTH,216) backgroundImage:@"PickerBG.png" shadowImage:@"PickerShadow.png" glassImage:@"pickerGlass.png" title:@" Επίλεξε Χιονοδρομικό"];
+            } else if (IS_IPHONE_5) {
                 defaultPickerView = [[AFPickerView alloc] initWithFrame:CGRectMake(0,245 + OFFSET_IOS_7 +  + OFFSET_5 ,320,216) backgroundImage:@"PickerBG.png" shadowImage:@"PickerShadow.png" glassImage:@"pickerGlass.png" title:@" Επίλεξε Χιονοδρομικό"];
 
 
