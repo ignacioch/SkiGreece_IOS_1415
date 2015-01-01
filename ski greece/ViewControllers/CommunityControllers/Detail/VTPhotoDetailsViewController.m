@@ -54,6 +54,20 @@ enum ActionSheetTags {
     [self.containerView setBackgroundColor:[UIColor clearColor]];
     [self addChildViewController:vc];
 
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)])
+    {
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 20)];
+        imgView.backgroundColor=[UIColor blackColor];
+        [self.view addSubview:imgView];
+    }
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning {

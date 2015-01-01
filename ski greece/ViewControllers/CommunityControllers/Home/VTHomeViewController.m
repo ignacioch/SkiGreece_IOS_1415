@@ -108,17 +108,7 @@ typedef enum {
     NSURLRequest *profilePictureURLRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0f]; // Facebook profile picture cache policy: Expires in 2 weeks
     [NSURLConnection connectionWithRequest:profilePictureURLRequest delegate:self];
     
-    // follow the same as the other screens
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 20)];
-        imgView.backgroundColor=[UIColor blackColor];
-        //[self.view addSubview:imgView];
-    }
     
-    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)])
-    {
-        [self setNeedsStatusBarAppearanceUpdate];
-    }
     
     
     
@@ -132,12 +122,21 @@ typedef enum {
     [self.containerView setBackgroundColor:[UIColor clearColor]];
     [self addChildViewController:vc];
     
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)])
+    {
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 20)];
+        imgView.backgroundColor=[UIColor blackColor];
+        [self.view addSubview:imgView];
+    }
 }
 
-
-
-
-
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
 
 
 - (IBAction)backButtonAction:(id)sender {
