@@ -29,14 +29,14 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb220305831428010</string>
+				<string>fb385546834939197</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>4.0</string>
 	<key>FacebookAppID</key>
-	<string>220305831428010</string>
+	<string>385546834939197</string>
 	<key>FacebookDisplayName</key>
 	<string>Ski Greece</string>
 	<key>LSRequiresIPhoneOS</key>
