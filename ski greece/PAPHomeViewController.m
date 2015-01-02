@@ -12,6 +12,7 @@
 #import "LoginViewController.h"
 #import "AppDelegate.h"
 #import "PAPPhotoTimelineViewController.h"
+#import "VTFindFriendsViewController.h"
 
 @interface PAPHomeViewController ()
     @property (nonatomic, strong) UIView *blankTimelineView;
@@ -88,8 +89,12 @@
 #pragma mark - ()
 
 - (void)inviteFriendsButtonAction:(id)sender {
-    PAPFindFriendsViewController *detailViewController = [[PAPFindFriendsViewController alloc] init];
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    //PAPFindFriendsViewController *detailViewController = [[PAPFindFriendsViewController alloc] init];
+    //[self.navigationController pushViewController:detailViewController animated:YES];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    VTFindFriendsViewController *vc=[sb instantiateViewControllerWithIdentifier:@"VTMyProfile"];
+    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:vc animated:YES completion:NULL];
 }
 
 

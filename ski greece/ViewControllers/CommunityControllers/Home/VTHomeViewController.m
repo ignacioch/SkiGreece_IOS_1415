@@ -90,6 +90,10 @@ typedef enum {
         self.activityButton.frame = CGRectMake(260.0f, SCREEN_HEIGHT - self.activityButton.frame.size.height, 80.0f, self.activityButton.frame.size.height);
     } else if (IS_IPHONE_5) {
         self.backgroundImg.image = [UIImage imageNamed:@"DefaultAnypic-568h.png"];
+        self.backButton.frame = CGRectMake(0.0f, self.backgroundImg.frame.origin.y + 4.0f, 56.0f, 56.0f);
+        self.settingsButton.frame = CGRectMake(SCREEN_WIDTH - 60.0f, self.backButton.frame.origin.y, 96.0f, 56.0f);
+        self.takePhotoBtn.frame = CGRectMake(135.0f, SCREEN_HEIGHT - self.takePhotoBtn.frame.size.height, 80.0f, self.takePhotoBtn.frame.size.height);
+        self.activityButton.frame = CGRectMake(260.0f, SCREEN_HEIGHT - self.activityButton.frame.size.height, 80.0f, self.activityButton.frame.size.height);
     }
     
     

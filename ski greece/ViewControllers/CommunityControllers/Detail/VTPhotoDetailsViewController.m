@@ -43,8 +43,8 @@ enum ActionSheetTags {
         self.topBar.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH , 43.0f);
         self.containerView.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height +43.0f, SCREEN_WIDTH, SCREEN_HEIGHT - [UIApplication sharedApplication].statusBarFrame.size.height - 43.0f);
         self.backBtn.frame = CGRectMake(10.0f, [UIApplication sharedApplication].statusBarFrame.size.height, self.backBtn.frame.size.width, self.backBtn.frame.size.height);
-        self.deleteBtn.frame = CGRectMake(SCREEN_WIDTH - self.activityBtn.frame.size.width -10.0f - self.deleteBtn.frame.size.width - 50.0f, [UIApplication sharedApplication].statusBarFrame.size.height, self.deleteBtn.frame.size.width, self.deleteBtn.frame.size.height);
-        self.activityBtn.frame = CGRectMake(SCREEN_WIDTH - self.activityBtn.frame.size.width -10.0f, [UIApplication sharedApplication].statusBarFrame.size.height, self.activityBtn.frame.size.width, self.activityBtn.frame.size.height);
+        self.deleteBtn.frame = CGRectMake(SCREEN_WIDTH - self.activityBtn.frame.size.width -10.0f - self.deleteBtn.frame.size.width - 50.0f, self.deleteBtn.frame.origin.y + [UIApplication sharedApplication].statusBarFrame.size.height, self.deleteBtn.frame.size.width, self.deleteBtn.frame.size.height);
+        self.activityBtn.frame = CGRectMake(SCREEN_WIDTH - self.activityBtn.frame.size.width -10.0f, self.activityBtn.frame.origin.y + [UIApplication sharedApplication].statusBarFrame.size.height, self.activityBtn.frame.size.width, self.activityBtn.frame.size.height);
     }
     
     del.photoDetailsViewController = [[PAPPhotoDetailsViewController alloc] initWithPhoto:self.photo];
