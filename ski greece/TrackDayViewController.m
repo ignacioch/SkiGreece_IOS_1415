@@ -150,8 +150,34 @@
     self.gotoMapBtn.userInteractionEnabled = NO;
     
     
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    if (screenBounds.size.height == 568) {
+    //CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    //if (screenBounds.size.height == 568) {
+    if (IS_IPHONE_6) {
+        self.backgroundImg.frame = CGRectMake(0, 0 + [UIApplication sharedApplication].statusBarFrame.size.height  , SCREEN_WIDTH, SCREEN_HEIGHT);
+        [self.backgroundImg setImage:[UIImage imageNamed:@"background_with_back_5.png"]];
+        
+        self.backBtn.frame = CGRectMake(self.backBtn.frame.origin.x, self.backBtn.frame.origin.y + OFFSET_IOS_7 , self.backBtn.frame.size.width , self.backBtn.frame.size.height);
+        
+        NSArray *subviews = [self.view subviews];
+        
+        for (UIView *subview in subviews) {
+            if (subview.tag == 10) {                // 10 is the up stuff
+                subview.frame = CGRectMake(subview.frame.origin.x + OFFSET_W_6 - 5.0f, subview.frame.origin.y + OFFSET_IOS_7 , subview.frame.size.width, subview.frame.size.height);
+            } else if (subview.tag == 20) {                // 20 is the middle
+                subview.frame = CGRectMake(subview.frame.origin.x, subview.frame.origin.y + OFFSET_IOS_7 + 25.0f, subview.frame.size.width, subview.frame.size.height);
+            } else if (subview.tag == 30) {                // 30 is the bottom | left
+                subview.frame = CGRectMake(subview.frame.origin.x, subview.frame.origin.y + OFFSET_IOS_7 + OFFSET_5 + 50.0f, subview.frame.size.width, subview.frame.size.height );
+            } else if (subview.tag == 31) {                // 30 is the bottom | middle
+                subview.frame = CGRectMake(subview.frame.origin.x + 15.0f, subview.frame.origin.y + OFFSET_IOS_7 + OFFSET_5 + 50.f, subview.frame.size.width, subview.frame.size.height );
+            } else if (subview.tag == 32) {                // 30 is the bottom | right
+                subview.frame = CGRectMake(subview.frame.origin.x + 15.0f + 15.0f, subview.frame.origin.y + OFFSET_IOS_7 + OFFSET_5 + 50.0f, subview.frame.size.width, subview.frame.size.height );
+            } 
+        }
+        
+        // manually change some elements
+        self.statsBar.frame = CGRectMake(self.statsBar.frame.origin.x, self.statsBar.frame.origin.y + OFFSET_IOS_7 + OFFSET_5 + 15.0f, SCREEN_WIDTH, self.statsBar.frame.size.height);
+        
+    } else if (IS_IPHONE_5) {
         
         self.backgroundImg.frame = CGRectMake(0, 0 + [UIApplication sharedApplication].statusBarFrame.size.height  , 320, 550);
         [self.backgroundImg setImage:[UIImage imageNamed:@"background_with_back_5.png"]];
@@ -165,7 +191,7 @@
                 subview.frame = CGRectMake(subview.frame.origin.x, subview.frame.origin.y + OFFSET_IOS_7 , subview.frame.size.width, subview.frame.size.height);
             } else if (subview.tag == 20) {                // 20 is the middle
                 subview.frame = CGRectMake(subview.frame.origin.x, subview.frame.origin.y + OFFSET_IOS_7 + 25.0f, subview.frame.size.width, subview.frame.size.height);
-            } else if (subview.tag == 30) {                // 30 is the bottom
+            } else if ((subview.tag == 30) || (subview.tag == 31) || (subview.tag == 32) || (subview.tag == 34)) {                // 30-32 is the bottom
                 subview.frame = CGRectMake(subview.frame.origin.x, subview.frame.origin.y + OFFSET_IOS_7 + OFFSET_5, subview.frame.size.width, subview.frame.size.height );
             }
         }
@@ -180,7 +206,7 @@
     }
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 20)];
         imgView.backgroundColor=[UIColor blackColor];
         [self.view addSubview:imgView];
     }

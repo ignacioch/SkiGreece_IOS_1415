@@ -41,6 +41,7 @@
 
 @property (nonatomic) double maximumSpeed;
 @property (nonatomic) double averageSpeed;
+@property (weak, nonatomic) IBOutlet UIImageView *statsBar;
 
 @property (strong, nonatomic) IBOutlet UILabel *totalDistanceCovered;
 @property (strong, nonatomic) IBOutlet UIButton *resetButton;
