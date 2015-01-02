@@ -26,11 +26,12 @@
     
     
     // There is no documentation on how to handle assets with the taller iPhone 5 screen as of 9/13/2012
-    if ([UIScreen mainScreen].bounds.size.height > 568.0f) {
+    //if ([UIScreen mainScreen].bounds.size.height > 568.0f) {
+    if (IS_IPHONE_6) {
         // for the iPhone 6
         if (IS_DEVELOPER) NSLog(@"iPhone 6 device");
         self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundLogin-667h.png"]];
-    } else if ([UIScreen mainScreen].bounds.size.height > 480.0f) {
+    } else if (IS_IPHONE_5) {
         // for the iPhone 5
         if (IS_DEVELOPER) NSLog(@"iPhone 5 device");
         self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundLogin-568h.png"]];
@@ -66,7 +67,17 @@
 
 -(void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    self.logInView.facebookButton.frame = CGRectMake(self.logInView.facebookButton.frame.origin.x, 330.0f, self.logInView.facebookButton.frame.size.width, self.logInView.facebookButton.frame.size.height);
+    
+    if (IS_IPHONE_6) {
+       self.logInView.facebookButton.frame = CGRectMake(self.logInView.facebookButton.frame.origin.x, 330.0f, self.logInView.facebookButton.frame.size.width, self.logInView.facebookButton.frame.size.height);
+    } else if (IS_IPHONE_5) {
+        self.logInView.facebookButton.frame = CGRectMake(self.logInView.facebookButton.frame.origin.x, 310.0f, self.logInView.facebookButton.frame.size.width, self.logInView.facebookButton.frame.size.height);
+        [self.logInView.facebookButton setImage:nil forState:UIControlStateNormal];
+        [self.logInView.facebookButton setBackgroundImage:[UIImage imageNamed:@"fb_button.png"] forState:UIControlStateNormal];
+        //self.logInView.facebookButton.hidden = YES;
+    }
+    
+    [self.logInView.facebookButton setTitle:@"" forState:UIControlStateNormal];
     
     if (IS_DEVELOPER) NSLog(@"Facebook button is %@ . Frame is (%f,%f,%f,%f) ", (self.logInView.facebookButton.hidden) ? @"Hidden" : @"Visible",self.logInView.facebookButton.frame.origin.x, self.logInView.facebookButton.frame.origin.y, self.logInView.facebookButton.frame.size.width, self.logInView.facebookButton.frame.size.height);
 }

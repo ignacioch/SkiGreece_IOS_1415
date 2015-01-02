@@ -39,7 +39,7 @@
              forControlEvents:UIControlEventTouchUpInside];
     [_loginFBButton setTitle:@"Login via FB" forState:UIControlStateNormal];
     _loginFBButton.frame = CGRectMake(80.0, 210.0, 160.0, 40.0);
-    [self.view addSubview:_loginFBButton];
+    //[self.view addSubview:_loginFBButton];
 }
 
 - (void)didReceiveMemoryWarning {
