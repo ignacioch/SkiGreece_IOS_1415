@@ -64,13 +64,12 @@
     self.responseData = [NSMutableData data];
     
     self.backgroundImg.frame = CGRectMake(0, 0 + [UIApplication sharedApplication].statusBarFrame.size.height  , SCREEN_WIDTH, SCREEN_HEIGHT);
-    /*if (IS_IPHONE_5) {
-        [self.backgroundImg setImage:[UIImage imageNamed:@"background_with_back_5.png"]];
-    } else if (IS_IPHONE_6){
-        //?? FIXME 
-        // create the png for iphone 6
-        [self.backgroundImg setImage:[UIImage imageNamed:@"background_with_back_5.png"]];
-    }*/
+
+    if (IS_IPHONE_6) {
+        self.mapMain.frame = CGRectMake(self.mapMain.frame.origin.x, self.mapMain.frame.origin.y + 48.0f, self.mapMain.frame.size.width, self.mapMain.frame.size.height);
+    } else if (IS_IPHONE_5) {
+        self.mapMain.frame = CGRectMake(self.mapMain.frame.origin.x, self.mapMain.frame.origin.y + 20.0f, self.mapMain.frame.size.width, self.mapMain.frame.size.height);
+    }
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
         UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 20)];
@@ -97,7 +96,7 @@
     
     CBZSplashView *splashView = [CBZSplashView splashViewWithIcon:icon backgroundImage:[UIImage imageNamed:@"ski_greece_splash_screen_new"]];
     splashView.animationDuration = 3;
-    splashView.iconColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ic_launcher.png"]];
+    //splashView.iconColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ic_launcher.png"]];
     
     [self.view addSubview:splashView];
     self.splashView = splashView;

@@ -31,7 +31,6 @@
         iconImageView.contentMode = UIViewContentModeScaleAspectFit;
         iconImageView.center = self.center;
         
-        //NSLog(@"X : %f, Y : %f, H : %f, W: %f",iconImageView.frame.origin.x,iconImageView.frame.origin.y,iconImageView.frame.size.height,iconImageView.frame.size.width);
         
         [self addSubview:iconImageView];
         
@@ -44,7 +43,7 @@
 {
     self = [super initWithFrame:[[UIScreen mainScreen] bounds]];
     if (self) {
-        NSLog(@"initImage is called");
+        NSLog(@"SplashScreen is added. Width is %f and height is %f",SCREEN_WIDTH,SCREEN_HEIGHT);
         
         self.backgroundColor = [UIColor clearColor];
         
@@ -57,15 +56,11 @@
 
         
         UIImageView *iconImageView = [UIImageView new];
-        iconImageView.image = [icon imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        iconImageView.tintColor = self.iconColor;
-        //iconImageView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-        iconImageView.frame = CGRectMake(0, 0, self.iconStartSize.width, self.iconStartSize.height);
+        iconImageView.image = icon ;//[icon imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        //iconImageView.tintColor = self.iconColor;
+        iconImageView.frame = CGRectMake(0, 0, self.iconStartSize.width/2, self.iconStartSize.height/2);
         iconImageView.contentMode = UIViewContentModeScaleAspectFit;
         iconImageView.center = self.center;
-        
-        //NSLog(@"BG : X : %f, Y : %f, H : %f, W: %f",bgImageView.frame.origin.x,bgImageView.frame.origin.y,bgImageView.frame.size.height,bgImageView.frame.size.width);
-        //NSLog(@"ICON :X : %f, Y : %f, H : %f, W: %f",iconImageView.frame.origin.x,iconImageView.frame.origin.y,iconImageView.frame.size.height,iconImageView.frame.size.width);
 
         
         [self addSubview:iconImageView];
