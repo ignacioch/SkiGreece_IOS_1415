@@ -24,6 +24,11 @@
         self.containerView.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height +43.0f, SCREEN_WIDTH, SCREEN_HEIGHT - [UIApplication sharedApplication].statusBarFrame.size.height - 43.0f);
         self.backButton.frame = CGRectMake(10.0f, [UIApplication sharedApplication].statusBarFrame.size.height, self.backButton.frame.size.width, self.backButton.frame.size.height);
         self.doneButton.frame = CGRectMake(SCREEN_WIDTH - self.doneButton.frame.size.width -10.0f, [UIApplication sharedApplication].statusBarFrame.size.height, self.doneButton.frame.size.width, self.doneButton.frame.size.height);
+    } else  if (IS_IPHONE_5) {
+        self.navBar.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH , 43.0f);
+        self.containerView.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height +43.0f, SCREEN_WIDTH, SCREEN_HEIGHT - [UIApplication sharedApplication].statusBarFrame.size.height - 43.0f);
+        self.backButton.frame = CGRectMake(10.0f, [UIApplication sharedApplication].statusBarFrame.size.height, self.backButton.frame.size.width, self.backButton.frame.size.height);
+        self.doneButton.frame = CGRectMake(SCREEN_WIDTH - self.doneButton.frame.size.width -10.0f, [UIApplication sharedApplication].statusBarFrame.size.height, self.doneButton.frame.size.width, self.doneButton.frame.size.height);
     }
     
     AppDelegate *del = (AppDelegate*)[[UIApplication sharedApplication] delegate];
@@ -40,15 +45,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)backButtonPressed:(id)sender {
     [self dismissViewControllerAnimated:NO completion:nil];

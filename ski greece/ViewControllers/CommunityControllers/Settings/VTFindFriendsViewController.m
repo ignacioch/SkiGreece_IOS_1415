@@ -22,6 +22,10 @@
         self.topBar.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH , 43.0f);
         self.containerView.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height +43.0f, SCREEN_WIDTH, SCREEN_HEIGHT - [UIApplication sharedApplication].statusBarFrame.size.height - 43.0f);
         self.backBtn.frame = CGRectMake(10.0f, [UIApplication sharedApplication].statusBarFrame.size.height, self.backBtn.frame.size.width, self.backBtn.frame.size.height);
+    } else if (IS_IPHONE_5) {
+        self.topBar.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH , 43.0f);
+        self.containerView.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height +43.0f, SCREEN_WIDTH, SCREEN_HEIGHT - [UIApplication sharedApplication].statusBarFrame.size.height - 43.0f);
+        self.backBtn.frame = CGRectMake(10.0f, [UIApplication sharedApplication].statusBarFrame.size.height, self.backBtn.frame.size.width, self.backBtn.frame.size.height);
     }
     
     AppDelegate *del = (AppDelegate*)[[UIApplication sharedApplication] delegate];
