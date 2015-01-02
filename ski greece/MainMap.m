@@ -64,13 +64,13 @@
     self.responseData = [NSMutableData data];
     
     self.backgroundImg.frame = CGRectMake(0, 0 + [UIApplication sharedApplication].statusBarFrame.size.height  , SCREEN_WIDTH, SCREEN_HEIGHT);
-    if (IS_IPHONE_5) {
+    /*if (IS_IPHONE_5) {
         [self.backgroundImg setImage:[UIImage imageNamed:@"background_with_back_5.png"]];
     } else if (IS_IPHONE_6){
         //?? FIXME 
         // create the png for iphone 6
         [self.backgroundImg setImage:[UIImage imageNamed:@"background_with_back_5.png"]];
-    }
+    }*/
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
         UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 20)];
