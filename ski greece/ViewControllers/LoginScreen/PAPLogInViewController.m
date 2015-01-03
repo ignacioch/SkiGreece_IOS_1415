@@ -41,8 +41,11 @@
     
     if (IS_DEVELOPER) NSLog(@"Background added");
     
-    NSString *text = NSLocalizedString(@"Sign up and start sharing your story with your friends.", @"Sign up and start sharing your story with your friends.");
+    //NSString *text = NSLocalizedString(@"Sign up and start sharing your story with your friends.", @"Sign up and start sharing your story with your friends.");
 
+    //NSString *text = @"Join SkiGreece and start sharing your story with your friends.";
+    NSString *text = @"Μπες και εσύ στην παρέα του SkiGreece!";
+    
     CGSize textSize = [text boundingRectWithSize:CGSizeMake(255.0f, CGFLOAT_MAX)
                                                     options:NSStringDrawingUsesLineFragmentOrigin // wordwrap?
                                                  attributes:@{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Medium" size:18.0f]}
