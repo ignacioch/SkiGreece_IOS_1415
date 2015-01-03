@@ -511,7 +511,7 @@
                                     <action selector="goBack:" destination="zsY-Z7-eU0" eventType="touchUpInside" id="mIh-Bi-JgG"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Copyright 2013-14, Vima IT &amp; Tech" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9O1-H7-drd">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Copyright 2014-15, SkiGreece" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9O1-H7-drd">
                                 <rect key="frame" x="8" y="435" width="238" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -1737,6 +1737,9 @@
                                 <state key="normal" image="back_button.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="jzD-XT-FaG" eventType="touchUpInside" id="HJt-mN-Cd7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9MG-2R-fkj">
                                 <rect key="frame" x="263" y="7" width="41" height="30"/>

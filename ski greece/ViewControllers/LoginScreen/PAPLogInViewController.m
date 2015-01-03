@@ -70,11 +70,16 @@
     
     if (IS_IPHONE_6) {
        self.logInView.facebookButton.frame = CGRectMake(self.logInView.facebookButton.frame.origin.x, 330.0f, self.logInView.facebookButton.frame.size.width, self.logInView.facebookButton.frame.size.height);
+        [self.logInView.facebookButton setImage:nil forState:UIControlStateNormal];
+        [self.logInView.facebookButton setBackgroundImage:[UIImage imageNamed:@"fb_button.png"] forState:UIControlStateNormal];
     } else if (IS_IPHONE_5) {
         self.logInView.facebookButton.frame = CGRectMake(self.logInView.facebookButton.frame.origin.x, 310.0f, self.logInView.facebookButton.frame.size.width, self.logInView.facebookButton.frame.size.height);
         [self.logInView.facebookButton setImage:nil forState:UIControlStateNormal];
         [self.logInView.facebookButton setBackgroundImage:[UIImage imageNamed:@"fb_button.png"] forState:UIControlStateNormal];
-        //self.logInView.facebookButton.hidden = YES;
+    } else {
+        self.logInView.facebookButton.frame = CGRectMake(self.logInView.facebookButton.frame.origin.x, self.logInView.facebookButton.frame.origin.y + [UIApplication sharedApplication].statusBarFrame.size.height, self.logInView.facebookButton.frame.size.width, self.logInView.facebookButton.frame.size.height);
+        [self.logInView.facebookButton setImage:nil forState:UIControlStateNormal];
+        [self.logInView.facebookButton setBackgroundImage:[UIImage imageNamed:@"fb_button.png"] forState:UIControlStateNormal];
     }
     
     [self.logInView.facebookButton setTitle:@"" forState:UIControlStateNormal];

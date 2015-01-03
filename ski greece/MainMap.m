@@ -66,10 +66,30 @@
     self.backgroundImg.frame = CGRectMake(0, 0 + [UIApplication sharedApplication].statusBarFrame.size.height  , SCREEN_WIDTH, SCREEN_HEIGHT);
 
     if (IS_IPHONE_6) {
-        self.mapMain.frame = CGRectMake(self.mapMain.frame.origin.x, self.mapMain.frame.origin.y + 48.0f, self.mapMain.frame.size.width, self.mapMain.frame.size.height);
+        if (COSMOTE_AD) {
+            self.mapMain.frame = CGRectMake(self.mapMain.frame.origin.x, self.mapMain.frame.origin.y + 48.0f, self.mapMain.frame.size.width, self.mapMain.frame.size.height);
+        } else {
+            self.mapMain.frame = CGRectMake(self.mapMain.frame.origin.x, 110.0f, self.mapMain.frame.size.width, SCREEN_HEIGHT - 110.0f);
+            self.backgroundImg.image = [UIImage imageNamed:@"background_with_back_5.png"];
+
+        }
+        
     } else if (IS_IPHONE_5) {
-        self.mapMain.frame = CGRectMake(self.mapMain.frame.origin.x, self.mapMain.frame.origin.y + 20.0f, self.mapMain.frame.size.width, self.mapMain.frame.size.height);
+        if (COSMOTE_AD) {
+           self.mapMain.frame = CGRectMake(self.mapMain.frame.origin.x, self.mapMain.frame.origin.y + 20.0f, self.mapMain.frame.size.width, self.mapMain.frame.size.height);
+        } else {
+             self.mapMain.frame = CGRectMake(self.mapMain.frame.origin.x, 105.0f, self.mapMain.frame.size.width, SCREEN_HEIGHT - 105.0f);
+            self.backgroundImg.image = [UIImage imageNamed:@"background_with_back_5.png"];
+        }
+        
+    } else {
+        if (!(COSMOTE_AD)) {
+            self.mapMain.frame = CGRectMake(self.mapMain.frame.origin.x, 100.0f, self.mapMain.frame.size.width, SCREEN_HEIGHT - 100.0f);
+            self.backgroundImg.image = [UIImage imageNamed:@"background_with_back_4.png"];
+        }
     }
+    
+    
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f) {
         UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 20)];
@@ -92,15 +112,17 @@
     
     
     // adding splash screen for cosmote
-    __unused UIImage *icon = [UIImage imageNamed:@"ic_launcher.png"];
-    
-    CBZSplashView *splashView = [CBZSplashView splashViewWithIcon:icon backgroundImage:[UIImage imageNamed:@"ski_greece_splash_screen_new"]];
-    splashView.animationDuration = 3;
-    //splashView.iconColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ic_launcher.png"]];
-    
-    [self.view addSubview:splashView];
-    self.splashView = splashView;
-    
+
+    if (COSMOTE_AD) {
+        __unused UIImage *icon = [UIImage imageNamed:@"ic_launcher.png"];
+        
+        CBZSplashView *splashView = [CBZSplashView splashViewWithIcon:icon backgroundImage:[UIImage imageNamed:@"ski_greece_splash_screen_new"]];
+        splashView.animationDuration = 3;
+        //splashView.iconColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ic_launcher.png"]];
+        
+        [self.view addSubview:splashView];
+        self.splashView = splashView;
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated

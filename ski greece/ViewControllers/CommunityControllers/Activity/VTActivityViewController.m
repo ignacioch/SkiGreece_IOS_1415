@@ -27,6 +27,10 @@
         self.navBar_top.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH , 43.0f);
         self.containerView.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height +43.0f, SCREEN_WIDTH, SCREEN_HEIGHT - [UIApplication sharedApplication].statusBarFrame.size.height - 43.0f);
         self.backButton.frame = CGRectMake(10.0f, [UIApplication sharedApplication].statusBarFrame.size.height, self.backButton.frame.size.width, self.backButton.frame.size.height);
+    } else {
+        self.navBar_top.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH , 43.0f);
+        self.containerView.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height +43.0f, SCREEN_WIDTH, SCREEN_HEIGHT - [UIApplication sharedApplication].statusBarFrame.size.height - 43.0f);
+        self.backButton.frame = CGRectMake(10.0f, [UIApplication sharedApplication].statusBarFrame.size.height, self.backButton.frame.size.width, self.backButton.frame.size.height);
     }
     
     AppDelegate *del = (AppDelegate*)[[UIApplication sharedApplication] delegate];

@@ -94,6 +94,11 @@ typedef enum {
         self.settingsButton.frame = CGRectMake(SCREEN_WIDTH - 60.0f, self.backButton.frame.origin.y, 96.0f, 56.0f);
         self.takePhotoBtn.frame = CGRectMake(120.0f, SCREEN_HEIGHT - self.takePhotoBtn.frame.size.height, 80.0f, self.takePhotoBtn.frame.size.height);
         self.activityButton.frame = CGRectMake(230.0f, SCREEN_HEIGHT - self.activityButton.frame.size.height, 80.0f, self.activityButton.frame.size.height);
+    } else {
+        self.backButton.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height , 56.0f, 56.0f);
+        self.settingsButton.frame = CGRectMake(SCREEN_WIDTH - 60.0f, self.backButton.frame.origin.y , 96.0f, 56.0f);
+        self.takePhotoBtn.frame = CGRectMake(120.0f, SCREEN_HEIGHT - self.takePhotoBtn.frame.size.height, 80.0f, self.takePhotoBtn.frame.size.height);
+        self.activityButton.frame = CGRectMake(230.0f, SCREEN_HEIGHT - self.activityButton.frame.size.height, 80.0f, self.activityButton.frame.size.height);
     }
     
     
