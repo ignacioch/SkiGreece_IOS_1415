@@ -36,6 +36,7 @@
         if (IS_DEVELOPER) NSLog(@"iPhone 5 device");
         self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundLogin-568h.png"]];
     } else {
+        if (IS_DEVELOPER) NSLog(@"iPhone 4 device");
         self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundLogin.png"]];
     }
     

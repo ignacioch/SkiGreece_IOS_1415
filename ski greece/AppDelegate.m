@@ -271,6 +271,7 @@
             }
             
             if (![user objectForKey:kPAPUserAlreadyAutoFollowedFacebookFriendsKey]) {
+                if (IS_DEVELOPER) NSLog(@"Following Friends 1st time");
                 self.hud.labelText = NSLocalizedString(@"Following Friends", nil);
                 firstLaunch = YES;
                 
@@ -323,8 +324,10 @@
                 }*/
                 
                 if (!error) {
+                    if (IS_DEVELOPER) NSLog(@"Hiding HUD");
                     [MBProgressHUD hideHUDForView:self.homeViewController.view animated:NO];
                     if (anypicFriends.count > 0) {
+                        if (IS_DEVELOPER) NSLog(@"Following Friends !error");
                         self.hud = [MBProgressHUD showHUDAddedTo:self.homeViewController.view animated:NO];
                         self.hud.dimBackground = YES;
                         self.hud.labelText = NSLocalizedString(@"Following Friends", nil);
@@ -334,7 +337,7 @@
                     }
                 }
             }
-            
+            [MBProgressHUD hideHUDForView:self.homeViewController.view animated:NO];
             [user saveEventually];
         } else {
             NSLog(@"No user session found. Forcing logOut.");
