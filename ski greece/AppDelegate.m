@@ -253,6 +253,8 @@
     
     NSArray *data = [result objectForKey:@"data"];
     
+    if (IS_DEVELOPER) NSLog(@"FacebookRequestDidLoad is called with data : %@",data);
+    
     if (data) {
         // we have friends data
         NSMutableArray *facebookIds = [[NSMutableArray alloc] initWithCapacity:[data count]];
@@ -266,6 +268,7 @@
         [[PAPCache sharedCache] setFacebookFriends:facebookIds];
         
         if (user) {
+            if (IS_DEVELOPER) NSLog(@"Entering is User");
             if ([user objectForKey:kPAPUserFacebookFriendsKey]) {
                 [user removeObjectForKey:kPAPUserFacebookFriendsKey];
             }
@@ -282,12 +285,23 @@
                 PFQuery *facebookFriendsQuery = [PFUser query];
                 [facebookFriendsQuery whereKey:kPAPUserFacebookIDKey containedIn:facebookIds];
                 
+                //NSArray *facebookFriends = [[PAPCache sharedCache] facebookFriends];
+                
+                // Query for all friends you have on facebook and who are using the app
+                PFQuery *friendsQuery = [PFUser query];
+                [friendsQuery whereKey:kPAPUserFacebookIDKey notEqualTo:[[PFUser currentUser] objectForKey:kPAPUserFacebookIDKey]];
+                
                 // auto-follow Parse employees
                 //PFQuery *parseEmployeesQuery = [PFUser query];
                 //[parseEmployeesQuery whereKey:kPAPUserFacebookIDKey containedIn:kPAPParseEmployeeAccounts];
                 
                 // combined query
-                PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:/*parseEmployeesQuery,*/facebookFriendsQuery, nil]];
+                // VERSION 4.0 AUTO-FOLLOW ALL USERS
+                // LATER IT CAN CHANGE SO AS IT FOLLOWS ONLY HIS FACEBOOK FRIENDS AND CERTAIN HICH POSTERS
+                //PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:/*parseEmployeesQuery,*/facebookFriendsQuery, nil]];
+                
+                PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:friendsQuery, nil]];
+
                 
                 NSArray *anypicFriends = [query findObjects:&error];
                 
@@ -330,7 +344,8 @@
                         if (IS_DEVELOPER) NSLog(@"Following Friends !error");
                         self.hud = [MBProgressHUD showHUDAddedTo:self.homeViewController.view animated:NO];
                         self.hud.dimBackground = YES;
-                        self.hud.labelText = NSLocalizedString(@"Following Friends", nil);
+                        self.hud.labelText = NSLocalizedString(@"Following Friends + loading objects of homeViewController", nil);
+                        [self.homeViewController loadObjects];
                     } else {
                         if (IS_DEVELOPER) NSLog(@"loading objects of home view controller");
                         [self.homeViewController loadObjects];
@@ -338,7 +353,13 @@
                 }
             }
             [MBProgressHUD hideHUDForView:self.homeViewController.view animated:NO];
-            [user saveEventually];
+            //[user saveEventually];
+            [user saveEventually:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    if (IS_DEVELOPER) NSLog(@"save Eventually -Loading Controller in the if clause");
+                    [self.homeViewController loadObjects];
+                }
+            }];
         } else {
             NSLog(@"No user session found. Forcing logOut.");
             [self logOut];
@@ -359,7 +380,13 @@
                 [user setObject:facebookId forKey:kPAPUserFacebookIDKey];
             }
             
-            [user saveEventually];
+            //[user saveEventually];
+            [user saveEventually:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    if (IS_DEVELOPER) NSLog(@"save Eventually -Loading Controller in the else clause");
+                    [self.homeViewController loadObjects];
+                }
+            }];
         }
         
         [FBRequestConnection startForMyFriendsWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
