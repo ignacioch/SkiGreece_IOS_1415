@@ -11,6 +11,6 @@
 #ifndef ski_greece_Config_h
 #define ski_greece_Config_h
 
-#define IS_DEVELOPER YES 
+#define IS_DEVELOPER NO 
 
 #endif
