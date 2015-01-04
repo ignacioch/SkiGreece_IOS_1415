@@ -47,6 +47,6 @@
 #define OFFSET_H_6 79.0f
 #define OFFSET_W_6 55.0f
 
-#define COSMOTE_AD NO
+#define COSMOTE_AD YES
 
 

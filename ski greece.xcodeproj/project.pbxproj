@@ -302,7 +302,6 @@
 		DF2661021A4DD07C00BC05B9 /* CBZSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2660FE1A4DD07C00BC05B9 /* CBZSplashView.m */; };
 		DF2661031A4DD07C00BC05B9 /* CBZVectorSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2661001A4DD07C00BC05B9 /* CBZVectorSplashView.m */; };
 		DF2661051A4DD23D00BC05B9 /* ski_greece_splash_screen_new.png in Resources */ = {isa = PBXBuildFile; fileRef = DF2661041A4DD23D00BC05B9 /* ski_greece_splash_screen_new.png */; };
-		DF287D931A4B260500439850 /* mobile-banner-640x450.png in Resources */ = {isa = PBXBuildFile; fileRef = DF287D921A4B260500439850 /* mobile-banner-640x450.png */; };
 		DF2F1F411A222223008F9C42 /* VTFindFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2F1F401A222223008F9C42 /* VTFindFriendsViewController.m */; };
 		DF31D0F41A3D17D600E72B01 /* BackgroundLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = DF31D0F01A3D17D600E72B01 /* BackgroundLogin.png */; };
 		DF31D0F51A3D17D600E72B01 /* BackgroundLogin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF31D0F11A3D17D600E72B01 /* BackgroundLogin@2x.png */; };
@@ -677,6 +676,8 @@
 		DFA753D71A3F977F004BB1F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFA753D61A3F977F004BB1F9 /* Images.xcassets */; };
 		DFDE61211A1143EC000AFEE6 /* VTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDE61201A1143EC000AFEE6 /* VTHomeViewController.m */; };
 		DFE24B1A1A59EA570064DD89 /* backgroundFromPSD@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = DFE24B191A59EA570064DD89 /* backgroundFromPSD@x2.png */; };
+		DFE24B1C1A59EEBF0064DD89 /* mobile-banner-640x450.png in Resources */ = {isa = PBXBuildFile; fileRef = DFE24B1B1A59EEBF0064DD89 /* mobile-banner-640x450.png */; };
+		DFE24B1E1A59F0390064DD89 /* splash_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DFE24B1D1A59F0390064DD89 /* splash_icon.png */; };
 		DFFB52ED19FEEC1700A7549B /* PAPAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB52E819FEEC1700A7549B /* PAPAccountViewController.m */; };
 		DFFB52EE19FEEC1700A7549B /* PAPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB52EA19FEEC1700A7549B /* PAPHomeViewController.m */; };
 		DFFB52EF19FEEC1700A7549B /* PAPPhotoTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFB52EC19FEEC1700A7549B /* PAPPhotoTimelineViewController.m */; };
@@ -1089,7 +1090,6 @@
 		DF2660FF1A4DD07C00BC05B9 /* CBZVectorSplashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBZVectorSplashView.h; sourceTree = "<group>"; };
 		DF2661001A4DD07C00BC05B9 /* CBZVectorSplashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBZVectorSplashView.m; sourceTree = "<group>"; };
 		DF2661041A4DD23D00BC05B9 /* ski_greece_splash_screen_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ski_greece_splash_screen_new.png; sourceTree = "<group>"; };
-		DF287D921A4B260500439850 /* mobile-banner-640x450.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mobile-banner-640x450.png"; sourceTree = "<group>"; };
 		DF2F1F3F1A222223008F9C42 /* VTFindFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTFindFriendsViewController.h; path = "ski greece/ViewControllers/CommunityControllers/Settings/VTFindFriendsViewController.h"; sourceTree = SOURCE_ROOT; };
 		DF2F1F401A222223008F9C42 /* VTFindFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTFindFriendsViewController.m; path = "ski greece/ViewControllers/CommunityControllers/Settings/VTFindFriendsViewController.m"; sourceTree = SOURCE_ROOT; };
 		DF31D0F01A3D17D600E72B01 /* BackgroundLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackgroundLogin.png; sourceTree = "<group>"; };
@@ -1474,6 +1474,8 @@
 		DFDE611F1A1143EC000AFEE6 /* VTHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTHomeViewController.h; path = "ski greece/ViewControllers/CommunityControllers/Home/VTHomeViewController.h"; sourceTree = SOURCE_ROOT; };
 		DFDE61201A1143EC000AFEE6 /* VTHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTHomeViewController.m; path = "ski greece/ViewControllers/CommunityControllers/Home/VTHomeViewController.m"; sourceTree = SOURCE_ROOT; };
 		DFE24B191A59EA570064DD89 /* backgroundFromPSD@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundFromPSD@x2.png"; sourceTree = "<group>"; };
+		DFE24B1B1A59EEBF0064DD89 /* mobile-banner-640x450.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mobile-banner-640x450.png"; sourceTree = "<group>"; };
+		DFE24B1D1A59F0390064DD89 /* splash_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash_icon.png; sourceTree = "<group>"; };
 		DFFB52E719FEEC1700A7549B /* PAPAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAPAccountViewController.h; sourceTree = "<group>"; };
 		DFFB52E819FEEC1700A7549B /* PAPAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAPAccountViewController.m; sourceTree = "<group>"; };
 		DFFB52E919FEEC1700A7549B /* PAPHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAPHomeViewController.h; sourceTree = "<group>"; };
@@ -1849,8 +1851,8 @@
 		84685A2C15F6AC3100E6E4FC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DFE24B1D1A59F0390064DD89 /* splash_icon.png */,
 				DF2661041A4DD23D00BC05B9 /* ski_greece_splash_screen_new.png */,
-				DF287D921A4B260500439850 /* mobile-banner-640x450.png */,
 				DFA750681A05191D00EBD6F6 /* AnypicAssets */,
 				8479AA3A184ADEB700ABB3C2 /* ic_launcher_120.png */,
 				84878F70184AC9E800941956 /* ski_greece_cover.jpg */,
@@ -2614,6 +2616,7 @@
 		DFA750681A05191D00EBD6F6 /* AnypicAssets */ = {
 			isa = PBXGroup;
 			children = (
+				DFE24B1B1A59EEBF0064DD89 /* mobile-banner-640x450.png */,
 				DFE24B191A59EA570064DD89 /* backgroundFromPSD@x2.png */,
 				DF08089F1A56F1A80031388E /* fb_button_pressed.png */,
 				DF0808A01A56F1A80031388E /* fb_button_pressed@2x.png */,
@@ -3117,10 +3120,10 @@
 				DFA751B01A05191E00EBD6F6 /* Icon.png in Resources */,
 				DFA7518F1A05191E00EBD6F6 /* camera_button_pressed.png in Resources */,
 				840BFB6316AA35F600AFB4E1 /* ProsforesCell.xib in Resources */,
+				DFE24B1C1A59EEBF0064DD89 /* mobile-banner-640x450.png in Resources */,
 				DFA7514D1A05191E00EBD6F6 /* AvatarPlaceholder@2x.png in Resources */,
 				DFA751F21A05191E00EBD6F6 /* nav_bar_bg@2x.png in Resources */,
 				843845FA17B830300020FD93 /* SkiCenter.plist in Resources */,
-				DF287D931A4B260500439850 /* mobile-banner-640x450.png in Resources */,
 				DF4D230519BFA5E10000F94E /* all_69.html in Resources */,
 				84E49AE417BB9DD400016E09 /* overlay_image.png in Resources */,
 				DF4D22DF19BFA5E10000F94E /* ftv2plastnode.png in Resources */,
@@ -3567,6 +3570,7 @@
 				84C6B2651819D82E002E05AA /* main_screen_header.png in Resources */,
 				84C6B2681819D91A002E05AA /* main_screen_lifts.png in Resources */,
 				84C6B2691819D91A002E05AA /* main_screen_tracks.png in Resources */,
+				DFE24B1E1A59F0390064DD89 /* splash_icon.png in Resources */,
 				84A014B71820598E00D15F95 /* skigreece_topbar_logo.png in Resources */,
 				84A014C21821017500D15F95 /* PickerBG.png in Resources */,
 				DFA752091A05191E00EBD6F6 /* shadowProfilePicture-29.png in Resources */,

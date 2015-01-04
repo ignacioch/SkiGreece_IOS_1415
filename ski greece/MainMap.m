@@ -13,12 +13,10 @@
 #import "MBProgressHUD.h"
 #import "Flurry.h"
 
-#import "CBZSplashView.h"
 
 
 @interface MainMap ()
 
-@property (nonatomic, strong) CBZSplashView *splashView;
 
 @end
 
@@ -111,28 +109,14 @@
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
     
     
-    // adding splash screen for cosmote
-
-    if (COSMOTE_AD) {
-        __unused UIImage *icon = [UIImage imageNamed:@"ic_launcher.png"];
-        
-        CBZSplashView *splashView = [CBZSplashView splashViewWithIcon:icon backgroundImage:[UIImage imageNamed:@"ski_greece_splash_screen_new"]];
-        splashView.animationDuration = 3;
-        //splashView.iconColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ic_launcher.png"]];
-        
-        [self.view addSubview:splashView];
-        self.splashView = splashView;
-    }
+   
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
-    /* wait a beat before animating in */
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.splashView startAnimation];
-    });
+    
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle{

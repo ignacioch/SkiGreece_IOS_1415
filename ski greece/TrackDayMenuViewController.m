@@ -22,6 +22,8 @@
 #import "PAPHomeViewController.h"
 #import "PAPLogInViewController.h"
 #import "VTHomeViewController.h"
+#import "CBZSplashView.h"
+
 
 // IPHONE 6 : Distance between basic button X => 55  , Y => 50
 // 
@@ -95,6 +97,7 @@
 
 @property (nonatomic, strong) PAPHomeViewController *homeViewController;
 @property (nonatomic, strong) MBProgressHUD *hud;
+@property (nonatomic, strong) CBZSplashView *splashView;
 
 
 @end
@@ -180,15 +183,14 @@
     
     
     
-    if(![defaults boolForKey:@"hasSeenTutorial"]) {
-        NSLog(@"User will see the tutorial");
-        [defaults setBool:false forKey:@"hasSeenTutorial"];
-        [self showIntroWithCrossDissolve];
-        [defaults synchronize];
-    } else {
-        NSLog(@"User has seen tutorial");
-    }
-    /*log the user as early as possible*/
+//    if(![defaults boolForKey:@"hasSeenTutorial"]) {
+//        NSLog(@"User will see the tutorial");
+//        [defaults setBool:false forKey:@"hasSeenTutorial"];
+//        [self showIntroWithCrossDissolve];
+//        [defaults synchronize];
+// } else {
+//        NSLog(@"User has seen tutorial");
+//    }
     
 //    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
 //        if (FBSession.activeSession.isOpen) {
@@ -270,6 +272,19 @@
     }
     
     
+    // adding splash screen for cosmote
+    
+    if (COSMOTE_AD) {
+        __unused UIImage *icon = [UIImage imageNamed:@"splash_icon.png"];
+        
+        CBZSplashView *splashView = [CBZSplashView splashViewWithIcon:icon backgroundImage:[UIImage imageNamed:@"ski_greece_splash_screen_new"]];
+        splashView.animationDuration = 3;
+        //splashView.iconColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ic_launcher.png"]];
+        
+        [self.view addSubview:splashView];
+        self.splashView = splashView;
+    }
+    
     
     
 }
@@ -278,11 +293,18 @@
 {
     [super viewDidAppear:animated];
     
+    
+    /* wait a beat before animating in */
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.splashView startAnimation];
+        if (![PFUser currentUser]) {
+            [self openLoginScreen];
+            return;
+        }
+    });
+    
     // If not logged in, present login view controller
-    if (![PFUser currentUser]) {
-        [self openLoginScreen];
-        return;
-    }
+    
     
 }
 
