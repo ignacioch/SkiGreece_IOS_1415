@@ -66,6 +66,16 @@
     if (IS_IPHONE_6) {
         if (COSMOTE_AD) {
             self.mapMain.frame = CGRectMake(self.mapMain.frame.origin.x, self.mapMain.frame.origin.y + 48.0f, self.mapMain.frame.size.width, self.mapMain.frame.size.height);
+            // adding clickable button on the Learn More
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+            [button addTarget:self
+                       action:@selector(aMethod:)
+             forControlEvents:UIControlEventTouchUpInside];
+            [button setTitle:@"" forState:UIControlStateNormal];
+            button.frame = CGRectMake(self.mapMain.frame.origin.x, self.mapMain.frame.origin.y - 80.0f, 160.0, 80.0);
+            [self.view addSubview:button];
+        
+        
         } else {
             self.mapMain.frame = CGRectMake(self.mapMain.frame.origin.x, 110.0f, self.mapMain.frame.size.width, SCREEN_HEIGHT - 110.0f);
             self.backgroundImg.image = [UIImage imageNamed:@"background_with_back_5.png"];
@@ -75,13 +85,31 @@
     } else if (IS_IPHONE_5) {
         if (COSMOTE_AD) {
            self.mapMain.frame = CGRectMake(self.mapMain.frame.origin.x, self.mapMain.frame.origin.y + 20.0f, self.mapMain.frame.size.width, self.mapMain.frame.size.height);
+            // adding clickable button on the Learn More
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+            [button addTarget:self
+                       action:@selector(aMethod:)
+             forControlEvents:UIControlEventTouchUpInside];
+            [button setTitle:@"" forState:UIControlStateNormal];
+            button.frame = CGRectMake(self.mapMain.frame.origin.x, self.mapMain.frame.origin.y - 80.0f, 160.0, 80.0);
+            [self.view addSubview:button];
         } else {
              self.mapMain.frame = CGRectMake(self.mapMain.frame.origin.x, 105.0f, self.mapMain.frame.size.width, SCREEN_HEIGHT - 105.0f);
             self.backgroundImg.image = [UIImage imageNamed:@"background_with_back_5.png"];
         }
         
     } else {
-        if (!(COSMOTE_AD)) {
+        if (COSMOTE_AD) {
+            // adding clickable button on the Learn More
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+            [button addTarget:self
+                       action:@selector(aMethod:)
+             forControlEvents:UIControlEventTouchUpInside];
+            [button setTitle:@"" forState:UIControlStateNormal];
+            button.frame = CGRectMake(self.mapMain.frame.origin.x, self.mapMain.frame.origin.y - 80.0f, 160.0, 80.0);
+            [self.view addSubview:button];
+        }
+        else {
             self.mapMain.frame = CGRectMake(self.mapMain.frame.origin.x, 100.0f, self.mapMain.frame.size.width, SCREEN_HEIGHT - 100.0f);
             self.backgroundImg.image = [UIImage imageNamed:@"background_with_back_4.png"];
         }
@@ -265,5 +293,12 @@
 
 - (IBAction)backAction:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)aMethod:(UIButton*)button
+{
+    UIApplication *mySafari = [UIApplication sharedApplication];
+    NSURL *myURL = [[NSURL alloc]initWithString:@"http://www.cosmote.gr"];
+    [mySafari openURL:myURL];
 }
 @end
