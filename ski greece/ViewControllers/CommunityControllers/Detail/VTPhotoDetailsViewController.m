@@ -59,6 +59,10 @@ enum ActionSheetTags {
         self.activityBtn.frame = CGRectMake(SCREEN_WIDTH - self.activityBtn.frame.size.width -10.0f, self.activityBtn.frame.origin.y + [UIApplication sharedApplication].statusBarFrame.size.height, self.activityBtn.frame.size.width, self.activityBtn.frame.size.height);
     }
     
+    self.backgroundImg.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height +43.0f, SCREEN_WIDTH, SCREEN_HEIGHT - [UIApplication sharedApplication].statusBarFrame.size.height - 43.0f);
+    self.backgroundImg.image = [UIImage imageNamed:@"backgroundFromPSD@2x.png"];
+
+    
     del.photoDetailsViewController = [[PAPPhotoDetailsViewController alloc] initWithPhoto:self.photo];
     PAPPhotoDetailsViewController *vc = del.photoDetailsViewController;
     vc.view.frame = self.containerView.bounds;

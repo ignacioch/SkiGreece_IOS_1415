@@ -63,7 +63,8 @@
     NSLog(@"loadView");
     self.scrollView = [[UIScrollView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     self.scrollView.delegate = self;
-    self.scrollView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundLeather.png"]];
+    //self.scrollView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundLeather.png"]];
+    self.scrollView.backgroundColor = [UIColor clearColor];
     self.view = self.scrollView;
     //[self.view addSubview:self.scrollView];
     UIImageView *photoImageView ;

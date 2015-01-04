@@ -73,9 +73,10 @@
     
     [super viewDidLoad];
     
-    UIView *texturedBackgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
-    texturedBackgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundLeather.png"]];
-    self.tableView.backgroundView = texturedBackgroundView;
+    //UIView *texturedBackgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
+    //texturedBackgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundLeather.png"]];
+    //self.tableView.backgroundView = texturedBackgroundView;
+    self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
   
     

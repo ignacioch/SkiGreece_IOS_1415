@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *navigationBar;
 - (IBAction)backButtonAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImg;
 
 @end

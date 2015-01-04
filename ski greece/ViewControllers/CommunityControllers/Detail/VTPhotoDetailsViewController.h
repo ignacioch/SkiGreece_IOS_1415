@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *backBtn;
 @property (weak, nonatomic) IBOutlet UIButton *deleteBtn;
 @property (weak, nonatomic) IBOutlet UIButton *propertyBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImg;
 
 - (IBAction)activityButtonAction:(id)sender;
 - (IBAction)actionButtonAction:(id)sender;

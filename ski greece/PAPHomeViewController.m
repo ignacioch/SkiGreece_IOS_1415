@@ -92,7 +92,7 @@
     //PAPFindFriendsViewController *detailViewController = [[PAPFindFriendsViewController alloc] init];
     //[self.navigationController pushViewController:detailViewController animated:YES];
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    VTFindFriendsViewController *vc=[sb instantiateViewControllerWithIdentifier:@"VTMyProfile"];
+    VTFindFriendsViewController *vc=[sb instantiateViewControllerWithIdentifier:@"VTFindFriends"];
     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentViewController:vc animated:YES completion:NULL];
 }

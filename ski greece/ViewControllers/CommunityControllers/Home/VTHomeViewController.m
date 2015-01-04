@@ -16,6 +16,7 @@
 #import "VTActivityViewController.h"
 //#import "PAPAccountViewController.h
 #import "VTEditPhotoViewController.h"
+#import "VTMyProfileViewController.h"
 
 #define CONTAINER_Y_IPHONE_4 60.0f
 #define CONTAINER_Y_IPHONE_5 52.0f
@@ -308,7 +309,7 @@ typedef enum {
             {
                 if (IS_DEVELOPER) NSLog(@"My profile");
                 UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-                VTFindFriendsViewController *vc=[sb instantiateViewControllerWithIdentifier:@"VTMyProfile"];
+                VTMyProfileViewController *vc=[sb instantiateViewControllerWithIdentifier:@"VTMyProfile"];
                 vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
                 [self presentViewController:vc animated:YES completion:NULL];
                 //PAPAccountViewController *accountViewController = [[PAPAccountViewController alloc] initWithStyle:UITableViewStylePlain];

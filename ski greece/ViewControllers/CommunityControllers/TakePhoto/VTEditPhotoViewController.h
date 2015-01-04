@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImg;
 
 @property (nonatomic, strong) UIImage * image;
 - (IBAction)backButtonPressed:(id)sender;

@@ -1719,12 +1719,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Dgt-uY-bG4">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundNavigationBar.png" id="L18-dT-Cxo">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="CBU-xD-aEk">
+                                <rect key="frame" x="0.0" y="41" width="320" height="439"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" id="VSZ-Np-JZZ">
@@ -1758,7 +1758,7 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="iyQ-x8-5mE" id="OQm-ve-1GJ"/>
-                        <outlet property="backgroundImage" destination="Dgt-uY-bG4" id="1HG-ya-JS4"/>
+                        <outlet property="backgroundImg" destination="CBU-xD-aEk" id="nRu-gj-41d"/>
                         <outlet property="containerView" destination="VSZ-Np-JZZ" id="SVe-My-8zU"/>
                         <outlet property="doneButton" destination="9MG-2R-fkj" id="58A-5i-uyq"/>
                         <outlet property="navBar" destination="L18-dT-Cxo" id="s3G-lp-S6e"/>
@@ -1779,6 +1779,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundNavigationBar.png" id="gW7-d0-Zj4">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="poa-K8-5tl">
+                                <rect key="frame" x="0.0" y="42" width="320" height="438"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" id="ZfK-VB-Nfo">
                                 <rect key="frame" x="0.0" y="42" width="320" height="438"/>
@@ -1824,6 +1828,7 @@
                     <connections>
                         <outlet property="activityBtn" destination="iyi-y3-U0j" id="73h-LK-Rep"/>
                         <outlet property="backBtn" destination="AMg-bz-3h4" id="SFU-q0-mx4"/>
+                        <outlet property="backgroundImg" destination="poa-K8-5tl" id="gqg-qw-vXl"/>
                         <outlet property="containerView" destination="ZfK-VB-Nfo" id="z4n-fU-Ksd"/>
                         <outlet property="deleteBtn" destination="bcV-yK-Ak2" id="P7M-8L-bim"/>
                         <outlet property="propertyBtn" destination="iyi-y3-U0j" id="cg5-I0-9Dx"/>
@@ -1842,12 +1847,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="yGe-Hg-NGP">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundNavigationBar.png" id="SDP-Wc-Cbo">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="HbZ-h3-9HW">
+                                <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="roX-Ls-oym">
@@ -1869,6 +1874,7 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="roX-Ls-oym" id="HsK-tB-F8d"/>
+                        <outlet property="backgroundImg" destination="HbZ-h3-9HW" id="ird-yq-vha"/>
                         <outlet property="containerView" destination="bUM-JE-0Ag" id="wrG-3Z-tAG"/>
                         <outlet property="navBar_top" destination="SDP-Wc-Cbo" id="ek7-UI-4o1"/>
                     </connections>
@@ -1889,6 +1895,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="E15-nw-dbg">
+                                <rect key="frame" x="0.0" y="42" width="320" height="438"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" id="fA2-FG-ltY">
                                 <rect key="frame" x="0.0" y="42" width="320" height="438"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -1908,6 +1918,7 @@
                     </view>
                     <connections>
                         <outlet property="backBtn" destination="4Y1-7D-dmv" id="dke-yf-s8e"/>
+                        <outlet property="backgroundImg" destination="E15-nw-dbg" id="lWg-fK-iob"/>
                         <outlet property="containerView" destination="fA2-FG-ltY" id="HPj-nS-qEb"/>
                         <outlet property="topBar" destination="BCy-kW-FvW" id="k8j-WJ-1Fn"/>
                     </connections>
@@ -1928,6 +1939,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Pk2-t2-JzB">
+                                <rect key="frame" x="0.0" y="40" width="320" height="440"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Bae-oC-RNq">
                                 <rect key="frame" x="14" y="6" width="52" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1947,6 +1962,7 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="Bae-oC-RNq" id="NPy-YK-m2h"/>
+                        <outlet property="backgroundImg" destination="Pk2-t2-JzB" id="CGW-VD-bQo"/>
                         <outlet property="containerView" destination="kKE-GN-7Mx" id="XRc-QQ-ggS"/>
                         <outlet property="navigationBar" destination="iA2-Qq-54A" id="M4y-ND-5UZ"/>
                     </connections>

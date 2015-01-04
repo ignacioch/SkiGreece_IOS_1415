@@ -62,9 +62,11 @@
 
     [super viewDidLoad];
     
-    UIView *texturedBackgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
-    [texturedBackgroundView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundLeather.png"]]];
-    self.tableView.backgroundView = texturedBackgroundView;
+    //UIView *texturedBackgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
+    //[texturedBackgroundView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundLeather.png"]]];
+    //self.tableView.backgroundView = texturedBackgroundView;
+    
+    self.tableView.backgroundColor = [UIColor clearColor];
 
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoNavigationBar.png"]];
 

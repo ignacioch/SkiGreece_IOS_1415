@@ -33,6 +33,10 @@
         self.backButton.frame = CGRectMake(10.0f, [UIApplication sharedApplication].statusBarFrame.size.height, self.backButton.frame.size.width, self.backButton.frame.size.height);
     }
     
+    self.backgroundImg.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height +43.0f, SCREEN_WIDTH, SCREEN_HEIGHT - [UIApplication sharedApplication].statusBarFrame.size.height - 43.0f);
+    self.backgroundImg.image = [UIImage imageNamed:@"backgroundFromPSD@2x.png"];
+
+    
     AppDelegate *del = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     del.activityController = [[PAPActivityFeedViewController alloc] init];
     PAPActivityFeedViewController *vc = del.activityController;
