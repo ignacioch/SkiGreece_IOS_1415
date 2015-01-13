@@ -23,6 +23,7 @@
 #import "PAPLogInViewController.h"
 #import "VTHomeViewController.h"
 #import "CBZSplashView.h"
+#import "SMBInternetConnectionIndicator.h"
 
 
 // IPHONE 6 : Distance between basic button X => 55  , Y => 50
@@ -98,7 +99,7 @@
 @property (nonatomic, strong) PAPHomeViewController *homeViewController;
 @property (nonatomic, strong) MBProgressHUD *hud;
 @property (nonatomic, strong) CBZSplashView *splashView;
-
+@property () SMBInternetConnectionIndicator *internetConnectionIndicator;
 
 @end
 
@@ -284,6 +285,11 @@
         [self.view addSubview:splashView];
         self.splashView = splashView;
     }
+    
+    //create frame for the indicator
+    CGRect screenRect                   = CGRectMake(0, [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH, 30);
+    self.internetConnectionIndicator    = [[SMBInternetConnectionIndicator alloc] initWithFrame:screenRect];
+    [self.view addSubview:_internetConnectionIndicator];
     
     
     

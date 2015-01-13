@@ -470,6 +470,7 @@
 		DF5804D91A51EBD900B5B55C /* buttonImageSettingsSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF5804D51A51EBD900B5B55C /* buttonImageSettingsSelected@2x.png */; };
 		DF662F341A334E9B006131DA /* VTMyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF662F331A334E9B006131DA /* VTMyProfileViewController.m */; };
 		DF662F371A336119006131DA /* VTActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF662F361A336119006131DA /* VTActivityViewController.m */; };
+		DF6BE3221A65D4B2007C35C6 /* SMBInternetConnectionIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6BE3211A65D4B2007C35C6 /* SMBInternetConnectionIndicator.m */; };
 		DF814F161A560A29006C75E5 /* HomeTimelineBlank.png in Resources */ = {isa = PBXBuildFile; fileRef = DF814F121A560A29006C75E5 /* HomeTimelineBlank.png */; };
 		DF814F171A560A29006C75E5 /* HomeTimelineBlank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF814F131A560A29006C75E5 /* HomeTimelineBlank@2x.png */; };
 		DF814F181A560A29006C75E5 /* PlaceholderPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = DF814F141A560A29006C75E5 /* PlaceholderPhoto.png */; };
@@ -667,9 +668,9 @@
 		DFA752321A051C2200EBD6F6 /* DefaultAnypic-fbYOUR_FACEBOOK_APP_ID@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DFA7522C1A051C2200EBD6F6 /* DefaultAnypic-fbYOUR_FACEBOOK_APP_ID@2x.png */; };
 		DFA752371A09949500EBD6F6 /* PAPLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA752361A09949500EBD6F6 /* PAPLogInViewController.m */; };
 		DFA753D71A3F977F004BB1F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFA753D61A3F977F004BB1F9 /* Images.xcassets */; };
+		DFC9FC091A62C0E50054092B /* mobile_banner_640_286.png in Resources */ = {isa = PBXBuildFile; fileRef = DFC9FC081A62C0E50054092B /* mobile_banner_640_286.png */; };
 		DFDE61211A1143EC000AFEE6 /* VTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDE61201A1143EC000AFEE6 /* VTHomeViewController.m */; };
 		DFE24B1A1A59EA570064DD89 /* backgroundFromPSD@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = DFE24B191A59EA570064DD89 /* backgroundFromPSD@x2.png */; };
-		DFE24B1C1A59EEBF0064DD89 /* mobile-banner-640x450.png in Resources */ = {isa = PBXBuildFile; fileRef = DFE24B1B1A59EEBF0064DD89 /* mobile-banner-640x450.png */; };
 		DFE24B1E1A59F0390064DD89 /* splash_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DFE24B1D1A59F0390064DD89 /* splash_icon.png */; };
 		DFE24B281A59FB160064DD89 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = DFE24B211A59FB160064DD89 /* Icon-72.png */; };
 		DFE24B291A59FB160064DD89 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DFE24B221A59FB160064DD89 /* Icon-72@2x.png */; };
@@ -1264,6 +1265,8 @@
 		DF662F331A334E9B006131DA /* VTMyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTMyProfileViewController.m; path = "ski greece/ViewControllers/CommunityControllers/Home/VTMyProfileViewController.m"; sourceTree = SOURCE_ROOT; };
 		DF662F351A336119006131DA /* VTActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTActivityViewController.h; path = "ski greece/ViewControllers/CommunityControllers/Activity/VTActivityViewController.h"; sourceTree = SOURCE_ROOT; };
 		DF662F361A336119006131DA /* VTActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTActivityViewController.m; path = "ski greece/ViewControllers/CommunityControllers/Activity/VTActivityViewController.m"; sourceTree = SOURCE_ROOT; };
+		DF6BE3211A65D4B2007C35C6 /* SMBInternetConnectionIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMBInternetConnectionIndicator.m; sourceTree = "<group>"; };
+		DF6BE3231A65D4F0007C35C6 /* SMBInternetConnectionIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMBInternetConnectionIndicator.h; sourceTree = "<group>"; };
 		DF814F121A560A29006C75E5 /* HomeTimelineBlank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HomeTimelineBlank.png; sourceTree = "<group>"; };
 		DF814F131A560A29006C75E5 /* HomeTimelineBlank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HomeTimelineBlank@2x.png"; sourceTree = "<group>"; };
 		DF814F141A560A29006C75E5 /* PlaceholderPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlaceholderPhoto.png; sourceTree = "<group>"; };
@@ -1464,10 +1467,10 @@
 		DFA752361A09949500EBD6F6 /* PAPLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PAPLogInViewController.m; path = "ski greece/ViewControllers/LoginScreen/PAPLogInViewController.m"; sourceTree = SOURCE_ROOT; };
 		DFA753D61A3F977F004BB1F9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DFC50C5D19FD04350015F1D8 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Config.h; path = "ski greece/Others/Config.h"; sourceTree = SOURCE_ROOT; };
+		DFC9FC081A62C0E50054092B /* mobile_banner_640_286.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mobile_banner_640_286.png; sourceTree = "<group>"; };
 		DFDE611F1A1143EC000AFEE6 /* VTHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTHomeViewController.h; path = "ski greece/ViewControllers/CommunityControllers/Home/VTHomeViewController.h"; sourceTree = SOURCE_ROOT; };
 		DFDE61201A1143EC000AFEE6 /* VTHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTHomeViewController.m; path = "ski greece/ViewControllers/CommunityControllers/Home/VTHomeViewController.m"; sourceTree = SOURCE_ROOT; };
 		DFE24B191A59EA570064DD89 /* backgroundFromPSD@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundFromPSD@x2.png"; sourceTree = "<group>"; };
-		DFE24B1B1A59EEBF0064DD89 /* mobile-banner-640x450.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mobile-banner-640x450.png"; sourceTree = "<group>"; };
 		DFE24B1D1A59F0390064DD89 /* splash_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash_icon.png; sourceTree = "<group>"; };
 		DFE24B211A59FB160064DD89 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		DFE24B221A59FB160064DD89 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
@@ -2398,6 +2401,7 @@
 		DF1658AE1A4DAD8000419B02 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				DF6BE3241A65D528007C35C6 /* SMBInternetConnectionIndicator */,
 				DF1658AF1A4DAD8700419B02 /* CBZSplashView */,
 			);
 			name = Libraries;
@@ -2614,10 +2618,19 @@
 			path = Licenses;
 			sourceTree = "<group>";
 		};
+		DF6BE3241A65D528007C35C6 /* SMBInternetConnectionIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				DF6BE3231A65D4F0007C35C6 /* SMBInternetConnectionIndicator.h */,
+				DF6BE3211A65D4B2007C35C6 /* SMBInternetConnectionIndicator.m */,
+			);
+			name = SMBInternetConnectionIndicator;
+			sourceTree = "<group>";
+		};
 		DFA750681A05191D00EBD6F6 /* AnypicAssets */ = {
 			isa = PBXGroup;
 			children = (
-				DFE24B1B1A59EEBF0064DD89 /* mobile-banner-640x450.png */,
+				DFC9FC081A62C0E50054092B /* mobile_banner_640_286.png */,
 				DFE24B191A59EA570064DD89 /* backgroundFromPSD@x2.png */,
 				DF08089F1A56F1A80031388E /* fb_button_pressed.png */,
 				DF0808A01A56F1A80031388E /* fb_button_pressed@2x.png */,
@@ -3128,7 +3141,7 @@
 				84B465F7169760DD0084ACA2 /* NewCameraCell.xib in Resources */,
 				DFA7518F1A05191E00EBD6F6 /* camera_button_pressed.png in Resources */,
 				840BFB6316AA35F600AFB4E1 /* ProsforesCell.xib in Resources */,
-				DFE24B1C1A59EEBF0064DD89 /* mobile-banner-640x450.png in Resources */,
+				DFC9FC091A62C0E50054092B /* mobile_banner_640_286.png in Resources */,
 				DFA7514D1A05191E00EBD6F6 /* AvatarPlaceholder@2x.png in Resources */,
 				DFA751F21A05191E00EBD6F6 /* nav_bar_bg@2x.png in Resources */,
 				843845FA17B830300020FD93 /* SkiCenter.plist in Resources */,
@@ -3732,6 +3745,7 @@
 				84EAC2A31809F1B700D614A4 /* NearbyPlaces.m in Sources */,
 				DF4D230419BFA5E10000F94E /* all_67.js in Sources */,
 				84EAC2A81809F32C00D614A4 /* V8HorizontalPickerView.m in Sources */,
+				DF6BE3221A65D4B2007C35C6 /* SMBInternetConnectionIndicator.m in Sources */,
 				DF4D231B19BFA5E10000F94E /* functions_64.js in Sources */,
 				8494659E180AF19500A8FC7D /* PlacesPIn.m in Sources */,
 				849465A4180AF2A500A8FC7D /* PlacesAnnotationView.m in Sources */,
