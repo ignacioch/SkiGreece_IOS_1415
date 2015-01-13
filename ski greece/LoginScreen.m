@@ -120,22 +120,7 @@
         [self openSession];
     }
     
-    /*I should check whether user is already logged in or needs to register*/
-    
-    /*
-    if (FBSession.activeSession.isOpen) {
-        [[FBRequest requestForMe] startWithCompletionHandler:
-         ^(FBRequestConnection *connection,
-           NSDictionary<FBGraphUser> *user,
-           NSError *error) {
-             if (!error) {
-                 NSLog(@"Username: %@",user.name);
-                 fbusername = user.name;
-                 fbpassword = user.id;
-                 [self FBloginUser:fbusername withPass:fbpassword];
-             }
-         }];
-    }*/
+ 
     
     
 }
@@ -340,7 +325,7 @@
 - (void)openSession
 {
     NSLog(@"Open Session Called");
-    [FBSession openActiveSessionWithReadPermissions:nil
+/*    [FBSession openActiveSessionWithReadPermissions:nil
                                        allowLoginUI:YES
                                   completionHandler:
      ^(FBSession *session,
@@ -360,7 +345,7 @@
               }
           }];
          
-     }];
+     }];*/
 }
 
 - (void)sessionStateChanged:(FBSession *)session

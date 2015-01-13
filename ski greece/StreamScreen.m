@@ -862,8 +862,8 @@
              if (!error) {
                  /*self.userNameLabel.text = user.name;
                  self.userProfileImage.profileID = user.id;*/
-                 NSLog(@"Name: %@",user.name);
-                 NSLog(@"User Id: %@",user.id);
+                 //NSLog(@"Name: %@",user.name);
+                // NSLog(@"User Id: %@",user.id);
              }
          }];
     }

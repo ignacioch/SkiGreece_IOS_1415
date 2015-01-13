@@ -126,7 +126,7 @@
            NSError *error) {
              if (!error) {
                  //[self setProfileFromFB:user.id];
-                 NSString *imageUrl = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?width=120&height=160", user.id];
+                 NSString *imageUrl = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?width=120&height=160", [user objectForKey:@"id"]];
                  NSURL *url = [NSURL URLWithString:imageUrl];
                  
                  [self.profilePicture setImageWithURLRequest:[NSURLRequest requestWithURL:url]

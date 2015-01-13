@@ -298,7 +298,7 @@
 - (void)aMethod:(UIButton*)button
 {
     UIApplication *mySafari = [UIApplication sharedApplication];
-    NSURL *myURL = [[NSURL alloc]initWithString:@"http://www.cosmote.gr"];
+    NSURL *myURL = [[NSURL alloc]initWithString:@"http://www.cosmote.gr/cosmoportal/page/HNMS/xml/Personal__microsite__4G__4G/section/4G"];
     [mySafari openURL:myURL];
 }
 @end
