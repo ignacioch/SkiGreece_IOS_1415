@@ -8,4 +8,6 @@
 
 @interface PAPLogInViewController : PFLogInViewController
 
+@property () BOOL skippedButton;
+
 @end

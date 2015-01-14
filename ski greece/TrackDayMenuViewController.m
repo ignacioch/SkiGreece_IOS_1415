@@ -512,6 +512,7 @@
     [loginViewController setDelegate:self];
     loginViewController.fields = PFLogInFieldsFacebook;
     loginViewController.facebookPermissions = @[ @"user_about_me" ];
+    loginViewController.skippedButton = YES ;
     [self presentViewController:loginViewController animated:YES completion:NULL];
 }
 

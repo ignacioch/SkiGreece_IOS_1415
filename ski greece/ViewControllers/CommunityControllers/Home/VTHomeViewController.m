@@ -17,6 +17,7 @@
 //#import "PAPAccountViewController.h
 #import "VTEditPhotoViewController.h"
 #import "VTMyProfileViewController.h"
+#import "PAPLogInViewController.h"
 
 #define CONTAINER_Y_IPHONE_4 60.0f
 #define CONTAINER_Y_IPHONE_5 52.0f
@@ -29,6 +30,8 @@
 
 @property (nonatomic, strong) UIView *blankTimelineView;
 @property (nonatomic, strong) PAPSettingsActionSheetDelegate *settingsActionSheetDelegate;
+@property (nonatomic, strong) MBProgressHUD *hud;
+
 
 @end
 
@@ -59,8 +62,8 @@ typedef enum {
     }
     
     
-
     
+
     CGFloat startingPoint ;
     CGFloat bottomBar  = BOTTOM_BAR_HEIGHT;
 
@@ -122,15 +125,6 @@ typedef enum {
     
     
     
-    // after the layout is computed we init the child controller
-    
-    //(AppDelegate*)[[UIApplication sharedApplication].delegate].homeViewController;
-    AppDelegate *del = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    PAPHomeViewController *vc = del.homeViewController;
-    vc.view.frame = self.containerView.bounds;
-    [self.containerView addSubview:vc.view];
-    [self.containerView setBackgroundColor:[UIColor clearColor]];
-    [self addChildViewController:vc];
     
     if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)])
     {
@@ -142,6 +136,38 @@ typedef enum {
         imgView.backgroundColor=[UIColor blackColor];
         [self.view addSubview:imgView];
     }
+    
+    
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    // opening login screen
+    if (![PFUser currentUser]) {
+        //?? FIXME - we also need a toast message in here
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Facebook Login Required"
+                                                         message:@"Για να χρησιμοποιήσετε το community, παρακαλούμε πολύ συνδεθείτε πρώτα."
+                                                        delegate:nil
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles:nil];
+        [alert show];
+        [self openLoginScreen];
+        return;
+    }
+    
+    // after the layout is computed we init the child controller
+    if ([PFUser currentUser]) {
+        AppDelegate *del = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+        PAPHomeViewController *vc = del.homeViewController;
+        vc.view.frame = self.containerView.bounds;
+        [self.containerView addSubview:vc.view];
+        [self.containerView setBackgroundColor:[UIColor clearColor]];
+        [self addChildViewController:vc];
+    }
+
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
@@ -173,6 +199,17 @@ typedef enum {
     VTActivityViewController *vc=[sb instantiateViewControllerWithIdentifier:@"VTActivity"];
     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentViewController:vc animated:YES completion:NULL];
+}
+
+-(void) openLoginScreen
+{
+    if (IS_DEVELOPER) NSLog(@"Showing login screen");
+    PAPLogInViewController *loginViewController = [[PAPLogInViewController alloc] init];
+    [loginViewController setDelegate:self];
+    loginViewController.fields = PFLogInFieldsFacebook;
+    loginViewController.facebookPermissions = @[ @"user_about_me" ];
+    loginViewController.skippedButton = NO ;
+    [self presentViewController:loginViewController animated:YES completion:NULL];
 }
 
 #pragma mark - takePhoto function
@@ -274,13 +311,6 @@ typedef enum {
     vc.image = image;
     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentViewController:vc animated:YES completion:NULL];
-
-    
-    /*PAPEditPhotoViewController *viewController = [[PAPEditPhotoViewController alloc] initWithImage:image];
-    [viewController setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-    
-    NSLog(@"Switching to the edit photo view controller");
-    [self presentViewController:viewController animated:YES completion:NULL];*/
     
 }
 
@@ -360,5 +390,41 @@ typedef enum {
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     [PAPUtility processFacebookProfilePictureData:_data];
 }
+
+#pragma mark - PFLoginViewController
+
+- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+    
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:true forKey:@"loginCompleted"];
+    [defaults synchronize];
+    
+    if (IS_DEVELOPER) NSLog(@"User has logged in we need to fetch all of their Facebook data before we let them in");
+    // user has logged in - we need to fetch all of their Facebook data before we let them in
+    //if (![self shouldProceedToMainInterface:user]) {
+    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    self.hud.labelText = NSLocalizedString(@"Loading", nil);
+    self.hud.dimBackground = YES;
+    //}
+    
+    [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+        if (!error) {
+            //[self facebookRequestDidLoad:result];
+            if ([[UIApplication sharedApplication].delegate respondsToSelector:@selector(facebookRequestDidLoad:)]) {
+                [[UIApplication sharedApplication].delegate performSelector:@selector(facebookRequestDidLoad:) withObject:result];
+            }
+        } else {
+            if ([[UIApplication sharedApplication].delegate respondsToSelector:@selector(facebookRequestDidFailWithError:)]) {
+                [[UIApplication sharedApplication].delegate performSelector:@selector(facebookRequestDidFailWithError:) withObject:error];
+            }
+        }
+        [self.hud hide:YES];
+        [self dismissViewControllerAnimated:NO completion:nil];
+    }];
+    
+    
+}
+
 
 @end

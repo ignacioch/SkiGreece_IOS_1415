@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VTHomeViewController : UIViewController<UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@interface VTHomeViewController : UIViewController<UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,PFLogInViewControllerDelegate>
 
 - (BOOL)shouldPresentPhotoCaptureController;
 

@@ -68,15 +68,18 @@
     self.fields = PFLogInFieldsUsernameAndPassword;
     self.logInView.usernameField.placeholder = @"Enter your email";
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button addTarget:self
-               action:@selector(skipMethod:)
-     forControlEvents:UIControlEventTouchUpInside];
-    [button setTitle:@"Skip FB login >>>" forState:UIControlStateNormal];
-    button.frame = CGRectMake(SCREEN_WIDTH - 140.0f,textLabel.frame.origin.y + textLabel.frame.size.height + 20.0f , 100.0f, 40.0);
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button.titleLabel setFont : [UIFont systemFontOfSize:10.0f]];
-    [self.view addSubview:button];
+    if (self.skippedButton) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button addTarget:self
+                   action:@selector(skipMethod:)
+         forControlEvents:UIControlEventTouchUpInside];
+        [button setTitle:@"Skip FB login >>>" forState:UIControlStateNormal];
+        button.frame = CGRectMake(SCREEN_WIDTH - 140.0f,textLabel.frame.origin.y + textLabel.frame.size.height + 20.0f , 100.0f, 40.0);
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [button.titleLabel setFont : [UIFont systemFontOfSize:10.0f]];
+        [self.view addSubview:button];
+    }
+    
 }
 
 - (void)skipMethod:(id)sender{
