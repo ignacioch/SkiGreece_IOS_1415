@@ -265,7 +265,7 @@
     } else if ([activityType isEqualToString:kPAPActivityTypeComment]) {
         return NSLocalizedString(@"commented on your photo", nil);
     } else if ([activityType isEqualToString:kPAPActivityTypeJoined]) {
-        return NSLocalizedString(@"joined Anypic", nil);
+        return NSLocalizedString(@"joined Ski Greece", nil);
     } else {
         return nil;
     }
