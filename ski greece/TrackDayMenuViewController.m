@@ -111,7 +111,6 @@
     NSArray *_regionArray;
     CLLocationManager *_locationManager;
 
-
 }
 
 @synthesize backgroundImg=_backgroundImg;
@@ -171,9 +170,14 @@
         NSLog(@"wantLocTarget is already set.");
     }
     
+    // Boolean for skipped button
     
-
+    if([defaults objectForKey:@"loginCompleted"] == nil) {
+        [defaults setBool:false forKey:@"isLoggedIn"];
+    }
+    
     [defaults synchronize];
+
 
     
     
@@ -291,6 +295,8 @@
     self.internetConnectionIndicator    = [[SMBInternetConnectionIndicator alloc] initWithFrame:screenRect];
     [self.view addSubview:_internetConnectionIndicator];
     
+   
+
     
     
 }
@@ -300,10 +306,16 @@
     [super viewDidAppear:animated];
     
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    
+    // When user is not logged in
+    // if login is not completed [aka first time] openLoginScreen
+    
     /* wait a beat before animating in */
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.splashView startAnimation];
-        if (![PFUser currentUser]) {
+        if ((![PFUser currentUser]) && (![defaults boolForKey:@"loginCompleted"])) {
             [self openLoginScreen];
             return;
         }
@@ -507,6 +519,11 @@
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:true forKey:@"loginCompleted"];
+    [defaults synchronize];
+    
     if (IS_DEVELOPER) NSLog(@"User has logged in we need to fetch all of their Facebook data before we let them in");
     // user has logged in - we need to fetch all of their Facebook data before we let them in
     //if (![self shouldProceedToMainInterface:user]) {
@@ -532,6 +549,18 @@
     
     
 }
+
+- (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:true forKey:@"loginCompleted"];
+    [defaults synchronize];
+    if (IS_DEVELOPER) NSLog(@"Login Cancelled");
+    [self dismissViewControllerAnimated:NO completion:nil];
+    
+
+}
+
 
 
 //#pragma mark - facebook functions
