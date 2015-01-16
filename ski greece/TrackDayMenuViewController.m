@@ -280,6 +280,15 @@
     // adding splash screen for cosmote
     
     if (COSMOTE_AD) {
+        
+        //adding analytics
+        // Capture author info &  user status
+        NSDictionary *eventParams = [NSDictionary dictionaryWithObjectsAndKeys:
+                                       @"Cosmote", @"Advertiser",
+                                       nil];
+        
+        [Flurry logEvent:@"SplashScreen_Viewed" withParameters:eventParams];
+        
         __unused UIImage *icon = [UIImage imageNamed:@"splash_icon.png"];
         
         CBZSplashView *splashView = [CBZSplashView splashViewWithIcon:icon backgroundImage:[UIImage imageNamed:@"ski_greece_splash_screen_new"]];
