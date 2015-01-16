@@ -11,6 +11,9 @@
 #import "UIFont+SnapAdditions.h"
 #import "NotificationInfo.h"
 
+
+#import <MHNotificationHelper/MHNotificationHelperViewController.h>
+
 #define SYSTEM_VERSION_LESS_THAN(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 
 
@@ -65,10 +68,6 @@
 {
     [super viewDidLoad];
     
-    self.tutorial.hidden=YES;
-    self.tutorial.userInteractionEnabled = NO;
-    self.closeTutorial.hidden= YES;
-    self.closeTutorial.userInteractionEnabled = NO;
     
 	// Do any additional setup after loading the view.
     self.skiCentersArray  = [[NSMutableArray alloc] initWithObjects:@"Κανένα",@"Χ.Κ. Καλαβρύτων",@"Χ.Κ. Παρνασσού",@"Χ.Κ. Βασιλίτσας",@"Χ.Κ. Καιμακτσαλάν",@"Χ.Κ. Σελίου",@"Χ.Κ. Πηλίου",@"Χ.Κ. 3-5 Πηγάδια",@"Χ.Κ. Πισοδερίου",@"Χ.Κ. Καρπενησίου",@"Χ.Κ. Ελατοχωρίου",@"Χ.Κ. Λαιλιά",@"Χ.Κ. Μαινάλου",@"Χ.Κ. Φαλακρού",@"Χ.Κ. Ανηλίου",@"Χ.Κ. Περτουλίου",nil];
@@ -134,8 +133,7 @@
         
         self.backBtn.frame = CGRectMake(self.backBtn.frame.origin.x, self.backBtn.frame.origin.y + OFFSET_IOS_7 , self.backBtn.frame.size.width , self.backBtn.frame.size.height);
         
-        self.tutorial.frame = CGRectMake(self.tutorial.frame.origin.x, self.tutorial.frame.origin.y, SCREEN_WIDTH - 2*self.tutorial.frame.origin.x , SCREEN_HEIGHT - 2*self.tutorial.frame.origin.y );
-        self.closeTutorial.frame = CGRectMake(self.tutorial.frame.origin.x, self.closeTutorial.frame.origin.y, self.closeTutorial.frame.size.width, self.closeTutorial.frame.size.height);
+
         
         NSArray *subviews = [self.view subviews];
         
@@ -159,8 +157,7 @@
         
         self.backBtn.frame = CGRectMake(self.backBtn.frame.origin.x, self.backBtn.frame.origin.y + OFFSET_IOS_7 , self.backBtn.frame.size.width , self.backBtn.frame.size.height);
         
-        self.tutorial.frame = CGRectMake(self.tutorial.frame.origin.x, self.tutorial.frame.origin.y, self.tutorial.frame.size.width, self.tutorial.frame.size.height);
-        self.closeTutorial.frame = CGRectMake(self.tutorial.frame.origin.x, self.closeTutorial.frame.origin.y, self.closeTutorial.frame.size.width, self.closeTutorial.frame.size.height);
+
         
         NSArray *subviews = [self.view subviews];
         
@@ -197,19 +194,7 @@
     
     
     
-    /*check whether the user wants to receive push notification*/
-    UIRemoteNotificationType status = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    if(![defaults boolForKey:@"hasSeenNotifGuides"]) {
-        NSLog(@"User will see the notice");
-        [defaults setBool:false forKey:@"hasSeenNotifGuides"];
-        [self seeGuidance];
-        [defaults synchronize];
-    } else if (status == UIRemoteNotificationTypeNone)
-    {
-        NSLog(@"User doesn't want to receive push-notifications");
-    }
+   
     
 
     self.roadLabel.hidden = YES;
@@ -219,15 +204,48 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    /*check whether the user wants to receive push notification*/
+    UIRemoteNotificationType status = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if(![defaults boolForKey:@"hasSeenNotifGuides"]) {
+        NSLog(@"User will see the notice");
+        [defaults setBool:false forKey:@"hasSeenNotifGuides"];
+        [self seeGuidance];
+        [defaults synchronize];
+     } else if (status == UIRemoteNotificationTypeNone)
+     {
+         NSLog(@"User doesn't want to receive push-notifications");
+         //[self seeGuidance];
+     }
+    
+    //[self seeGuidance];
+}
+
 -(void) seeGuidance
 {
     [[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"hasSeenNotifGuides"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    self.tutorial.hidden=NO;
-    self.tutorial.userInteractionEnabled = YES;
-    self.closeTutorial.hidden= NO;
-    self.closeTutorial.userInteractionEnabled = YES;
+    NSString *title = @"Benachrichtungen aktivieren";
+    NSString *descriptionString = @"Um die Notificationen verwenden zu können müssen sie die Banachrichtungen aktivieren.";
+    
+    
+    MHNotificationHelperObject *notificationObject = [MHNotificationHelperObject objectWithTitle:title
+                                                                                     description:descriptionString
+                                                                                         appIcon:nil
+                                                                                         appName:@"Ski Greece"];
+    
+    MHNotificationHelperViewController *notificationHelper = [MHNotificationHelperViewController.alloc initWithNotification:notificationObject];
+    notificationHelper.bannerLabel.text = NSLocalizedString(@"Banner", nil);
+    
+    [self presentViewController:notificationHelper animated:YES completion:nil];
+    
+
 }
 
 
@@ -606,11 +624,7 @@
     NotificationInfo *vc = [sb instantiateViewControllerWithIdentifier:@"NotificationInfoID"];
     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentViewController:vc animated:YES completion:NULL];
+
 }
-- (IBAction)closeTut:(id)sender {
-    self.tutorial.hidden=YES;
-    self.tutorial.userInteractionEnabled = NO;
-    self.closeTutorial.hidden= YES;
-    self.closeTutorial.userInteractionEnabled = NO;
-}
+
 @end

@@ -46,9 +46,6 @@
 
 - (IBAction)goToInfo:(id)sender;
 
-@property (strong, nonatomic) IBOutlet UIImageView *tutorial;
-@property (strong, nonatomic) IBOutlet UIButton *closeTutorial;
-- (IBAction)closeTut:(id)sender;
 
 
 

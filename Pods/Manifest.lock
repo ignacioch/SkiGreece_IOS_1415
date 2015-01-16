@@ -1,0 +1,13 @@
+PODS:
+  - Masonry (0.6.0)
+  - MHNotificationHelper (0.9.2):
+    - Masonry
+
+DEPENDENCIES:
+  - MHNotificationHelper
+
+SPEC CHECKSUMS:
+  Masonry: 0bc111d6902e3a55ff8423bcbdf7155261806547
+  MHNotificationHelper: af6106937917b71f8d43ae709981eac6cf6b7fe5
+
+COCOAPODS: 0.33.1
