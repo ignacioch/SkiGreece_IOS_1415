@@ -107,11 +107,11 @@
     
     MHNotificationHelperObject *notificationObject = [MHNotificationHelperObject objectWithTitle:title
                                                                                      description:descriptionString
-                                                                                         appIcon:nil
+                                                                                         appIcon:[UIImage imageNamed:@"Icon"]
                                                                                          appName:@"Ski Greece"];
     
     MHNotificationHelperViewController *notificationHelper = [MHNotificationHelperViewController.alloc initWithNotification:notificationObject];
-    notificationHelper.bannerLabel.text = NSLocalizedString(@"Banner", nil);
+    notificationHelper.bannerLabel.text = NSLocalizedString(@"Ski Greece", nil);
     
     [self presentViewController:notificationHelper animated:YES completion:nil];
 }
