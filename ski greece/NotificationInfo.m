@@ -7,6 +7,8 @@
 //
 
 #import "NotificationInfo.h"
+#import <MHNotificationHelper/MHNotificationHelperViewController.h>
+
 
 @interface NotificationInfo ()
 
@@ -31,11 +33,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.tutorial.hidden=YES;
-    self.tutorial.userInteractionEnabled = NO;
-    self.closeTutorial.hidden= YES;
-    self.closeTutorial.userInteractionEnabled = NO;
 
     
     //CGRect screenBounds = [[UIScreen mainScreen] bounds];
@@ -104,16 +101,20 @@
 }
 
 - (IBAction)openImg:(id)sender {
-    self.tutorial.hidden=NO;
-    self.tutorial.userInteractionEnabled = YES;
-    self.closeTutorial.hidden= NO;
-    self.closeTutorial.userInteractionEnabled = YES;
+    NSString *title = @"Benachrichtungen aktivieren";
+    NSString *descriptionString = @"Um die Notificationen verwenden zu können müssen sie die Banachrichtungen aktivieren.";
+    
+    
+    MHNotificationHelperObject *notificationObject = [MHNotificationHelperObject objectWithTitle:title
+                                                                                     description:descriptionString
+                                                                                         appIcon:nil
+                                                                                         appName:@"Ski Greece"];
+    
+    MHNotificationHelperViewController *notificationHelper = [MHNotificationHelperViewController.alloc initWithNotification:notificationObject];
+    notificationHelper.bannerLabel.text = NSLocalizedString(@"Banner", nil);
+    
+    [self presentViewController:notificationHelper animated:YES completion:nil];
 }
 
-- (IBAction)closeTut:(id)sender {
-    self.tutorial.hidden=YES;
-    self.tutorial.userInteractionEnabled = NO;
-    self.closeTutorial.hidden= YES;
-    self.closeTutorial.userInteractionEnabled = NO;
-}
+
 @end
