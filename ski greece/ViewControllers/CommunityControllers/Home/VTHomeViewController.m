@@ -58,6 +58,8 @@ typedef enum {
     // Do your resizing
     
     self.backgroundImg.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH, SCREEN_HEIGHT - [UIApplication sharedApplication].statusBarFrame.size.height);
+    self.backgroundImg.image = [UIImage imageNamed:@"backgroundFromPSD@2x.png"];
+
     
     self.navigationBar.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH, self.navigationBar.frame.size.height);
     self.bottomBar.frame = CGRectMake(0.0f, SCREEN_HEIGHT - self.bottomBar.frame.size.height, SCREEN_WIDTH, self.bottomBar.frame.size.height);

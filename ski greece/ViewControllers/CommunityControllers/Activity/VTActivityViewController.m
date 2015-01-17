@@ -19,21 +19,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    if (IS_IPHONE_6) {
-        self.navBar_top.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH , 43.0f);
-        self.containerView.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height +43.0f, SCREEN_WIDTH, SCREEN_HEIGHT - [UIApplication sharedApplication].statusBarFrame.size.height - 43.0f);
-        self.backButton.frame = CGRectMake(10.0f, [UIApplication sharedApplication].statusBarFrame.size.height, self.backButton.frame.size.width, self.backButton.frame.size.height);
-    } else if (IS_IPHONE_5) {
-        self.navBar_top.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH , 43.0f);
-        self.containerView.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height +43.0f, SCREEN_WIDTH, SCREEN_HEIGHT - [UIApplication sharedApplication].statusBarFrame.size.height - 43.0f);
-        self.backButton.frame = CGRectMake(10.0f, [UIApplication sharedApplication].statusBarFrame.size.height, self.backButton.frame.size.width, self.backButton.frame.size.height);
-    } else {
-        self.navBar_top.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH , 43.0f);
-        self.containerView.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height +43.0f, SCREEN_WIDTH, SCREEN_HEIGHT - [UIApplication sharedApplication].statusBarFrame.size.height - 43.0f);
-        self.backButton.frame = CGRectMake(10.0f, [UIApplication sharedApplication].statusBarFrame.size.height, self.backButton.frame.size.width, self.backButton.frame.size.height);
-    }
-    
-    self.backgroundImg.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height +43.0f, SCREEN_WIDTH, SCREEN_HEIGHT - [UIApplication sharedApplication].statusBarFrame.size.height - 43.0f);
+    self.navBar_top.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH , self.navBar_top.frame.size.height);
+    self.containerView.frame = CGRectMake(0.0f, self.navBar_top.frame.origin.y + self.navBar_top.frame.size.height, SCREEN_WIDTH, SCREEN_HEIGHT - self.navBar_top.frame.origin.y - self.navBar_top.frame.size.height);
+    self.backButton.frame = CGRectMake(0.0f, self.navBar_top.frame.origin.y, self.backButton.frame.size.width,self.navBar_top.frame.size.height);
+    self.backgroundImg.frame = CGRectMake(0.0f, self.containerView.frame.origin.y, SCREEN_WIDTH, self.containerView.frame.size.height);
     self.backgroundImg.image = [UIImage imageNamed:@"backgroundFromPSD@2x.png"];
 
     
