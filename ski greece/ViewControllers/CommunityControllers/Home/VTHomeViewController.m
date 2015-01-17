@@ -55,66 +55,20 @@ typedef enum {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
-    if (IS_DEVELOPER){
-        NSLog(@"Container is loaded");
-        NSLog(@"ContainerView. X : %f Y:%f Height :%f Width : %f",self.containerView.frame.origin.x,self.containerView.frame.origin.y,self.containerView.frame.size.height,self.containerView.frame.size.width);
-    }
-    
-    
-    
-
-    CGFloat startingPoint ;
-    CGFloat bottomBar  = BOTTOM_BAR_HEIGHT;
-
-    if (IS_IPHONE_6) {
-        startingPoint = CONTAINER_Y_IPHONE_6;
-    } else if (IS_IPHONE_5) {
-        startingPoint = CONTAINER_Y_IPHONE_5;
-    } else  {
-        startingPoint = CONTAINER_Y_IPHONE_4;
-    }
-    
-    // get device height
-    //CGRect screenRect = [[UIScreen mainScreen] bounds];
-    //CGFloat screenWidth = screenRect.size.width;
-    CGFloat screenHeight = SCREEN_HEIGHT;
-    CGFloat containerHeight = screenHeight - startingPoint - bottomBar - [UIApplication sharedApplication].statusBarFrame.size.height;
-
-    
     // Do your resizing
     
     self.backgroundImg.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH, SCREEN_HEIGHT - [UIApplication sharedApplication].statusBarFrame.size.height);
     
-    if (IS_IPHONE_6) {
-        self.backgroundImg.image = [UIImage imageNamed:@"DefaultAnypic-667h.png"];
-        self.backButton.frame = CGRectMake(0.0f, self.backgroundImg.frame.origin.y + 4.0f, 56.0f, 56.0f);
-        self.settingsButton.frame = CGRectMake(SCREEN_WIDTH - 60.0f, self.backButton.frame.origin.y, 96.0f, 56.0f);
-        self.takePhotoBtn.frame = CGRectMake(135.0f, SCREEN_HEIGHT - self.takePhotoBtn.frame.size.height, 80.0f, self.takePhotoBtn.frame.size.height);
-        self.activityButton.frame = CGRectMake(260.0f, SCREEN_HEIGHT - self.activityButton.frame.size.height, 80.0f, self.activityButton.frame.size.height);
-    } else if (IS_IPHONE_5) {
-        self.backgroundImg.image = [UIImage imageNamed:@"DefaultAnypic-568h.png"];
-        self.backButton.frame = CGRectMake(0.0f, self.backgroundImg.frame.origin.y , 56.0f, 56.0f);
-        self.settingsButton.frame = CGRectMake(SCREEN_WIDTH - 60.0f, self.backButton.frame.origin.y, 96.0f, 56.0f);
-        self.takePhotoBtn.frame = CGRectMake(120.0f, SCREEN_HEIGHT - self.takePhotoBtn.frame.size.height, 80.0f, self.takePhotoBtn.frame.size.height);
-        self.activityButton.frame = CGRectMake(230.0f, SCREEN_HEIGHT - self.activityButton.frame.size.height, 80.0f, self.activityButton.frame.size.height);
-    } else {
-        self.backButton.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height , 56.0f, 56.0f);
-        self.settingsButton.frame = CGRectMake(SCREEN_WIDTH - 60.0f, self.backButton.frame.origin.y , 96.0f, 56.0f);
-        self.takePhotoBtn.frame = CGRectMake(120.0f, SCREEN_HEIGHT - self.takePhotoBtn.frame.size.height, 80.0f, self.takePhotoBtn.frame.size.height);
-        self.activityButton.frame = CGRectMake(230.0f, SCREEN_HEIGHT - self.activityButton.frame.size.height, 80.0f, self.activityButton.frame.size.height);
-    }
+    self.navigationBar.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH, self.navigationBar.frame.size.height);
+    self.bottomBar.frame = CGRectMake(0.0f, SCREEN_HEIGHT - self.bottomBar.frame.size.height, SCREEN_WIDTH, self.bottomBar.frame.size.height);
+    // container view is contained between the two bars
+    self.containerView.frame = CGRectMake(0.0, self.navigationBar.frame.origin.y + self.navigationBar.frame.size.height, SCREEN_WIDTH, SCREEN_HEIGHT - self.navigationBar.frame.origin.y - self.navigationBar.frame.size.height - self.bottomBar.frame.size.height );
+    self.backButton.frame = CGRectMake(0.0f, self.navigationBar.frame.origin.y, self.backButton.frame.size.width,self.navigationBar.frame.size.height);
+    self.settingsButton.frame = CGRectMake(SCREEN_WIDTH - self.settingsButton.frame.size.width, self.navigationBar.frame.origin.y, self.settingsButton.frame.size.width,self.navigationBar.frame.size.height);
+    self.takePhotoBtn.frame = CGRectMake(SCREEN_WIDTH * 1 / 3, self.bottomBar.frame.origin.y, SCREEN_WIDTH /3, self.bottomBar.frame.size.height);
+    self.activityButton.frame = CGRectMake(SCREEN_WIDTH * 2 / 3, self.bottomBar.frame.origin.y, SCREEN_WIDTH /3, self.bottomBar.frame.size.height);
+    self.homeButton.frame = CGRectMake(0.0f, self.bottomBar.frame.origin.y, SCREEN_WIDTH /3, self.bottomBar.frame.size.height);
     
-    
-    
-    // adjust tableView frame
-    self.containerView.frame = CGRectMake(0.0, startingPoint + [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH,containerHeight);
-    if (IS_DEVELOPER) {
-        NSLog(@"containerView after changes");
-        NSLog(@"statusBarFrame : %f",[UIApplication sharedApplication].statusBarFrame.size.height);
-        NSLog(@"containerView. X : %f Y:%f Height :%f Width : %f",self.containerView.frame.origin.x,self.containerView.frame.origin.y,self.containerView.frame.size.height,self.containerView.frame.size.width);
-        NSLog(@"backgroundImg : X : %f Y:%f Height :%f Width : %f",self.backgroundImg.frame.origin.x,self.backgroundImg.frame.origin.y,self.backgroundImg.frame.size.height,self.backgroundImg.frame.size.width);
-    }
     
     // Download user's profile picture
     NSURL *profilePictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large", [[PFUser currentUser] objectForKey:kPAPUserFacebookIDKey]]];
