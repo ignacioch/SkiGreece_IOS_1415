@@ -39,28 +39,15 @@ enum ActionSheetTags {
         self.photo = del.photoFromNotif;
     }
     
-    if (IS_IPHONE_6) {
-        self.topBar.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH , 43.0f);
-        self.containerView.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height +43.0f, SCREEN_WIDTH, SCREEN_HEIGHT - [UIApplication sharedApplication].statusBarFrame.size.height - 43.0f);
-        self.backBtn.frame = CGRectMake(10.0f, [UIApplication sharedApplication].statusBarFrame.size.height, self.backBtn.frame.size.width, self.backBtn.frame.size.height);
-        self.deleteBtn.frame = CGRectMake(SCREEN_WIDTH - self.activityBtn.frame.size.width -10.0f - self.deleteBtn.frame.size.width - 50.0f, self.deleteBtn.frame.origin.y + [UIApplication sharedApplication].statusBarFrame.size.height, self.deleteBtn.frame.size.width, self.deleteBtn.frame.size.height);
-        self.activityBtn.frame = CGRectMake(SCREEN_WIDTH - self.activityBtn.frame.size.width -10.0f, self.activityBtn.frame.origin.y + [UIApplication sharedApplication].statusBarFrame.size.height, self.activityBtn.frame.size.width, self.activityBtn.frame.size.height);
-    } else  if (IS_IPHONE_5) {
-        self.topBar.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH , 43.0f);
-        self.containerView.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height +43.0f, SCREEN_WIDTH, SCREEN_HEIGHT - [UIApplication sharedApplication].statusBarFrame.size.height - 43.0f);
-        self.backBtn.frame = CGRectMake(10.0f, [UIApplication sharedApplication].statusBarFrame.size.height, self.backBtn.frame.size.width, self.backBtn.frame.size.height);
-        self.deleteBtn.frame = CGRectMake(SCREEN_WIDTH - self.activityBtn.frame.size.width -10.0f - self.deleteBtn.frame.size.width - 50.0f, self.deleteBtn.frame.origin.y + [UIApplication sharedApplication].statusBarFrame.size.height, self.deleteBtn.frame.size.width, self.deleteBtn.frame.size.height);
-        self.activityBtn.frame = CGRectMake(SCREEN_WIDTH - self.activityBtn.frame.size.width -10.0f, self.activityBtn.frame.origin.y + [UIApplication sharedApplication].statusBarFrame.size.height, self.activityBtn.frame.size.width, self.activityBtn.frame.size.height);
-    } else {
-        self.topBar.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH , 43.0f);
-        self.containerView.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height +43.0f, SCREEN_WIDTH, SCREEN_HEIGHT - [UIApplication sharedApplication].statusBarFrame.size.height - 43.0f);
-        self.backBtn.frame = CGRectMake(10.0f, [UIApplication sharedApplication].statusBarFrame.size.height, self.backBtn.frame.size.width, self.backBtn.frame.size.height);
-        self.deleteBtn.frame = CGRectMake(SCREEN_WIDTH - self.activityBtn.frame.size.width -10.0f - self.deleteBtn.frame.size.width - 50.0f, self.deleteBtn.frame.origin.y + [UIApplication sharedApplication].statusBarFrame.size.height, self.deleteBtn.frame.size.width, self.deleteBtn.frame.size.height);
-        self.activityBtn.frame = CGRectMake(SCREEN_WIDTH - self.activityBtn.frame.size.width -10.0f, self.activityBtn.frame.origin.y + [UIApplication sharedApplication].statusBarFrame.size.height, self.activityBtn.frame.size.width, self.activityBtn.frame.size.height);
-    }
     
     self.backgroundImg.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height +43.0f, SCREEN_WIDTH, SCREEN_HEIGHT - [UIApplication sharedApplication].statusBarFrame.size.height - 43.0f);
     self.backgroundImg.image = [UIImage imageNamed:@"backgroundFromPSD@2x.png"];
+    
+    self.topBar.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH , 43.0f);
+    self.containerView.frame = CGRectMake(0.0f, self.topBar.frame.origin.y + self.topBar.frame.size.height, SCREEN_WIDTH, SCREEN_HEIGHT - self.topBar.frame.origin.y - self.topBar.frame.size.height);
+    self.backBtn.frame = CGRectMake(0.0f, self.topBar.frame.origin.y, self.backBtn.frame.size.width,self.topBar.frame.size.height);
+    self.deleteBtn.frame = CGRectMake(SCREEN_WIDTH - self.activityBtn.frame.size.width -10.0f - self.deleteBtn.frame.size.width - 50.0f, self.backBtn.frame.origin.y, self.deleteBtn.frame.size.width, self.topBar.frame.size.height);
+    self.activityBtn.frame = CGRectMake(SCREEN_WIDTH - self.activityBtn.frame.size.width -10.0f, self.backBtn.frame.origin.y , self.activityBtn.frame.size.width, self.topBar.frame.size.height);
 
     
     del.photoDetailsViewController = [[PAPPhotoDetailsViewController alloc] initWithPhoto:self.photo];
