@@ -33,6 +33,7 @@
     NSMutableArray * changesInChannels;
     NSArray * channelsNames;
     BOOL visiblePicker;
+    BOOL alreadySeenGuide_thisSession;
 
 }
 
@@ -68,6 +69,7 @@
 {
     [super viewDidLoad];
     
+    alreadySeenGuide_thisSession = false;
     
 	// Do any additional setup after loading the view.
     self.skiCentersArray  = [[NSMutableArray alloc] initWithObjects:@"Κανένα",@"Χ.Κ. Καλαβρύτων",@"Χ.Κ. Παρνασσού",@"Χ.Κ. Βασιλίτσας",@"Χ.Κ. Καιμακτσαλάν",@"Χ.Κ. Σελίου",@"Χ.Κ. Πηλίου",@"Χ.Κ. 3-5 Πηγάδια",@"Χ.Κ. Πισοδερίου",@"Χ.Κ. Καρπενησίου",@"Χ.Κ. Ελατοχωρίου",@"Χ.Κ. Λαιλιά",@"Χ.Κ. Μαινάλου",@"Χ.Κ. Φαλακρού",@"Χ.Κ. Ανηλίου",@"Χ.Κ. Περτουλίου",nil];
@@ -209,7 +211,7 @@
     [super viewDidAppear:animated];
     
     /*check whether the user wants to receive push notification*/
-    UIRemoteNotificationType status = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
+    //UIRemoteNotificationType status = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     if(![defaults boolForKey:@"hasSeenNotifGuides"]) {
@@ -217,19 +219,48 @@
         [defaults setBool:false forKey:@"hasSeenNotifGuides"];
         [self seeGuidance];
         [defaults synchronize];
-     } else if (status == UIRemoteNotificationTypeNone)
+     } else if (![self pushNotificationsEnabled] && (!alreadySeenGuide_thisSession))
      {
          NSLog(@"User doesn't want to receive push-notifications");
-         //[self seeGuidance];
+         [self seeGuidance];
      }
     
     //[self seeGuidance];
+}
+
+- (BOOL)pushNotificationsEnabled
+{
+    
+    BOOL isgranted = false;
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0){
+        if ([[UIApplication sharedApplication] respondsToSelector:@selector(isRegisteredForRemoteNotifications)])
+        {
+            isgranted =  [[UIApplication sharedApplication] isRegisteredForRemoteNotifications];
+        }else{
+            
+        }
+    }else{
+        UIRemoteNotificationType types = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
+        if (types & UIRemoteNotificationTypeAlert)
+        {
+            
+            isgranted = true;
+        }else{
+            
+        }
+    }
+    NSLog(@"Push notifications status : %@",(isgranted) ? @"TRUE" : @"FALSE");
+    return isgranted;
+    
 }
 
 -(void) seeGuidance
 {
     [[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"hasSeenNotifGuides"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    alreadySeenGuide_thisSession = true;
     
     NSString *title = @"Benachrichtungen aktivieren";
     NSString *descriptionString = @"Um die Notificationen verwenden zu können müssen sie die Banachrichtungen aktivieren.";
