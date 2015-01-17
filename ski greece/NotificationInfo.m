@@ -101,8 +101,8 @@
 }
 
 - (IBAction)openImg:(id)sender {
-    NSString *title = @"Benachrichtungen aktivieren";
-    NSString *descriptionString = @"Um die Notificationen verwenden zu können müssen sie die Banachrichtungen aktivieren.";
+    NSString *title = @"Ενεργοποίησε την υπηρεσία ειδοποίησεων";
+    NSString *descriptionString = @"Ακολούθησε τις παρακάτω οδηγίες για να λαμβάνεις ειδοποίησεις με τα νέα που επιθυμείς.";
     
     
     MHNotificationHelperObject *notificationObject = [MHNotificationHelperObject objectWithTitle:title
