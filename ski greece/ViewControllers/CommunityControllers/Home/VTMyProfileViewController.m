@@ -27,12 +27,6 @@
     self.navigationBar.frame = CGRectMake(0.0f, [UIApplication sharedApplication].statusBarFrame.size.height, SCREEN_WIDTH , 43.0f);
     self.containerView.frame = CGRectMake(0.0, self.navigationBar.frame.origin.y + self.navigationBar.frame.size.height, SCREEN_WIDTH, SCREEN_HEIGHT - self.navigationBar.frame.origin.y - self.navigationBar.frame.size.height );
     self.backButton.frame = CGRectMake(0.0f, self.navigationBar.frame.origin.y, self.backButton.frame.size.width,self.navigationBar.frame.size.height);
-
-    
-    
-    /*UIView *texturedBackgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
-     [texturedBackgroundView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundLeather.png"]]];
-     self.tableView.backgroundView = texturedBackgroundView;*/
     
     AppDelegate *del = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     del.myprofileViewController = [[PAPAccountViewController alloc] init];
