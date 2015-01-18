@@ -49,6 +49,7 @@ install_resource "MHNotificationHelper/MHNotificationHelper/MHNotificationHelper
 install_resource "MHNotificationHelper/MHNotificationHelper/MHNotificationHelper/MHNotificationHelper/images/MHSettings.png"
 install_resource "MHNotificationHelper/MHNotificationHelper/MHNotificationHelper/MHNotificationHelper/images/MHSettings@2x.png"
 install_resource "MHNotificationHelper/MHNotificationHelper/MHNotificationHelper/MHNotificationHelper/MHNotification.bundle"
+install_resource "VTAcknowledgementsViewController/VTAcknowledgementsViewController.bundle"
 
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 if [[ "${ACTION}" == "install" ]]; then

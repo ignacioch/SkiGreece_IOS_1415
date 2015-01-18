@@ -3,14 +3,21 @@ PODS:
   - Masonry (0.6.0)
   - MHNotificationHelper (0.9.2):
     - Masonry
+  - VTAcknowledgementsViewController (0.12)
 
 DEPENDENCIES:
   - Harpy
   - MHNotificationHelper
+  - VTAcknowledgementsViewController (from `https://github.com/ignacioch/VTAcknowledgementsViewController.git`)
+
+EXTERNAL SOURCES:
+  VTAcknowledgementsViewController:
+    :git: https://github.com/ignacioch/VTAcknowledgementsViewController.git
 
 SPEC CHECKSUMS:
   Harpy: 5c328179d689e44b5da72a102b2d7cb4eb31dd2b
   Masonry: 0bc111d6902e3a55ff8423bcbdf7155261806547
   MHNotificationHelper: af6106937917b71f8d43ae709981eac6cf6b7fe5
+  VTAcknowledgementsViewController: 2b30e1a2b0350ed7028c1432c34805d77ba62dd9
 
 COCOAPODS: 0.33.1

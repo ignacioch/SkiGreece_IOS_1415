@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_Ski_Greece_VTAcknowledgementsViewController : NSObject
+@end
+@implementation PodsDummy_Pods_Ski_Greece_VTAcknowledgementsViewController
+@end

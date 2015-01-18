@@ -24,3 +24,9 @@
 #define COCOAPODS_VERSION_MINOR_Masonry 6
 #define COCOAPODS_VERSION_PATCH_Masonry 0
 
+// VTAcknowledgementsViewController
+#define COCOAPODS_POD_AVAILABLE_VTAcknowledgementsViewController
+#define COCOAPODS_VERSION_MAJOR_VTAcknowledgementsViewController 0
+#define COCOAPODS_VERSION_MINOR_VTAcknowledgementsViewController 12
+#define COCOAPODS_VERSION_PATCH_VTAcknowledgementsViewController 0
+
