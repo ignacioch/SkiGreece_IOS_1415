@@ -279,7 +279,7 @@ static const CGFloat VTLabelMargin = 20;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.acknowledgements.count;
+    return self.acknowledgements.count + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -289,6 +289,13 @@ static const CGFloat VTLabelMargin = 20;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:VTCellIdentifier];
     }
 
+    // last cell to exit
+    // indexPath.row from 0 to count
+    if (indexPath.row == self.acknowledgements.count ) {
+        cell.textLabel.text = @"Exit";
+        return cell;
+    }
+    
     VTAcknowledgement *acknowledgement = self.acknowledgements[indexPath.row];
     cell.textLabel.text = acknowledgement.title;
     cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
@@ -300,10 +307,16 @@ static const CGFloat VTLabelMargin = 20;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    VTAcknowledgement *acknowledgement = self.acknowledgements[indexPath.row];
-    VTAcknowledgementViewController *viewController = [[VTAcknowledgementViewController alloc] initWithTitle:acknowledgement.title text:acknowledgement.text];
-    viewController.textViewFont = self.licenseTextViewFont;
-    //[self.navigationController pushViewController:viewController animated:YES];
+    // last cell to exit
+    // indexPath.row from 0 to count
+    if (indexPath.row == self.acknowledgements.count ) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        VTAcknowledgement *acknowledgement = self.acknowledgements[indexPath.row];
+        VTAcknowledgementViewController *viewController = [[VTAcknowledgementViewController alloc] initWithTitle:acknowledgement.title text:acknowledgement.text];
+        viewController.textViewFont = self.licenseTextViewFont;
+        [self presentViewController:viewController animated:YES completion:NULL];
+    }
 }
 
 @end

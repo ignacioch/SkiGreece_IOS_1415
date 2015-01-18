@@ -56,6 +56,7 @@
     }
 
     self.view = textView;
+    
 }
 
 @end
