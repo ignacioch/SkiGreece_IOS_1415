@@ -4,6 +4,7 @@
 target "Ski Greece" do
 
 pod 'MHNotificationHelper'
+pod 'Harpy'
 
 end
 

@@ -13,6 +13,7 @@
 #import <Parse/Parse.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import "Reachability.h"
+#import <Harpy/Harpy.h>
 
 @interface AppDelegate () {
     NSMutableData *_data;
@@ -82,6 +83,16 @@
     
     // Use Reachability to monitor connectivity
     [self monitorReachability];
+    
+    
+    // Present Window before calling Harpy
+    [self.window makeKeyAndVisible];
+    
+    // Set the App ID for your app
+    [[Harpy sharedInstance] setAppID:@"565068622"];
+    
+    // Set the UIViewController that will present an instance of UIAlertController
+    [[Harpy sharedInstance] setPresentingViewController:_window.rootViewController];
 
     
     return YES;
@@ -166,6 +177,16 @@
         currentInstallation.badge = 0;
         [currentInstallation saveEventually];
     }
+    
+    
+    /*
+     Perform weekly check for new version of your app
+     Useful if you user returns to your app from background after extended period of time
+     Place in applicationDidBecomeActive:
+     
+     Also, performs version check on first launch.
+     */
+    [[Harpy sharedInstance] checkVersionWeekly];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

@@ -41,6 +41,7 @@ install_resource()
       ;;
   esac
 }
+install_resource "Harpy/Harpy/Harpy.bundle"
 install_resource "MHNotificationHelper/MHNotificationHelper/MHNotificationHelper/MHNotificationHelper/images/MHExit.png"
 install_resource "MHNotificationHelper/MHNotificationHelper/MHNotificationHelper/MHNotificationHelper/images/MHExit@2x.png"
 install_resource "MHNotificationHelper/MHNotificationHelper/MHNotificationHelper/MHNotificationHelper/images/MHNotification.png"

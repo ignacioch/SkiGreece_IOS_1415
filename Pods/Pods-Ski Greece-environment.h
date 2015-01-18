@@ -6,6 +6,12 @@
 // project.
 
 
+// Harpy
+#define COCOAPODS_POD_AVAILABLE_Harpy
+#define COCOAPODS_VERSION_MAJOR_Harpy 3
+#define COCOAPODS_VERSION_MINOR_Harpy 3
+#define COCOAPODS_VERSION_PATCH_Harpy 0
+
 // MHNotificationHelper
 #define COCOAPODS_POD_AVAILABLE_MHNotificationHelper
 #define COCOAPODS_VERSION_MAJOR_MHNotificationHelper 0
