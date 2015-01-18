@@ -288,6 +288,7 @@
 		84F620E217C0C1FC00FEE348 /* PostStreamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F620E117C0C1FC00FEE348 /* PostStreamCell.xib */; };
 		84FF5BE817BF9ACC00F26041 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FF5BE717BF9ACC00F26041 /* CoreImage.framework */; };
 		A027A673149F42E9BF3A352C /* libPods-Ski Greece.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0403EA9DBD744BD3A855A601 /* libPods-Ski Greece.a */; };
+		DF0066141A6C0ED00029070D /* Pods-Ski Greece-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF0066131A6C0ED00029070D /* Pods-Ski Greece-acknowledgements.plist */; };
 		DF0808A31A56F1A80031388E /* fb_button_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = DF08089F1A56F1A80031388E /* fb_button_pressed.png */; };
 		DF0808A41A56F1A80031388E /* fb_button_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF0808A01A56F1A80031388E /* fb_button_pressed@2x.png */; };
 		DF0808A51A56F1A80031388E /* fb_button.png in Resources */ = {isa = PBXBuildFile; fileRef = DF0808A11A56F1A80031388E /* fb_button.png */; };
@@ -1078,6 +1079,7 @@
 		84F620DF17C0C08F00FEE348 /* PhotoStreamCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoStreamCell.xib; sourceTree = "<group>"; };
 		84F620E117C0C1FC00FEE348 /* PostStreamCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostStreamCell.xib; sourceTree = "<group>"; };
 		84FF5BE717BF9ACC00F26041 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		DF0066131A6C0ED00029070D /* Pods-Ski Greece-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Pods-Ski Greece-acknowledgements.plist"; path = "Pods/Pods-Ski Greece-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
 		DF08089F1A56F1A80031388E /* fb_button_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_button_pressed.png; sourceTree = "<group>"; };
 		DF0808A01A56F1A80031388E /* fb_button_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fb_button_pressed@2x.png"; sourceTree = "<group>"; };
 		DF0808A11A56F1A80031388E /* fb_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_button.png; sourceTree = "<group>"; };
@@ -1868,6 +1870,7 @@
 		84685A2C15F6AC3100E6E4FC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DF0066131A6C0ED00029070D /* Pods-Ski Greece-acknowledgements.plist */,
 				DFE24B201A59FAF60064DD89 /* Icons */,
 				DFE24B1D1A59F0390064DD89 /* splash_icon.png */,
 				DF2661041A4DD23D00BC05B9 /* ski_greece_splash_screen_new.png */,
@@ -3309,6 +3312,7 @@
 				DFA7518E1A05191E00EBD6F6 /* camera_button@2x.png in Resources */,
 				DF4D22F119BFA5E10000F94E /* open.png in Resources */,
 				DF5804D11A51E65F00B5B55C /* back_button@2x.png in Resources */,
+				DF0066141A6C0ED00029070D /* Pods-Ski Greece-acknowledgements.plist in Resources */,
 				DF4D232419BFA5E10000F94E /* functions_6c.html in Resources */,
 				DF4D234019BFA5E10000F94E /* FlurryiOSAdvertisingREADMEv5.3.0.pdf in Resources */,
 				DFA751841A05191E00EBD6F6 /* buttonLike@2x.png in Resources */,

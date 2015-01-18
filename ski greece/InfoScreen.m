@@ -8,6 +8,7 @@
 
 #import "InfoScreen.h"
 #import "PSLocationManager.h"
+#import <VTAcknowledgementsViewController/VTAcknowledgementsViewController.h>
 
 @interface InfoScreen ()
 
@@ -160,58 +161,67 @@
     credits.text=creditstxt;
     
     /*option for location tracking text*/
+    //?? removed for now
     
-    UILabel *option_loc= [[UILabel alloc] initWithFrame:CGRectMake( credits.frame.origin.x , credits.frame.origin.y + credits.frame.size.height + 30.0f, 200.0f, 50.0f)];
+    UIButton *goToCreditsButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [goToCreditsButton addTarget:self
+               action:@selector(openCredits:)
+     forControlEvents:UIControlEventTouchUpInside];
+    [goToCreditsButton setTitle:@"View Credits >" forState:UIControlStateNormal];
+    goToCreditsButton.frame = CGRectMake( credits.frame.origin.x , credits.frame.origin.y + credits.frame.size.height + 30.0f, 200.0f, 50.0f);
+    goToCreditsButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     
-    NSString * options_loc_txt=@"Επιθυμώ να λαμβάνω προσφορές από επιχειρήσεις όταν βρίσκομαι στα ΧΚ (με χρήση της τοποθεσίας μου).";
-    option_loc.lineBreakMode = UILineBreakModeWordWrap;
-    option_loc.numberOfLines = 4;
-    [option_loc setFont:[UIFont fontWithName:@"Myriad Pro" size:11.0f]];
-    [option_loc setTextColor:[UIColor blackColor]];
-    [option_loc setBackgroundColor:[UIColor clearColor]];
-    
-    
-    
-    /*expectedLabelSize = [options_loc_txt sizeWithFont:option_loc.font
-                               constrainedToSize:maximumLabelSize
-                                   lineBreakMode:option_loc.lineBreakMode];
-    
-    NSLog(@"Expected label size:%f",expectedLabelSize.height);
-    newFrame = option_loc.frame;
-    newFrame.size.height = expectedLabelSize.height;
-    option_loc.frame = newFrame;*/
-    option_loc.text=options_loc_txt;
-    
-    /*add the switch*/
-    CGRect myFrame = CGRectMake(credits.frame.origin.x + 210.0f , credits.frame.origin.y + credits.frame.size.height + 30.0f, 230.0f, 30.0f);
-    //create and initialize the slider
-    self.locationSwitch = [[UISwitch alloc] initWithFrame:myFrame];
-    //set the switch to ON or OFF based on the preferences
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    if(![defaults boolForKey:@"wantLocTarget"]) {
-        NSLog(@"User does not want to see Location targeting adverts");
-        [defaults setBool:false forKey:@"wantLocTarget"];
-        [defaults synchronize];
-        [self.locationSwitch setOn:NO];
-    } else
-    {
-        NSLog(@"User want to see Location targeting adverts");
-        [defaults setBool:true forKey:@"wantLocTarget"];
-        [defaults synchronize];
-        [self.locationSwitch setOn:YES];
-    }
-    
-    
-    //attach action method to the switch when the value changes
-    [self.locationSwitch addTarget:self
-                      action:@selector(switchIsChanged:)
-            forControlEvents:UIControlEventValueChanged];
+//    UILabel *option_loc= [[UILabel alloc] initWithFrame:CGRectMake( credits.frame.origin.x , credits.frame.origin.y + credits.frame.size.height + 30.0f, 200.0f, 50.0f)];
+//    
+//    NSString * options_loc_txt=@"Επιθυμώ να λαμβάνω προσφορές από επιχειρήσεις όταν βρίσκομαι στα ΧΚ (με χρήση της τοποθεσίας μου).";
+//    option_loc.lineBreakMode = UILineBreakModeWordWrap;
+//    option_loc.numberOfLines = 4;
+//    [option_loc setFont:[UIFont fontWithName:@"Myriad Pro" size:11.0f]];
+//    [option_loc setTextColor:[UIColor blackColor]];
+//    [option_loc setBackgroundColor:[UIColor clearColor]];
+//    
+//    
+//    
+//    /*expectedLabelSize = [options_loc_txt sizeWithFont:option_loc.font
+//                               constrainedToSize:maximumLabelSize
+//                                   lineBreakMode:option_loc.lineBreakMode];
+//    
+//    NSLog(@"Expected label size:%f",expectedLabelSize.height);
+//    newFrame = option_loc.frame;
+//    newFrame.size.height = expectedLabelSize.height;
+//    option_loc.frame = newFrame;*/
+//    option_loc.text=options_loc_txt;
+//    
+//    /*add the switch*/
+//    CGRect myFrame = CGRectMake(credits.frame.origin.x + 210.0f , credits.frame.origin.y + credits.frame.size.height + 30.0f, 230.0f, 30.0f);
+//    //create and initialize the slider
+//    self.locationSwitch = [[UISwitch alloc] initWithFrame:myFrame];
+//    //set the switch to ON or OFF based on the preferences
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    
+//    if(![defaults boolForKey:@"wantLocTarget"]) {
+//        NSLog(@"User does not want to see Location targeting adverts");
+//        [defaults setBool:false forKey:@"wantLocTarget"];
+//        [defaults synchronize];
+//        [self.locationSwitch setOn:NO];
+//    } else
+//    {
+//        NSLog(@"User want to see Location targeting adverts");
+//        [defaults setBool:true forKey:@"wantLocTarget"];
+//        [defaults synchronize];
+//        [self.locationSwitch setOn:YES];
+//    }
+//    
+//    
+//    //attach action method to the switch when the value changes
+//    [self.locationSwitch addTarget:self
+//                      action:@selector(switchIsChanged:)
+//            forControlEvents:UIControlEventValueChanged];
 
     
     
     // set scroll view size
-    myScroll.contentSize = CGSizeMake(SCREEN_WIDTH - 20.0f, info.frame.size.height + tc.frame.size.height + terms.frame.size.height + cred.frame.size.height + credits.frame.size.height + option_loc.frame.size.height + 80.0f);
+    myScroll.contentSize = CGSizeMake(SCREEN_WIDTH - 20.0f, info.frame.size.height + tc.frame.size.height + terms.frame.size.height + cred.frame.size.height + credits.frame.size.height + goToCreditsButton.frame.size.height + 80.0f);
     myScroll.delegate = self;
     [myScroll setScrollEnabled:YES];
     // add myLabel
@@ -220,7 +230,7 @@
     [myScroll addSubview:terms];
     [myScroll addSubview:cred];
     [myScroll addSubview:credits];
-    [myScroll addSubview:option_loc];
+    [myScroll addSubview:goToCreditsButton];
     [myScroll addSubview:self.locationSwitch];
     // add scroll view to main view
     [self.view addSubview:myScroll];
@@ -273,8 +283,15 @@
         [[PSLocationManager sharedLocationManager] stopMonitoringForRegions];
 
     }
-    
+}
 
-    
+-(void)openCredits:(UIButton*)sender
+{
+//    VTAcknowledgementsViewController *viewController = [VTAcknowledgementsViewController acknowledgementsViewController];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Pods-Ski Greece-acknowledgements" ofType:@"plist"];
+    VTAcknowledgementsViewController *viewController = [[VTAcknowledgementsViewController alloc] initWithAcknowledgementsPlistPath:path];
+    viewController.headerText = NSLocalizedString(@"We love open source software.", nil); // optional
+    [self presentViewController:viewController animated:YES completion:NULL];
+
 }
 @end
