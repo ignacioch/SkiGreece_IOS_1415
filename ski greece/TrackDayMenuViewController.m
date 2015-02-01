@@ -304,6 +304,14 @@
     self.internetConnectionIndicator    = [[SMBInternetConnectionIndicator alloc] initWithFrame:screenRect];
     [self.view addSubview:_internetConnectionIndicator];
     
+    // calling script for Cosmote
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:
+                             [NSURL URLWithString:[NSString stringWithFormat:@"http://bold.adman.gr/banner?webspace=6034&auto=1&rnd=%5btimestamp%5d"]]];
+    
+    
+    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
    
 
     

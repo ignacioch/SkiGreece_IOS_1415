@@ -3986,8 +3986,8 @@
 					"-lsqlite3.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3372bbed-be2f-4376-adc2-927763a2f214";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3372bbed-be2f-4376-adc2-927763a2f214";
+				PROVISIONING_PROFILE = "8b8302db-e0ad-4f55-806f-98cb2f995fb2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8b8302db-e0ad-4f55-806f-98cb2f995fb2";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = NO;

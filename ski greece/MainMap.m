@@ -27,6 +27,8 @@
     NSInteger flag;
     MBProgressHUD *hud;
     NSMutableArray * dataFromServer;
+    NSURLConnection * first_connection;
+    NSURLConnection * second_connection;
 }
 @synthesize mapMain;
 @synthesize responseData;
@@ -130,11 +132,17 @@
     
     //fetching condition for all the ski centers
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:
+    NSURLRequest *first_request = [NSURLRequest requestWithURL:
                              [NSURL URLWithString:[NSString stringWithFormat:@"http://%s/_all",BASE_URL]]];
     
 
-    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    first_connection =[[NSURLConnection alloc] initWithRequest:first_request delegate:self];
+    
+    //NSURLRequest *second_request = [NSURLRequest requestWithURL:
+    //                         [NSURL URLWithString:[NSString stringWithFormat:@"http://bold.adman.gr/banner?webspace=6035&auto=1&rnd=%5btimestamp%5d"]]];
+    
+    
+   //second_connection = [[NSURLConnection alloc] initWithRequest:second_request delegate:self];
     
     
    
@@ -153,11 +161,15 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     NSLog(@"didReceiveResponse");
-    [self.responseData setLength:0];
+    if (connection == first_connection) {
+        [self.responseData setLength:0];
+    }
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    [self.responseData appendData:data];
+    if (connection == first_connection) {
+        [self.responseData appendData:data];
+    }
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
@@ -168,28 +180,32 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     NSLog(@"connectionDidFinishLoading");
     
-    //[hud show:NO];
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
     
-    
-    // now we'll parse our data using NSJSONSerialization
-    id myJSON = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableContainers error:nil];
-    
-    // typecast an array and list its contents
-    NSArray *jsonArray = (NSArray *)myJSON;
-    
-    dataFromServer= [[NSMutableArray alloc] initWithCapacity:[jsonArray count]];
-    
-    // take a look at all elements in the array
-    for (id element in jsonArray) {
-        [dataFromServer addObject:element];
+    if (connection == first_connection) {
+        //[hud show:NO];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        
+        // now we'll parse our data using NSJSONSerialization
+        id myJSON = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableContainers error:nil];
+        
+        // typecast an array and list its contents
+        NSArray *jsonArray = (NSArray *)myJSON;
+        
+        dataFromServer= [[NSMutableArray alloc] initWithCapacity:[jsonArray count]];
+        
+        // take a look at all elements in the array
+        for (id element in jsonArray) {
+            [dataFromServer addObject:element];
+        }
+        
+        flag = 1;
+        [self.mapMain reloadData];
+    } else {
+        NSLog(@"Updating Cosmote analytics" );
     }
     
-    flag = 1;
-    [self.mapMain reloadData];
-    
-
-   
+ 
 
 }
 
@@ -302,7 +318,8 @@
     [Flurry logEvent:@"Cosmote_LearnMore_Clicked"];
     
     UIApplication *mySafari = [UIApplication sharedApplication];
-    NSURL *myURL = [[NSURL alloc]initWithString:@"http://www.cosmote.gr/cosmoportal/page/HNMS/xml/Personal__microsite__4G__4G/section/4G"];
+//    NSURL *myURL = [[NSURL alloc]initWithString:@"http://www.cosmote.gr/cosmoportal/page/HNMS/xml/Personal__microsite__4G__4G/section/4G"];
+    NSURL *myURL = [[NSURL alloc]initWithString:@"http://bold.adman.gr/click?webspace=6035&auto=1"];
     [mySafari openURL:myURL];
 }
 @end
